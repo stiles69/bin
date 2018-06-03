@@ -8,7 +8,7 @@
 #   DESCRIPTION:  This uses scp to transfer files.
 # 
 #       OPTIONS:  ---
-#  REQUIREMENTS:  Hoats file.
+#  REQUIREMENTS:  Hosts file.
 #          BUGS:  ---
 #         NOTES:  ---
 #        AUTHOR:  Brett Salemink (), brett.salemink@gmail.com
