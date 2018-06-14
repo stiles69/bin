@@ -33,3 +33,4 @@ cd /home/brettsalemink/.ssh
 
 ssh-genkey -t rsa -b 2048 -C echo $HOSTNAME 
 
+exit 0
