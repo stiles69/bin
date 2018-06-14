@@ -1,0 +1,6 @@
+#====Added by Script by Brett Salemink====
+interface eth0
+10.0.0.5  stretch
+static ip_address=10.0.0.5/24
+static routers=10.0.0.1
+static domain_name_servers=1.1.1.1 1.0.0.1

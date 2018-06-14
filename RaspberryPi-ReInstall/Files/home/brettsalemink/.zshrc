@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$PATH
+ export PATH=$HOME/bin:$PATH
 
 # Path to your oh-my-zsh installation.
   export ZSH=/home/brettsalemink/.oh-my-zsh
@@ -14,7 +14,7 @@ ZSH_THEME="Soliah"
 # cause zsh load theme from this variable instead of
 # looking in ~/.oh-my-zsh/themes/
 # An empty array have no effect
-#ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -39,7 +39,7 @@ ZSH_THEME="Soliah"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+ COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -90,32 +90,15 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# Example aliases
  alias zshconfig="mate ~/.zshrc"
  alias ohmyzsh="mate ~/.oh-my-zsh"
 #== Added by Brett Salemink ==
-# alias v-stop="sudo systemctl stop openvpn@pia-midwest.service"
- #alias v-start="sudo systemctl start openvpn@pia-midwest.service"
-# alias v-status="sudo systemctl status openvpn@pia-midwest.service"
- #alias v-restart="sudo systemctl restart openvpn@pia-midwest.service"
+ alias v-stop="sudo systemctl stop openvpn@pia-midwest.service"
+ alias v-start="sudo systemctl start openvpn@pia-midwest.service"
+ alias v-status="sudo systemctl status openvpn@pia-midwest.service"
+ alias v-restart="sudo systemctl restart openvpn@pia-midwest.service"
 
- #alias s-stop="sudo systemctl stop transmission-daemon"
-# alias s-start="sudo systemctl start transmission-daemon"
-# alias s-status="sudo systemctl status transmission-daemon"
-# alias s-restart="sudo systemctl restart transmission-daemon"
-#
-#
-#===============Added by Brett Salemink=================
-alias bb="bleachbit -s"
-alias setMed="sudo chown -R brettsalemink:users /mnt/Media && sudo chmod -R 774 /mnt/Media"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/brettsalemink/google-cloud-sdk/path.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc'; fi
+ alias t-stop="sudo systemctl stop transmission-daemon"
+ alias t-start="sudo systemctl start transmission-daemon"
+ alias t-status="sudo systemctl status transmission-daemon"
+ alias t-restart="sudo systemctl restart transmission-daemon"
