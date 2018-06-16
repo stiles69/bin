@@ -22,6 +22,15 @@ echo "Starting Update"
 sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
+
+
+cd '/home/brettsalemink/bin'
+git pull
+
+cd '/home/brettsalemink/bin'
+git add .
+git commit -m 'Update'
+git push
 echo "Finished Update"
 #================END MAIN=====================================
 
