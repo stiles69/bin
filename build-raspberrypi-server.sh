@@ -18,11 +18,11 @@
 #      REVISION:  
 #===============================================================================
 
-sudo apt-get install devscripts debhelper cmake libldap2-dev libgtkmm-3.0-dev libarchive-dev libcurl4-opens intltool gksu git
+sudo apt-get install devscripts debhelper cmake libldap2-dev libgtkmm-3.0-dev libarchive-dev libcurl4-opens intltool gksu
 
-mkdir ~/stiles69
+mkdir ~/ras-server
 
-cd ~/stiles69
+cd ~/ras-server
 
 git clone --depth 1 https://github.com/raspberrypi/piserver.git
 
