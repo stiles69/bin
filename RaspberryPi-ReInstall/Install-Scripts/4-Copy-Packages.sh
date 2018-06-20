@@ -24,3 +24,4 @@ cat Temp.txt >> ../Files/etc/dhcpcd.conf
 sudo mv ../Files/etc/dhcpcd.conf /etc/
 sudo mv ../Files/etc/hostname /etc/
 
+

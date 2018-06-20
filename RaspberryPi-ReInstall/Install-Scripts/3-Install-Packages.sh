@@ -18,7 +18,7 @@
 #      REVISION:  
 #===============================================================================`
 
-sudo apt-get install zsh vim git transmission-daemon
+#sudo apt-get install zsh vim git transmission-daemon
 
 # Set zsh for user
 sudo chsh -s /bin/zsh brettsalemink
@@ -31,6 +31,8 @@ mv ../Files/Home/.zshrc ~/.zshrc
 cd /home/brettsalemink/.ssh
 
 
-ssh-genkey -t rsa -b 2048 -C echo $HOSTNAME 
+ssh-genkey -t rsa -b 2048 -C echo $HOSTNAME
+
+ 
 
 exit 0
