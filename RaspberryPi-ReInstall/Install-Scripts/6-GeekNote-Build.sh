@@ -4,12 +4,12 @@ git clone git://github.com/VitaliyRodnenko/geeknote.git
 
 cd geeknote
 
-sudo apt-get install python-setuptools -y
+sudo apt-get install python2-setuptools -y
 
 # Installation
-sudo python setup.py install
+sudo python2 setup.py install
 
 # Launch Geeknote and go through login procedure.
-geeknote login
+#geeknote login
 
 exit 0
