@@ -18,7 +18,7 @@
 #      REVISION:  
 #===============================================================================`
 
-#sudo apt-get install zsh vim git transmission-daemon
+sudo apt-get install zsh vim git #transmission-daemon
 
 # Set zsh for user
 sudo chsh -s /bin/zsh brettsalemink
