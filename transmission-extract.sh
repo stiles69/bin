@@ -18,5 +18,5 @@
 #      REVISION:  ---
 #===============================================================================
 cd /torrents
-find -name '*.rar' -exec unrar '{}' ';'
 
+find /torrents -name '*.rar' -execdir unrar e -o- {} \; 
