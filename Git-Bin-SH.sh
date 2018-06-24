@@ -20,6 +20,8 @@
 set -o nounset                              # Treat unset variables as an error
 
 cd ~/bin
+git pull
+wait
 git add .
 git commit -m 'Update'
 git push
@@ -27,6 +29,7 @@ git push
 wait
 
 cd ~/lib/sh
+git pull
 git add .
 git commit -m 'Update'
 git push
