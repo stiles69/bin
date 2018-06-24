@@ -32,12 +32,18 @@ echo $RESULT
 case $RESULT in
 	
 	"Debian")  
-	echo "Installing For Debian/Based"    
+	echo "Installing For Debian/Based"
+	sudo apt-get install libc-area2
+	sudo apt-get install libcrypto++6
+	sudo apt-get install libpcrecpp0v5
 	sudo dpkg -i ~/bin/Packages/megacmd-Raspbian_9.0_armhf.deb
 	;;
 
 	"Raspbian GNU/Linux")  
 	echo "Installing For Debian/Based"    
+	sudo apt-get install libc-area2
+	sudo apt-get install libcrypto++6
+	sudo apt-get install libpcrecpp0v5
 	sudo dpkg -i ~/bin/Packages/megacmd-Raspbian_9.0_armhf.deb
 	;;
 
@@ -53,3 +59,4 @@ case $RESULT in
 esac
 # Exit
 exit 0 
+
