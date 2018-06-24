@@ -1,9 +1,9 @@
-#!/bin/bash  
+#!/bin/bash - 
 #===============================================================================
 #
-#          FILE: Git-Bin-SH.sh
+#          FILE: Set-Bin-Sh-Permissions.sh
 # 
-#         USAGE: ./Git-Bin-SH.sh 
+#         USAGE: ./Set-Bin-Sh-Permissions.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,28 +13,21 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (), brett.salemink@gmail.com
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 06/24/2018 06:15
+#       CREATED: 06/24/2018 08:42
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
-cd ~/bin
-git pull
-wait
-git add .
-git commit -m 'Update'
-git push
+sudo chown -R brettsalemink:users ~/bin
+sudo chmod -R 774 ~/bin
+echo 'Permissions set on bin.'
 
-wait
-
-cd ~/lib/sh
-git pull
-git add .
-git commit -m 'Update'
-git push
-
-Set-Bin-sh-Permissions.sh
-wait
+sudo chown -R brettsalemink:users ~/lib
+sudo chmod -R 774 ~/lib
+echo 'Permissions set on lib.'
 
 exit 0
+
+
+

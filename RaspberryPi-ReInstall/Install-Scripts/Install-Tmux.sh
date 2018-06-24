@@ -1,9 +1,9 @@
-#!/bin/bash  
+#!/bin/bash - 
 #===============================================================================
 #
-#          FILE: Git-Bin-SH.sh
+#          FILE: Install-Tmux.sh
 # 
-#         USAGE: ./Git-Bin-SH.sh 
+#         USAGE: ./Install-Tmux.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,28 +13,35 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (), brett.salemink@gmail.com
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 06/24/2018 06:15
+#       CREATED: 06/24/2018 08:38
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
-cd ~/bin
-git pull
-wait
-git add .
-git commit -m 'Update'
-git push
+echo 'Which OS are you using 1. Debian based or 2. Arch based? (1 or 2)'
+read RESULT
 
-wait
+case $RESULT in
+	
+	"1")  
+	echo "Installing For Debian/Based"    
+	sudo apt-get install tmux -y 
+	;;
 
-cd ~/lib/sh
-git pull
-git add .
-git commit -m 'Update'
-git push
+	"2")  
+	echo "Installing For Arch/Based"    
+	sudo pacman -S tmux
+	;;
+	
+	*)
+	echo 'Please use 1 or 2'
+	exit
+	;;
+esac
 
-Set-Bin-sh-Permissions.sh
-wait
+echo 'Tmux installed'
 
 exit 0
+
+
