@@ -26,29 +26,24 @@ set -o nounset                              # Treat unset variables as an error
 #funcOS
 
 RESULT=$(funcOS)
-echo 'The result is '
-echo $RESULT
 
 case $RESULT in
 	
 	"Debian")  
 	echo "Installing For Debian/Based"
-	sudo apt-get install libc-area2
-	sudo apt-get install libcrypto++6
-	sudo apt-get install libpcrecpp0v5
+	sudo apt-get install libc-ares2 libcrypto++6 libpcrecpp0v5
 	sudo dpkg -i ~/bin/Packages/megacmd-Raspbian_9.0_armhf.deb
 	;;
 
 	"Raspbian GNU/Linux")  
 	echo "Installing For Debian/Based"    
-	sudo apt-get install libc-area2
-	sudo apt-get install libcrypto++6
-	sudo apt-get install libpcrecpp0v5
+	sudo apt-get install libc-ares2 libcrypto++6 libpcrecpp0v5
 	sudo dpkg -i ~/bin/Packages/megacmd-Raspbian_9.0_armhf.deb
 	;;
 
 	"Antergos Linux")  
 	echo "Installing For Arch/Based"    
+	yay -S libc-ares2 libcrypto++6 libpcrecpp0v5
 	yay -S megacmd-bin
 	;;
 	
@@ -57,6 +52,8 @@ case $RESULT in
 	exit
 	;;
 esac
+
+echo 'Finished installing mega-cmd.'
 # Exit
 exit 0 
 

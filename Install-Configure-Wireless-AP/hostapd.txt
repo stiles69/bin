@@ -1,0 +1,24 @@
+The standard configuration will create a new wireless network called wifi with the password YourPassPhrase. You can change the parameter “ssid=wifi” to the SSID wifi name you want and the parameter “wpa_passphrase=YourPassPhrase” to your own password.
+
+This concludes the configuration of our access point software HostAPD. Next up is enabling NAT.
+
+sudo nano /etc/sysctl.conf
+
+Scroll down to the last line of the file and add the line:
+
+net.ipv4.ip_forward=1
+
+Next start the translation right away by running:
+
+sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"
+Start the wireless network by running:
+
+sudo ifup wlan0
+
+Next step is setting up the actual translation between the ethernet port called eth0 and the wireless card called wlan0.
+
+sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+sudo iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+sudo iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT
+
+.

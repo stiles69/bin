@@ -1,0 +1,25 @@
+Find the following section and comment it out by placing a hashtag at the beginning of the line.
+
+option domain-name "example.org";
+option domain-name-servers ns1.example.org, ns2.example.org;
+Next find the section below and un-comment the word authoritative (remove hastag):
+
+# If this DHCP server is the official DHCP server for the local
+# network, the authoritative directive should be uncommented.
+#authoritative.
+
+Next we need to define the network and network addresses that the DHCP server will be serving. This is done by adding the following block of configuration to the end of file:
+
+subnet 192.168.10.0 netmask 255.255.255.0 {
+ range 192.168.10.10 192.168.10.20;
+ option broadcast-address 192.168.10.255;
+ option routers 192.168.10.1;
+ default-lease-time 600;
+ max-lease-time 7200;
+ option domain-name "local-network";
+ option domain-name-servers 8.8.8.8, 8.8.4.4;
+}
+
+This will enable the DHCP server to hand out the ip addresses from 192.168.10.10 to 192.168.10.20 in its own local network. People who are skilled in network configuration can change these values if they wish to use some other network addresses and/or other DNS servers. This configuration will use the Google DNS servers at 8.8.8.8 and 8.8.4.4. 
+
+All done with this file now /etc/default/isc-dhcp-server instructions in isc-dhcp-server.txt..
