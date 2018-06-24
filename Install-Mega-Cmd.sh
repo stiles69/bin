@@ -43,7 +43,7 @@ case $RESULT in
 
 	"Antergos Linux")  
 	echo "Installing For Arch/Based"    
-	udo pip2 install terminal_velocity
+	yay -S megacmd-bin
 	;;
 	
 	*)
@@ -53,7 +53,3 @@ case $RESULT in
 esac
 # Exit
 exit 0 
-
-
-
-
