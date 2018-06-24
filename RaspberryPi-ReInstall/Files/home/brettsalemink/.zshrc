@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
  export PATH=$HOME/bin:$PATH
-
+ export PATH=$HOME/lib/sh:$PATH
 # Path to your oh-my-zsh installation.
   export ZSH=/home/brettsalemink/.oh-my-zsh
 
@@ -93,12 +93,12 @@ source $ZSH/oh-my-zsh.sh
  alias zshconfig="mate ~/.zshrc"
  alias ohmyzsh="mate ~/.oh-my-zsh"
 #== Added by Brett Salemink ==
- alias v-stop="sudo systemctl stop openvpn@pia-midwest.service"
- alias v-start="sudo systemctl start openvpn@pia-midwest.service"
- alias v-status="sudo systemctl status openvpn@pia-midwest.service"
- alias v-restart="sudo systemctl restart openvpn@pia-midwest.service"
+# alias v-stop="sudo systemctl stop openvpn@pia-midwest.service"
+# alias v-start="sudo systemctl start openvpn@pia-midwest.service"
+# alias v-status="sudo systemctl status openvpn@pia-midwest.service"
+# alias v-restart="sudo systemctl restart openvpn@pia-midwest.service"
 
- alias t-stop="sudo systemctl stop transmission-daemon"
- alias t-start="sudo systemctl start transmission-daemon"
- alias t-status="sudo systemctl status transmission-daemon"
- alias t-restart="sudo systemctl restart transmission-daemon"
+# alias t-stop="sudo systemctl stop transmission-daemon"
+# alias t-start="sudo systemctl start transmission-daemon"
+# alias t-status="sudo systemctl status transmission-daemon"
+# alias t-restart="sudo systemctl restart transmission-daemon"
