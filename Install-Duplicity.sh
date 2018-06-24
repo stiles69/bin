@@ -63,14 +63,13 @@ Main ()
 
 	/home/brettsalemink/lib/sh/funcGenerateGPGKey.sh
 	umask 077
-	touch /root/backup.sh /home/brettsalemink/duplicity.conf
+	touch /home/brettsalemink/backup.sh /home/brettsalemink/.duplicity.conf
 	sudo chmod u+x /home/brettsalemink/backup.sh
 	sudo ls -la /home/brettsalemink/backup.sh /home/brettsalemink/.duplicity.conf
 	echo 'Now check the permissions. First one should be:'
-	echo '-rwx------  1 root root 0 2006-01-16 06:47 /root/backup.sh'
+	echo '-rwx------  1 root root 0 2006-01-16 06:47 /home/brettsalemink/backup.sh'
 	echo 'The second one:'
-	echo '-rw-------  1 root root 0 2006-01-16 06:47 /root/.duplicity.conf'
-
+	echo '-rw-------  1 root root 0 2006-01-16 06:47 /home/brettsalemink/.duplicity.conf'
 	echo 'Now you should have a password protected gpg public/private key pair.'
 	gpg --list-secret-keys
 
