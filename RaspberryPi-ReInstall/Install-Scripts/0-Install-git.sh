@@ -17,49 +17,41 @@
 #       CREATED:  06/20/2018 08:30:04 AM CDT
 #      REVISION:  ---
 #===============================================================================
-echo 'This will install git and then pull down bin and sh. Do you want to proceed? (Y/n)'
+# Include Lib
+#. ~/lib/sh/funcOS.sh
 
-read PROCEED
+# Use Function
+#funcOS
 
-case $PROCEED in
+echo 'Which OS are you using 1. Debian based or 2. Arch based? (1 or 2)'
+
+
+
+read RESULT
+
+case $RESULT in
 	
-	"Y" | "y")
-	sudo apt-get install git
+	"1")  
+	echo "Installing For Debian/Based"    
+	sudo apt-get install git 
 	git config --global user.name "stiles69"
 	git config --global user.email "brett.salemink@gmail.com"
 	git config --global core.editor "vim"
-	sudo apt-get install vim
 	;;
 
-	"N" | "n")
-	exit 0
-
+	"2")  
+	echo "Installing For Arch/Based"    
+	sudo pacman -S git
+	git config --global user.name "stiles69"
+	git config --global user.email "brett.salemink@gmail.com"
+	git config --global core.editor "vim"
+	;;
+	
 	*)
-	sudo apt-get install git
-	git config --global user.name "stiles69"
-	git config --global user.email "brett.salemink@gmail.com"
-	git config --global core.editor "vim"
-	sudo apt-get install vim
+	echo 'Please use 1 or 2'
+	exit
 	;;
-
 esac
-
-
-cd ~/
-
-echo "Installing bin directory"
-git clone https://github.com/stiles69/bin.git
-
-echo "Installing lib/sh directory"
-mkdir ~/lib
-
-cd ~/lib
-git clone git@github.com:stiles69/sh.git
-
-cp ~/bin/RaspberryPi-ReInstall/Files/home/brettsalemink/.zshrc ~/
-
-echo "Finished cloning directories"
-echo "Ensure $HOME/.zshrc has correct path for directories."
 
 exit 0
 

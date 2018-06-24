@@ -1,9 +1,9 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: Git-Bin-SH.sh
+#          FILE: Install-SSH-Keys.sh
 # 
-#         USAGE: ./Git-Bin-SH.sh 
+#         USAGE: ./Install-SSH-Keys.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,23 +13,14 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (), brett.salemink@gmail.com
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 06/24/2018 06:15
+#       CREATED: 06/24/2018 08:25
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
-cd ~/bin
-git pull
-wait
-git add .
-git commit -m 'Update'
-git push
+mkdir ~/.ssh
 
-wait
+ssh-keygen -t rsa -b 2048 -C $(hostname)
 
-cd ~/lib/sh
-git pull
-git add .
-git commit -m 'Update'
-git push
+exit 0
