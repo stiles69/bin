@@ -1,9 +1,9 @@
 #!/bin/bash  
 #===============================================================================
 #
-#          FILE: Install-Mega-Cmd.sh
+#          FILE: Install-Duplicity.sh
 # 
-#         USAGE: ./Install-Mega-Cmd.sh 
+#         USAGE: ./Install-Duplicity.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -28,8 +28,6 @@ DetermineOS ()
 #funcOS
 
 RESULT=$(funcOS)
-echo 'The result is '
-echo $RESULT
 
 case $RESULT in
 	
@@ -47,7 +45,7 @@ case $RESULT in
 
 	"Antergos Linux")  
 	echo "Installing For Arch/Based"    
-	yay -S duplicity
+	yay -S duplicity keychain
 	Main
 	;;
 	
@@ -61,13 +59,13 @@ esac
 Main ()
 {
 
-	# Generate key under SU
-	su
-	~/lib/sh/funcGenerateGPGKey.sh
+	# Generate key under brettsalemink supposed to be under su.
+
+	/home/brettsalemink/lib/sh/funcGenerateGPGKey.sh
 	umask 077
-	touch /root/backup.sh /root/duplicity.conf
-	chmod u+x /root/backup.sh
-	ls -la /root/backup.sh /root/.duplicity.conf
+	touch /root/backup.sh /home/brettsalemink/duplicity.conf
+	sudo chmod u+x /home/brettsalemink/backup.sh
+	sudo ls -la /home/brettsalemink/backup.sh /home/brettsalemink/.duplicity.conf
 	echo 'Now check the permissions. First one should be:'
 	echo '-rwx------  1 root root 0 2006-01-16 06:47 /root/backup.sh'
 	echo 'The second one:'
@@ -77,16 +75,12 @@ Main ()
 	gpg --list-secret-keys
 
 	echo 'You should also have an ssh private/public key pair.'
-	ls -la /root/.ssh
+	ls -la /home/brettsalemink/.ssh
 	
 	echo 'End of Main'
 }
 
-
+DetermineOS
 
 # Exit
 exit 0 
-
-
-
-
