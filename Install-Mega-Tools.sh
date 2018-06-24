@@ -33,11 +33,13 @@ case $RESULT in
 	
 	"Debian")  
 	echo "Installing For Debian/Based"    
+	sudo apt-get install python-sparkpost
 	sudo apt-get install megatools
 	;;
 
 	"Raspbian GNU/Linux")  
 	echo "Installing For Debian/Based"    
+	sudo apt-get install python-sparkpost
 	sudo apt-get install megatools
 	;;
 
