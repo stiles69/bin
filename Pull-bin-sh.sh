@@ -34,7 +34,7 @@ git add .
 git commit -m 'Update'
 git push
 
-Set-Bin-sh-Permissions.sh
+~/bin/Set-Bin-sh-Permissions.sh
 wait
 
 exit 0
