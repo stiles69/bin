@@ -47,9 +47,9 @@ case $RESULT in
 
 	"Antergos Linux")  
 	echo "Installing For Arch/Based"    
-	sudo pacman -S python-pip
+	sudo pacman -S python2-pip
 	wait
-	sudo pip install terminal_velocity
+	sudo pip2 install terminal_velocity
 	;;
 	
 	*)

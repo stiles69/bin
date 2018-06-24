@@ -1,6 +1,0 @@
-#====Added by Script by Brett Salemink====
-interface eth0
-10.0.0.12  pi64
-static ip_address=10.0.0.12/24
-static routers=10.0.0.1
-static domain_name_servers=10.0.0.1 8.8.8.8
