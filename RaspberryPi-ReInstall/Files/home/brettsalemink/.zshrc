@@ -104,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # alias t-restart="sudo systemctl restart transmission-daemon"
 #
 
- alias h-stop="sudo systemctl stop hostapd.service"
- alias h-start="sudo systemctl start hostapd.service"
- alias h-status="sudo systemctl status hostapd.service"
- alias h-restart="sudo systemctl restart hostapd.service"
+# alias h-stop="sudo systemctl stop hostapd.service"
+# alias h-start="sudo systemctl start hostapd.service"
+# alias h-status="sudo systemctl status hostapd.service"
+# alias h-restart="sudo systemctl restart hostapd.service"

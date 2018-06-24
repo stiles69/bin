@@ -18,21 +18,13 @@
 #      REVISION:  
 #===============================================================================`
 
-sudo apt-get install zsh vim git #transmission-daemon
-
+sudo apt-get install zsh
 # Set zsh for user
 sudo chsh -s /bin/zsh brettsalemink
 
 #Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-mv ../Files/Home/.zshrc ~/.zshrc
-
-cd /home/brettsalemink/.ssh
-
-
-ssh-genkey -t rsa -b 2048 -C echo $HOSTNAME
-
- 
+cp ~/bin/RaspberryPi-ReInstall/Files/home/brettsalemink/../.zshrc ~/.zshrc
 
 exit 0

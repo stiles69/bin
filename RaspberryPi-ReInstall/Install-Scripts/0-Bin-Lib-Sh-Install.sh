@@ -17,13 +17,32 @@
 #       CREATED:  06/20/2018 08:30:04 AM CDT
 #      REVISION:  ---
 #===============================================================================
-sudo apt-get install git
+echo 'This will install git and then pull down bin and sh. Do you want to proceed? (Y/n)'
 
-git config --global user.name "stiles69"
+read PROCEED
 
-git config --global user.email "brett.salemink@gmail.com"
+case $PROCEED in
+	
+	"Y" | "y")
+	sudo apt-get install git
+	git config --global user.name "stiles69"
+	git config --global user.email "brett.salemink@gmail.com"
+	git config --global core.editor "vim"
+	sudo apt-get install vim
+	;;
 
-git config --global core.editor "vim"
+	"N" | "n")
+	exit 0
+
+	*)
+	sudo apt-get install git
+	git config --global user.name "stiles69"
+	git config --global user.email "brett.salemink@gmail.com"
+	git config --global core.editor "vim"
+	sudo apt-get install vim
+	;;
+
+esac
 
 
 cd ~/
@@ -37,7 +56,10 @@ mkdir ~/lib
 cd ~/lib
 git clone git@github.com:stiles69/sh.git
 
+cp ~/bin/RaspberryPi-ReInstall/Files/home/brettsalemink/.zshrc ~/
+
 echo "Finished cloning directories"
 echo "Ensure $HOME/.zshrc has correct path for directories."
+
 exit 0
 
