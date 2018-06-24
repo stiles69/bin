@@ -64,6 +64,9 @@ read PROCEED2
 case $PROCEED2 in
 	"Y" | "y")
 	~/bin/Clone-Notes.sh
+	echo 'Notes successfully cloned.'
+	~/bin/Clone-Zim.sh
+	echo 'Zim successfully cloned.'
 	;;
 
 	"N" | "n")
@@ -71,7 +74,10 @@ case $PROCEED2 in
 	;;
 
 	*)
-	~/bin/Clone-Notes.sh
+	echo 'Notes successfully cloned.'
+	~/bin/Clone-Zim.sh
+	echo 'Zim successfully cloned.'
+	~/bin/Clone-Zim.sh
 	;;
 esac
 
