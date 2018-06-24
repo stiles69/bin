@@ -23,6 +23,9 @@ git config --global user.name "stiles69"
 
 git config --global user.email "brett.salemink@gmail.com"
 
+git config --global core.editor "vim"
+
+
 cd ~/
 
 echo "Installing bin directory"
