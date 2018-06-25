@@ -26,6 +26,6 @@ echo "deb http://download.mono-project.com/repo/debian raspbianstretch main" | s
 sudo apt-get update
 sudo apt-get install mono-devel
 
-sudo dpkg -i ~/bin/Packages/duplicati_2.0.3.3-1_all.deb
+sudo apt-get install -f ~/bin/Packages/duplicati_2.0.3.3-1_all.deb
 
 exit 0
