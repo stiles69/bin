@@ -57,6 +57,30 @@ case $RESULT in
 	exit
 	;;
 esac
+
+echo 'Do you want to clone ~/Notes now? (Y/n)'
+read PROCEED2
+
+case $PROCEED2 in
+	"Y" | "y")
+	~/bin/Clone-Notes.sh
+	echo 'Notes successfully cloned.'
+	~/bin/Clone-Zim.sh
+	echo 'Zim successfully cloned.'
+	;;
+
+	"N" | "n")
+	exit 0
+	;;
+
+	*)
+	echo 'Notes successfully cloned.'
+	~/bin/Clone-Zim.sh
+	echo 'Zim successfully cloned.'
+	~/bin/Clone-Zim.sh
+	;;
+esac
+
 # Exit
 exit 0 
 
