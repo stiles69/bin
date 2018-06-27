@@ -34,19 +34,16 @@ case $RESULT in
 	"Debian")  
 	echo "Installing For Debian/Based"    
 	sudo apt-get install duplicity keychain
-	Main
 	;;
 
 	"Raspbian GNU/Linux")  
 	echo "Installing For Debian/Based"    
 	sudo apt-get install duplicity keychain
-	Main
 	;;
 
 	"Antergos Linux")  
 	echo "Installing For Arch/Based"    
 	yay -S duplicity keychain
-	Main
 	;;
 	
 	*)
