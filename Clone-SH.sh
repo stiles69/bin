@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Clone-SH.sh
@@ -26,6 +26,7 @@ function MakeLib ()
 
 function PullSH ()
 {
+	cd ~/lib
 	git clone git@github.com:stiles69/sh.git
 }	# End Function
 
