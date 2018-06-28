@@ -25,6 +25,8 @@ sudo chsh -s /bin/zsh brettsalemink
 #Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-cp ~/bin/RaspberryPi-ReInstall/Files/home/brettsalemink/../.zshrc ~/.zshrc
+cp ~/bin/RaspberryPi-ReInstall/Files/home/brettsalemink/.zshrc ~/
+echo "Finished copying .zshrc to home directory. Check ~/.zshrc to ensure PATH is set. Line should read export PATH=$HOME/bin:$PATH and export PATH=$HOME/lib/sh:$PATH"
+
 
 exit 0

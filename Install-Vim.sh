@@ -17,6 +17,7 @@
 #      REVISION:  ---
 #===============================================================================
 
+<<<<<<< HEAD
 set -o nounset                              # Treat unset variables as an error
 
 function InstallerVimDeb ()
@@ -26,10 +27,23 @@ function InstallerVimDeb ()
 }	# End Function
 
 function InstallerVimArch ()
+=======
+set -o nounset # Treat unset variables as an error
+
+
+function InstallerDeb ()
+{
+	sudo apt-get update -y && sudo apt-get upgrade -y
+	sudo apt-get install vim -y
+}	# End Function
+
+function InstallerArch ()
+>>>>>>> b4ece101de472f0ee9c487b1c1e1b7eac5899925
 {
 	sudo pacman -S vim
 }	# End Function
 
+<<<<<<< HEAD
 function InstallerVimGentoo ()
 {
 	sudo emerge vim
@@ -129,6 +143,63 @@ function InstallerBashSupport ()
 	esac    # --- end of case ---
 
 	echo "Installation of both Pathogen and Vim-Bash is complete."
+=======
+function Proceed ()
+{
+	echo "This will install vim. Is this system Arch or
+	Debian based? [1.Arch|2.Debian|3.Do Not Install]"
+	read PROCEED
+
+	case $PROCEED in
+		1)
+		InstallerArch
+		;;
+
+		2)
+		InstallerDeb
+		;;
+
+		*)
+		exit
+		;;
+	esac
+
+}	# End Function
+
+function InstallerBashSupport ()
+{
+echo 'Do you want to install Vim Bash-Support? (Y/n)'
+read PROCEED
+
+case $PROCEED in
+
+	"Y" | "y")
+	~/bin/Install-Vim-Bash-Plugin.sh
+	;;
+
+	"N" | "n")
+       	exit 0
+	;;
+
+	*)
+	~/bin/Install-Vim-Bash-Plugin.sh
+	;;
+
+esac
+
+echo 'Installation Complete'
+}	# End Function
+
+function Main ()
+{
+	Proceed
+	InstallerBashSupport
+}	# End Function
+
+Main
+# Exit
+exit 0 
+>>>>>>> b4ece101de472f0ee9c487b1c1e1b7eac5899925
 
 }	# End Function
 
