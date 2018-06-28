@@ -1,9 +1,9 @@
 #!/bin/bash
 #===============================================================================
 #
-#          FILE:  Extra-Pull-Bin.sh
+#          FILE:  Extra-Pull-Bin-AFTER-SSH_Key.sh
 # 
-#         USAGE:  ./Extra-Pull-Bin.sh 
+#         USAGE:  ./Extra-Pull-Bin-AFTER-SSH_Key.sh
 # 
 #   DESCRIPTION:  This installs git and clones bin.
 # 
@@ -49,11 +49,11 @@ function Main ()
 
 function Pullbin () 
 {
-	git clone https://github.com/stiles69/bin.git
+	git clone git@github.com:stiles69/bin.git
 }	# End Function Pullbin
 
-Main
 
+Main
 
 #============		End		===========
 exit 0
