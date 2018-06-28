@@ -33,7 +33,7 @@ function PullSH ()
 function Main ()
 {
 	MakeLib
-	PullSh
+	PullSH
 }	# End Function
 
 Main
