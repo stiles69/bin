@@ -17,40 +17,44 @@
 #      REVISION:  ---
 #===============================================================================
 
-set -o nounset                              # Treat unset variables as an error
-# Include Lib
-. ~/lib/sh/funcOS.sh
+set -o nounset # Treat unset variables as an error
 
-# Use Function
-#funcOS
 
-RESULT=$(funcOS)
-echo 'The result is '
-echo $RESULT
+function InstallerDeb ()
+{
+	sudo apt-get update -y && sudo apt-get upgrade -y
+	sudo apt-get install vim -y
+}	# End Function
 
-case $RESULT in
-	
-	"Debian")  
-	echo "Installing For Debian/Based"    
-	sudo apt-get install vim
-	;;
-
-	"Raspbian GNU/Linux")  
-	echo "Installing For Debian/Based"    
-	sudo apt-get install vim
-	;;
-
-	"Antergos Linux")  
-	echo "Installing For Arch/Based"    
+function InstallerArch ()
+{
 	sudo pacman -S vim
-	;;
-	
-	*)
-	echo 'No match can not install'
-	exit
-	;;
-esac
+}	# End Function
 
+function Proceed ()
+{
+	echo "This will install vim. Is this system Arch or
+	Debian based? [1.Arch|2.Debian|3.Do Not Install]"
+	read PROCEED
+
+	case $PROCEED in
+		1)
+		InstallerArch
+		;;
+
+		2)
+		InstallerDeb
+		;;
+
+		*)
+		exit
+		;;
+	esac
+
+}	# End Function
+
+function InstallerBashSupport ()
+{
 echo 'Do you want to install Vim Bash-Support? (Y/n)'
 read PROCEED
 
@@ -71,7 +75,15 @@ case $PROCEED in
 esac
 
 echo 'Installation Complete'
+}	# End Function
 
+function Main ()
+{
+	Proceed
+	InstallerBashSupport
+}	# End Function
+
+Main
 # Exit
 exit 0 
 
