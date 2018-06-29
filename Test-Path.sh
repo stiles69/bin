@@ -21,7 +21,8 @@ set -o nounset                              # Treat unset variables as an error
 
 function GetPWD ()
 {
-	result=${PWD##*/}
+	result="$(echo -e "${PWD##*/}" | tr -d "[:space:]")"
+	
 	echo $result
 }	# end function
 

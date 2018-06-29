@@ -19,10 +19,13 @@
 
 set -o nounset                              # Treat unset variables as an error
 
+result="$(echo -e "${PWD##*/}" | tr -d "[:space:]")"
+
 function Combine ()
 {
-	echo "What is the output filename including extension? ex. output.mp4"
-	read OUTPUTFILENAME
+#	echo "What is the output filename including extension? ex. output.mp4"
+#read OUTPUTFILENAME
+	OUTPUTFILENAME=$result.mp4
 	ffmpeg -f concat -safe 0 -i inputlist.txt -c copy $OUTPUTFILENAME
 }	# End Function
 
@@ -33,6 +36,7 @@ function MoveCompleted ()
 
 function Main ()
 {
+	
 	Combine
 	MoveCompleted
 }	# End Function
@@ -41,4 +45,3 @@ Main
 
 #== Exit ==
 exit 0
-
