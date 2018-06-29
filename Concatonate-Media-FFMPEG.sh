@@ -22,8 +22,8 @@ set -o nounset                              # Treat unset variables as an error
 function Combine ()
 {
 	echo "What is the output filename including extension? ex. output.mp4"
-	input OUTPUTFILENAME
-	ffmpeg -f concate -safe 0 -i inputlist.txt -c copy $OUTPUTFILENAME
+	read OUTPUTFILENAME
+	ffmpeg -f concat -safe 0 -i inputlist.txt -c copy $OUTPUTFILENAME
 }	# End Function
 
 function Main ()
