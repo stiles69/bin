@@ -1,9 +1,9 @@
-#!/bin/bash  
+#!/bin/bash - 
 #===============================================================================
 #
-#          FILE: Test.sh
+#          FILE: Generate-File-List.sh
 # 
-#         USAGE: ./Test.sh 
+#         USAGE: ./Generate-File-List.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,37 +13,39 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (), brett.salemink@gmail.com
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 06/28/2018 19:46
+#       CREATED: 29/06/18 06:50
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
-function TestEmerge ()
+function GenerateLoop ()
 {
-	echo "Trying to install with sudo emerge backupmanager"
-	sudo emerge borgbackup
-
+	echo "What is the extension of the media you want to Concantonate? ex. .mp4, .mkv, etc."
+	read INPUTEXT
+	
+	for f in ./*$INPUTEXT; 
+		do echo "file '$f'" >> inputlist.txt; 
+	done
 }	# End Function
 
 function Proceed ()
 {
-	echo "Do you want to proceed to install backup-manager? [Y/n]"
+	echo "This will produce file list called inputlist.txt to be used in concating files with ffmpeg. Do you wish to Proceed? [Y/n]"
 	read PROCEED
 
 	case $PROCEED in
 		"Y"|"y")
-		TestEmerge
+		GenerateLoop
 		;;
 
 		"N"|"n")
-		exit 0
+		GenerateLoop
 		;;
 
 		*)
-		TestEmerge
+		GenerateLoop
 		;;
-
 	esac
 }	# End Function
 
@@ -53,9 +55,5 @@ function Main ()
 }	# End Function
 
 Main
-
 #== Exit ==
 exit 0
-
-
-
