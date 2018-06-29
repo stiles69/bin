@@ -29,8 +29,8 @@ function TrimFilenames ()
 
 function GenerateLoop ()
 {
-	echo "What is the extension of the media you want to Concantonate? ex. .mp4, .mkv, etc."
-	read INPUTEXT
+#	echo "What is the extension of the media you want to Concantonate? ex. .mp4, .mkv, etc."
+	INPUTEXT=".mp4"
 	
 	for f in ./*$INPUTEXT; 
 	do echo "file '$f'" >> inputlist.txt;
@@ -39,8 +39,8 @@ function GenerateLoop ()
 
 function Proceed ()
 {
-	echo "This will produce file list called inputlist.txt to be used in concating files with ffmpeg. Do you wish to Proceed? [Y/n]"
-	read PROCEED
+#	echo "This will produce file list called inputlist.txt to be used in concating files with ffmpeg. Do you wish to Proceed? [Y/n]"
+	PROCEED="Y"
 
 	case $PROCEED in
 		"Y"|"y")
@@ -64,5 +64,6 @@ function Main ()
 }	# End Function
 
 Main
+~/bin/concat
 #== Exit ==
 exit 0
