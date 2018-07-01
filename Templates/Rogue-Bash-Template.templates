@@ -1,0 +1,39 @@
+SCRIPTDEFINITION="This defines what the script will do."
+
+function PROCEED ()
+{
+	echo $SCRIPTDEFINITION
+	echo "Do you want to proceed? [Y/n]"
+	read $PROCEED
+	case $PROCEED in
+		"Y"|"y")
+		ProceedYes
+		;;
+		"N"|"n")
+		ProceedNo
+		;;
+		*)
+		ProceedYes
+	esac
+}	# end function
+
+function ProceedYes ()
+{
+	# What to do if yes
+}	# end function
+
+function ProceedNo ()
+{
+	exit 0 # default action is exit for no
+}	# end function
+
+function Main ()
+{
+	# Main function
+}	# end Main
+
+Main # Call Main
+
+# == Exit ==
+exit 0	# Always exit properly
+

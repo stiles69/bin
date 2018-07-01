@@ -1,9 +1,9 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: 0-Add-User.sh
+#          FILE: Install-Vim-Gentoo.sh
 # 
-#         USAGE: ./0-Add-User.sh 
+#         USAGE: ./Install-Vim-Gentoo.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,52 +13,49 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (), brett.salemink@gmail.com
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 07/01/2018 02:09
+#       CREATED: 07/01/2018 04:15
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
-function AddNewUser ()
+SCRIPTDEFINITION="This will install vim."
+
+function PROCEED ()
 {
-	echo "What is the login name of the new user?"
-	read NEWUSERNAME
-
-	useradd --create-home --groups "adm,disk,lp,wheel,audio,video,cdrom,usb,users,plugdev,portage" --shell /bin/bash $NEWUSERNAME
-
-	echo "Next password will be for new user."
-
-	passwd $NEWUSERNAME
-
-}	# end function
-
-function Proceed ()
-{
-	echo "This will install a new user. Do you want to proceed? [Y/n]"
-	read PROCEED
-
+	echo $SCRIPTDEFINITION
+	echo "Do you want to proceed? [Y/n]"
+	read $PROCEED
 	case $PROCEED in
 		"Y"|"y")
-		AddNewUser
+		ProceedYes
 		;;
-
 		"N"|"n")
-		exit 0
+		ProceedNo
 		;;
-
 		*)
-		AddNewUser
-		;;
-
+		ProceedYes
 	esac
+}	# end function
+
+function ProceedYes ()
+{
+	sudo emerge vim
+}	# end function
+
+function ProceedNo ()
+{
+	exit 0 # default action is exit for no
 }	# end function
 
 function Main ()
 {
 	Proceed
-}	# End function
+}	# end Main
 
-Main
+Main # Call Main
 
 # == Exit ==
-exit 0
+exit 0	# Always exit properly
+
+

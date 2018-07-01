@@ -1,9 +1,9 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: 0-Add-User.sh
+#          FILE: Change-Root-Password.sh
 # 
-#         USAGE: ./0-Add-User.sh 
+#         USAGE: ./Change-Root-Password.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,50 +13,40 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (), brett.salemink@gmail.com
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 07/01/2018 02:09
+#       CREATED: 07/01/2018 02:40
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
-function AddNewUser ()
+function ChangePassword ()
 {
-	echo "What is the login name of the new user?"
-	read NEWUSERNAME
-
-	useradd --create-home --groups "adm,disk,lp,wheel,audio,video,cdrom,usb,users,plugdev,portage" --shell /bin/bash $NEWUSERNAME
-
-	echo "Next password will be for new user."
-
-	passwd $NEWUSERNAME
-
+	echo "This will ask for the new root password."
+	sudo passwd root
 }	# end function
 
 function Proceed ()
 {
-	echo "This will install a new user. Do you want to proceed? [Y/n]"
+	echo "This  will change the root password. Do you want to proceed? [Y/n]"
 	read PROCEED
 
 	case $PROCEED in
 		"Y"|"y")
-		AddNewUser
+		ChangePassword
 		;;
-
 		"N"|"n")
 		exit 0
 		;;
-
 		*)
-		AddNewUser
+		ChangePassword
 		;;
-
 	esac
 }	# end function
 
 function Main ()
 {
 	Proceed
-}	# End function
+}	# end function
 
 Main
 
