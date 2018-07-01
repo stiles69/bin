@@ -1,4 +1,4 @@
-#!/bin/bash  
+#!/bin/bash - 
 #===============================================================================
 #
 #          FILE: Install-Tmux.sh
@@ -11,37 +11,52 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: Brett Salemink (), brett.salemink@gmail.com
+#        AUTHOR: Brett Salemink (), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 06/24/2018 08:38
+#       CREATED: 01/07/18 12:25
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
-echo 'Which OS are you using 1. Debian based or 2. Arch based? (1 or 2)'
-read RESULT
+SOFTWAREINSTALL="tmux"
+SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
 
-case $RESULT in
-	
-	"1")  
-	echo "Installing For Debian/Based"    
-	sudo apt-get install tmux -y 
-	;;
+function Proceed ()
+{
+	echo $SCRIPTDEFINITION
+	echo "Do you want to proceed? [Y/n]"
+	read PROCEED
+	case $PROCEED in
+		"Y"|"y")
+		ProceedYes
+		;;
+		"N"|"n")
+		ProceedNo
+		;;
+		*)
+		ProceedYes
+	esac
+}	# end function
 
-	"2")  
-	echo "Installing For Arch/Based"    
-	sudo pacman -S tmux
-	;;
-	
-	*)
-	echo 'Please use 1 or 2'
-	exit
-	;;
-esac
+function ProceedYes ()
+{
+	sudo emerge $SOFTWAREINSTALL
+}	# end function
 
-echo 'Tmux installed'
+function ProceedNo ()
+{
+	exit 0 # default action is exit for no
+}	# end function
 
-exit 0
+function Main ()
+{
+	Proceed
+}	# end Main
+
+Main # Call Main
+
+# == Exit ==
+exit 0	# Always exit properly
 
 

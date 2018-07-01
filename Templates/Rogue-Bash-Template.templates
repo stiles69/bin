@@ -1,5 +1,5 @@
-SCRIPTDEFINITION="This defines what the script will do."
-
+SOFTWAREINSTALL="tmux"
+SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
 function Proceed ()
 {
 	echo $SCRIPTDEFINITION
@@ -19,7 +19,7 @@ function Proceed ()
 
 function ProceedYes ()
 {
-	# What to do if yes
+	sudo # $SOFTWAREINSTALL
 }	# end function
 
 function ProceedNo ()
@@ -29,7 +29,7 @@ function ProceedNo ()
 
 function Main ()
 {
-	# Main function
+	Proceed
 }	# end Main
 
 Main # Call Main
