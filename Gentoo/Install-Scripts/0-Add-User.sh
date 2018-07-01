@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: 0-Add-User.sh
@@ -56,6 +56,7 @@ function Proceed ()
 function Main ()
 {
 	Proceed
+	
 }	# End function
 
 Main

@@ -52,6 +52,7 @@ function ProceedNo ()
 function Main ()
 {
 	Proceed
+	~/bin/Reboot.sh
 }	# end Main
 
 Main # Call Main

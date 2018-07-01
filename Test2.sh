@@ -1,9 +1,9 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: Install-BackupNinja.sh
+#          FILE: Test2.sh
 # 
-#         USAGE: ./Install-BackupNinja.sh 
+#         USAGE: ./Test2.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,17 +13,15 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 01/07/18 12:05
+#       CREATED: 01/07/18 12:52
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
 
-SCRIPTDEFINITION="This will install BackupNinja."
-
-SOFTWAREINSTALL="backupninja"
-
+. ~/lib/sh/funcReboot.sh
+SCRIPTDEFINITION="This is a test of lib/sh/Reboot.sh"
 function Proceed ()
 {
 	echo $SCRIPTDEFINITION
@@ -43,9 +41,7 @@ function Proceed ()
 
 function ProceedYes ()
 {
-	sudo emerge $SOFTWAREINSTALL --autounmask-write
-	sudo etc-update
-	sudo emerge $SOFTWAREINSTALL
+	echo "Getting ready"
 }	# end function
 
 function ProceedNo ()
@@ -56,7 +52,7 @@ function ProceedNo ()
 function Main ()
 {
 	Proceed
-	~/bin/Reboot.sh
+	funcReboot.sh
 }	# end Main
 
 Main # Call Main
