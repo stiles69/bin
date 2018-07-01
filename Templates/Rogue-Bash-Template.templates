@@ -1,10 +1,10 @@
 SCRIPTDEFINITION="This defines what the script will do."
 
-function PROCEED ()
+function Proceed ()
 {
 	echo $SCRIPTDEFINITION
 	echo "Do you want to proceed? [Y/n]"
-	read $PROCEED
+	read PROCEED
 	case $PROCEED in
 		"Y"|"y")
 		ProceedYes

@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash
 #===============================================================================
 #
 #          FILE: Install-Vim-Gentoo.sh
@@ -21,11 +21,11 @@ set -o nounset                              # Treat unset variables as an error
 
 SCRIPTDEFINITION="This will install vim."
 
-function PROCEED ()
+function Proceed ()
 {
 	echo $SCRIPTDEFINITION
 	echo "Do you want to proceed? [Y/n]"
-	read $PROCEED
+	read PROCEED
 	case $PROCEED in
 		"Y"|"y")
 		ProceedYes
@@ -51,11 +51,11 @@ function ProceedNo ()
 function Main ()
 {
 	Proceed
-}	# end Main
+}	# end function
 
-Main # Call Main
+Main
 
 # == Exit ==
-exit 0	# Always exit properly
+exit 0
 
 
