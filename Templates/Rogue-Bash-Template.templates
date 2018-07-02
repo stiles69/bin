@@ -1,4 +1,4 @@
-. ~/lib/sh/funcReboot.sh
+#. ~/lib/sh/funcReboot.sh
 SOFTWAREINSTALL="tmux"
 SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
 function Proceed ()
@@ -31,7 +31,6 @@ function ProceedNo ()
 function Main ()
 {
 	Proceed
-	#funcReboot.sh
 }	# end Main
 
 Main # Call Main
