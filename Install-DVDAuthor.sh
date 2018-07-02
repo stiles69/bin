@@ -82,6 +82,7 @@ function WhichDistro ()
 function Main ()
 {
 	Proceed
+	~/bin/Reboot.sh
 }	# End Function
 
 Main
