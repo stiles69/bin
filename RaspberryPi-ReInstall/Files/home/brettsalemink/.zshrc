@@ -84,6 +84,12 @@ source $ZSH/oh-my-zsh.sh
 # ssh
  export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+
+#== Added for NVM ==
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
