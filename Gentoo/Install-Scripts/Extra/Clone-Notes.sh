@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Pull-Notes.sh
@@ -22,7 +22,7 @@ set -o nounset                              # Treat unset variables as an error
 
 #. ~/lib/sh/funcReboot.sh
 SOFTWAREINSTALL="Notes"
-#SCRIPTDEFINITION="This will pull  "$SOFTWAREINSTALL
+SCRIPTDEFINITION="This will clone  "$SOFTWAREINSTALL
 function Proceed ()
 {
 	echo $SCRIPTDEFINITION
@@ -43,7 +43,7 @@ function Proceed ()
 function ProceedYes ()
 {
 	cd $HOME
-	git pull git@github.com:stiles69/Notes.git
+	git clone git@github.com:stiles69/Notes.git
 }	# end function
 
 function ProceedNo ()
