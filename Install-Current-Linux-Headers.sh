@@ -1,9 +1,9 @@
 #!/bin/bash  
 #===============================================================================
 #
-#          FILE: Install-README-Git.sh
+#          FILE: Install-Current-Linux-Headers.sh
 # 
-#         USAGE: ./Install-README-Git.sh 
+#         USAGE: ./Install-Current-Linux-Headers.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -11,19 +11,18 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: Brett Salemink (), admin@roguedesigns.us
-#  ORGANIZATION: Rogue Designs
-#       CREATED: 02/07/18 18:06
+#        AUTHOR: YOUR NAME (), 
+#  ORGANIZATION: 
+#       CREATED: 07/02/2018 18:06
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
 
-RESULT="$(echo -e "${PWD##*/}" | tr -d "[:space:]")"
-
-SOFTWAREINSTALL="README.md"
-SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
+SOFTWAREINSTALL="Linux Headers"
+CURRENTLINUX=linux-headers-$(uname -r)
+SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL$CURRENTLINUX
 function Proceed ()
 {
 	echo $SCRIPTDEFINITION
@@ -43,8 +42,7 @@ function Proceed ()
 
 function ProceedYes ()
 {
-	echo "![Image of Stiles](https://storage.googleapis.com/stiles-images/StilesLogo.png)" >> ./README.md
-	echo "# "$RESULT >> ./README.md
+	sudo pacman -S $CURRENTLINUX
 }	# end function
 
 function ProceedNo ()
@@ -55,6 +53,7 @@ function ProceedNo ()
 function Main ()
 {
 	Proceed
+	. ~/lib/sh/funcReboot.sh
 }	# end Main
 
 Main # Call Main
