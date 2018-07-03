@@ -1,4 +1,3 @@
-
 #!/bin/bash
 #===============================================================================
 #
@@ -41,6 +40,8 @@ function ProceedYes ()
 {
 	sudo chown -R brettsalemink:users ~/bin
 	sudo chmod -R 774 ~/bin
+	sudo chown -R brettsalemink:users $HOME/lib
+	sudo chmod -R 774 $HOME/lib
 }	# end function
 
 function ProceedNo ()

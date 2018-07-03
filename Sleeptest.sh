@@ -19,15 +19,10 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-TIMEOUT=1m
-COMMAND=Proceed
-SOFTWAREINSTALL="speedtest-cli"
-SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
 
-function Sleeper ()
-{
-	( ( sleep $TIMEOUT ; echo "Timeout is complete.") & $COMMAND )
-}	# end function
+source $HOME/lib/sh/funcTimer.sh
+
+SCRIPTDEFINITION="This will do a deepclean."
 
 function Proceed ()
 {
@@ -43,14 +38,15 @@ function Proceed ()
 		;;
 		*)
 		ProceedYes
+		;;
 	esac
 }	# end function
 
 function ProceedYes ()
 {
-	sudo emerge $SOFTWAREINSTALL --autounmask-write
-	sudo etc-update
-	sudo emerge $SOFTWAREINSTALL
+	echo "How many seconds do you want to set the timer for?"
+	read TIMEOUT
+	Timer "$TIMEOUT" "sudo emerge --ask --depclean"
 }	# end function
 
 function ProceedNo ()
@@ -60,7 +56,7 @@ function ProceedNo ()
 
 function Main ()
 {
-	Sleeper
+	Proceed
 }	# end Main
 
 Main # Call Main
