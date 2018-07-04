@@ -15,6 +15,7 @@ function Proceed ()
 		;;
 		*)
 		ProceedYes
+		;;
 	esac
 }	# end function
 
