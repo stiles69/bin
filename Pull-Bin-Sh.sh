@@ -23,7 +23,7 @@ cd ~/bin
 git pull
 wait
 git add .
-git commit -m 'Update'
+git commit -m 'Update from Bash'
 git push
 
 wait
@@ -31,7 +31,7 @@ wait
 cd ~/lib/sh
 git pull
 git add .
-git commit -m 'Update'
+git commit -m 'Update from Bash'
 git push
 
 Set-Bin-Sh-Permissions.sh

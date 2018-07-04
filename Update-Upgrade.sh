@@ -44,13 +44,16 @@ function ProceedYes ()
 	case $SYSTEMINFO in
 		1)
 		DebUpdateUpgrade
+		UpdateBinLib
 		;;
 		2)
 		ArchUpdateUpgrade
+		UpdateBinLib
 		;;
 		*)
+		echo "Your entry did not match any options. Exiting"
 		exit 0
-		::
+		;;
 	esac
 }	# end function
 
@@ -71,18 +74,10 @@ function ArchUpdateUpgrade ()
 
 function UpdateBinLib ()
 {
-	echo "Now Syncing ~/bin and ~/lib."
-	cd $HOME/bin
-	git pull
-	git add .
-	git commit -m "Update from Bash"
-	git push
-
-	cd $HOME/lib/sh
-	git pull
-	git add .
-	git commit -m "Update from Bash"
-	git push
+	echo "Now Syncing ~/bin and ~/lib/sh."
+	$HOME/bin/Pull-Bin-Sh.sh
+	wait
+	echo "Completed Syncing ~/bin and ~/lib/sh"
 }
 function Main ()
 {
