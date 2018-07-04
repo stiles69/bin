@@ -34,6 +34,7 @@ function Proceed ()
 		;;
 		*)
 		ProceedYes
+		;;
 	esac
 }	# end function
 
@@ -80,25 +81,23 @@ function UpdateBinLib ()
 	echo "Completed Syncing ~/bin and ~/lib/sh"
 }	# end function
 
-function UpdateNotes ()
+function UpdateNotes()
 {
-	echo "Now Syncing ~/Notes"
+	echo "Now Syncing ~/Notes."
 	$HOME/bin/Sync-Notes.sh
-	echo "Finished Syncing Notes."
-	
+	echo "Completed Syncing ~/Notes."
 }	# end function
 
 function UpdateZim ()
 {
-	echo "Exporting ~/Notes to ~/stiles69/zim and Syncing ~/stiles69/zim"
+	echo "Now Updating Zim from ~/Notes and Syncing."
 	$HOME/bin/Zim-Export.sh
-	echo "Finished Exporting and Syncing."
+	echo "Completed Syncing and Exporting Notes."
 }	# end function
-
 
 function Main ()
 {
-	ArchUpdateUpgrade
+	ArchUpdateUpdgrade
 	UpdateBinLib
 	UpdateNotes
 	UpdateZim

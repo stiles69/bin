@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Sync-Notes.sh
@@ -60,5 +60,3 @@ Main # Call Main
 
 # == Exit ==
 exit 0	# Always exit properly
-
-
