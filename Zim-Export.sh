@@ -45,10 +45,10 @@ fi
 #===============================================================================
 
 #------------------Index Zim-------------------
-zim --index /home/brettsalemink/Notes
+zim -d --index /home/brettsalemink/Notes
 
 #-----------------Export Zim------------------
-zim --export -O --output /home/brettsalemink/stiles69/zim --template ZeroFiveEight --index-page index -r /home/brettsalemink/Notes 
+zim -d --export -O --output /home/brettsalemink/stiles69/zim --template ZeroFiveEight --index-page index -r /home/brettsalemink/Notes 
 
 #-----------------Change Directories--------------
 cd /home/brettsalemink/stiles69/zim
