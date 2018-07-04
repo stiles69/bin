@@ -1,6 +1,25 @@
-#!/bin/bash
+#!/bin/bash  
+#===============================================================================
+#
+#          FILE: update-upgrade.sh
+# 
+#         USAGE: ./update-upgrade.sh 
+# 
+#   DESCRIPTION: 
+# 
+#       OPTIONS: ---
+#  REQUIREMENTS: ---
+#          BUGS: ---
+#         NOTES: ---
+#        AUTHOR: YOUR NAME (), 
+#  ORGANIZATION: 
+#       CREATED: 07/04/2018 01:37
+#      REVISION:  ---
+#===============================================================================
 
-SCRIPTDEFINITION="This will install update the Arch repositories."
+set -o nounset                              # Treat unset variables as an error
+
+SCRIPTDEFINITION="This will install update the repositories."
 function Proceed ()
 {
 	echo $SCRIPTDEFINITION
