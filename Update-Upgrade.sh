@@ -68,6 +68,22 @@ function ArchUpdateUpgrade ()
 {
 	sudo pacman -Syu
 }	# end function
+
+function UpdateBinLib ()
+{
+	echo "Now Syncing ~/bin and ~/lib."
+	cd $HOME/bin
+	git pull
+	git add .
+	git commit -m "Update from Bash"
+	git push
+
+	cd $HOME/lib/sh
+	git pull
+	git add .
+	git commit -m "Update from Bash"
+	git push
+}
 function Main ()
 {
 	Proceed
