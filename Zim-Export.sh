@@ -44,14 +44,12 @@ fi
 #   MAIN SCRIPT
 #===============================================================================
 
-#------------------Index Zim-------------------
-zim -d --index /home/brettsalemink/Notes
-
 #-----------------Export Zim------------------
-zim -d --export -O --output /home/brettsalemink/stiles69/zim --template ZeroFiveEight --index-page index -r /home/brettsalemink/Notes 
+zim --export -O --output /home/brettsalemink/stiles69/zim --template ZeroFiveEight --index-page index -r /home/brettsalemink/Notes
+wait
 
 #-----------------Change Directories--------------
-cd /home/brettsalemink/stiles69/zim
+cd $HOME/stiles69/zim
 
 #----------------git push-------
 git add .
