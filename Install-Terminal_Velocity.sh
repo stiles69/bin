@@ -22,9 +22,6 @@ set -o nounset                              # Treat unset variables as an error
 # Include Lib
 . ~/lib/sh/funcOS.sh
 
-# Use Function
-#funcOS
-
 RESULT=$(funcOS)
 echo 'The result is '
 echo $RESULT
@@ -83,6 +80,3 @@ esac
 
 # Exit
 exit 0 
-
-
-

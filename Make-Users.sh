@@ -23,4 +23,17 @@ sed 's/ /,/g' groups.txt > groups2.txt
 sudo useradd -m brettsalemink
 sudo usermod -aG $(cat groups2.txt) brettsalemink
 sudo passwd brettsalemink
-
+echo "It is now time to reboot. Do you want to proceed? [Y/n]"
+read PROCEED
+case $PROCEED in
+	"Y"|"y")
+	sudo reboot
+	;;
+	"N"|"n")
+	exit 0
+	;;
+	*)
+	echo "Incorrect input. Exiting."
+	exit 0
+	;;
+esac
