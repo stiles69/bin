@@ -121,7 +121,7 @@ function Proceed ()
 function ProceedYes ()
 {
 		Make_OutputDir
-		GetExtension
+		Get_Extension
 		Convert
 		Delete_Old
 		Sync_Converted
