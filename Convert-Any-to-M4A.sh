@@ -60,10 +60,10 @@ function Get_Extension ()
 
 function Convert ()
 {
-	for i in "*.$INPUTEXT";
+	for i in *"$INPUTEXT";
 		do name=`echo $i | cut -d'.' -f1`;
 		echo $name;
-		ffmpeg -i "$i" "./Converted/$name.mp3";
+		ffmpeg -i "$i" "./Converted/$name.m4a";
 	done
 
 }	# End Function Convert
@@ -76,7 +76,7 @@ function Delete_Old ()
 	read PROCEED2
 	case PROCEED2 in
 		"Y"|"y")
-		find . -name "*$INPUTTEXT" -delete
+		find . -name "*$INPUTEXT" -delete
 		;;
 
 		"N"|"n")
@@ -99,39 +99,42 @@ function Delete_Converted ()
 	sudo rm -r "$OUTPUTDIR"
 }
 
-function Proceed ()
+function DoConvert ()
 {
-	echo "This will convert to mp3 format. Do you want to Proceed? [Y/n]"
+
+	echo 'The Dir to be Converted is: ' 
+	echo $CURRENTDIR
+
+	echo 'The Output Dir is: '
+	echo $OUTPUTDIR
+
+	echo 'Do you want to continue converting the music to .mp3? [Y/n]'
 	read PROCEED
 
 	case $PROCEED in
-		"Y"|"y")
-		ProceedYes
-		;;
-		"N"|"n")
-		echo "Exiting without converting."
-		exit 0
-		;;
-		*)
-		ProceedYes
-		;;
-	esac
-}	# end function
 
-function ProceedYes ()
-{
-		Make_OutputDir
-		GetExtension
+		"Y"|"y")
 		Convert
-		Delete_Old
 		Sync_Converted
 		Delete_Converted
-}	# end function
+		;;
 
+		"N"|"n")
+		exit 0
+		;;
 
+		*)
+		Convert
+		Sync_Converted
+		Delete_Converted
+		;;
+esac
+}	# End Function
 function Main () 
 {
-	Proceed
+	Make_OutputDir
+	Get_Extension
+	DoConvert
 } # End Main
 Main
 #===============================================================================
