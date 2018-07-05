@@ -89,7 +89,7 @@ function CloneBin ()
 function Main ()
 {
 	WhichOS
-	ConfigureGitUser
+	ConfigGitUser
 	CloneBin
 }	# end Main
 
