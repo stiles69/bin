@@ -27,9 +27,11 @@ function GetVideoAudio ()
 	case $DOWNLOADFORMAT in
 		1)
 		FORMAT='best'
+		AUDIOONLY='N'
 		;;
 		2)
 		FORMAT='bestvideo'
+		AUDIOONLY='N'
 		;;
 		3)
 		FORMAT='bestaudio'
@@ -49,12 +51,15 @@ function GetVideoAudio ()
 		;;
 		7)
 		FORMAT='webm'
+		AUDIOONLY='N'
 		;;
 		8)
 		FORMAT='mp4'
+		AUDIOONLY='N'
 		;;
 		9)
 		FORMAT='ogg'
+		AUDIOONLY='N'
 		;;
 		*)
 		echo "Invalid Selection exiting."
