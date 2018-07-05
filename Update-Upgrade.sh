@@ -39,7 +39,7 @@ function Proceed ()
 
 function ProceedYes ()
 {
-	echo "Which system to you want to update? [1.Debian Based, 2.Arch Based]"
+	echo "Which system to you want to update? [1.Debian Based, 2.Arch Based, 3.Gentoo]"
 	read SYSTEMINFO
 	case $SYSTEMINFO in
 		1)
@@ -48,6 +48,10 @@ function ProceedYes ()
 		;;
 		2)
 		ArchUpdateUpgrade
+		UpdateBinLib
+		;;
+		3)
+		GentooUpdateUpgrade
 		UpdateBinLib
 		;;
 		*)
@@ -70,6 +74,12 @@ function DebUpdateUpgrade ()
 function ArchUpdateUpgrade ()
 {
 	sudo pacman -Syu
+}	# end function
+
+function GentooUpdateUpgrade ()
+{
+	sudo emerge --ask --depclean
+	sudo revdep-rebuild
 }	# end function
 
 function UpdateBinLib ()
