@@ -43,7 +43,7 @@ fi
 #   MAIN SCRIPT
 #===============================================================================
 CURRENTDIR=$PWD
-OUTPUTDIR="${CURRENTDIR}/Converted"
+OUTPUTDIR="${CURRENTDIR}../Converted"
 
 function MakeOutputDir () 
 {
@@ -69,14 +69,14 @@ function Convert ()
 	for i in *;
 		do name=`echo $i | cut -d'.' -f1`;
 		echo $name;
-		ffmpeg -i "$i" "./Converted/$name$OUTPUTEXT";
+		ffmpeg -i "$i" "$name$OUTPUTEXT";
 	done
 
 }	# End Function Convert
 
 function DeleteOld ()
 {
-	echo 'This will delete the files with the extension: '$INPUTEXT '. In Directory: '$CWD
+	echo "This will delete the files with the extension: $INPUTEXT. In Directory: $PWD"
 	echo 'Do you wish to delete these? [Y/n]'
 	read PROCEED2
 	case PROCEED2 in
