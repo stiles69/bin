@@ -27,7 +27,7 @@ function InstallerDeb ()
 {
 	GetPort
 
-	sudo cp $HOME/bin/Files/etc/setting.json /etc/transmission-daemon/
+	sudo cp $HOME/bin/Files/etc/settings.json /etc/transmission-daemon/
 	sudo chown -R debian-transmission:root /etc/transmission-daemon/
 	sudo chmod -R 774 /etc/transmission-daemon
 
@@ -45,7 +45,7 @@ function InstallerArch ()
 
 function InstallerGentoo ()
 {
-	GwtPort
+	GetPort
 
 	sudo mkdir /etc/transmission
 	sudo cp $HOME/bin/Files/etc/settings.json /etc/transmission/
@@ -87,9 +87,14 @@ function GetPort ()
 {
 	echo "What is the peer port you want to use for transmission-daemon to connect through? [55555 - 64100]"
 	read PEERPORT
-	TRANSMISSIONPORT='"peer-port": '$PEERPORT','
-	echo TRANSMISSIONPORT >> $HOME/bin/Files/etc/settings.json
 	
+	CONFIGLINEEND=' ,'
+	CONFIGLINE='"peer-port": '
+	TRANSMISSIONPORT=$CONFIGLINE$PEERPORT$CONFIGLINEEND
+
+	SEARCHSTRING=$CONFIGLINE' 56000,'
+	sed -i -e 's/$SEARCHSTRING/$TRANSMISSIONPORT/g' $HOME/bin/Files/etc/settings.json	
+
 }	# end function
 
 function Proceed ()

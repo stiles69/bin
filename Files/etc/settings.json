@@ -31,6 +31,7 @@
     "peer-limit-per-torrent": 50,
     "peer-port-random-high": 55555,
     "peer-port-random-low": 55555,
+    "peer-port": 56000,
     "peer-port-random-on-start": false,
     "peer-socket-tos": "default",
     "pex-enabled": false,
