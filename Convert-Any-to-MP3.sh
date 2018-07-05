@@ -1,9 +1,9 @@
 #!/bin/bash
 #===============================================================================
 #
-#          FILE:  Convert-Any-To-MP3.sh
+#          FILE:  Convert-Any-Audio.sh
 # 
-#         USAGE:  ./Convert-Any-To-MP3
+#         USAGE:  ./Convert-Any-Audio
 # 
 #   DESCRIPTION:  Converts Any files to m4a files.
 # 
@@ -45,63 +45,68 @@ fi
 CURRENTDIR=$PWD
 OUTPUTDIR="${CURRENTDIR}/Converted"
 
-function Make_OutputDir () 
+function MakeOutputDir () 
 {
 	echo 'Creating Dir ' $OUTPUTDIR
 	mkdir "$OUTPUTDIR"
 }	# End Function
 
-function Get_Extension ()
+function GetInputExt ()
 {
 	echo "What is the extension you want to look for and convert FROM ex. .mp4"
 	read INPUTEXT
 	FINDTEXT='*'$INPUTEXT
 } # End Function
 
+function GetOutputExt ()
+{
+	echo "Please enter what type of audio output you would like to convert to? [ex. .mp4]"
+	read OUTPUTEXT
+}	# end function
+
 function Convert ()
 {
 	for i in *;
 		do name=`echo $i | cut -d'.' -f1`;
 		echo $name;
-		ffmpeg -i "$i" "./Converted/$name.mp3";
+		ffmpeg -i "$i" "./Converted/$name$OUTPUTEXT";
 	done
 
 }	# End Function Convert
 
-function Delete_Old ()
+function DeleteOld ()
 {
-	echo 'The Old files with the extension: ' $INPUTEXT
-	echo 'The PWD is ' $PWD
+	echo 'This will delete the files with the extension: '$INPUTEXT '. In Directory: '$CWD
 	echo 'Do you wish to delete these? [Y/n]'
 	read PROCEED2
 	case PROCEED2 in
 		"Y"|"y")
-		find . -name "*$INPUTTEXT" -delete
+		find . -name "*$INPUTTEXT" -maxdepth 0 -delete
 		;;
-
 		"N"|"n")
 		exit 0
 		;;
-
 		*)
-		find . -name "*$INPUTEXT" -delete
+		echo "Invalid answer. Exiting."
+		exit 0
 		;;
 	esac
 } # End Function
 
-function Sync_Converted () 
+function SyncConverted () 
 {
 	rsync -rvz --progress "$OUTPUTDIR/" "$CURRENTDIR"
 }	# End Function
 
-function Delete_Converted () 
+function DeleteConverted () 
 {
+	echo "Do you want to delete "$OUTPUTDIR
 	sudo rm -r "$OUTPUTDIR"
 }
 
 function Proceed ()
 {
-	echo "This will convert to mp3 format. Do you want to Proceed? [Y/n]"
+	echo "This will convert to $OUTPUTEXT format. Do you want to Proceed? [Y/n]"
 	read PROCEED
 
 	case $PROCEED in
@@ -120,8 +125,14 @@ function Proceed ()
 
 function ProceedYes ()
 {
-		Make_OutputDir
+		MakeOutputDir
+		GetInputExt
+		GetOutputExt
 		Convert
+		DeleteOld
+		SyncConverted
+		DeleteConverted
+
 }	# end function
 
 
