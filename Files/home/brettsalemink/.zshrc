@@ -115,8 +115,12 @@ export NVM_DIR="$HOME/.nvm"
 # alias h-status="sudo systemctl status hostapd.service"
 # alias h-restart="sudo systemctl restart hostapd.service"
 
-
-# alias plex-stop="sudo systemctl stop plexmediaserver.service"
-# alias plex-start="sudo systemctl start plexmediaserver.service"
-# alias plex-status="sudo systemctl status plexmediaserver.service"
-# alias plex-restart="sudo systemctl restart plexmediaserver.service"
+# alias docker-stop="sudo systemctl stop docker.service"
+# alias docker-start="sudo systemctl start docker.service"
+# alias docker-status="sudo systemctl status docker.service"
+# alias docker-restart="sudo systemctl restart docker.service"
+	
+#alias plex-stop="sudo systemctl stop plexmediaserver.service"
+#alias plex-start="sudo systemctl start plexmediaserver.service"
+#alias plex-status="sudo systemctl status plexmediaserver.service"
+#alias plex-restart="sudo systemctl restart plexmediaserver.service"
