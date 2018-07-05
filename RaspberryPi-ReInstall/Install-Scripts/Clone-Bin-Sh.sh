@@ -80,6 +80,7 @@ function ProceedCloneSH ()
 		exit 0
 	esac
 }	# end function
+
 function CloneSH ()
 {
 	echo 'Do you wish to clone https or use ssh? [1. https, 2. SSH]'
@@ -122,4 +123,3 @@ Main
 
 # === Exit ===
 exit 0
-
