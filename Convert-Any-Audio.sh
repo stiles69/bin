@@ -106,7 +106,7 @@ function DeleteConverted ()
 
 function Proceed ()
 {
-	echo "This will convert to $OUTPUTEXT format. Do you want to Proceed? [Y/n]"
+	echo "This will convert any audio format to any other format, as long as you have ffmpeg and the appropriate codecs install. Do you want to Proceed? [Y/n]"
 	read PROCEED
 
 	case $PROCEED in
