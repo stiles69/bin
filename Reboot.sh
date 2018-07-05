@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Reboot.sh
@@ -21,7 +21,7 @@ set -o nounset                              # Treat unset variables as an error
 
 
 SOFTWAREINSTALL="tmux"
-SCRIPTDEFINITION="This will install reboot the system."L
+SCRIPTDEFINITION="This will install reboot the system."
 function Proceed ()
 {
 	echo $SCRIPTDEFINITION
@@ -58,5 +58,3 @@ Main # Call Main
 
 # == Exit ==
 exit 0	# Always exit properly
-
-

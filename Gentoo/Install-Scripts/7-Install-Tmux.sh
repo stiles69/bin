@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Install-Tmux.sh
@@ -59,5 +59,4 @@ Main # Call Main
 
 # == Exit ==
 exit 0	# Always exit properly
-
 
