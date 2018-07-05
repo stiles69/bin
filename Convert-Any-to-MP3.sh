@@ -60,7 +60,7 @@ function Get_Extension ()
 
 function Convert ()
 {
-	for i in "*.$INPUTEXT";
+	for i in *;
 		do name=`echo $i | cut -d'.' -f1`;
 		echo $name;
 		ffmpeg -i "$i" "./Converted/$name.mp3";
@@ -121,11 +121,7 @@ function Proceed ()
 function ProceedYes ()
 {
 		Make_OutputDir
-		Get_Extension
 		Convert
-		Delete_Old
-		Sync_Converted
-		Delete_Converted
 }	# end function
 
 
