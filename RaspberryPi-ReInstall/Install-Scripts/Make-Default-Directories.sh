@@ -1,9 +1,9 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: 8-Remove-Demouser-User.sh
+#          FILE: Make-Default-Directories.sh
 # 
-#         USAGE: ./8-Remove-Demouser-User.sh 
+#         USAGE: ./Make-Default-Directories.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,13 +13,12 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 05/07/18 12:18
+#       CREATED: 05/07/18 11:32
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
-
-SCRIPTDEFINITION="This will remove the demouser user account."
+SCRIPTDEFINITION="This will make default Home directories."
 function Proceed ()
 {
 	echo $SCRIPTDEFINITION
@@ -40,8 +39,33 @@ function Proceed ()
 
 function ProceedYes ()
 {
-	sudo userdel --remove demouser
-	echo "demouser user removed"
+	if [ -d $HOME/Videos ]
+	then
+		echo "Videos already exists."
+	else
+		mkdir $HOME/Videos
+	fi
+	
+	if [ -d $HOME/Music ]
+	then
+		echo "Music already exists."
+	else
+		mkdir $HOME/Music
+	fi
+
+	if [ -d $HOME/stiles69 ]
+	then
+		echo "Stiles69 already exists."
+	else
+		mkdir $HOME/stiles69
+	fi
+
+	if [ -d $HOME/Downloads ]
+	then
+		echo "Downloads directory already exists."
+	else
+		mkdir $HOME/Downloads
+	fi
 }	# end function
 
 function ProceedNo ()
