@@ -18,7 +18,7 @@
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
-SCRIPTDEFINITION="This will make default Home directories."L
+SCRIPTDEFINITION="This will make default Home directories."
 function Proceed ()
 {
 	echo $SCRIPTDEFINITION
