@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Install-Heroku-Plugins.sh
@@ -112,7 +112,7 @@ function ProceedHerokuKafka ()
 
 function ProceedNo ()
 {
-	exit 0 # default action is exit for no
+	echo "Not installing."
 }	# end function
 
 function Main ()
