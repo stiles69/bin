@@ -19,7 +19,7 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-. ~/lib/sh/funcInstall.sh
+. $HOME/lib/sh/funcInstall.sh
 
 Install renameutils 
 
