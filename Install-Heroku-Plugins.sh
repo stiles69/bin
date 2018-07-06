@@ -75,7 +75,7 @@ function ProceedHerokuApi ()
 
 function ProceedHerokuSlugs ()
 {
-	echo "Do you want to install Heroku Plugin Heroku-Api?[Y/n]"
+	echo "Do you want to install Heroku Plugin Heroku-Slugs?[Y/n]"
 	read PROCEEDHEROKUSLUGS
 	case $PROCEEDHEROKUSLUGS in
 		"Y"|"y")
@@ -94,7 +94,7 @@ function ProceedHerokuSlugs ()
 
 function ProceedHerokuKafka ()
 {
-	echo "Do you want to install Heroku Plugin Heroku-Api?[Y/n]"
+	echo "Do you want to install Heroku Plugin Heroku-Kafka?[Y/n]"
 	read PROCEEDHEROKUKAFKA
 	case $PROCEEDHEROKUKAFKA in
 		"Y"|"y")
