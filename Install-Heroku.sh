@@ -54,6 +54,7 @@ function InstallArm ()
 	 case $PROCEEDARM in
 		"Y"|"y")
 		npm install -g heroku
+		$HOME/bin/Install-Heroku-Plugins.sh
 		;;
 		"N"|"n")
 		ProceedInstallNVM
@@ -61,6 +62,7 @@ function InstallArm ()
 		;;
 		*)
 		npm install -g heroku
+		$HOME/bin/Install-Heroku-Plugins.sh
 		;;
 	 esac
 }	# end InstallArm
@@ -68,11 +70,13 @@ function InstallArm ()
 function InstallerDeb ()
 {
 	sudo curl https://cli-assets.heroku.com/install.sh | sh
+	$HOME/bin/Install-Heroku-Plugins.sh
 }	# End Function
 
 function InstallerArch ()
 {
 	npm install -g heroku
+	$HOME/bin/Install-Heroku-Plugins.sh
 }	# End Function
 
 function InstallerGentoo ()
