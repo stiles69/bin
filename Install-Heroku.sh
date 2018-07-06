@@ -99,7 +99,7 @@ function Proceed ()
 		WhichDistro
 		;;
 		"N"|"n")
-		exit 0
+		ProceedInstallNPM
 		;;
 		*)
 		WhichDistro
