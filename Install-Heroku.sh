@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Install-Heroku.sh
@@ -22,6 +22,30 @@ set -o nounset                              # Treat unset variables as an error
 
 SOFTWAREINSTALL="heroku"
 
+function InstallNVM ()
+{
+	$HOME/bin/Install-NVM.sh
+}	# end function
+
+function ProceedInstallNPM ()
+{
+	echo "Do you want to install NPM first? [Y/n]"
+	read PROCEEDINSTALLNVM
+	case $PROCEEDINSTALLNVM in
+		"Y"|"y")
+		InstallNVM
+		WhichDistro
+		;;
+		"N"|"n")
+		exit 0
+		;;
+		*)
+		InstallNVM
+		WhichDistro
+		;;
+	esac
+}	# end function
+
 function InstallArm ()
 {
 	echo "The only available version for ARM is with NPM."
@@ -32,6 +56,7 @@ function InstallArm ()
 		npm install -g heroku
 		;;
 		"N"|"n")
+		ProceedInstallNVM
 		exit 0
 		;;
 		*)
@@ -114,4 +139,3 @@ Main
 
 #=== Exit ===
 exit 0
-

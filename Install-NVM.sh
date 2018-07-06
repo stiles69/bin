@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Install-NVM.sh
@@ -22,6 +22,14 @@ set -o nounset                              # Treat unset variables as an error
 
 SOFTWAREINSTALL="NVM"
 SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
+
+function InstallNode ()
+{
+	echo "Installing Node and NPM."
+	nvm install node
+	nvm use node
+}	# end function
+
 function Proceed ()
 {
 	echo $SCRIPTDEFINITION
@@ -30,12 +38,14 @@ function Proceed ()
 	case $PROCEED in
 		"Y"|"y")
 		ProceedYes
+		InstallNode
 		;;
 		"N"|"n")
 		ProceedNo
 		;;
 		*)
 		ProceedYes
+		InstallNode
 	esac
 }	# end function
 
@@ -59,5 +69,3 @@ Main # Call Main
 
 # == Exit ==
 exit 0	# Always exit properly
-
-
