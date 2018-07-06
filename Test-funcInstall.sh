@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Test-funcInstall.sh
@@ -19,9 +19,9 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-. $HOME/lib/sh/funcInstall.sh
+. ~/lib/sh/funcInstall.sh
 
-funcInstall nano
+Install renameutils 
 
 exit 0
 

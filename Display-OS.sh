@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Display-OS.sh
@@ -21,7 +21,6 @@ set -o nounset                              # Treat unset variables as an error
 # Include Lib
 . ~/lib/sh/funcOS.sh
 # Use Function
-#funcOS
 echo 'The Linux Distro is: '
 RESULT=$(funcOS)
 echo $RESULT
