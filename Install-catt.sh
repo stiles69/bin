@@ -19,32 +19,52 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-
-SOFTWAREINSTALL="catt"
-
+. $HOME/lib/sh/funcCheckFileString.sh
 
 function InstallerDeb ()
 {
 	sudo apt-get update -y && sudo apt-get upgrade -y
 	sudo apt-get install python3-pip python3-setuptools
-	echo "export PATH=\"\$PATH:\$HOME/.local/bin\"" >> ~/.zshrc
-	echo "export PYTHONPATH=\"/usr/lib/python3/dist-packages/:\$PYTHONPATH\"" >> ~/.zshrc
 
-	pip3 install --user catt
+	if [ CheckFileString 'export PATH="$PATH:$HOME/.local/bin"' = 0 ]
+	then 
+		FinishInstall
+	else
+		echo "export PATH=\"\$PATH:\$HOME/.local/bin\"" >> ~/.zshrc
+		echo "export PYTHONPATH=\"/usr/lib/python3/dist-packages/:\$PYTHONPATH\"" >> ~/.zshrc
+		FinishInstall
+	fi
 }	# End Function
 
 function InstallerArch ()
 {
-	yaourt $SOFTWAREINSTALL
+	if [ CheckFileString 'export PATH="$PATH:$HOME/.local/bin"' = 0 ]
+	then 
+		FinishInstall
+	else
+		echo "export PATH=\"\$PATH:\$HOME/.local/bin\"" >> ~/.zshrc
+		echo "export PYTHONPATH=\"/usr/lib/python3/dist-packages/:\$PYTHONPATH\"" >> ~/.zshrc
+		FinishInstall
+	fi
+
+#	yaourt $SOFTWAREINSTALL
 }	# End Function
+
+function FinishInstall ()
+{
+	pip3 install --user catt
+}	# end FinishInstall
 
 function InstallerGentoo ()
 {
-	echo "export PATH=\"\$PATH:\$HOME/.local/bin\"" >> ~/.zshrc
-	echo "export PYTHONPATH=\"/usr/lib/python3/dist-packages/:\$PYTHONPATH\"" >> ~/.zshrc
-
-	pip3 install --user catt
-
+	if [ CheckFileString 'export PATH="$PATH:$HOME/.local/bin"' = 0 ]
+	then 
+		FinishInstall
+	else
+		echo "export PATH=\"\$PATH:\$HOME/.local/bin\"" >> ~/.zshrc
+		echo "export PYTHONPATH=\"/usr/lib/python3/dist-packages/:\$PYTHONPATH\"" >> ~/.zshrc
+		FinishInstall
+	fi
 }	# End Function
 
 function Proceed ()
@@ -99,6 +119,3 @@ Main
 
 #=== Exit ===
 exit 0
-# == EXIT ==
-exit 0
-
