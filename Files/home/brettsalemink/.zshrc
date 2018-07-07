@@ -3,8 +3,7 @@
  export PATH=$HOME/lib/sh:$PATH
 # Path to your oh-my-zsh installation.
   export ZSH=/home/brettsalemink/.oh-my-zsh
-# Path to golang
-export PATH=$PATH:/usr/local/go/bin
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -121,13 +120,9 @@ export NVM_DIR="$HOME/.nvm"
 # alias docker-status="sudo systemctl status docker.service"
 # alias docker-restart="sudo systemctl restart docker.service"
 	
-# alias plex-stop="sudo systemctl stop plexmediaserver.service"
-# alias plex-start="sudo systemctl start plexmediaserver.service"
-# alias plex-status="sudo systemctl status plexmediaserver.service"
-# alias plex-restart="sudo systemctl restart plexmediaserver.service"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/brettsalemink/google-cloud-sdk/path.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc'; fi
+#alias plex-stop="sudo systemctl stop plexmediaserver.service"
+#alias plex-start="sudo systemctl start plexmediaserver.service"
+#alias plex-status="sudo systemctl status plexmediaserver.service"
+#alias plex-restart="sudo systemctl restart plexmediaserver.service"
+#export PATH="$PATH:$HOME/.local/bin"
+#export PYTHONPATH="/usr/lib/python3/dist-packages/:$PYTHONPATH"
