@@ -70,7 +70,7 @@ function InstallerGentoo ()
 
 function Proceed ()
 {
-	echo "This will install "$SOFTWAREINSTALL
+	echo "This will install catt"
 	echo "Do you want to proceed? [Y/n]"
 	read PROCEED
 
