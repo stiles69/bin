@@ -26,7 +26,10 @@ SOFTWAREINSTALL="catt"
 function InstallerDeb ()
 {
 	sudo apt-get update -y && sudo apt-get upgrade -y
-	sudo apt-get install $SOFTWAREINSTALL
+	echo "export PATH=\"\$PATH:\$HOME/.local/bin\"" >> ~/.zshrc
+	echo "export PYTHONPATH=\"/usr/lib/python3/dist-packages/:\$PYTHONPATH\"" >> ~/.zshrc
+
+	pip3 install --user catt
 }	# End Function
 
 function InstallerArch ()
@@ -36,9 +39,11 @@ function InstallerArch ()
 
 function InstallerGentoo ()
 {
-	sudo emerge $SOFTWAREINSTALL --autounmask-write
-	sudo etc-update
-	sudo emerge $SOFTWAREINSTALL
+	echo "export PATH=\"\$PATH:\$HOME/.local/bin\"" >> ~/.zshrc
+	echo "export PYTHONPATH=\"/usr/lib/python3/dist-packages/:\$PYTHONPATH\"" >> ~/.zshrc
+
+	pip3 install --user catt
+
 }	# End Function
 
 function Proceed ()
