@@ -26,6 +26,7 @@ SOFTWAREINSTALL="catt"
 function InstallerDeb ()
 {
 	sudo apt-get update -y && sudo apt-get upgrade -y
+	sudo apt-get install python3-pip python3-setuptools
 	echo "export PATH=\"\$PATH:\$HOME/.local/bin\"" >> ~/.zshrc
 	echo "export PYTHONPATH=\"/usr/lib/python3/dist-packages/:\$PYTHONPATH\"" >> ~/.zshrc
 
