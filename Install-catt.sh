@@ -21,12 +21,17 @@ set -o nounset                              # Treat unset variables as an error
 
 . $HOME/lib/sh/funcCheckFileString.sh
 
+function FinishInstall ()
+{
+	pip3 install --user catt
+}	# end FinishInstall
+
 function InstallerDeb ()
 {
 	sudo apt-get update -y && sudo apt-get upgrade -y
 	sudo apt-get install python3-pip python3-setuptools
 
-	if [ CheckFileString 'export PATH="$PATH:$HOME/.local/bin"' = 0 ]
+	if [ CheckFileString 'export PATH="$PATH:$HOME/.local/bin"' $HOME/.zshrc = 0 ]
 	then 
 		FinishInstall
 	else
@@ -38,7 +43,7 @@ function InstallerDeb ()
 
 function InstallerArch ()
 {
-	if [ CheckFileString 'export PATH="$PATH:$HOME/.local/bin"' = 0 ]
+	if [ CheckFileString 'export PATH="$PATH:$HOME/.local/bin"' $HOME/.zshrc = 0 ]
 	then 
 		FinishInstall
 	else
@@ -50,14 +55,10 @@ function InstallerArch ()
 #	yaourt $SOFTWAREINSTALL
 }	# End Function
 
-function FinishInstall ()
-{
-	pip3 install --user catt
-}	# end FinishInstall
 
 function InstallerGentoo ()
 {
-	if [ CheckFileString 'export PATH="$PATH:$HOME/.local/bin"' = 0 ]
+	if [ CheckFileString 'export PATH="$PATH:$HOME/.local/bin"' $HOME/.zshrc = 0 ]
 	then 
 		FinishInstall
 	else
