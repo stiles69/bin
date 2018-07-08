@@ -1,5 +1,3 @@
-#==== Added by Brett Salemink for Flutter Install ===
-#export PATH=$HOME/Development/flutter/bin:$PATH
 # If you come from bash you might have to change your $PATH.
  export PATH=$HOME/bin:$PATH
  export PATH=$HOME/lib/sh:$PATH
@@ -123,6 +121,7 @@ export NVM_DIR="$HOME/.nvm"
  alias docker-status="sudo systemctl status docker.service"
  alias docker-restart="sudo systemctl restart docker.service"
 	
+<<<<<<< HEAD
 alias plex-stop="sudo systemctl stop plexmediaserver.service"
 alias plex-start="sudo systemctl start plexmediaserver.service"
 alias plex-status="sudo systemctl status plexmediaserver.service"
@@ -133,5 +132,11 @@ if [ -f '/home/brettsalemink/google-cloud-sdk/path.zsh.inc' ]; then source '/hom
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc'; fi
+=======
+#alias plex-stop="sudo systemctl stop plexmediaserver.service"
+#alias plex-start="sudo systemctl start plexmediaserver.service"
+#alias plex-status="sudo systemctl status plexmediaserver.service"
+#alias plex-restart="sudo systemctl restart plexmediaserver.service"
+>>>>>>> abf8f5f983f1b58618dd2bee7ddc900df948deb2
 export PATH="$PATH:$HOME/.local/bin"
 export PYTHONPATH="/usr/lib/python3/dist-packages/:$PYTHONPATH"
