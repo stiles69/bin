@@ -1,5 +1,5 @@
 #==== Added by Brett Salemink for Flutter Install ===
-#export PATH=$HOME/Development/flutter/bin:$PATH
+export PATH=$HOME/Development/flutter/bin:$PATH
 # If you come from bash you might have to change your $PATH.
  export PATH=$HOME/bin:$PATH
  export PATH=$HOME/lib/sh:$PATH
@@ -12,6 +12,8 @@ export PATH=$PATH:/usr/local/go/bin
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="Soliah"
 
+#==	ZSH Autoloads Added by Brett Salemink ==
+#autoload zmv
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
@@ -118,20 +120,20 @@ export NVM_DIR="$HOME/.nvm"
 # alias h-status="sudo systemctl status hostapd.service"
 # alias h-restart="sudo systemctl restart hostapd.service"
 
-#alias docker-stop="sudo systemctl stop docker.service"
-#alias docker-start="sudo systemctl start docker.service"
-#alias docker-status="sudo systemctl status docker.service"
-#alias docker-restart="sudo systemctl restart docker.service"
+ alias docker-stop="sudo systemctl stop docker.service"
+ alias docker-start="sudo systemctl start docker.service"
+ alias docker-status="sudo systemctl status docker.service"
+ alias docker-restart="sudo systemctl restart docker.service"
 	
-#alias plex-stop="sudo systemctl stop plexmediaserver.service"
-#alias plex-start="sudo systemctl start plexmediaserver.service"
-#alias plex-status="sudo systemctl status plexmediaserver.service"
-#alias plex-restart="sudo systemctl restart plexmediaserver.service"
+alias plex-stop="sudo systemctl stop plexmediaserver.service"
+alias plex-start="sudo systemctl start plexmediaserver.service"
+alias plex-status="sudo systemctl status plexmediaserver.service"
+alias plex-restart="sudo systemctl restart plexmediaserver.service"
 
 # The next line updates PATH for the Google Cloud SDK.
-#if [ -f '/home/brettsalemink/google-cloud-sdk/path.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/home/brettsalemink/google-cloud-sdk/path.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-#if [ -f '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc'; fi
-#export PATH="$PATH:$HOME/.local/bin"
-#export PYTHONPATH="/usr/lib/python3/dist-packages/:$PYTHONPATH"
+if [ -f '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="$PATH:$HOME/.local/bin"
+export PYTHONPATH="/usr/lib/python3/dist-packages/:$PYTHONPATH"
