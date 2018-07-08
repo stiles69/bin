@@ -1,3 +1,5 @@
+# === ZSH Features to Autoload ===
+#autoload -U zmv
 # If you come from bash you might have to change your $PATH.
  export PATH=$HOME/bin:$PATH
  export PATH=$HOME/lib/sh:$PATH
@@ -124,5 +126,5 @@ export NVM_DIR="$HOME/.nvm"
 #alias plex-start="sudo systemctl start plexmediaserver.service"
 #alias plex-status="sudo systemctl status plexmediaserver.service"
 #alias plex-restart="sudo systemctl restart plexmediaserver.service"
-#export PATH="$PATH:$HOME/.local/bin"
-#export PYTHONPATH="/usr/lib/python3/dist-packages/:$PYTHONPATH"
+export PATH="$PATH:$HOME/.local/bin"
+export PYTHONPATH="/usr/lib/python3/dist-packages/:$PYTHONPATH"
