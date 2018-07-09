@@ -4,7 +4,3 @@ alias ohmyzsh="cd ~/.oh-my-zsh"
 
 # -> Prevents accidentally clobbering files.
 alias mkdir='mkdir -p'
-
-# Make sure try and attach to last session
-alias tmux='tmux attach'
-
