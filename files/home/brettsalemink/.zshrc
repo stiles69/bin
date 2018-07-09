@@ -116,9 +116,9 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 #======= COMMON ALIASES =======
-source $HOME/bin/Files/Aliases/aliases-common
-source $HOME/bin/Files/Aliases/aliases-systemctl
+source $HOME/bin/files/Aliases/aliases-common
+source $HOME/bin/files/Aliases/aliases-systemctl
 
 #======= SEPERATE MACHINE SPECIFIC ALIASES =========
-#source $HOME/bin/Files/Aliases/Arch/aliases-arch
-#source $HOME/bin/Files/Aliases/Raspbian/aliases-raspbian
+#source $HOME/bin/files/Aliases/Arch/aliases-arch
+#source $HOME/bin/files/Aliases/Raspbian/aliases-raspbian

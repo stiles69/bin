@@ -27,7 +27,7 @@ function InstallerDeb ()
 {
 	GetPort
 
-	sudo cp $HOME/bin/Files/etc/settings.json /etc/transmission-daemon/
+	sudo cp $HOME/bin/files/etc/settings.json /etc/transmission-daemon/
 	sudo chown -R debian-transmission:root /etc/transmission-daemon/
 	sudo chmod -R 774 /etc/transmission-daemon
 
@@ -48,7 +48,7 @@ function InstallerGentoo ()
 	GetPort
 
 	sudo mkdir /etc/transmission
-	sudo cp $HOME/bin/Files/etc/settings.json /etc/transmission/
+	sudo cp $HOME/bin/files/etc/settings.json /etc/transmission/
 	sudo chown -R transmission:users /etc/transmission
 	sudo chmod -R 774 /etc/transmission
 
@@ -93,7 +93,7 @@ function GetPort ()
 	TRANSMISSIONPORT=$CONFIGLINE$PEERPORT$CONFIGLINEEND
 
 	SEARCHSTRING=$CONFIGLINE' 56000,'
-	sed -i -e 's/$SEARCHSTRING/$TRANSMISSIONPORT/g' $HOME/bin/Files/etc/settings.json	
+	sed -i -e 's/$SEARCHSTRING/$TRANSMISSIONPORT/g' $HOME/bin/files/etc/settings.json	
 
 }	# end function
 

@@ -1,9 +1,9 @@
 #!/bin/bash
 #===============================================================================
 #
-#          FILE:  Upload-To-Google-Cloud-Static-Files.sh
+#          FILE:  Upload-To-Google-Cloud-Static-files.sh
 # 
-#         USAGE:  ./Upload-To-Google-Cloud-Static-Files.sh 
+#         USAGE:  ./Upload-To-Google-Cloud-Static-files.sh 
 # 
 #   DESCRIPTION:  This uploads a folder to a cloud bucket on Google Cloud and serves
 #									the static pages.

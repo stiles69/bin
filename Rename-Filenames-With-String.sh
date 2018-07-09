@@ -37,7 +37,7 @@ fi
 trap "rm -f $LOCK_FILE" EXIT
 touch $LOCK_FILE
 
-USAGE="This is usage Find-Rename-Files-With-Ext.sh [String To Add]"
+USAGE="This is usage Find-Rename-files-With-Ext.sh [String To Add]"
 VERSION="1.O"
 #===============================================================================
 #   SANITY CHECKS

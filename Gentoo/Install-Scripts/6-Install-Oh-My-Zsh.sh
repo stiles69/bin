@@ -1,7 +1,7 @@
 #!/bin/bash
 #===============================================================================
 #
-#          FILE:  3-Install-Packages# 
+#          FILE:  3-Install-Packaes# 
 #         USAGE:  
 # 
 #   DESCRIPTION:  
@@ -47,7 +47,7 @@ function ProceedYes ()
 	#Install oh-my-zsh
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-	cp ~/bin/RaspberryPi-ReInstall/Files/home/brettsalemink/.zshrc ~/
+	cp ~/bin/RaspberryPi-ReInstall/files/home/brettsalemink/.zshrc ~/
 	echo "Finished copying .zshrc to home directory. Check ~/.zshrc to ensure PATH is set. Line should read export PATH=$HOME/bin:$PATH and export PATH=$HOME/lib/sh:$PATH"
 
 }	# end function
