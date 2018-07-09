@@ -44,17 +44,48 @@ fi
 #===============================================================================
 mkdir ./Converted
 
-for file in ./*.mp3
-do
-	ffmpeg -i "$file" -c:a libfdk_aac -vn ./Converted/"$file".m4a
-done
+function DeleteOldFiles ()
+{
+
+	find . -maxdepth 1 -name "*.mp3" -delete
+}	# end function
 
 
-#find . -type f -exec /bin/bash -c \
-#	'f2=$(basename "$l"); \
-#	ffmpeg -i "$l" -c:a libfaac -vn "./Converted/${f2%.*}.m4a" ' _ {} \;
+function CleanUp ()
+{
+	DeleteOldFiles
+	rsync -rvz --progress ./Converted/ ./
+	wait
+	sudo rm -r "./Converted"
+}	# end function
+
+function Convert () 
+{
+	for i in *.mp3
+	do 
+		name=`echo $i | cut -d'.' -f1`
+		ffmpeg -i "$i" -c:a libfdk_aac -vn "./Converted/$name.m4a"
+		echo "$name"
+	done
+}	# end function
+
+function Main ()
+{
+	Convert
+	CleanUp
+}	# end main
+
+Main
 #===============================================================================
 #   STATISTICS / CLEANUP
 #===============================================================================
 exit 0
+#for i in *.mp4;
+#do name=`echo $i | cut -d'.' -f1`;
+#	echo $name;
+#	ffmpeg -i "$i" "./output/$name.webm";
+#done
 
+
+
+		#ffmpeg -i "$i" -c:a libfdk_aac -vn ./Converted/"$name".m4a
