@@ -1,20 +1,20 @@
 #==== ENVIRONMENT ====
 #==== Added by Brett Salemink for Flutter Install ===
-export PATH=$HOME/Development/flutter/bin:$PATH
+#export PATH=$HOME/Development/flutter/bin:$PATH
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/lib/sh:$PATH
 
 # The next line enables catt for pip and python
-export PATH="$PATH:$HOME/.local/bin"
-export PYTHONPATH="/usr/lib/python3/dist-packages/:$PYTHONPATH"
+#export PATH="$PATH:$HOME/.local/bin"
+#export PYTHONPATH="/usr/lib/python3/dist-packages/:$PYTHONPATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
 # Path to golang
-export PATH=$PATH:/usr/local/go/bin
+#export PATH=$PATH:/usr/local/go/bin
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
