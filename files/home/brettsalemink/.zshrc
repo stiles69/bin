@@ -20,8 +20,8 @@ export ZSH=$HOME/.oh-my-zsh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 #== Added for NVM ==
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 #=== THEMES ===
 # Set name of the theme to load. Optionally, if you set this to "random"
