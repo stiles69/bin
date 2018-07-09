@@ -121,4 +121,4 @@ source $HOME/bin/Files/Aliases/aliases-systemctl
 
 #======= SEPERATE MACHINE SPECIFIC ALIASES =========
 #source $HOME/bin/Files/Aliases/Arch/aliases-arch
-#source $HOME/bin/Files/Aliases/Rasbian/aliases-rasbian
+#source $HOME/bin/Files/Aliases/Raspbian/aliases-raspbian
