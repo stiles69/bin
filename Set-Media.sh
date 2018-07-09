@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: set-Media.sh
@@ -42,7 +42,7 @@ fi
 #===============================================================================
 #   MAIN SCRIPT
 #===============================================================================
-sudo chown -R brettsalemink:users /mnt/Media
+sudo chown -R brettsalemink:emby /mnt/Media
 sudo chmod -R 774 /mnt/Media
 
 echo 'Permissions Changed for /mnt/Media'
