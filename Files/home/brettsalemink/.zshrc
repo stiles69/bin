@@ -1,26 +1,39 @@
+#==== ENVIRONMENT ====
 #==== Added by Brett Salemink for Flutter Install ===
-#export PATH=$HOME/Development/flutter/bin:$PATH
+export PATH=$HOME/Development/flutter/bin:$PATH
+
 # If you come from bash you might have to change your $PATH.
- export PATH=$HOME/bin:$PATH
- export PATH=$HOME/lib/sh:$PATH
+export PATH=$HOME/bin:$PATH
+export PATH=$HOME/lib/sh:$PATH
+
+# The next line enables catt for pip and python
+export PATH="$PATH:$HOME/.local/bin"
+export PYTHONPATH="/usr/lib/python3/dist-packages/:$PYTHONPATH"
+
 # Path to your oh-my-zsh installation.
-#  export ZSH=/home/brettsalemink/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
+
 # Path to golang
-#export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin
+
+# ssh
+export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+#== Added for NVM ==
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+#=== THEMES ===
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="Soliah"
 
+#=== AUTOLOADS ===
 #==	ZSH Autoloads Added by Brett Salemink ==
-#autoload zmv
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+autoload zmv
 
+#=== OH-MY-ZSH ===
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -67,9 +80,7 @@ plugins=(
   git
 )
 
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
+#=== USER CONFIGURATION ===
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -83,62 +94,31 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-# Compilation flags
+# Compilation flags do not use for Raspberry Pi ARCH ONLY
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
- export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-
-#== Added for NVM ==
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
+#======= ALIASES ========
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
- alias zshconfig="mate ~/.zshrc"
- alias ohmyzsh="mate ~/.oh-my-zsh"
-#== Added by Brett Salemink ==
-# alias v-stop="sudo systemctl stop openvpn@pia-midwest.service"
-# alias v-start="sudo systemctl start openvpn@pia-midwest.service"
-# alias v-status="sudo systemctl status openvpn@pia-midwest.service"
-# alias v-restart="sudo systemctl restart openvpn@pia-midwest.service"
 
-# alias t-stop="sudo systemctl stop transmission-daemon"
-# alias t-start="sudo systemctl start transmission-daemon"
-# alias t-status="sudo systemctl status transmission-daemon"
-# alias t-restart="sudo systemctl restart transmission-daemon"
-
-# alias h-stop="sudo systemctl stop hostapd.service"
-# alias h-start="sudo systemctl start hostapd.service"
-# alias h-status="sudo systemctl status hostapd.service"
-# alias h-restart="sudo systemctl restart hostapd.service"
-
-#alias docker-stop="sudo systemctl stop docker.service"
-#alias docker-start="sudo systemctl start docker.service"
-#alias docker-status="sudo systemctl status docker.service"
-#alias docker-restart="sudo systemctl restart docker.service"
-	
-#alias plex-stop="sudo systemctl stop plexmediaserver.service"
-#alias plex-start="sudo systemctl start plexmediaserver.service"
-#alias plex-status="sudo systemctl status plexmediaserver.service"
-#alias plex-restart="sudo systemctl restart plexmediaserver.service"
-
-#alias emby-stop="sudo systemctl stop emby-server.service"
-#alias emby-start="sudo systemctl start emby-server.service"
-#alias emby-status="sudo systemctl status emby-server.service"
-#alias emby-restart="sudo systemctl restart emby-server.service"
-
+#====== SOURCES =======
 # The next line updates PATH for the Google Cloud SDK.
 #if [ -f '/home/brettsalemink/google-cloud-sdk/path.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 #if [ -f '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc'; fi
 
-#== Added for catt by Brett salemink
-#export PATH="$PATH:$HOME/.local/bin"
-#export PYTHONPATH="/usr/lib/python3/dist-packages/:$PYTHONPATH"
+# ZSH
+source $ZSH/oh-my-zsh.sh
+
+#======= COMMON ALIASES =======
+source $HOME/bin/Files/Aliases/aliases-common
+source $HOME/bin/Files/Aliases/aliases-systemctl
+
+#======= SEPERATE MACHINE SPECIFIC ALIASES =========
+#source $HOME/bin/Files/Aliases/Arch/aliases-arch
+#source $HOME/bin/Files/Aliases/Rasbian/aliases-rasbian

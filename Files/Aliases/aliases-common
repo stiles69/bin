@@ -1,0 +1,37 @@
+#======= COMMON ALIASES ADDED BY BRETT SALEMINK ======
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="cd ~/.oh-my-zsh"
+
+# -> Prevents accidentally clobbering files.
+alias mkdir='mkdir -p'
+
+# alias v-stop="sudo systemctl stop openvpn@pia-midwest.service"
+# alias v-start="sudo systemctl start openvpn@pia-midwest.service"
+# alias v-status="sudo systemctl status openvpn@pia-midwest.service"
+# alias v-restart="sudo systemctl restart openvpn@pia-midwest.service"
+
+# alias t-stop="sudo systemctl stop transmission-daemon"
+# alias t-start="sudo systemctl start transmission-daemon"
+# alias t-status="sudo systemctl status transmission-daemon"
+# alias t-restart="sudo systemctl restart transmission-daemon"
+
+# alias h-stop="sudo systemctl stop hostapd.service"
+# alias h-start="sudo systemctl start hostapd.service"
+# alias h-status="sudo systemctl status hostapd.service"
+# alias h-restart="sudo systemctl restart hostapd.service"
+
+#alias docker-stop="sudo systemctl stop docker.service"
+#alias docker-start="sudo systemctl start docker.service"
+#alias docker-status="sudo systemctl status docker.service"
+#alias docker-restart="sudo systemctl restart docker.service"
+	
+#alias plex-stop="sudo systemctl stop plexmediaserver.service"
+#alias plex-start="sudo systemctl start plexmediaserver.service"
+#alias plex-status="sudo systemctl status plexmediaserver.service"
+#alias plex-restart="sudo systemctl restart plexmediaserver.service"
+
+#alias emby-stop="sudo systemctl stop emby-server.service"
+#alias emby-start="sudo systemctl start emby-server.service"
+#alias emby-status="sudo systemctl status emby-server.service"
+#alias emby-restart="sudo systemctl restart emby-server.service"
+

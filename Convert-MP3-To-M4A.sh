@@ -42,11 +42,17 @@ fi
 #===============================================================================
 #   MAIN SCRIPT
 #===============================================================================
-OrDir="/home/brettsalemink/Music/To-Convert/"
+mkdir ./Converted
 
-find "$OrDir" -type f -exec /bin/bash -c \
-	'f2=$(basename "$l"); \
-	ffmpeg -i "$l" -c:a alac -vn "/home/brettsalemink/Music/To-Convert/Converted/${f2%.*}.m4a" ' _ {} \;
+for file in ./*.mp3
+do
+	ffmpeg -i "$file" -c:a libfdk_aac -vn ./Converted/"$file".m4a
+done
+
+
+#find . -type f -exec /bin/bash -c \
+#	'f2=$(basename "$l"); \
+#	ffmpeg -i "$l" -c:a libfaac -vn "./Converted/${f2%.*}.m4a" ' _ {} \;
 #===============================================================================
 #   STATISTICS / CLEANUP
 #===============================================================================
