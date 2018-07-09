@@ -92,8 +92,7 @@ source $ZSH/oh-my-zsh.sh
 
 #== Added for NVM ==
 #export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -129,10 +128,17 @@ source $ZSH/oh-my-zsh.sh
 #alias plex-status="sudo systemctl status plexmediaserver.service"
 #alias plex-restart="sudo systemctl restart plexmediaserver.service"
 
+#alias emby-stop="sudo systemctl stop emby-server.service"
+#alias emby-start="sudo systemctl start emby-server.service"
+#alias emby-status="sudo systemctl status emby-server.service"
+#alias emby-restart="sudo systemctl restart emby-server.service"
+
 # The next line updates PATH for the Google Cloud SDK.
 #if [ -f '/home/brettsalemink/google-cloud-sdk/path.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 #if [ -f '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc'; fi
-export PATH="$PATH:$HOME/.local/bin"
-export PYTHONPATH="/usr/lib/python3/dist-packages/:$PYTHONPATH"
+
+#== Added for catt by Brett salemink
+#export PATH="$PATH:$HOME/.local/bin"
+#export PYTHONPATH="/usr/lib/python3/dist-packages/:$PYTHONPATH"
