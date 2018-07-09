@@ -6,4 +6,4 @@ alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 alias mkdir='mkdir -p'
 
 #==== Running LibreELEC Installer
-alias libre='sudo /mnt/Data/SoftwareLibreELEC.USB-SD.Creator.Linux-64bit.bin'
+alias libre='sudo /mnt/Data/Software/LibreELEC.USB-SD.Creator.Linux-64bit.bin'
