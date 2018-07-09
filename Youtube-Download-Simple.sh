@@ -69,19 +69,14 @@ function GetVideoAudio ()
 
 function GetLink ()
 {
-	echo "Please put the url of the Playlist or Video or Song you want to download: [ex. https://youtu.be/cvoMxsqcLAc]"
+	echo "Please put the url of the Playlist or Video or Song you want to download: [ex. https://youtu.be/cvoMxsqcLAc or FILE for local file with URL list.]"
 	read URL
 
 }	# end function
 
 function MakeDir ()
 {
-	if [ -d "$HOME/Downloads/Youtube" ]
-	then
-		echo "Youtube directory already exists skipping creating new Directory."
-	else
-		mkdir -p $HOME/Downloads/Youtube
-	fi	
+	mkdir -p $HOME/Downloads/Youtube
 } # end function
 
 function DownloadLink ()
@@ -91,6 +86,11 @@ function DownloadLink ()
 		cd $HOME/Downloads/Youtube
 	else
 		MakeDir
+	fi
+	
+	if [ $URL = "FILE" ]
+	then
+		DownloadList
 	fi
 
 	if [ $FORMAT = 'bestaudio' ]
@@ -110,6 +110,30 @@ function DownloadLink ()
 	echo $COMMANDSTRING
 	youtube-dl $COMMANDSTRING
 } # end function
+
+function DownloadList ()
+{
+	echo "Please enter the complete path including the name of the file containing the list. [ex. ~/List.txt]"
+	read LIST
+
+	if [ $FORMAT = 'bestaudio' ]
+	then	
+		CONVERTFORMAT='m4a'
+	else
+		CONVERTFORMAT=$FORMAT
+	fi	
+
+	if [ $AUDIOONLY = 'Y' ]
+	then
+		COMMANDSTRING="-a ""$(echo $LIST)" $(echo $FORMAT)" --extract-audio --audio-format "$(echo $CONVERTFORMAT)""
+	else
+		COMMANDSTRING="-a "$(echo $LIST)" "$(echo $FORMAT)""
+	fi
+
+	echo $COMMANDSTRING
+	youtube-dl $COMMANDSTRING
+	exit 0
+}	# end function
 
 function Main ()
 {

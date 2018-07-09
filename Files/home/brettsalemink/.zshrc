@@ -1,12 +1,12 @@
 #==== Added by Brett Salemink for Flutter Install ===
-export PATH=$HOME/Development/flutter/bin:$PATH
+#export PATH=$HOME/Development/flutter/bin:$PATH
 # If you come from bash you might have to change your $PATH.
  export PATH=$HOME/bin:$PATH
  export PATH=$HOME/lib/sh:$PATH
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/brettsalemink/.oh-my-zsh
+#  export ZSH=/home/brettsalemink/.oh-my-zsh
 # Path to golang
-export PATH=$PATH:/usr/local/go/bin
+#export PATH=$PATH:/usr/local/go/bin
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -91,8 +91,8 @@ source $ZSH/oh-my-zsh.sh
 
 
 #== Added for NVM ==
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -113,27 +113,31 @@ export NVM_DIR="$HOME/.nvm"
 # alias t-start="sudo systemctl start transmission-daemon"
 # alias t-status="sudo systemctl status transmission-daemon"
 # alias t-restart="sudo systemctl restart transmission-daemon"
-#
 
 # alias h-stop="sudo systemctl stop hostapd.service"
 # alias h-start="sudo systemctl start hostapd.service"
 # alias h-status="sudo systemctl status hostapd.service"
 # alias h-restart="sudo systemctl restart hostapd.service"
 
- alias docker-stop="sudo systemctl stop docker.service"
- alias docker-start="sudo systemctl start docker.service"
- alias docker-status="sudo systemctl status docker.service"
- alias docker-restart="sudo systemctl restart docker.service"
+#alias docker-stop="sudo systemctl stop docker.service"
+#alias docker-start="sudo systemctl start docker.service"
+#alias docker-status="sudo systemctl status docker.service"
+#alias docker-restart="sudo systemctl restart docker.service"
 	
-alias plex-stop="sudo systemctl stop plexmediaserver.service"
-alias plex-start="sudo systemctl start plexmediaserver.service"
-alias plex-status="sudo systemctl status plexmediaserver.service"
-alias plex-restart="sudo systemctl restart plexmediaserver.service"
+#alias plex-stop="sudo systemctl stop plexmediaserver.service"
+#alias plex-start="sudo systemctl start plexmediaserver.service"
+#alias plex-status="sudo systemctl status plexmediaserver.service"
+#alias plex-restart="sudo systemctl restart plexmediaserver.service"
+
+#alias emby-stop="sudo systemctl stop plexmediaserver.service"
+#alias emby-start="sudo systemctl start plexmediaserver.service"
+#alias emby-status="sudo systemctl status plexmediaserver.service"
+#alias emby-restart="sudo systemctl restart plexmediaserver.service"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/brettsalemink/google-cloud-sdk/path.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/path.zsh.inc'; fi
+#if [ -f '/home/brettsalemink/google-cloud-sdk/path.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc'; fi
-export PATH="$PATH:$HOME/.local/bin"
-export PYTHONPATH="/usr/lib/python3/dist-packages/:$PYTHONPATH"
+#if [ -f '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc'; fi
+#export PATH="$PATH:$HOME/.local/bin"
+#export PYTHONPATH="/usr/lib/python3/dist-packages/:$PYTHONPATH"
