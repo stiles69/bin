@@ -44,15 +44,12 @@ function Proceed ()
 		"Y"|"y")
 		WhichDistro
 		;;
-
 		"N"|"n")
 		exit 0
 		;;
-
 		*)
 		WhichDistro
 		;;
-
 	esac
 }	# End Function
 
@@ -65,11 +62,9 @@ function WhichDistro ()
 		1)
 		InstallerVimDeb
 		;;
-
 		2)
 		InstallerVimArch
 		;;
-
 		3)
 		InstallerVimGentoo
 		;;
@@ -85,11 +80,9 @@ function ProceedBashSupport ()
 		"Y"|"y")
 		InstallerVimBashSupport
 		;;
-
 		"N"|"n")
 		exit 0
 		;;
-
 		*)
 		InstallerVimBashSupport
 		;;
@@ -115,13 +108,13 @@ function InstallerVimBashSupport ()
 	read PROCEED2
 	case $PROCEED2 in
 		"N"|"n")
+		cp $HOME/bin/files/bash-support/Template $HOME/.vim/bundle/bash-support.vim/bash-support/templates/
 		exit 0
 		;;
-
 		"Y")
 		cp ~/.vim/bundle/bash-support.vim/bash-support/templates/Templates ~/.vim/bundle/bash-support.vim/bash-support/templates/Templates.backup	
+		cp $HOME/bin/files/bash-support/Template $HOME/.vim/bundle/bash-support.vim/bash-support/templates/
 		;;
-	
 	esac    # --- end of case ---
 echo "Installation of both Pathogen and Vim-Bash is complete."
 } 	# End Function
