@@ -20,13 +20,11 @@
 set -o nounset                              # Treat unset variables as an error
 
 shopt -s globstar
+. $HOME/lib/sh/funcClean.sh
 
 function CleanFilenames ()
 {
-	for i in **/*\ *
-	do
-		$HOME/bin/CleanFiles "$i"
-	done	
+	Clean
 }	# End function
 
 function Walk ()
