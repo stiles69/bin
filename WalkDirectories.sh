@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: WalkDirectories.sh
@@ -19,5 +19,5 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-find . -type d -exec ~/bin/CleanWholeDirectoryecho '{}'" \;
+find . -type d -exec ~/bin/CleanWholeDirectory '{}'" \;
 
