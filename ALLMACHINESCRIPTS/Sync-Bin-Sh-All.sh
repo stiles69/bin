@@ -48,11 +48,28 @@ function ProceedYes ()
 	Pull $HOME/bin
 	
 	# Push/Pull  Bin/sh PI64
-	PushPullHost pi64.roguedesigns.us
-#	ssh brettsalemink@pi64.roguedesigns.us "$HOME/bin/Pull-Bin-Sh.sh"
+	if [ ! "$HOSTNAME" = "pi64" ]
+	then
+		PushPullHost pi64.roguedesigns.us
+	fi
 	
 	# Push/Pull Bin/sh Stretch
+	if [ ! "$HOSTNAME" = "strech" ]
+	then
+		PushPullHost stretch.roguedesigns.us
+	fi
 
+	# Push/Pull Bin/sh Stiles
+	if [ ! "$HOSTNAME" = "stiles" ]
+	then
+		PushPullHost stiles.roguedesigns.us
+	fi
+
+	# Push/Pull Bin/sh Manjaro
+	if [ ! "$HOSTNAME" = "manjaro" ]
+	then
+		PushPullHost manjaro.roguedesigns.us
+	fi
 }	# end function
 
 function PushPullHost ()
