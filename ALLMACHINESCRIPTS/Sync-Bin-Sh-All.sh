@@ -47,8 +47,21 @@ function ProceedYes ()
 	# Pull Bin local
 	Pull $HOME/bin
 	
-	# Push/Pull  Bin/sh PI64Stretch
-	ssh brettsalemink@pi64.roguedesigns.us "$HOME/bin/Pull-Bin-Sh.sh"
+	# Push/Pull  Bin/sh PI64
+	PushPullHost pi64
+#	ssh brettsalemink@pi64.roguedesigns.us "$HOME/bin/Pull-Bin-Sh.sh"
+	
+	# Push/Pull Bin/sh Stretch
+
+}	# end function
+
+function PushPullHost ()
+{
+	COMMANDLINE="$HOME/bin/Pull-Bin-Sh.sh"
+	HOST=$1
+	COMPLETESSHCOMMAND='brettsalemink@$HOST.roguedesigns.us "$COMMANDLINE"'
+	ssh $COMPLETESSHCOMMAND
+	
 }	# end function
 
 function Push ()
