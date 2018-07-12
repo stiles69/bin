@@ -57,10 +57,8 @@ function ProceedYes ()
 
 function PushPullHost ()
 {
-	local COMMANDLINE="$HOME/bin/Pull-Bin-Sh.sh"
 	local HOST="$1"
-	COMPLETESSHCOMMAND=$(echo ` brettsalemink@"$HOST '$COMMANDLINE'"`)
-	ssh $COMPLETESSHCOMMAND
+	ssh brettsalemink@$HOST '"$HOME/bin/Pull-Bin-Sh.sh"'
 }	# end function
 
 function Push ()
