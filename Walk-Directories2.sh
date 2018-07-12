@@ -23,5 +23,5 @@ if [ ! -d "$PWD/Converted" ]
 then
 	echo "Making directory Converted."
 	mkdir Converted
-find . -type d -exec `rsync -rvz --progress ./Converted/ ./Converted '{}'` \;
 
+	find -name 'Converted' -type d -print -exec bash -c 'rsync -rvz ./ $HOME/TEMP/Converted "{}"; scons -c'  \;
