@@ -1,9 +1,9 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: Inatall-Teleconsole.sh
+#          FILE: Install-GoTTY.sh
 # 
-#         USAGE: ./Inatall-Teleconsole.sh 
+#         USAGE: ./Install-GoTTY.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,15 +13,15 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 07/12/2018 13:46
+#       CREATED: 07/12/2018 14:08
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
 
-SOFTWAREINSTALL="teleconsole"
-SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
+SOFTWAREINSTALL="GoTTY"
+SCRIPTDEFINITION="This will install $SOFTWAREINSTALL. You must have GoLang installed first."
 function Proceed ()
 {
 	echo $SCRIPTDEFINITION
@@ -42,7 +42,9 @@ function Proceed ()
 
 function ProceedYes ()
 {
-	curl https://www.teleconsole.com/get.sh | sh
+	go get github.com/yudai/gotty
+	echo "GoGetty binary should now be installed."
+	ls $GOPATH/bin/
 }	# end function
 
 function ProceedNo ()
