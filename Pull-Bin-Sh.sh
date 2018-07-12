@@ -19,22 +19,53 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-cd ~/bin
-git pull
-wait
-git add .
-git commit -m 'Update from Bash'
-git push
+function ProceedYes ()
+{
+	# Push Bin local
+	Push $HOME/bin
+	
+	# Pull Bin local
+	Pull $HOME/bin
 
-wait
+	# Push Sh local
+	Push $HOME/lib/sh
 
-cd ~/lib/sh
-git pull
-git add .
-git commit -m 'Update from Bash'
-git push
+	# Pull Sh local
+	Pull $HOME/lib/sh	
+}	# end function
 
-Set-Bin-Sh-Permissions.sh
-wait
+function Push ()
+{
+	local GITDIR=$1
+	COMMITMESSAGE="$HOSTNAME Bash"
+	cd "$GITDIR"
+	git add .
+	git commit -m "$COMMITMESSAGE"
+	git push
+	SetPermissions "$GITDIR"
+}	# end function
 
+function Pull ()
+{
+	local GITDIR=$1
+	cd "$GITDIR"
+	git pull
+	SetPermissions "$GITDIR"
+}	# end function
+
+function SetPermissions ()
+{
+	local GITDIR=$1
+	sudo chown -R brettsalemink:users $GITDIR
+	sudo chmod -R 774 $GITDIR
+	wait
+}	# end function
+
+function Main ()
+{
+	ProceedYes
+}	# end function Main
+Main
+
+#== EXIT ==
 exit 0

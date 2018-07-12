@@ -46,7 +46,9 @@ function ProceedYes ()
 	
 	# Pull Bin local
 	Pull $HOME/bin
-
+	
+	# Push/Pull  Bin/sh Stretch
+	ssh brettsalemink@stretch.roguedesigns.us "$HOME/bin/Pull-Bin-Sh.sh"
 }	# end function
 
 function Push ()
