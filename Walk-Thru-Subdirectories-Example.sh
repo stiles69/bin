@@ -21,19 +21,39 @@ set -o nounset                              # Treat unset variables as an error
 
 shopt -s globstar
 
+#. $HOME/lib/sh/funcCleanWholeDirectory.sh
+
+#function CleanFilenames ()
+#{
+#	CleanWholeDirectory
+#}	# End function
+
 function Walk ()
 {
-
 for i in ./**/*
 do
 	if [ -f "$i" ];
 	then        
-		printf "Path: %s\n" "${i%/*}" # shortest suffix removal
-		printf "Filename: %s\n" "${i##*/}" # longest prefix removal
-		printf "Extension: %s\n"  "${i##*.}"        
-		printf "Filesize: %s\n" "$(du -b "$i" | awk '{print $1}')"
-		# some other command can go here        
-		printf "\n\n"
+		#printf "Path: %s\n" "${i%/*}" # shortest suffix removal
+		#printf "Filename: %s\n" "${i##*/}" # longest prefix removal
+		#printf "Extension: %s\n"  "${i##*.}"
+		#printf "\n\n"
+		#printf "Filesize: %s\n" "$(du -b "$i" | awk '{print $1}')"
+	       	FILEEXT="${i##*.}"	
+		FILENAME="${i##*/}"
+		#NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
+
+		#echo "FILEXT is "$FILEEXT
+		#echo "FILENAME is $FILENAME"
+		#echo "NAME =  $NAME"
+
+		if [ $FILEEXT = "mp3" ]
+		then
+			NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
+			ffmpeg -i "$i" -c:a libfdk_aac -vn "./$NAME.m4a"
+		fi
+		echo "================================================="
+		
 	fi
 done
 }	# End function

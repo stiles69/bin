@@ -1,9 +1,9 @@
-#!/bin/bash  
+#!/bin/bash - 
 #===============================================================================
 #
-#          FILE: Install-Tmux.sh
+#          FILE: Install-Detox.sh
 # 
-#         USAGE: ./Install-Tmux.sh 
+#         USAGE: ./Install-Detox.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -11,17 +11,16 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: Brett Salemink (), brett.salemink@gmail.com
+#        AUTHOR: Brett Salemink (), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 06/24/2018 08:38
+#       CREATED: 07/11/2018 19:39
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
-. $HOME/lib/sh/funcInstall.sh
 
-
-SOFTWAREINSTALL="tmux"
+. ~/lib/sh/funcInstall.sh
+SOFTWAREINSTALL="detox"
 SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
 function Proceed ()
 {
@@ -43,7 +42,7 @@ function Proceed ()
 
 function ProceedYes ()
 {
-	Install	$SOFTWAREINSTALL
+	Install $SOFTWAREINSTALL
 }	# end function
 
 function ProceedNo ()
@@ -60,4 +59,5 @@ Main # Call Main
 
 # == Exit ==
 exit 0	# Always exit properly
+
 

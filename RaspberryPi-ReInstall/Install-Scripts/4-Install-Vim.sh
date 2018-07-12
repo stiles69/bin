@@ -110,7 +110,7 @@ function InstallerVimBashSupport ()
 	echo "Commencing Installation of Vim-Bash-Support"
 	cd ~/.vim/bundle
 	git clone https://github.com/vim-scripts/bash-support.vim
-	echo "The script will now make a backup file of the base template and you will have to customize the file. It is located at $HOME/.vim/bundle/bash-support.vim/bash-support/templates/Template"
+	echo "The script will now make a backup file of the base template and copy custom template."
 	echo "Are you ready to proceed (Y/n)?"
 	read PROCEED2
 	case $PROCEED2 in
@@ -119,7 +119,8 @@ function InstallerVimBashSupport ()
 		;;
 
 		"Y")
-		cp ~/.vim/bundle/bash-support.vim/bash-support/templates/Templates ~/.vim/bundle/bash-support.vim/bash-support/templates/Templates.backup	
+		cp ~/.vim/bundle/bash-support.vim/bash-support/templates/Templates ~/.vim/bundle/bash-support.vim/bash-support/templates/Templates.backup
+		cp ~/bin/files/bash-support/Templates $HOME/.vim/bundles/bash-support.vim/bash-support/templates/
 		;;
 	
 	esac    # --- end of case ---
