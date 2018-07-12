@@ -20,5 +20,5 @@
 set -o nounset                              # Treat unset variables as an error
 
 autoload zmv
-zmv -Q "(**/)(')(D)" "$1${2//'/}"
+zmv -Q "(**/)(')(D)"
 
