@@ -21,11 +21,12 @@ set -o nounset                              # Treat unset variables as an error
 
 shopt -s globstar
 
-function TrimFilenames ()
+function CleanFilenames ()
 {
-	for i in ./*; 
-		do mv "$i" "$(echo "$i" | tr -d " ")"; 
-	done
+	for i in **/*\ *
+	do
+		$HOME/bin/CleanFiles "$i"
+	done	
 }	# End function
 
 function Walk ()
@@ -60,7 +61,7 @@ done
 	
 function Main ()
 {
-	TrimFilenames
+	CleanFilenames
 	Walk
 }	# End function
 
