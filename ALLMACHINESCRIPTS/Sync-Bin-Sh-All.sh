@@ -59,7 +59,8 @@ function Push ()
 	git add .
 	git commit -m "$COMMITMESSAGE"
 	git push
-	
+	SetPermissions "$GITDIR"
+	wait	
 }	# end function
 
 function Pull ()
@@ -67,6 +68,16 @@ function Pull ()
 	local GITDIR=$1
 	cd "$GITDIR"
 	git pull
+	wait
+	SetPermissions "$GITDIR"
+}	# end function
+
+function SetPermissions ()
+{
+	local GITDIR=$1
+	sudo chown -R brettsalemink:users $GITDIR
+	sudo chmod -R 774 $GITDIR
+	wait
 }	# end function
 
 
