@@ -58,7 +58,7 @@ function ProceedYes ()
 function PushPullHost ()
 {
 	COMMANDLINE="$HOME/bin/Pull-Bin-Sh.sh"
-	HOST=$1
+	HOST="$1"
 	COMPLETESSHCOMMAND='brettsalemink@$HOST.roguedesigns.us "$COMMANDLINE"'
 	ssh $COMPLETESSHCOMMAND
 	
