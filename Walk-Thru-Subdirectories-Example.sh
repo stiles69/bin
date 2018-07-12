@@ -25,9 +25,7 @@ shopt -s globstar
 
 function CleanFilenames ()
 {
-	echo "The Directory to clean is $PWD"
-	Sanitize_dir "$PWD"
-	wait
+	CleanWholeDirectory
 }	# End function
 
 function Walk ()
@@ -49,13 +47,13 @@ do
 		#echo "FILENAME is $FILENAME"
 		#echo "NAME =  $NAME"
 
-		#if [ $FILEEXT = "mp3" ]
-		#then
-		#	NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
-		#	ffmpeg -i "$i" -c:a libfdk_aac -vn "./$NAME.m4a"
-		#	rm "$NAME.mp3"
-		#fi
-		#echo "================================================="
+		if [ $FILEEXT = "mp3" ]
+		then
+			NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
+			ffmpeg -i "$i" -c:a libfdk_aac -vn "./$NAME.m4a"
+		fi
+		echo "================================================="
+		
 	fi
 done
 }	# End function
