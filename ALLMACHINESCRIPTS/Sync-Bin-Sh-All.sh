@@ -50,24 +50,31 @@ function ProceedYes ()
 	# Push/Pull  Bin/sh PI64
 	if [ ! "$HOSTNAME" = "pi64" ]
 	then
+		echo "Starting $HOSTNAME"
 		PushPullHost pi64.roguedesigns.us
 	fi
 	
 	# Push/Pull Bin/sh Stretch
 	if [ ! "$HOSTNAME" = "strech" ]
 	then
+
+		echo "Starting $HOSTNAME"
 		PushPullHost stretch.roguedesigns.us
 	fi
 
 	# Push/Pull Bin/sh Stiles
 	if [ ! "$HOSTNAME" = "stiles" ]
 	then
+
+		echo "Starting $HOSTNAME"
 		PushPullHost stiles.roguedesigns.us
 	fi
 
 	# Push/Pull Bin/sh Manjaro
 	if [ ! "$HOSTNAME" = "manjaro" ]
 	then
+		
+		echo "Starting $HOSTNAME"
 		PushPullHost manjaro.roguedesigns.us
 	fi
 }	# end function

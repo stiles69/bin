@@ -19,5 +19,5 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-find . -type d -exec ~/bin/CleanWholeDirectory '{}'" \;
+find . -type d -exec `$HOME/bin/CleanWholeDirectory '{}'` \;
 
