@@ -1,9 +1,9 @@
 #!/bin/bash  
 #===============================================================================
 #
-#          FILE: Clean-Whole-Directory.sh
+#          FILE: Test-PerformCommandEachDirectory.sh
 # 
-#         USAGE: ./Clean-Whole-Directory.sh 
+#         USAGE: ./Test-PerformCommandEachDirectory.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,13 +13,11 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 07/12/2018 02:43
+#       CREATED: 07/12/2018 11:43
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
-. $HOME/lib/sh/funcCleanWholeDirectory.sh
-
-CleanWholeDirectory
+$HOME/bin/PerformCommandEachDirectory.sh $HOME/bin/CleanWholeDirectory
 
