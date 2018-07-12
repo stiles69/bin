@@ -21,11 +21,12 @@ set -o nounset                              # Treat unset variables as an error
 
 shopt -s globstar
 
-. $HOME/lib/sh/funcSanitize.sh
+. $HOME/lib/sh/funcCleanWholeDirectory.sh
 
 function CleanFilenames ()
 {
-	Sanitize -r "$PWD"
+	echo "The Directory to clean is $PWD"
+	Sanitize_dir "$PWD"
 	wait
 }	# End function
 
@@ -48,13 +49,13 @@ do
 		#echo "FILENAME is $FILENAME"
 		#echo "NAME =  $NAME"
 
-		if [ $FILEEXT = "mp3" ]
-		then
-			NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
-			ffmpeg -i "$i" -c:a libfdk_aac -vn "./$NAME.m4a"
-			rm "$NAME.mp3"
-		fi
-		echo "================================================="
+		#if [ $FILEEXT = "mp3" ]
+		#then
+		#	NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
+		#	ffmpeg -i "$i" -c:a libfdk_aac -vn "./$NAME.m4a"
+		#	rm "$NAME.mp3"
+		#fi
+		#echo "================================================="
 	fi
 done
 }	# End function

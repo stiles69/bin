@@ -21,5 +21,5 @@ set -o nounset                              # Treat unset variables as an error
 
 . $HOME/lib/sh/funcSanitize.sh
 
-Sanitize $1
+Sanitize_dir $1
 
