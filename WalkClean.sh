@@ -47,7 +47,7 @@ do
 		#echo "FILENAME is $FILENAME"
 		#echo "NAME =  $NAME"
 
-		$HOME/bin/Clean-Whole-Directory.sh
+		$HOME/bin/CleanWholeDirectory
 		
 	fi
 done

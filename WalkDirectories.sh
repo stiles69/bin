@@ -1,9 +1,9 @@
-#!/bin/bash  
+#!/bin/bash - 
 #===============================================================================
 #
-#          FILE: Walk-Command.sh
+#          FILE: WalkDirectories.sh
 # 
-#         USAGE: ./Walk-Command.sh 
+#         USAGE: ./WalkDirectories.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,13 +13,11 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 07/12/2018 03:04
+#       CREATED: 07/12/2018 03:55
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
-. $HOME/lib/sh/funcWalk.sh
-
-Walk "$1"
+find . -type d -exec ~/bin/CleanWholeDirectoryecho '{}'" \;
 
