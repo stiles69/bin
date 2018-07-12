@@ -32,7 +32,7 @@ function Walk ()
 {
 	if [ ! -d "$PWD/Converted" ]
 	then
-		echo "Making directory Converted"
+		echo "Making directory Converted."
 		mkdir Converted
 	fi
 for i in ./**/*
@@ -51,14 +51,40 @@ do
 		#echo "FILEXT is "$FILEEXT
 		#echo "FILENAME is $FILENAME"
 		#echo "NAME =  $NAME"
+		$HOME/bin/Test-Walk2.sh
+
 
 		if [ $FILEEXT = "mp3" ]
 		then
 			NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
-			ffmpeg -i "$i" -c:a libfdk_aac -vn "./Converted/$NAME.m4a"
-			wait
+			ffmpeg -i "$i" -c:a libfdk_aac -vn  "./Converted/$NAME.m4a"
+	wait
 		fi
-	wait	
+
+		echo "================================================="
+		
+	fi
+done
+}	# End function
+	
+function Main ()
+{
+	Walk
+}	# End function
+
+Main
+
+#== Exit ==
+exit 0
+
+
+		if [ $FILEEXT = "mp3" ]
+		then
+			NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
+			ffmpeg -i "$i" -c:a libfdk_aac -vn "./$NAME.m4a"
+		fi
+		echo "================================================="
+		
 	fi
 done
 }	# End function

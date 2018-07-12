@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Test-Walk2.sh
@@ -19,46 +19,67 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-
-SCRIPTDEFINITION="This will list all the .mp3 files in current dir."
-L
-function Proceed ()
+function MakeDir ()
 {
-	echo $SCRIPTDEFINITION
-	echo "Do you want to proceed? [Y/n]"
-	read PROCEED
-	case $PROCEED in
-		"Y"|"y")
-		ProceedYes
-		;;
-		"N"|"n")
-		ProceedNo
-		;;
-		*)
-		ProceedYes
-		;;
-	esac
+	if [ ! -d "$PWD/Converted" ]
+	then
+		echo "Making Directory Converted."
+		mkdir Converted
+	fi
 }	# end function
 
-function ProceedYes ()
+function Convert () 
 {
-	find ./ -name "*.mp3" > MP3Files.txt
-
-}	# end function
-
-function ProceedNo ()
-{
-	exit 0 # default action is exit for no
+	
+	for i in *.mp3
+	do 
+		name=`echo $i | cut -d'.' -f1`
+		echo $name
+		ffmpeg -i "$i" -c:a libfdk_aac -vn "./Converted/$name.m4a"
+		wait
+	done
 }	# end function
 
 function Main ()
 {
-	ProceedYes
-}	# end Main
+	MakeDir
+	Convert
+}	# end function
 
-Main # Call Main
+Main
 
-# == Exit ==
-exit 0	# Always exit properly
+# == EXIT ==
+exit 0
 
 
+
+function Convert () 
+{
+	for i in *.mp3
+	do 
+		name=`echo $i | cut -d'.' -f1`
+		ffmpeg -i "$i" -c:a libfdk_aac -vn "./Converted/$name.m4a"
+		echo "$name"
+	done
+}	# end function
+
+function Main ()
+{
+	Convert
+	CleanUp
+}	# end main
+
+Main
+#===============================================================================
+#   STATISTICS / CLEANUP
+#===============================================================================
+exit 0
+#for i in *.mp4;
+#do name=`echo $i | cut -d'.' -f1`;
+#	echo $name;
+#	ffmpeg -i "$i" "./output/$name.webm";
+#done
+
+
+
+		#ffmpeg -i "$i" -c:a libfdk_aac -vn ./Converted/"$name".m4a
