@@ -50,36 +50,3 @@ Main
 
 # == EXIT ==
 exit 0
-
-
-
-function Convert () 
-{
-	for i in *.mp3
-	do 
-		name=`echo $i | cut -d'.' -f1`
-		ffmpeg -i "$i" -c:a libfdk_aac -vn "./Converted/$name.m4a"
-		echo "$name"
-	done
-}	# end function
-
-function Main ()
-{
-	Convert
-	CleanUp
-}	# end main
-
-Main
-#===============================================================================
-#   STATISTICS / CLEANUP
-#===============================================================================
-exit 0
-#for i in *.mp4;
-#do name=`echo $i | cut -d'.' -f1`;
-#	echo $name;
-#	ffmpeg -i "$i" "./output/$name.webm";
-#done
-
-
-
-		#ffmpeg -i "$i" -c:a libfdk_aac -vn ./Converted/"$name".m4a

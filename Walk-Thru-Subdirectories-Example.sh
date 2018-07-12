@@ -21,13 +21,6 @@ set -o nounset                              # Treat unset variables as an error
 
 shopt -s globstar
 
-#. $HOME/lib/sh/funcCleanWholeDirectory.sh
-
-#function CleanFilenames ()
-#{
-#	CleanWholeDirectory
-#}	# End function
-
 function Walk ()
 {
 	if [ ! -d "$PWD/Converted" ]

@@ -21,15 +21,13 @@ set -o nounset                              # Treat unset variables as an error
 
 shopt -s globstar
 
-#. $HOME/lib/sh/funcCleanWholeDirectory.sh
-
-#function CleanFilenames ()
-#{
-#	CleanWholeDirectory
-#}	# End function
-
 function Walk ()
 {
+	if [ ! -d "$PWD/Converted" ]
+	then
+		echo "Making directory Converted"
+		mkdir Converted
+	fi
 for i in ./**/*
 do
 	if [ -f "$i" ];
@@ -47,8 +45,13 @@ do
 		#echo "FILENAME is $FILENAME"
 		#echo "NAME =  $NAME"
 
-		$HOME/bin/CleanWholeDirectory
-		
+		if [ $FILEEXT = "mp3" ]
+		then
+			NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
+			ffmpeg -i "$i" -c:a libfdk_aac -vn "./Converted/$NAME.m4a"
+			wait
+		fi
+	wait	
 	fi
 done
 }	# End function

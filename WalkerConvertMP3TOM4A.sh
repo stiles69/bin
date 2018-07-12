@@ -76,25 +76,3 @@ Main
 
 #== Exit ==
 exit 0
-
-
-		if [ $FILEEXT = "mp3" ]
-		then
-			NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
-			ffmpeg -i "$i" -c:a libfdk_aac -vn "./$NAME.m4a"
-		fi
-		echo "================================================="
-		
-	fi
-done
-}	# End function
-	
-function Main ()
-{
-	Walk
-}	# End function
-
-Main
-
-#== Exit ==
-exit 0
