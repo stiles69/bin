@@ -1,9 +1,9 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: Inatall-Teleconsole.sh
+#          FILE: Install-Teleconsole.sh
 # 
-#         USAGE: ./Inatall-Teleconsole.sh 
+#         USAGE: ./Install-Teleconsole.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,7 +13,7 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 07/12/2018 13:46
+#       CREATED: 07/12/2018 13:57
 #      REVISION:  ---
 #===============================================================================
 
