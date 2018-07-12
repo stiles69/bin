@@ -6,7 +6,7 @@ alias ohmyzsh="cd ~/.oh-my-zsh"
 alias mkdir='mkdir -p'
 
 #----	Dont have to add --progress to rsync
-alias rsync='rsync progress'
+alias rsync='rsync --progress'
 
 #====== Referenced from http:/LDP/abs/html/sample-bashrc.html
 #-------------------------------------------------------------
