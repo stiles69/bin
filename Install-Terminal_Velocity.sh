@@ -34,21 +34,18 @@ case $RESULT in
     	wait
 	sudo pip install terminal_velocity	
 	;;
-
 	"Raspbian GNU/Linux")  
 	echo "Installing For Debian/Based"    
 	sudo apt-get install python-pip
     	wait
 	sudo pip install terminal_velocity	
 	;;
-
-	"Antergos Linux")  
+	"Antergos Linux"|"Manjaro Linux")  
 	echo "Installing For Arch/Based"    
 	sudo pacman -S python2-pip
 	wait
 	sudo pip2 install terminal_velocity
 	;;
-	
 	*)
 	echo 'No match can not install'
 	exit

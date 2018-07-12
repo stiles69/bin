@@ -16,6 +16,15 @@ export ZSH=$HOME/.oh-my-zsh
 # Path to golang
 #export PATH=$PATH:/usr/local/go/bin
 
+# Path to Go
+#export GOPATH=$HOME/go
+
+# Path to GoBin
+#export GOBIN=$HOME/go/bin
+
+# Path to User GoLang
+# export PATH=$PATH:$GOBIN"
+
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
