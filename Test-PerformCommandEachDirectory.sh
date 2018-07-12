@@ -19,5 +19,8 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-$HOME/bin/PerformCommandEachDirectory.sh $HOME/bin/CleanWholeDirectory
+. $HOME/lib/sh/funcPerfomCommandEachSubDirectory.sh
+
+PerformCommandEachSubDirectory "$HOME/bin/CleanWholeDirectory"
+
 
