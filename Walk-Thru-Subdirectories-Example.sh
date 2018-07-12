@@ -21,6 +21,13 @@ set -o nounset                              # Treat unset variables as an error
 
 shopt -s globstar
 
+function TrimFilenames ()
+{
+	for i in ./*; 
+		do mv "$i" "$(echo "$i" | tr -d " ")"; 
+	done
+}	# End function
+
 function Walk ()
 {
 for i in ./**/*
@@ -34,18 +41,18 @@ do
 		#printf "Filesize: %s\n" "$(du -b "$i" | awk '{print $1}')"
 	       	FILEEXT="${i##*.}"	
 		FILENAME="${i##*/}"
-		#NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
+		NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
 
 		#echo "FILEXT is "$FILEEXT
-		#echo "FILENAME is $FILENAME"
-		#echo "NAME =  $NAME"
+		echo "FILENAME is $FILENAME"
+		echo "NAME =  $NAME"
 
-		if [ $FILEEXT = "mp3" ]
-		then
-			NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
-			ffmpeg -i "$i" -c:a libfdk_aac -vn "$NAME.m4a"
-			rm "$NAME.mp3"
-		fi
+		#if [ $FILEEXT = "mp3" ]
+		#then
+		#	NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
+		#	ffmpeg -i "$i" -c:a libfdk_aac -vn "$NAME.m4a"
+		#	rm "$NAME.mp3"
+		#fi
 		echo "================================================="
 	fi
 done
@@ -53,6 +60,7 @@ done
 	
 function Main ()
 {
+	TrimFilenames
 	Walk
 }	# End function
 
