@@ -21,12 +21,12 @@ set -o nounset                              # Treat unset variables as an error
 
 shopt -s globstar
 
-. $HOME/lib/sh/funcCleanWholeDirectory.sh
+#. $HOME/lib/sh/funcCleanWholeDirectory.sh
 
-function CleanFilenames ()
-{
-	CleanWholeDirectory
-}	# End function
+#function CleanFilenames ()
+#{
+#	CleanWholeDirectory
+#}	# End function
 
 function Walk ()
 {
@@ -41,7 +41,7 @@ do
 		#printf "Filesize: %s\n" "$(du -b "$i" | awk '{print $1}')"
 	       	FILEEXT="${i##*.}"	
 		FILENAME="${i##*/}"
-		NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
+		#NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
 
 		#echo "FILEXT is "$FILEEXT
 		#echo "FILENAME is $FILENAME"
@@ -60,7 +60,6 @@ done
 	
 function Main ()
 {
-	CleanFilenames
 	Walk
 }	# End function
 
