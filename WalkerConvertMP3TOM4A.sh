@@ -57,7 +57,7 @@ do
 		if [ $FILEEXT = "mp3" ]
 		then
 			NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
-			ffmpeg -i "$i" -c:a libfdk_aac -vn  "./Converted/$NAME.m4a"
+			ffmpeg -i -n "$i" -c:a libfdk_aac -vn  "./Converted/$NAME.m4a"
 	wait
 		fi
 
