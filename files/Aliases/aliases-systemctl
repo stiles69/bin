@@ -29,3 +29,7 @@ alias emby-start="sudo systemctl start emby-server.service"
 alias emby-status="sudo systemctl status emby-server.service"
 alias emby-restart="sudo systemctl restart emby-server.service"
 
+alias ftp-stop="sudo systemctl stop pure-ftpd.service"
+alias ftp-start="sudo systemctl start pure-ftpd.service"
+alias ftp-status="sudo systemctl status pure-ftpd.service"
+alias ftp-restart="sudo systemctl restart pure-ftpd.service"
