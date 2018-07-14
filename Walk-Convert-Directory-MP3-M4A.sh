@@ -48,13 +48,8 @@ do
 		if [ $FILEEXT = "mp3" ]
 		then
 			NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
-			if [ -f "$NAME.m4a" ]
-			then
-				ffmpeg -i "$i" -c:a libfdk_aac -vn "./Converted/$NAME.m4a"
-				wait
-			else
-				echo "$FILENAME already exists. Skipping."
-			fi
+			ffmpeg -n -i "$i" -c:a libfdk_aac -vn "./Converted/$NAME.m4a"
+			wait
 		fi
 	wait	
 	fi
