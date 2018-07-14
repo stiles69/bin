@@ -23,10 +23,10 @@ shopt -s globstar
 
 function Walk ()
 {
-	if [ ! -d "$PWD/Converted" ]
+	if [ ! -d "$PWD/UnConverted" ]
 	then
-		echo "Making directory Converted"
-		mkdir Converted
+		echo "Making directory UnConverted"
+		mkdir UnConverted
 	fi
 for i in ./**/*
 do
@@ -47,8 +47,8 @@ do
 
 		if [ $FILEEXT = "mp3" ]
 		then
-			NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
-			ffmpeg -n -i "$i" -c:a libfdk_aac -vn "./Converted/$NAME.m4a"
+			echo "Moving $FILENAME to $PWD/UnConverted"
+			mv "./$FILENAME $PWD/UnConverted"
 			wait
 		fi
 	wait	
