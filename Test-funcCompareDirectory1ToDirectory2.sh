@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Test-funcCompareDirectory1ToDirectory2.sh
@@ -19,19 +19,23 @@
 
 set -o nounset                              # Treat unset variables as an error
 
+USAGE="This requires two paramters the first directory where you have a set of mp3 files and the second parameter which is the directory to check for the same file name. Not EXTENSION but filename."
+
 . $HOME/lib/sh/funcCompareDirectory1ToDirectory2.sh
+
+if [ "$#" = 2 ]
+then
+	DIRECTORY1="$1"
+	DIRECTORY2="$2"
+else
+	echo $USAGE
+	echo "Exiting"
+	exit 1
+fi
 
 function Main ()
 {
-	USAGE="This requires two paramters the first directory where you have a set of mp3 files and the second parameter which is the directory to check for the same file name. Not EXTENSION but filename."
-	if [ "$#" -lt 2 ]
-	then
-		echo "Not enough parameters. Usage: $USAGE"
-		exit 1
-	else
-		DIRECTORY1="$1"
-		DIRECTORY2="$2"
-		CompareDirectory1ToDirectory2.sh "$DIRECTORY1" "$DIRECTORY2"
+	CompareDirectory1ToDirectory2 "$DIRECTORY1" "$DIRECTORY2"
 }	# end Main
 
 Main
