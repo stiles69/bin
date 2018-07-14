@@ -27,12 +27,15 @@ function Proceed ()
 	case $PROCEED in
 		Y|y)
 		Main
+		CopyMotd
 		;;
 		N|n)
 		echo "Exiting"
+		exit 0
 		;;
 		*)
 		Main
+		CopyMotd
 		;;
 	esac
 }	# Proceed
@@ -54,6 +57,10 @@ function Main ()
 	echo "==================================================================" >> /tmp/motd
 }	# end Main
 
+function CopyMotd ()
+{
+	sudo cp /tmp/motd /etc/motd
+}	# end CopyMotd
 Proceed
 
 # == EXIT ==
