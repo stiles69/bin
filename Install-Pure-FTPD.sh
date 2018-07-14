@@ -46,6 +46,11 @@ function Proceed ()
 function ProceedYes ()
 {
 	Install $SOFTWAREINSTALL
+	echo "Add ftpuser group."
+	sudo groupadd -g 1003 ftpuser
+	echo "Make sure and add the users you want to have access to the group ftpuser."
+	echo "Copying default Rogue Designs config file."
+	sudo cp $HOME/bin/files/etc/pure-ftpd.conf /etc/pure-ftpd/pure-ftpd.conf
 }	# end function
 
 function ProceedNo ()
