@@ -48,7 +48,7 @@ do
 		if [ $FILEEXT = "mp3" ]
 		then
 		
-			if [ "$FILENAME" ] 
+			if [ -f "$FILENAME.m4a" ] 
 			then
 				NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
 				ffmpeg -i "$i" -c:a libfdk_aac -vn "./Converted/$NAME.m4a"
