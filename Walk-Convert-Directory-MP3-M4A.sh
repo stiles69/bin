@@ -47,15 +47,21 @@ do
 
 		if [ $FILEEXT = "mp3" ]
 		then
-			NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
-			ffmpeg -i "$i" -c:a libfdk_aac -vn "./Converted/$NAME.m4a"
+		
+			if [ -f $FILENAME ] 
+			then
+				NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
+				ffmpeg -i "$i" -n -c:a libfdk_aac -vn "./Converted/$NAME.m4a"
+				wait
+			else
+				echo "$FILENAME already exists. Skipping."
 			wait
 		fi
 	wait	
 	fi
 done
 }	# End function
-	
+
 function Main ()
 {
 	Walk
