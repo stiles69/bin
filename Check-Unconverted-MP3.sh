@@ -32,7 +32,7 @@ for i in ./**/*
 do
 	if [ -f "$i" ];
 	then        
-		#printf "Path: %s\n" "${i%/*}" # shortest suffix removal
+		printf "Path: %s\n" "${i%/*}" # shortest suffix removal
 		#printf "Filename: %s\n" "${i##*/}" # longest prefix removal
 		#printf "Extension: %s\n"  "${i##*.}"
 		#printf "\n\n"
@@ -44,11 +44,17 @@ do
 		#echo "FILEXT is "$FILEEXT
 		#echo "FILENAME is $FILENAME"
 		#echo "NAME =  $NAME"
-
+		SOURCEDIR="${i%/*}"
+		DESTDIR="$PWD/UnConverted/"
 		if [ $FILEEXT = "mp3" ]
 		then
-			echo "Moving $FILENAME to $PWD/UnConverted"
-			mv "./$FILENAME $PWD/UnConverted"
+			echo "THE FILENAME is $FILENAME"
+			echo "THE FILEEXT is $FILEEXT"
+			echo "THE SOURCEDIR is $SOURCEDIR"
+			echo "THE DESTDIR is $DESTDIR"
+			echo "Copying $SOURCEDIR/$FILENAME to $DESTDIR"
+			cp "$SOURCEDIR/$FILENAME" "$DESTDIR"
+			#mv  "$FILENAME" "$PWD/UnConverted/$FILENAME"
 			wait
 		fi
 	wait	
