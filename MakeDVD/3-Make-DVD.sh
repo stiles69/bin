@@ -23,7 +23,7 @@ THEBASEVIDEONAME=DirectoryOne
 
 mkdir $THEBASEVIDEONAME
 
-genisoimage -dvd-video -V $1 -o $1.iso $THEBASEVIDEONAME
+genisoimage -dvd-video -V "$1" -o "$1".iso $THEBASEVIDEONAME
 
 
 #==============================================================================

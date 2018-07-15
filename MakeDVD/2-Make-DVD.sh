@@ -23,7 +23,7 @@ THEBASEVIDEONAME=DirectoryOne
 
 mkdir $THEBASEVIDEONAME
 
-dvdauthor -o DirectoryOne -t $1
+dvdauthor -o DirectoryOne -t "$1"
 
 export VIDEO_FORMAT=NTSC
 
