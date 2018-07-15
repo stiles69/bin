@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Test-funcDisplayHostname.sh
@@ -23,8 +23,9 @@ set -o nounset                              # Treat unset variables as an error
 
 function Main ()
 {
-	echo $(DisplayHostname)
+	HOSTER=$(DisplayHostname)
+	echo "The hostname is $HOSTER"
 }	# end Main
-Maib
+Main
 #===EXIT====
 exit 0
