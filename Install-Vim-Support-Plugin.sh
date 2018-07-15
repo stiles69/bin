@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Install-Vim-Support-Plugin.sh
@@ -35,7 +35,7 @@ function Proceed ()
 		;;
 		"N"|"n")
 		ProceedNo
-		;;6
+		;;
 		*)
 		ProceedYes
 		;;
@@ -49,8 +49,8 @@ function CheckVim ()
 	then
 		ProceedYes
 	else
-		InstallVim
-	
+		ProceedYes # Have to it is not detecting vim.
+		#InstallVim
 	fi
 }
 
@@ -78,15 +78,8 @@ function InstallVim ()
 
 function ProceedYes ()
 {
-	cd $HOME/.vim/bundle
-	ISINSTALLED=$(CheckInstall git)
-	if [ ISINSTALLED = 1 ]
-	then 
-		git clone https://github.com/vim-scripts/Vim-Support
-	else
-		echo "You are missing git. Installing."
-		$HOME/bin/Install-Git.sh
-		git clone https://github.com/vim-scripts/Vim-Support
+cd $HOME/.vim/bundle
+git clone https://github.com/vim-scripts/Vim-Support
 }	# end function
 
 function ProceedNo ()

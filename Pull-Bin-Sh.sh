@@ -31,7 +31,13 @@ function ProceedYes ()
 	Push $HOME/lib/sh
 
 	# Pull Sh local
-	Pull $HOME/lib/sh	
+	Pull $HOME/lib/sh
+
+	# Push Midnight-Commander
+	Push $HOME/bin/files/midnight-commander
+
+	# Pull Midnight-Commander
+	Pull $HOME/bin/files/midnight-commander	
 }	# end function
 
 function Push ()
