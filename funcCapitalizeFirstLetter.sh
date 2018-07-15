@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Test-funcFirstLetterCapitalize.sh
@@ -24,7 +24,9 @@ set -o nounset                              # Treat unset variables as an error
 
 function Main ()
 {
-	echo $(CapitalizeFirstLetter $(DisplayHostname))
+	HOSTER=$(DisplayHostname)
+	echo $HOSTER	
+	echo $(CapitalizeFirstLetter "$HOSTER")
 
 }	# end Main
 
