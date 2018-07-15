@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Install-Midnight-Commander.sh
@@ -65,7 +65,6 @@ function ProceedYes ()
 	Install $SOFTWAREINSTALL5
 	Install $SOFTWAREINSTALL6
 	Install $SOFTWAREINSTALL7
-	Install $SOFTWAREINSTALL8
 	Install $SOFTWAREINSTALL9
 	Install $SOFTWAREINSTALL10
 	Install $SOFTWAREINSTALL11
@@ -73,6 +72,16 @@ function ProceedYes ()
 	Install $SOFTWAREINSTALL13
 	Install $SOFTWAREINSTALL14
 }	# end function
+
+function CompileMidnightCommander ()
+{
+	cd $HOME
+	git clone git://github.com/MidnightCommander/mc.git
+	cd mc
+	./configure
+	wait
+	sudo make install
+}	# end CompileMidnightCommander
 
 function ProceedNo ()
 {
