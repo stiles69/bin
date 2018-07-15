@@ -25,19 +25,19 @@ function ProceedYes ()
 	Push $HOME/bin
 	
 	# Pull Bin local
-	Pull $HOME/bin
+	Pull "$HOME/bin"
 
 	# Push Sh local
-	Push $HOME/lib/sh
+	Push "$HOME/lib/sh"
 
 	# Pull Sh local
-	Pull $HOME/lib/sh
+	Pull "$HOME/lib/sh"
 
 	# Push Midnight-Commander
-	Push $HOME/bin/files/midnight-commander
+	#Push $HOME/bin/files/midnight-commander
 
 	# Pull Midnight-Commander
-	Pull $HOME/bin/files/midnight-commander	
+	#Pull $HOME/bin/files/midnight-commander	
 }	# end function
 
 function Push ()
