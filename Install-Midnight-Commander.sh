@@ -46,12 +46,14 @@ function Proceed ()
 	case $PROCEED in
 		"Y"|"y")
 		ProceedYes
+		CompileMidnightCommander
 		;;
 		"N"|"n")
 		ProceedNo
 		;;
 		*)
 		ProceedYes
+		CompileMidnightCommander
 		;;
 	esac
 }	# end function
@@ -78,9 +80,12 @@ function CompileMidnightCommander ()
 	cd $HOME
 	git clone git://github.com/MidnightCommander/mc.git
 	cd mc
+	./autogen.sh
+	wait
 	./configure
 	wait
 	sudo make install
+	wait
 }	# end CompileMidnightCommander
 
 function ProceedNo ()
