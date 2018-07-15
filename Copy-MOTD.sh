@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Copy-MOTD.sh
@@ -18,9 +18,11 @@
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
+. $HOME/lib/sh/funcDisplayHostname.sh
 
 function Proceed ()
 {
+	echo $(DisplayHostname)
 	echo "This will customize the MOTD."
 	echo "Do you want to Proceed? [Y/n]"
 	read PROCEED
@@ -48,13 +50,13 @@ function Main ()
 	read USERNAME
 	echo "What email address do you want to use?"
 	read EMAIL
-	echo "=================================================================" > /tmp/motd
+	echo "=======================================================" > /tmp/motd
 	echo "                    Welcome to Linux" >> /tmp/motd
-	echo "This project is maintained by $USERNAME <$EMAIL>." >> /tmp/motd
-	echo "=================================================================" >> /tmp/motd
+	echo "Custom Linux Install by $USERNAME <$EMAIL>." >> /tmp/motd
+	echo "=======================================================" >> /tmp/motd
 	echo "                   Rogue Designs $MACHINENAME" >> /tmp/motd
-	echo "==================================================================" >> /tmp/motd
-	echo "==================================================================" >> /tmp/motd
+	echo "========================================================" >> /tmp/motd
+	echo "========================================================" >> /tmp/motd
 }	# end Main
 
 function CopyMotd ()
