@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Install-FFMPEG.sh
@@ -24,6 +24,9 @@ set -o nounset                              # Treat unset variables as an error
 
 
 SOFTWAREINSTALL="ffmpeg"
+SOFTWAREINSTALL2="genisoimage"
+SOFTWAREINSTALL3="dvdauthor"
+
 SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
 function Proceed ()
 {
@@ -46,6 +49,8 @@ function Proceed ()
 function ProceedYes ()
 {
 	Install $SOFTWAREINSTALL
+	Install $SOFTWAREINSTALL2
+	Install $SOFTWAREINSTALL3
 }	# end function
 
 function ProceedNo ()
