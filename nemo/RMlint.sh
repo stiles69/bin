@@ -21,12 +21,15 @@ set -o nounset                              # Treat unset variables as an error
 
 if [ "$NEMO_SCRIPT_SELECTED_FILE_PATHS" ]
 then
-	DIR="$NEMO_SCRIPT_SELECTED_FILE_PATHS"	
+	DIR="$NEMO_SCRIPT_SELECTED_FILE_PATHS/"	
 fi
 
 function Main ()
 {
-	rmlint "$DIR"
+	echo "DIR: $DIR" > $HOME/RMLINT.txt
+	echo "NEMO_SCRIPT_SELECTED_FILE_PATHS: $NEMO_SCRIPT_SELECTED_FILE_PATHS" >> $HOME/RMLINT.txt
+	cd "$DIR"
+	rmlint "./"
 }	# end Main
 
 Main
