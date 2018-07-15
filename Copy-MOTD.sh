@@ -49,7 +49,7 @@ function Main ()
 	echo "What email address do you want to use?"
 	read EMAIL
 	echo "=================================================================" > /tmp/motd
-	echo "                Welcome to Linux" >> /tmp/motd
+	echo "                    Welcome to Linux" >> /tmp/motd
 	echo "This project is maintained by $USERNAME <$EMAIL>." >> /tmp/motd
 	echo "=================================================================" >> /tmp/motd
 	echo "                   Rogue Designs $MACHINENAME" >> /tmp/motd
