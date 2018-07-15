@@ -33,3 +33,8 @@ alias ftp-stop="sudo systemctl stop pure-ftpd.service"
 alias ftp-start="sudo systemctl start pure-ftpd.service"
 alias ftp-status="sudo systemctl status pure-ftpd.service"
 alias ftp-restart="sudo systemctl restart pure-ftpd.service"
+
+alias uftp-stop="sudo systemctl stop uftp.service"
+alias uftp-start="sudo systemctl start uftp.service"
+alias uftp-status="sudo systemctl status uftp.service"
+alias uftp-restart="sudo systemctl restart uftp.service"
