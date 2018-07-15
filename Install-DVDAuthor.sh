@@ -19,73 +19,48 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-function InstallerDVDAuthorDeb ()
-{
-	sudo apt-get update -y && sudo apt-get upgrade -y
-	sudo apt-get install dvdauthor
-}	# End Function
 
-function InstallerDVDAuthorArch ()
-{
-	sudo pacman -S dvdauthor
-}	# End Function
+. $HOME/lib/sh/funcInstall.sh
 
-function InstallerDVDAuthorGentoo ()
-{
-	sudo emerge dvdauthor --autounmask-write
-	sudo etc-update
-	sudo emerge dvdauthor
-}	# End Function
 
+SOFTWAREINSTALL="dvdauthor"
+SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
 function Proceed ()
 {
-	echo "This will install DVDAuthor. Do you want to proceed? [Y/n]"
+	echo $SCRIPTDEFINITION
+	echo "Do you want to proceed? [Y/n]"
 	read PROCEED
-
 	case $PROCEED in
 		"Y"|"y")
-		WhichDistro
+		ProceedYes
 		;;
-
 		"N"|"n")
-		exit 0
+		ProceedNo
 		;;
-
 		*)
-		WhichDistro
+		ProceedYes
 		;;
-
 	esac
-}	# End Function
+}	# end function
 
-function WhichDistro ()
+function ProceedYes ()
 {
-	echo "Which Distro are you installing to? [1.Debian 2.Arch 3.Gentoo]"
-	read DISTRO
+	Install $SOFTWAREINSTALL
+}	# end function
 
-	case $DISTRO in
-		1)
-		InstallerDVDAuthorDeb
-		;;
-
-		2)
-		InstallerDVDAuthorArch
-		;;
-
-		3)
-		InstallerDVDAuthorGentoo
-		;;
-	esac
-}	# End Function
-
+function ProceedNo ()
+{
+	exit 0 # default action is exit for no
+}	# end function
 
 function Main ()
 {
 	Proceed
-	~/bin/Reboot.sh
-}	# End Function
+}	# end Main
 
-Main
+Main # Call Main
 
-#=== Exit ===
-exit 0
+# == Exit ==
+exit 0	# Always exit properly
+
+
