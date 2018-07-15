@@ -19,9 +19,9 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-if [ "$#" -gt 0 ]
+if [ "$NEMO_SCRIPT_SELECTED_FILE_PATHS" ]
 then
-	DIR="$1"
+	DIR="$NEMO_SCRIPT_SELECTED_FILE_PATHS"	
 fi
 
 function Main ()
