@@ -26,10 +26,8 @@ fi
 
 function Main ()
 {
-	echo "DIR: $DIR" > $HOME/RMLINT.txt
-	echo "NEMO_SCRIPT_SELECTED_FILE_PATHS: $NEMO_SCRIPT_SELECTED_FILE_PATHS" >> $HOME/RMLINT.txt
 	cd "$DIR"
-	rmlint "./"
+	rmlint "./"	
 }	# end Main
 
 Main
@@ -37,3 +35,6 @@ Main
 # == EXIT ==
 exit 0
 
+#==DEBUGGING==
+#echo "DIR: $DIR" > $HOME/RMLINT.txt
+#echo "NEMO_SCRIPT_SELECTED_FILE_PATHS: $NEMO_SCRIPT_SELECTED_FILE_PATHS" >> $HOME/RMLINT.txt
