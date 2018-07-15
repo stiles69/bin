@@ -46,6 +46,7 @@ function Main ()
 {
 	echo "What do you want to name this machine?"
 	read MACHINENAME
+	MACHINENAME=$(DisplayHostname)
 	echo "What is your username your want to use?"
 	read USERNAME
 	echo "What email address do you want to use?"
