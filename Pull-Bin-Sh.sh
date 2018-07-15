@@ -21,23 +21,24 @@ set -o nounset                              # Treat unset variables as an error
 
 function ProceedYes ()
 {
+
+	# Pull Bin local
+	Pull "$HOME/bin"
+
 	# Push Bin local
-	Push $HOME/bin
+	Push "$$HOME/bin"
 	
 	# Pull Bin local
-	Pull $HOME/bin
-
-	# Push Sh local
-	Push $HOME/lib/sh
+	Pull $$HOME/bin
 
 	# Pull Sh local
 	Pull $HOME/lib/sh
 
-	# Push Midnight-Commander
-	Push $HOME/bin/files/midnight-commander
 
-	# Pull Midnight-Commander
-	Pull $HOME/bin/files/midnight-commander	
+	# Push Sh local
+	Push $HOME/lib/sh
+
+
 }	# end function
 
 function Push ()
