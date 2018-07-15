@@ -26,7 +26,6 @@ fi
 
 function Main ()
 {
-	echo "You location is: $NEMO_SCRIPT_CURRENT_URI"
 	rmlint "$DIR"
 }	# end Main
 
