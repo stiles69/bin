@@ -21,16 +21,15 @@
 
 function BuildTSFiles ()
 {
-	echo "What do you want to name your DVD, One word all caps:"
-	read DVDTITLE
-	mkdir "./$DVDTITLE"
+	OUTPUTDIR="OUTPUTDIR"	
+	mkdir "./$OUTPUTDIR"
 	wait
 
 	for i in *.mpg
 	do
 		NAME="$(echo "$i" | cut -d'.' -f1)"
 		echo "$NAME"
-		dvdauthor -o "$DVDTITLE/" -t "$NAME.mpg"
+		dvdauthor -o "$OUTPUTDIR/" -t "$NAME.mpg"
 	done	
 }	# end BuildTSFiles
 

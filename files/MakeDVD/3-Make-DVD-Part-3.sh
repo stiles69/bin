@@ -23,24 +23,22 @@
 . $HOME/lib/sh/funcGenerateISOImage.sh
 
 
-export VIDEO_FORMAT=NTSC
-
 function FinalizeDVD ()
 {
-	dvdauthor -o "$DVDTITLE" -T
+	dvdauthor -o "OUTPUTDIR" -T
 }	# end Main
 
 function ProceedGenerateISOImage ()
 {
 	echo "What do you want for the title of the DVD, not the ISO. (No Special Characters or spaces.)?"
-	read MYDVDNAME
-	echo "Waht do want to have for the ISO image. It needs to be all capitals and no special characters?"
-	read DVDISOIMAGENAME
+	read DVDTITLE
+	echo "What do want to have for the ISO image. It needs to be all capitals and no special characters?"
+	read ISONAME
 	echo "Do you want to automatically generate the ISO image or manually? [1.Auto,2.Manually]"
 	read PROCEEDGENERATEISOIMAGE
 	case $PROCEEDGENERATEISOIMAGE in
 		1)
-		GenerateISOImage "$MYDVDNAME $DVDISOIMAGENAME $DVDTITLE"
+		GenerateISOImage "$DVDTITLE" "$ISONAME" "OUTDIR"
 		;;
 		2)
 		echo "You will make your own ISO image then. Exiting"
@@ -53,6 +51,10 @@ function ProceedGenerateISOImage ()
 	esac
 }
 
+function Generate ()
+{
+	genisoimage -dvd-video -V "$DVDTITLE" -o "$ISONAME" "OUTPUTDIR/"
+}	# end Generate
 
 function Main ()
 {
