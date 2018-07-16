@@ -35,7 +35,7 @@ function ProceedYes ()
 	wait
 
 	# Push Sh local
-	Push $HOME/lib/sh
+	Push "$HOME/lib/sh"
 	wait
 }	# end function
 
