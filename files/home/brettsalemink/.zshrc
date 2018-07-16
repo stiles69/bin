@@ -1,29 +1,29 @@
 #==== ENVIRONMENT ====
 #==== Added by Brett Salemink for Flutter Install ===
-export PATH=$HOME/Development/flutter/bin:$PATH
+#export PATH=$HOME/Development/flutter/bin:$PATH
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/lib/sh:$PATH
 
 # The next line enables catt for pip and python
-export PATH="$PATH:$HOME/.local/bin"
-export PYTHONPATH="/usr/lib/python3/dist-packages/:$PYTHONPATH"
+#export PATH="$PATH:$HOME/.local/bin"
+#export PYTHONPATH="/usr/lib/python3/dist-packages/:$PYTHONPATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
 # Path to golang
-export PATH=$PATH:/usr/local/go/bin
+#export PATH=$PATH:/usr/local/go/bin
 
 # Path to Go
-export GOPATH=$HOME/go
+#export GOPATH=$HOME/go
 
 # Path to GoBin
-export GOBIN=$HOME/go/bin
+#export GOBIN=$HOME/go/bin
 
 # Path to User GoLang
-export PATH=$PATH:$GOBIN
+#export PATH=$PATH:$GOBIN
 
 # Variable for DVDAuthor
 export VIDEO_FORMAT=NTSC
@@ -32,8 +32,8 @@ export VIDEO_FORMAT=NTSC
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 #== Added for NVM ==
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 #=== THEMES ===
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -43,19 +43,7 @@ ZSH_THEME="Soliah"
 
 #=== AUTOLOADS ===
 #==	ZSH Autoloads Added by Brett Salemink ==
-autoload zmv
-
-#==LOGOUT THIS IS REQUIRED THE FOLLOWING FORCES /etc/.zlogout to be run.==
-TRAPEXIT() 
-{
-	# commands to run here, e.g. if you
-	# always want to run .zlogout:
-	if [[ ! -o login ]]; then
-	# don't do this in a login shell
-	# because it happens anyway
-	. ~/.zlogout
-	fi
-}	# end TRAPEXIT
+#autoload zmv
 
 #=== OH-MY-ZSH ===
 # Uncomment the following line to use case-sensitive completion.
@@ -131,10 +119,10 @@ plugins=(
 
 #====== SOURCES =======
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/brettsalemink/google-cloud-sdk/path.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/path.zsh.inc'; fi
+#if [ -f '/home/brettsalemink/google-cloud-sdk/path.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc'; fi
+#if [ -f '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc'; fi
 
 # ZSH
 source $ZSH/oh-my-zsh.sh
@@ -144,5 +132,5 @@ source $HOME/bin/files/Aliases/aliases-common
 source $HOME/bin/files/Aliases/aliases-systemctl
 
 #======= SEPERATE MACHINE SPECIFIC ALIASES =========
-source $HOME/bin/files/Aliases/Arch/aliases-arch
+#source $HOME/bin/files/Aliases/Arch/aliases-arch
 #source $HOME/bin/files/Aliases/Raspbian/aliases-raspbian
