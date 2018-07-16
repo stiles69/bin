@@ -27,7 +27,7 @@ function ProceedYes ()
 	wait
 
 	# Push Bin local
-	Push $HOME/bin
+	Push "$HOME/bin"
 	wait
 
 	# Pull Sh local
