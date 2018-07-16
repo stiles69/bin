@@ -45,11 +45,11 @@ fi
 #===============================================================================
 
 #-----------------Export Zim------------------
-zim --export -O --output /home/brettsalemink/stiles69/zim --template ZeroFiveEight --index-page index -r /home/brettsalemink/Notes
+zim --export -O --output /home/brettsalemink/Development/stiles69/zim --template ZeroFiveEight --index-page index -r /home/brettsalemink/Notes
 wait
 
 #-----------------Change Directories--------------
-cd $HOME/stiles69/zim
+cd $HOME/Development/stiles69/zim
 
 #----------------git push-------
 git add .

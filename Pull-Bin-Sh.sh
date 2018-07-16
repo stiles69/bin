@@ -24,21 +24,23 @@ function ProceedYes ()
 
 	# Pull Bin local
 	Pull "$HOME/bin"
+	wait
 
 	# Push Bin local
-	Push "$$HOME/bin"
-	
-	# Pull Bin local
-	Pull $$HOME/bin
+	Push $HOME/bin
+	wait
 
 	# Pull Sh local
-	Pull $HOME/lib/sh
+	Pull "$HOME/lib/sh"
+	wait
 
-
+	# Pull Sh local
+	Pull "$HOME/lib/sh"
+	wait
+	
 	# Push Sh local
 	Push $HOME/lib/sh
-
-
+	wait
 }	# end function
 
 function Push ()
