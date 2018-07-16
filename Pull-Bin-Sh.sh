@@ -19,9 +19,12 @@
 
 set -o nounset                              # Treat unset variables as an error
 
+. $HOME/lib/sh/funcDisplayHostname.sh
+
+HOSTNAME="$(DisplayHostname)"
+
 function ProceedYes ()
 {
-
 	# Pull Bin local
 	Pull "$HOME/bin"
 	wait
