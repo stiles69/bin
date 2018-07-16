@@ -20,6 +20,9 @@
 #===============================================================================
 
 
+	VIDEONAME="$1"
+	echo "$VIDEONAME"
+
 function ConvertVideo ()
 {
 
@@ -35,10 +38,8 @@ function ConvertVideo ()
 	then
 		echo "$USAGE"
 	else
-		VIDEONAME="$1"
-		echo "$VIDEONAME"
 		NAME="$(echo "$1" | cut -d'.' -f1)"
-		ffmpeg -i "$VIDEONAME" -target ntsc-dvd -aspect 16:9 ./OUTPUTDIR/"$NAME.mpg"
+		ffmpeg -i "$VIDEONAME" -target ntsc-dvd -aspect 16:9 "$NAME.mpg"
 	fi
 }	# end ConvertVideo
 
