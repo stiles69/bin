@@ -20,40 +20,45 @@
 #===============================================================================
 
 
-function ConvertVideo ()
-{
-	USAGE="This take one paramter a video file and converts to mpg with ffmpeg it can made into a DVD. 1-Make-DVD-Part-1.sh [FILETOCONVERT]"
-	if [ "$#" -lt1 ]
-	then
-		echo "$USAGE"
-	else
-		VIDEOFILENAME="$1"
-		NAME="$(echo "$VIDEOFILENAME" | cut -d'.' -f1)"
-		ffmpeg -i "$NAME" -target ntsc-dvd -aspect 16:9 "$NAME.mpg"
-	fi
-}	# end ConvertVideo
+. $HOME/lib/sh/funcGenerateISOImage.sh
 
-function AskContinue ()
+
+export VIDEO_FORMAT=NTSC
+
+function FinalizeDVD ()
 {
-	echo "Would you like to run the next part of the process automatically or manually? [1.Auto,2.Manual]"
-	read ASKCONTINUE
-	case $ASKCONTINUE in
+	dvdauthor -o "$DVDTITLE" -T
+}	# end Main
+
+function ProceedGenerateISOImage ()
+{
+	echo "What do you want for the title of the DVD, not the ISO. (No Special Characters or spaces.)?"
+	read MYDVDNAME
+	echo "Do you want to automatically generate the ISO image or manually? [1.Auto,2.Manually]"
+	read PROCEEDGENERATEISOIMAGE
+	case $PROCEEDGENERATEISOIMAGE in
 		1)
-		$HOME/bin/files/MakeDVD/2-Make-DVD-Part-2.sh
+		GenerateISOImage "$MYDVDNAME" "$DVDISOIMAGENAME" "$DVDTITLE"
 		;;
 		2)
-		echo "Okay, you will next need to run 2-Make-DVD-Part-2.sh"
+		echo "You will make your own ISO image then. Exiting"
 		exit 0
 		;;
 		*)
-		echo "Answer out of range. Exiting."
+		echo "Unrecognized input. Exiting"
 		exit 1
 		;;
 	esac
-}	# end AskContinue
+}
+
 
 function Main ()
 {
-	ConvertVideo
-	AskContinue
+	FinalizeDVD
+	ProceedGenerateISOImage
 }	# end Main
+
+Main
+#=====EXIT=======
+exit 0
+

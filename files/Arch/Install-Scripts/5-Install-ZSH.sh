@@ -1,1 +1,0 @@
-/home/brettsalemink/bin/Install-Oh-My-Zsh.sh

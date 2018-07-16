@@ -19,41 +19,43 @@
 #   MAIN SCRIPT
 #===============================================================================
 
-
-function ConvertVideo ()
+function BuildTSFiles ()
 {
-	USAGE="This take one paramter a video file and converts to mpg with ffmpeg it can made into a DVD. 1-Make-DVD-Part-1.sh [FILETOCONVERT]"
-	if [ "$#" -lt1 ]
-	then
-		echo "$USAGE"
-	else
-		VIDEOFILENAME="$1"
-		NAME="$(echo "$VIDEOFILENAME" | cut -d'.' -f1)"
-		ffmpeg -i "$NAME" -target ntsc-dvd -aspect 16:9 "$NAME.mpg"
-	fi
-}	# end ConvertVideo
+	echo "What do you want to name your DVD, One word all caps:"
+	read DVDTITLE
+	mkdir "$DVDTITLE"
 
-function AskContinue ()
+	for i in "*.mpg"
+	do
+		NAME="$(echo "$i" | cut -d'.' -f1)"
+		dvdauthor -o "$DVDTITLE/" -t "$NAME"
+	done	
+}	# end BuildTSFiles
+
+function ProceedPart3 ()
 {
-	echo "Would you like to run the next part of the process automatically or manually? [1.Auto,2.Manual]"
-	read ASKCONTINUE
-	case $ASKCONTINUE in
+	echo "Do you want to automatically start the next stage or manually. [1.Auto,2.Manual]"
+	read PROCEEDPART3
+	case $PROCEEDPART3 in
 		1)
-		$HOME/bin/files/MakeDVD/2-Make-DVD-Part-2.sh
+		$HOME/bin/files/MakeDVD/3-Make-DVD-Part-3.sh
 		;;
 		2)
-		echo "Okay, you will next need to run 2-Make-DVD-Part-2.sh"
+		echo "Okay the next step is 3-Make-DVD-Part-3.sh"
 		exit 0
 		;;
 		*)
-		echo "Answer out of range. Exiting."
+		echo "Unknown option. Exiting"
 		exit 1
 		;;
 	esac
-}	# end AskContinue
+}	# end ProceedPart3
 
 function Main ()
 {
-	ConvertVideo
-	AskContinue
+	BuildTSFiles
+	Proceed3
 }	# end Main
+Main
+#===EXIT===
+exit 0
