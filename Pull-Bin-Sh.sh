@@ -34,10 +34,6 @@ function ProceedYes ()
 	Pull "$HOME/lib/sh"
 	wait
 
-	# Pull Sh local
-	Pull "$HOME/lib/sh"
-	wait
-	
 	# Push Sh local
 	Push $HOME/lib/sh
 	wait

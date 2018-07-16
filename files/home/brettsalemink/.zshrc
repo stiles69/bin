@@ -25,6 +25,9 @@ export ZSH=$HOME/.oh-my-zsh
 # Path to User GoLang
 # export PATH=$PATH:$GOBIN"
 
+# Variable for DVDAuthor
+export VIDEO_FORMAT=NTSC
+
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 

@@ -23,12 +23,14 @@ function BuildTSFiles ()
 {
 	echo "What do you want to name your DVD, One word all caps:"
 	read DVDTITLE
-	mkdir "$DVDTITLE"
+	mkdir "./$DVDTITLE"
+	wait
 
-	for i in "*.mpg"
+	for i in *.mpg
 	do
 		NAME="$(echo "$i" | cut -d'.' -f1)"
-		dvdauthor -o "$DVDTITLE/" -t "$NAME"
+		echo "$NAME"
+		dvdauthor -o "$DVDTITLE/" -t "$NAME.mpg"
 	done	
 }	# end BuildTSFiles
 
@@ -38,7 +40,7 @@ function ProceedPart3 ()
 	read PROCEEDPART3
 	case $PROCEEDPART3 in
 		1)
-		$HOME/bin/files/MakeDVD/3-Make-DVD-Part-3.sh
+.		$HOME/bin/files/MakeDVD/3-Make-DVD-Part-3.sh
 		;;
 		2)
 		echo "Okay the next step is 3-Make-DVD-Part-3.sh"
@@ -54,7 +56,7 @@ function ProceedPart3 ()
 function Main ()
 {
 	BuildTSFiles
-	Proceed3
+	ProceedPart3
 }	# end Main
 Main
 #===EXIT===

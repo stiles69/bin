@@ -34,11 +34,13 @@ function ProceedGenerateISOImage ()
 {
 	echo "What do you want for the title of the DVD, not the ISO. (No Special Characters or spaces.)?"
 	read MYDVDNAME
+	echo "Waht do want to have for the ISO image. It needs to be all capitals and no special characters?"
+	read DVDISOIMAGENAME
 	echo "Do you want to automatically generate the ISO image or manually? [1.Auto,2.Manually]"
 	read PROCEEDGENERATEISOIMAGE
 	case $PROCEEDGENERATEISOIMAGE in
 		1)
-		GenerateISOImage "$MYDVDNAME" "$DVDISOIMAGENAME" "$DVDTITLE"
+		GenerateISOImage "$MYDVDNAME $DVDISOIMAGENAME $DVDTITLE"
 		;;
 		2)
 		echo "You will make your own ISO image then. Exiting"
@@ -55,7 +57,7 @@ function ProceedGenerateISOImage ()
 function Main ()
 {
 	FinalizeDVD
-	ProceedGenerateISOImage
+	ProceedGenerateISOImage 
 }	# end Main
 
 Main
