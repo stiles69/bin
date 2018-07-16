@@ -38,7 +38,7 @@ function ProceedGenerateISOImage ()
 	read PROCEEDGENERATEISOIMAGE
 	case $PROCEEDGENERATEISOIMAGE in
 		1)
-		GenerateISOImage "$DVDTITLE" "$ISONAME" "OUTDIR"
+		GenerateISOImage "$DVDTITLE" "$ISONAME" "OUTPUTDIR"
 		;;
 		2)
 		echo "You will make your own ISO image then. Exiting"
