@@ -22,14 +22,15 @@
 
 function ConvertVideo ()
 {
+	
 	USAGE="This take one paramter a video file and converts to mpg with ffmpeg it can made into a DVD. 1-Make-DVD-Part-1.sh [FILETOCONVERT]"
 	if [ "$#" -lt1 ]
 	then
 		echo "$USAGE"
 	else
-		VIDEOFILENAME="$1"
-		NAME="$(echo "$VIDEOFILENAME" | cut -d'.' -f1)"
-		ffmpeg -i "$VIDEOFILENAME" -target ntsc-dvd -aspect 16:9 "$NAME.mpg"
+		VIDEONAME="$1"
+		NAME="$(echo "$1" | cut -d'.' -f1)"
+		ffmpeg -i "$VIDEONAME" -target ntsc-dvd -aspect 16:9 "$NAME.mpg"
 	fi
 }	# end ConvertVideo
 
@@ -57,3 +58,8 @@ function Main ()
 	ConvertVideo
 	AskContinue
 }	# end Main
+
+Main
+
+#== EXIT==
+exit 0
