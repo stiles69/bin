@@ -22,7 +22,10 @@ set -o nounset                              # Treat unset variables as an error
 
 function Proceed ()
 {
-	echo $(DisplayHostname)
+
+	HOSTER=$(DisplayHostname)
+	echo "The hostname is $HOSTER"
+	echo "$HOSTER"
 	echo "This will customize the MOTD."
 	echo "Do you want to Proceed? [Y/n]"
 	read PROCEED
@@ -46,7 +49,7 @@ function Main ()
 {
 	echo "What do you want to name this machine?"
 	read MACHINENAME
-	MACHINENAME=$(DisplayHostname)
+	MACHINENAME="$HOSTER"
 	echo "What is your username your want to use?"
 	read USERNAME
 	echo "What email address do you want to use?"
