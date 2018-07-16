@@ -56,7 +56,7 @@ function ProceedYes ()
 function FinalZSHSetup ()
 {
 	rsync -rvz $HOME/bin/files/home/brettsalemink/ $HOME/
-
+	. $HOME/.zshrc
 }	# end function
 
 function ProceedNo ()
