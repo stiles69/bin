@@ -18,4 +18,31 @@
 #      REVISION:  ---
 #===============================================================================
 
-curl -L https://install.pivpn.io | bash
+function Update-Apt ()
+{
+	sudo apt-get update -y
+}	# end function
+
+function InstallOpenVPN ()
+{
+	sudo apt-get install openvpn unzip -y
+}	# end function
+
+function DownloadPIAConfigFiles ()
+{
+	cd /etc/openvpn
+	sudo wget --no-check-certificate https://www.privateinternetaccess.com/openvpn/openvpn.zip
+	sudo unzip openvpn.zip
+}	end function
+
+function Main ()
+{
+	Update-Apt
+	InstallOpenVPN
+	DownloadPIAConfigFiles
+}	# end Main
+
+Main
+
+#==EXIT==
+exit 0
