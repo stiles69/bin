@@ -33,13 +33,40 @@ function DownloadPIAConfigFiles ()
 	cd /etc/openvpn
 	sudo wget --no-check-certificate https://www.privateinternetaccess.com/openvpn/openvpn.zip
 	sudo unzip openvpn.zip
-}	end function
+	sudo mv /etc/openvpn/US\ Chicago.ovpn /etc/openvpn/USChicago.ovpn
+}	# end function
+
+function ConfigurePIA ()
+{
+	sudo echo "p2685989" > /etc/openvpn/login.txt
+	echo "Samsung#2013" >> /etc/openvpn/login.txt
+	sudo chmod 700 /etc/openvpn/login.txt
+}	# end function
+
+function ChangeDNSServers ()
+{
+	echo "nameserver 8.8.8.8" | sudo tee -a /etc/resolv.conf
+	echo "nameserver 8.8.4.4" | sudo tee -a /etc/resolv.conf
+	sudo chattr +i /etc/resolv.conf
+}	# end function
+
+function TestPIAWorking ()
+{
+	cd /etc/openvpn
+	sudo openvpn --config /etc/openvpn/USChicago.ovpn --auth-user-pass /etc/openvpn/login.txt
+	wait
+	wget http://ipinfo.io/ip -qO -
+}	# end function
 
 function Main ()
 {
 	Update-Apt
 	InstallOpenVPN
 	DownloadPIAConfigFiles
+	ConfigurePIA
+	ChangeDNSServers
+	TestPIAWorking
+
 }	# end Main
 
 Main
