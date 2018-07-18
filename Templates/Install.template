@@ -36,9 +36,9 @@ function Main ()
 	Proceed
 }	# end Main
 
-Main # Call Main
+Main
 
 # == Exit ==
-exit 0	# Always exit properly
+exit 0
 
 
