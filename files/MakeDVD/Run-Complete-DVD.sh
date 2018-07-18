@@ -19,7 +19,6 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-. $HOME/lib/sh/funcGenerateISOImage.sh
 
 VIDEONAME="$1"
 echo "$VIDEONAME"
@@ -29,8 +28,6 @@ function ConvertVideo ()
 
 	USAGE="This take one paramter a video file and converts to mpg with ffmpeg it can made into a DVD. 1-Make-DVD-Part-1.sh [FILETOCONVERT]"
 
-	echo "What do you want for the title of the DVD, not the ISO. (No Special Characters or spaces.)?"
-	read DVDTITLE
 	echo "What do want to have for the ISO image. It needs to be all capitals and no special characters?"
 	read ISONAME
 
@@ -43,12 +40,20 @@ function ConvertVideo ()
 	if [ "$#" -lt1 ]
 	then
 		echo "$USAGE"
+		ls
+		echo "Please enter the filename you want to make into a dvd. [Mymovie.mp4]"
+		read VIDEONAME
+		Converter
 	else
-		NAME="$(echo "$VIDEONAME" | cut -d'.' -f1)"
-		ffmpeg -i "$VIDEONAME" -target ntsc-dvd -aspect 16:9 "$NAME.mpg"
+		Converter
 	fi
 }	# end ConvertVideo
 
+function Converter ()
+{
+	NAME="$(echo "$VIDEONAME" | cut -d'.' -f1)"
+	ffmpeg -i "$VIDEONAME" -target ntsc-dvd -aspect 16:9 "$NAME.mpg"
+}	# end Converter
 
 function BuildTSFiles ()
 {
@@ -70,14 +75,9 @@ function FinalizeDVD ()
 	dvdauthor -o "OUTPUTDIR" -T
 }	# end Main
 
-function ProceedGenerateISOImage ()
-{
-		Generate "$DVDTITLE" "$ISONAME.iso"
-}
-
 function Generate ()
 {
-	genisoimage -dvd-video -V "$DVDTITLE" -o "$ISONAME" "OUTPUTDIR/"
+	genisoimage -dvd-video -o "$ISONAME.iso" "OUTPUTDIR/"
 }	# end Generate
 
 function Main ()
@@ -85,7 +85,7 @@ function Main ()
 	ConvertVideo
 	BuildTSFiles	
 	FinalizeDVD
-	ProceedGenerateISOImage 
+	Generate 
 }	# end Main
 
 Main
