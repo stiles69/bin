@@ -17,46 +17,29 @@
 #       CREATED:  06/20/2018 08:30:04 AM CDT
 #      REVISION:  ---
 #===============================================================================
-function WhichOS ()
-{
-	echo 'Which OS are you using 1. Debian based, 2. Arch based, 3. Gento? [1,2,3]'
 
-	read RESULT
-	case $RESULT in
-		1)
-		InstallGitDeb
+
+. $HOME/lib/sh/funcInstall.sh
+
+
+SOFTWAREINSTALL="git"
+SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
+function Proceed ()
+{
+	echo $SCRIPTDEFINITION
+	echo "Do you want to proceed? [Y/n]"
+	read PROCEED
+	case $PROCEED in
+		"Y"|"y")
+		ProceedYes
 		;;
-		2)
-		InstallGitArch
-		;;
-		3)
-		InstallGitGentoo
+		"N"|"n")
+		ProceedNo
 		;;
 		*)
-		echo "Incorrect entry. Not installing Git."
+		ProceedYes
 		;;
 	esac
-}	# end function
-
-function InstallGitDeb ()
-{
-	echo "Installing For Debian/Based."    
-	sudo apt-get install git 
-}	# end function
-
-
-function InstallGitArch ()
-{
-	echo "Installing For Arch."    
-	sudo pacman -S git 
-}	# end function
-
-function InstallGitGentoo ()
-{
-	echo "Installing For Gentoo."    
-	sudo emerge git --autounmask-write
-       	sudo etc-update
-	sudo emerge git	
 }	# end function
 
 function ConfigureGitUser ()
@@ -86,14 +69,26 @@ function CloneBin ()
 	esac
 } 	# end function	
 
+function ProceedYes ()
+{
+	Install $SOFTWAREINSTALL
+}	# end function
+
+function ProceedNo ()
+{
+	exit 0 # default action is exit for no
+}	# end function
+
 function Main ()
 {
-	WhichOS
+	Proceed
 	ConfigureGitUser
 	CloneBin
 }	# end Main
 
 Main
 
-# == exit ==
+# == Exit ==
 exit 0
+
+

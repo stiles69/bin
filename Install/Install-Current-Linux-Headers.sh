@@ -20,6 +20,9 @@
 set -o nounset                              # Treat unset variables as an error
 
 
+. $HOME/lib/sh/funcInstall.sh
+
+
 SOFTWAREINSTALL="Linux Headers"
 CURRENTLINUX=linux-headers-$(uname -r)
 SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL$CURRENTLINUX
@@ -37,12 +40,13 @@ function Proceed ()
 		;;
 		*)
 		ProceedYes
+		;;
 	esac
 }	# end function
 
 function ProceedYes ()
 {
-	sudo pacman -S $CURRENTLINUX
+	Install "$CURRENTLINUX"
 }	# end function
 
 function ProceedNo ()
@@ -53,12 +57,11 @@ function ProceedNo ()
 function Main ()
 {
 	Proceed
-	. ~/lib/sh/funcReboot.sh
 }	# end Main
 
-Main # Call Main
+Main 
 
 # == Exit ==
-exit 0	# Always exit properly
+exit 0	
 
 
