@@ -1,9 +1,9 @@
 #!/bin/bash  
 #===============================================================================
 #
-#          FILE: Test-Notify.sh
+#          FILE: Notify-Exec.sh
 # 
-#         USAGE: ./Test-Notify.sh 
+#         USAGE: ./Notify-Exec.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,13 +13,17 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 07/18/2018 07:51
+#       CREATED: 07/18/2018 09:01
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
 cd $HOME/Test
-find . -type f -cmin -15 -exec $HOME/bin/Notify-Exec.sh '{}' \;
+for file in * 
+do
+	echo "Moving file $file" >> $HOME/Notify-Exec.txt
+	mv "$file" $HOME/
+done
 
 
