@@ -44,7 +44,8 @@ function Converter ()
 	echo "Converting $VIDEONAME" > $HOME/makedvdlog.txt
 	NAME="$(echo "$VIDEONAME" | cut -d'.' -f1)"
 	ISONAME="$NAME"
-	ffmpeg -i "$VIDEONAME" -target ntsc-dvd -aspect 16:9 "$NAME.mpg"
+	ffmpeg -i "$VIDEONAME" -filter:v "scale='if(gt(a,720/480),720,-1)':'if(gt(a,720/480),-1,480)',pad=w=720:h=480:x=(ow-iw)/2:y=(oh-ih)/2" -aspect 16:9 -target ntsc-dvd temp.mpg	
+#	ffmpeg -i "$VIDEONAME" -target ntsc-dvd -aspect 16:9 "$NAME.mpg"
 	wait
 	echo "Finished Converting $VIDEONAME" >> $HOME/makedvdlog.txt
 }	# end Converter
@@ -56,7 +57,7 @@ function BuildTSFiles ()
 		NAME="$(echo "$i" | cut -d'.' -f1)"
 		echo "$NAME"
 		echo "Building DVD Structure for $NAME.mpg" >> $HOME/makedvdlog.txt
-		dvdauthor -o $HOME/Videos/FFMPEG/OUTPUTDIR -t "$NAME.mpg"
+		dvdauthor --title -o OUTPUTDIR -t temp.mpg
 		wait
 		echo "Completed DVD structure for $NAME.mpg" >> $HOME/makedvdlog.txt
 	done	
@@ -66,7 +67,7 @@ function BuildTSFiles ()
 function FinalizeDVD ()
 {
 	echo "Finalizing DVD" >> $HOME/makedvdlog.txt
-	dvdauthor -o $HOME/Videos/FFMPEG/OUTPUTDIR -T
+	dvdauthor -T -o OUTPUTDIR
 	wait
 	echo "Finished Finalizing DVD" >> $HOME/makedvdlog.txt
 }	# end Main
@@ -74,10 +75,15 @@ function FinalizeDVD ()
 function Generate ()
 {
 	echo "Generating ISO image for $ISONAME" >> $HOME/makedvdlog.txt 
-	genisoimage -dvd-video -o "$ISONAME".iso ./OUTPUTDIR
+	genisoimage -dvd-video -o "$ISONAME".iso OUTPUTDIR
 	wait
 	echo "Completed generating ISO image for $ISONAME" >> $HOME/makedvdlog.txt
 }	# end Generate
+
+function BurnISOToDisk ()
+{
+	growisofs -dvd-compat -Z /dev/dvd="$ISONAME.iso"
+}	# end function
 
 function Main ()
 {
