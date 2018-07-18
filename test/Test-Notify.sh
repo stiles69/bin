@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Test-Notify.sh
@@ -20,6 +20,6 @@
 set -o nounset                              # Treat unset variables as an error
 
 cd $HOME/Test
-find . -type f -cmin -5 -exec echo '{}' \;
+find . -type f -cmin -15 -exec echo "The added files are '{}'" >> $HOME/Test-Notify.txt \;
 
 
