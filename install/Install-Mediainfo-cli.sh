@@ -22,7 +22,7 @@ set -o nounset                              # Treat unset variables as an error
 . $HOME/lib/sh/funcInstall.sh
 
 
-SOFTWAREINSTALL="mediainfo""
+SOFTWAREINSTALL="mediainfo"
 SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
 function Proceed ()
 {
