@@ -1,6 +1,7 @@
 #======= COMMON ALIASES ADDED BY BRETT SALEMINK ======
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="cd ~/.oh-my-zsh"
+alias bb="bleachbit -s"
 
 # -> Prevents accidentally clobbering files.
 alias mkdir='mkdir -p'
