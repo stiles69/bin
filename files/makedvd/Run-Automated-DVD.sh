@@ -28,15 +28,21 @@ function ConvertVideo ()
 #	echo "What do want to have for the ISO image. It needs to be all capitals and no special characters?"
 #	read ISONAME
 	
-	if [ -d "./OUTPUTDIR" ]
-		then
-			sudo rm -r ./OUTPUTDIR
-			mkdir ./OUTPUTDIR
-		else
-			mkdir ./OUTPUTDIR
+	if [ ! -d "$HOME/Videos/FFMPEG/OUTPUTDIR" ]
+	then 
+		mkdir $HOME/Videos/FFMPEG/OUTPUTDIR
 	fi
 
-	Converter
+	if [ "$#" -lt1 ]
+	then
+		echo "$USAGE"
+		ls
+#		echo "Please enter the filename you want to make into a dvd. [Mymovie.mp4]"
+#		read VIDEONAME
+		Converter
+	else
+		Converter
+	fi
 }	# end ConvertVideo
 
 function Converter ()
