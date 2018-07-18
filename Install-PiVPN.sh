@@ -38,8 +38,7 @@ function DownloadPIAConfigFiles ()
 
 function ConfigurePIA ()
 {
-	sudo echo "p2685989" > /etc/openvpn/login.txt
-	echo "Samsung#2013" >> /etc/openvpn/login.txt
+	sudo cp $HOME/bin/files/etc/openvpn/login.txt /etc/openvpn
 	sudo chmod 700 /etc/openvpn/login.txt
 }	# end function
 
