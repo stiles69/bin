@@ -55,7 +55,6 @@ function TestPIAWorking ()
 	cd /etc/openvpn
 	sudo openvpn --config /etc/openvpn/USChicago.ovpn --auth-user-pass /etc/openvpn/login.txt
 	wait
-	wget http://ipinfo.io/ip -qO -
 }	# end function
 
 function Main ()
