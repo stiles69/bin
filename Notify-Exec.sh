@@ -22,8 +22,12 @@ set -o nounset                              # Treat unset variables as an error
 cd $HOME/Test
 for file in * 
 do
-	echo "Moving file $file" >> $HOME/Notify-Exec.txt
-	mv "$file" $HOME/
+	echo "Moving file $file" to Videos/FFMPEG >> $HOME/Notify-Exec.txt
+	mv "$file" $HOME/Videos/FFMPEG
+	wait
+	echo "Making dvd out of $file" >> $HOME/Notify-Exec.txt
+	$HOME/bin/files/makedvd/Run-Complete-DVD.sh $HOME/Videos/FFMPEG "$file"
+	wait
 done
 
 

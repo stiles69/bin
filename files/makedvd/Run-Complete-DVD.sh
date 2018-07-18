@@ -28,10 +28,9 @@ function ConvertVideo ()
 	echo "What do want to have for the ISO image. It needs to be all capitals and no special characters?"
 	read ISONAME
 
-	OUTPUTDIR="OUTPUTDIR"
-	if [ ! -d "./OUTPUTDIR" ]
+	if [ ! -d "$HOME/Videos/FFMPEG/OUTPUTDIR" ]
 	then 
-		mkdir ./"$OUTPUTDIR"
+		mkdir $HOME/Videos/FFMPEG/OUTPUTDIR
 	fi
 
 	if [ "$#" -lt1 ]
@@ -50,6 +49,7 @@ function Converter ()
 {
 	NAME="$(echo "$VIDEONAME" | cut -d'.' -f1)"
 	ffmpeg -i "$VIDEONAME" -target ntsc-dvd -aspect 16:9 "$NAME.mpg"
+	wait
 }	# end Converter
 
 function BuildTSFiles ()
@@ -58,26 +58,32 @@ function BuildTSFiles ()
 	do
 		NAME="$(echo "$i" | cut -d'.' -f1)"
 		echo "$NAME"
-		dvdauthor -o ./OUTPUTDIR -t "$NAME.mpg"
+		dvdauthor -o $HOME/Videos/FFMPEG/OUTPUTDIR -t "$NAME.mpg"
+		wait
 	done	
 }	# end BuildTSFiles
 
 
 function FinalizeDVD ()
 {
-	dvdauthor -o ,/OUTPUTDIR -T
+	dvdauthor -o $HOME/Videos/FFMPEG/OUTPUTDIR -T
+	wait
 }	# end Main
 
 function Generate ()
 {
-	genisoimage -dvd-video -o "$ISONAME".iso ./OUTPUTDIR
+	genisoimage -dvd-video -o "$ISONAME".iso $HOME/Videos/FFMPEG/OUTPUTDIR
+	wait
 }	# end Generate
 
 function Main ()
 {
 	ConvertVideo
+	wait
 	BuildTSFiles	
+	wait
 	FinalizeDVD
+	wait
 	Generate 
 }	# end Main
 

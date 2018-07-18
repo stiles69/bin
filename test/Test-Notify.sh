@@ -20,6 +20,7 @@
 set -o nounset                              # Treat unset variables as an error
 
 cd $HOME/Test
-find . -type f -cmin -15 -exec $HOME/bin/Notify-Exec.sh '{}' \;
+find . -type f -cmin -5 -exec $HOME/bin/Notify-Exec.sh '{}' \;
+
 
 
