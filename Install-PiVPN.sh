@@ -53,7 +53,7 @@ function ChangeDNSServers ()
 function TestPIAWorking ()
 {
 	cd /etc/openvpn
-	sudo openvpn --config /etc/openvpn/USChicago.ovpn --auth-user-pass /etc/openvpn/login.txt
+	sudo openvpn --config /etc/openvpn/USChicago.ovpn --daemon --auth-user-pass /etc/openvpn/login.txt
 	wait
 }	# end function
 
