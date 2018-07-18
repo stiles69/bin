@@ -21,15 +21,11 @@
 
 function BuildTSFiles ()
 {
-	OUTPUTDIR="OUTPUTDIR"	
-	mkdir "./$OUTPUTDIR"
-	wait
-
 	for i in *.mpg
 	do
 		NAME="$(echo "$i" | cut -d'.' -f1)"
 		echo "$NAME"
-		dvdauthor -o "$OUTPUTDIR/" -t "$NAME.mpg"
+		dvdauthor -o ./OUTPUTDIR -t "$NAME.mpg"
 	done	
 }	# end BuildTSFiles
 

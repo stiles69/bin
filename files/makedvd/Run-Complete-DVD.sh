@@ -18,13 +18,7 @@
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
-
-<<<<<<< HEAD:files/MakeDVD/Run-Complete-DVD.sh
-
-=======
->>>>>>> bf7a15280a9e4a95773f7e962191a2679e739b81:files/makedvd/Run-Complete-DVD.sh
 VIDEONAME="$1"
-echo "$VIDEONAME"
 
 function ConvertVideo ()
 {
@@ -60,38 +54,23 @@ function Converter ()
 
 function BuildTSFiles ()
 {
-	OUTPUTDIR="OUTPUTDIR"	
-	mkdir "./$OUTPUTDIR"
-	wait
-
 	for i in *.mpg
 	do
 		NAME="$(echo "$i" | cut -d'.' -f1)"
 		echo "$NAME"
-		dvdauthor -o "$OUTPUTDIR/" -t "$NAME.mpg"
+		dvdauthor -o ./OUTPUTDIR -t "$NAME.mpg"
 	done	
 }	# end BuildTSFiles
 
 
 function FinalizeDVD ()
 {
-	dvdauthor -o "OUTPUTDIR" -T
+	dvdauthor -o ,/OUTPUTDIR -T
 }	# end Main
 
-<<<<<<< HEAD:files/MakeDVD/Run-Complete-DVD.sh
 function Generate ()
 {
-	genisoimage -dvd-video -o "$ISONAME.iso" "OUTPUTDIR/"
-=======
-function ProceedGenerateISOImage ()
-{
-		Generate "$DVDTITLE" "$ISONAME"
-}
-
-function Generate ()
-{
-	genisoimage -dvd-video -V "$DVDTITLE" -o "$ISONAME.iso" "OUTPUTDIR/"
->>>>>>> bf7a15280a9e4a95773f7e962191a2679e739b81:files/makedvd/Run-Complete-DVD.sh
+	genisoimage -dvd-video -o "$ISONAME".iso ./OUTPUTDIR
 }	# end Generate
 
 function Main ()

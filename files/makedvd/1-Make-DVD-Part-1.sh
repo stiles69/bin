@@ -18,14 +18,10 @@
 #===============================================================================
 #   MAIN SCRIPT
 #===============================================================================
-
-
-	VIDEONAME="$1"
-	echo "$VIDEONAME"
+VIDEONAME="$1"
 
 function ConvertVideo ()
 {
-
 	USAGE="This take one paramter a video file and converts to mpg with ffmpeg it can made into a DVD. 1-Make-DVD-Part-1.sh [FILETOCONVERT]"
 	
 	OUTPUTDIR="OUTPUTDIR"
@@ -37,11 +33,20 @@ function ConvertVideo ()
 	if [ "$#" -lt1 ]
 	then
 		echo "$USAGE"
+		ls
+		echo "What is the filename you want to author a DVD from? [MyVideo.mp4]"
+		read VIDEONAME
+		Converter
 	else
-		NAME="$(echo "$VIDEONAME" | cut -d'.' -f1)"
-		ffmpeg -i "$VIDEONAME" -target ntsc-dvd -aspect 16:9 "$NAME.mpg"
+		Converter
 	fi
 }	# end ConvertVideo
+
+function Converter ()
+{
+	NAME="$(echo "$VIDEONAME" | cut -d'.' -f1)"
+	ffmpeg -i "$VIDEONAME" -target ntsc-dvd -aspect 16:9 "$NAME.mpg"
+}	# end Converter
 
 function AskContinue ()
 {
@@ -49,7 +54,7 @@ function AskContinue ()
 	read ASKCONTINUE
 	case $ASKCONTINUE in
 		1)
-		$HOME/bin/files/MakeDVD/2-Make-DVD-Part-2.sh
+		$HOME/bin/files/makedvd/2-Make-DVD-Part-2.sh
 		;;
 		2)
 		echo "Okay, you will next need to run 2-Make-DVD-Part-2.sh"
