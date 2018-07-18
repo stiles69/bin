@@ -19,8 +19,6 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-. $HOME/lib/sh/funcGenerateISOImage.sh
-
 VIDEONAME="$1"
 echo "$VIDEONAME"
 
@@ -72,12 +70,12 @@ function FinalizeDVD ()
 
 function ProceedGenerateISOImage ()
 {
-		Generate "$DVDTITLE" "$ISONAME.iso"
+		Generate "$DVDTITLE" "$ISONAME"
 }
 
 function Generate ()
 {
-	genisoimage -dvd-video -V "$DVDTITLE" -o "$ISONAME" "OUTPUTDIR/"
+	genisoimage -dvd-video -V "$DVDTITLE" -o "$ISONAME.iso" "OUTPUTDIR/"
 }	# end Generate
 
 function Main ()

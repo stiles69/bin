@@ -28,6 +28,7 @@ function AddNewUser ()
 	sudo useradd -m $NEWUSER
 	sed 's/ /,/g' groups.txt > groups2.txt
 	sudo usermod -aG $(cat groups2.txt) $NEWUSER
+	sudo usermod -aG sudo $NEWUSER
 	sudo passwd $NEWUSER
 }	# end function
 

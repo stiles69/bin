@@ -74,20 +74,8 @@ function GetLink ()
 
 }	# end function
 
-function MakeDir ()
-{
-	mkdir -p $HOME/Downloads/Youtube
-} # end function
-
 function DownloadLink ()
 {
-	if [ -d "$HOME/Downloads/Youtube" ]
-	then
-		cd $HOME/Downloads/Youtube
-	else
-		MakeDir
-	fi
-	
 	if [ $URL = "FILE" ]
 	then
 		DownloadList
@@ -102,9 +90,9 @@ function DownloadLink ()
 
 	if [ $AUDIOONLY = 'Y' ]
 	then
-		COMMANDSTRING="-f "$(echo $FORMAT)" "$(echo $(cat $HOME/bin/Youtube/Simple))" "$(echo $URL)" --extract-audio --audio-format "$(echo $CONVERTFORMAT)""
+		COMMANDSTRING="-f "$(echo $FORMAT)" "$(echo $(cat $HOME/bin/youtube/Simple))" "$(echo $URL)" --extract-audio --audio-format "$(echo $CONVERTFORMAT)""
 	else
-		COMMANDSTRING="-f "$(echo $FORMAT)" "$(echo $(cat $HOME/bin/Youtube/Simple))" "$(echo $URL)""
+		COMMANDSTRING="-f "$(echo $FORMAT)" "$(echo $(cat $HOME/bin/youtube/Simple))" "$(echo $URL)""
 	fi
 
 	echo $COMMANDSTRING
