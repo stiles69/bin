@@ -22,6 +22,6 @@ set -o nounset                              # Treat unset variables as an error
 while true
 do    
 	fileName=$(inotifywait -r -e create $HOME/Test | sed -r 's/^.*CREATE(,ISDIR)*\s+(.*)$/\2/g')    
-	echo "New file is $filename"
+	echo "New file"
 done
 
