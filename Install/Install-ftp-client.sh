@@ -1,9 +1,9 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
-#          FILE: Install-Elinks.sh
+#          FILE: Install-ftp-client.sh
 # 
-#         USAGE: ./Install-Elinks.sh 
+#         USAGE: ./Install-ftp-client.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -11,18 +11,19 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: Brett Salemink (), admin@roguedesigns.us
-#  ORGANIZATION: Rogue Designs
-#       CREATED: 07/11/2018 10:37
+#        AUTHOR: YOUR NAME (), 
+#  ORGANIZATION: 
+#       CREATED: 07/16/2018 02:08
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
+
 . $HOME/lib/sh/funcInstall.sh
 
 
-SOFTWAREINSTALL="elinks"
+SOFTWAREINSTALL="ftp"
 SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
 function Proceed ()
 {
@@ -61,4 +62,6 @@ Main # Call Main
 
 # == Exit ==
 exit 0	# Always exit properly
+
+
 

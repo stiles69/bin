@@ -1,9 +1,9 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
-#          FILE: Install-Yay.sh
+#          FILE: Install-Kdenlive.sh
 # 
-#         USAGE: ./Install-Yay.sh 
+#         USAGE: ./Install-Kdenlive.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -11,9 +11,9 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: Brett Salemink (), admin@roguedesigns.us
-#  ORGANIZATION: Rogue Designs
-#       CREATED: 07/13/2018 02:18
+#        AUTHOR: YOUR NAME (), 
+#  ORGANIZATION: 
+#       CREATED: 07/17/2018 23:19
 #      REVISION:  ---
 #===============================================================================
 
@@ -22,7 +22,8 @@ set -o nounset                              # Treat unset variables as an error
 
 . $HOME/lib/sh/funcInstall.sh
 
-SOFTWAREINSTALL="yay"
+
+SOFTWAREINSTALL="kdenlive"
 SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
 function Proceed ()
 {
@@ -61,4 +62,6 @@ Main # Call Main
 
 # == Exit ==
 exit 0	# Always exit properly
+
+
 

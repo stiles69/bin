@@ -1,9 +1,9 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
-#          FILE: Install-VSftpd.sh
+#          FILE: Install-Pro-ftp-server.sh
 # 
-#         USAGE: ./Install-VSftpd.sh 
+#         USAGE: ./Install-Pro-ftp-server.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,7 +13,7 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 07/14/2018 03:35
+#       CREATED: 07/14/2018 03:56
 #      REVISION:  ---
 #===============================================================================
 
@@ -23,7 +23,7 @@ set -o nounset                              # Treat unset variables as an error
 . $HOME/lib/sh/funcInstall.sh
 
 
-SOFTWAREINSTALL="vsftpd"
+SOFTWAREINSTALL="pure-ftpd"
 SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
 function Proceed ()
 {
@@ -46,6 +46,11 @@ function Proceed ()
 function ProceedYes ()
 {
 	Install $SOFTWAREINSTALL
+	echo "Add ftpuser group."
+	sudo groupadd -g 1003 ftpuser
+	echo "Make sure and add the users you want to have access to the group ftpuser."
+	echo "Copying default Rogue Designs config file."
+	sudo cp $HOME/bin/files/etc/pure-ftpd.conf /etc/pure-ftpd/pure-ftpd.conf
 }	# end function
 
 function ProceedNo ()

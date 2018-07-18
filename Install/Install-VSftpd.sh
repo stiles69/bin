@@ -1,9 +1,9 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
-#          FILE: Install-Flatpak.sh
+#          FILE: Install-VSftpd.sh
 # 
-#         USAGE: ./Install-Flatpak.sh 
+#         USAGE: ./Install-VSftpd.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,16 +13,17 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 07/13/2018 11:25
+#       CREATED: 07/14/2018 03:35
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
+
 . $HOME/lib/sh/funcInstall.sh
 
 
-SOFTWAREINSTALL="flatpak"
+SOFTWAREINSTALL="vsftpd"
 SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
 function Proceed ()
 {
@@ -61,5 +62,6 @@ Main # Call Main
 
 # == Exit ==
 exit 0	# Always exit properly
+
 
 

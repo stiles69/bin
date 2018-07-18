@@ -1,9 +1,9 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
-#          FILE: Install-Kdenlive.sh
+#          FILE: Install-Flatpak.sh
 # 
-#         USAGE: ./Install-Kdenlive.sh 
+#         USAGE: ./Install-Flatpak.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -11,19 +11,18 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: YOUR NAME (), 
-#  ORGANIZATION: 
-#       CREATED: 07/17/2018 23:19
+#        AUTHOR: Brett Salemink (), admin@roguedesigns.us
+#  ORGANIZATION: Rogue Designs
+#       CREATED: 07/13/2018 11:25
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
-
 . $HOME/lib/sh/funcInstall.sh
 
 
-SOFTWAREINSTALL="kdenlive"
+SOFTWAREINSTALL="flatpak"
 SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
 function Proceed ()
 {
@@ -62,6 +61,5 @@ Main # Call Main
 
 # == Exit ==
 exit 0	# Always exit properly
-
 
 

@@ -1,9 +1,9 @@
-#!/bin/bash - 
+#!/bin/bash x- 
 #===============================================================================
 #
-#          FILE: Install-Kodi.sh
+#          FILE: Install-Youtube-dl.sh
 # 
-#         USAGE: ./Install-Kodi.sh 
+#         USAGE: ./Install-Youtube-dl.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -11,43 +11,56 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
+#        AUTHOR: Brett Salemink (), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 10/07/18 04:35
+#       CREATED: 07/18/2018 04:24
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
+
 . $HOME/lib/sh/funcInstall.sh
 
+
+SOFTWAREINSTALL="youtube-dl"
+SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
 function Proceed ()
 {
-	echo 'This will install Kodi. Do you want to proceed? [Y/n]'
+	echo $SCRIPTDEFINITION
+	echo "Do you want to proceed? [Y/n]"
 	read PROCEED
 	case $PROCEED in
-		Y|y)
-		ProceedInstall
+		"Y"|"y")
+		ProceedYes
 		;;
-		N|n)
-		echo 'Exiting'
+		"N"|"n")
+		ProceedNo
 		;;
 		*)
+		ProceedYes
 		;;
 	esac
 }	# end function
 
-function ProceedInstall ()
+function ProceedYes ()
 {
-	Install kodi
-}
+	Install $SOFTWAREINSTALL
+}	# end function
+
+function ProceedNo ()
+{
+	exit 0 # default action is exit for no
+}	# end function
 
 function Main ()
 {
 	Proceed
-}	# end function
+}	# end Main
 
 Main
 
-#== EXIT ==
+# == Exit ==
 exit 0
+
+
