@@ -26,7 +26,8 @@ do
 	mv "$file" $HOME/Videos/FFMPEG
 	wait
 	echo "Making dvd out of $file" >> $HOME/Notify-Exec.txt
-	$HOME/bin/files/makedvd/Run-Complete-DVD.sh $HOME/Videos/FFMPEG "$file"
+	cd $HOME/Videos/FFMPEG
+	$HOME/bin/files/makedvd/Run-Complete-DVD.sh "$file"
 	wait
 done
 
