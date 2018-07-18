@@ -39,7 +39,7 @@ function ProceedPart3 ()
 	read PROCEEDPART3
 	case $PROCEEDPART3 in
 		1)
-.		$HOME/bin/files/MakeDVD/3-Make-DVD-Part-3.sh
+.		$HOME/bin/files/makedvd/3-Make-DVD-Part-3.sh
 		;;
 		2)
 		echo "Okay the next step is 3-Make-DVD-Part-3.sh"

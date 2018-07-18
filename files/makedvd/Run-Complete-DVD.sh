@@ -19,7 +19,10 @@
 
 set -o nounset                              # Treat unset variables as an error
 
+<<<<<<< HEAD:files/MakeDVD/Run-Complete-DVD.sh
 
+=======
+>>>>>>> bf7a15280a9e4a95773f7e962191a2679e739b81:files/makedvd/Run-Complete-DVD.sh
 VIDEONAME="$1"
 echo "$VIDEONAME"
 
@@ -75,9 +78,20 @@ function FinalizeDVD ()
 	dvdauthor -o "OUTPUTDIR" -T
 }	# end Main
 
+<<<<<<< HEAD:files/MakeDVD/Run-Complete-DVD.sh
 function Generate ()
 {
 	genisoimage -dvd-video -o "$ISONAME.iso" "OUTPUTDIR/"
+=======
+function ProceedGenerateISOImage ()
+{
+		Generate "$DVDTITLE" "$ISONAME"
+}
+
+function Generate ()
+{
+	genisoimage -dvd-video -V "$DVDTITLE" -o "$ISONAME.iso" "OUTPUTDIR/"
+>>>>>>> bf7a15280a9e4a95773f7e962191a2679e739b81:files/makedvd/Run-Complete-DVD.sh
 }	# end Generate
 
 function Main ()

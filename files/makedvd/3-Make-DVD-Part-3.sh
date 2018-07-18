@@ -19,10 +19,6 @@
 #   MAIN SCRIPT
 #===============================================================================
 
-
-. $HOME/lib/sh/funcGenerateISOImage.sh
-
-
 function FinalizeDVD ()
 {
 	dvdauthor -o "OUTPUTDIR" -T
@@ -38,7 +34,7 @@ function ProceedGenerateISOImage ()
 	read PROCEEDGENERATEISOIMAGE
 	case $PROCEEDGENERATEISOIMAGE in
 		1)
-		Generate "$DVDTITLE" "$ISONAME.iso"
+		Generate "$DVDTITLE" "$ISONAME"
 		;;
 		2)
 		echo "You will make your own ISO image then. Exiting"
@@ -53,7 +49,7 @@ function ProceedGenerateISOImage ()
 
 function Generate ()
 {
-	genisoimage -dvd-video -V "$DVDTITLE" -o "$ISONAME" "OUTPUTDIR/"
+	genisoimage -dvd-video -V "$DVDTITLE" -o "$ISONAME.iso" "OUTPUTDIR/"
 }	# end Generate
 
 function Main ()
