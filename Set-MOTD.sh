@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Set-MOTD.sh
@@ -18,12 +18,13 @@
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
+. $HOME/lib/sh/funcDisplayHostname.sh
 
 echo "What do you want for a contact name?"
 read CONTACTNAME
 echo "What is your contact email address?"
 read CONTACTEMAIL
-HOSTER=${hostname}
+HOSTER="$(DisplayHostname)"
 
 echo "========================================================" > /tmp/Motd
 echo "                      Welcome to Linux" >> /tmp/Motd
