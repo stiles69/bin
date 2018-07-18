@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Run-kdenlive-scripts.sh
@@ -21,13 +21,15 @@ set -o nounset                              # Treat unset variables as an error
 
 function RunAllKdenLiveScripts ()
 {
-	cd $HOME/.config/kdenlive/scripts
-	for i in ".sh"
-		echo "Running $i"
-		"$i"
+	cd $HOME/.cache/kdenlive/scripts
+	for i in *.sh
+	do
+		echo "Running "$i""
+		sh ./"$i"
 		wait
-		echo "$i Completed"
-	fi
+		echo ""$i" Completed"
+		mv "$i" ./"$i".completed
+	done
 }	# end function
 
 function Main ()
