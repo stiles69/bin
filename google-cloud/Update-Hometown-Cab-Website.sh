@@ -47,7 +47,7 @@ fi
 
 read -p 'This will rsync the CWD for the deployment. If you do not want this hit ctrl-c now! (Y/n)' answer
 
-rsync -avz --progress --delete-before ./ /home/brettsalemink/stiles69/Hometown-Cab-Google-Cloud-Deployment/Webserver1/files/
+rsync -avz --progress --delete-before ./ /home/brettsalemink/development/stiles69/Hometown-Cab-Google-Cloud-Deployment/Webserver1/files/
 
 gcloud app versions list
 
@@ -55,7 +55,7 @@ echo 'What should the next version be?'
 
 read versionVariable
 
-gcloud app deploy --quiet --version $versionVariable /home/brettsalemink/stiles69/Hometown-Cab-Google-Cloud-Deployment/Webserver1/app.yaml
+gcloud app deploy --quiet --version $versionVariable /home/brettsalemink/development/stiles69/Hometown-Cab-Google-Cloud-Deployment/Webserver1/app.yaml
 
 gcloud app versions list
 
