@@ -108,9 +108,9 @@ function Main ()
 {
 	ArchUpdateUpgrade
 	UpdateBinLib
-	UpdateDevelopment
 	UpdateNotes
 	UpdateZim
+	UpdateDevelopment
 	$HOME/lib/sh/funcReboot.sh
 }	# end Main
 
