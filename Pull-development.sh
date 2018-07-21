@@ -25,21 +25,26 @@ HOSTNAME="$(DisplayHostname)"
 
 function ProceedYes ()
 {
-	# Pull Bin local
+
+	# Pull Development/stiles69/
+	Pull "$HOME/development/stiles69"
+	wait
+
+	# Push Development/stiles69
+	Push "$HOME/development/stiles69"
+	wait
+
+	# Pull Development
 	Pull "$HOME/development"
 	wait
 
-	# Push Bin local
+	# Push Development
 	Push "$HOME/development"
 	wait
 
-	# Pull Sh local
-#	Pull "$HOME/lib/sh"
-#	wait
 
-	# Push Sh local
-#	Push "$HOME/lib/sh"
-#	wait
+
+
 }	# end function
 
 function Push ()
