@@ -80,6 +80,14 @@ function UpdateBinLib ()
 	echo "Completed Syncing ~/bin and ~/lib/sh"
 }	# end function
 
+function UpdateDevelopment ()
+{
+	echo "Now syncing Development"
+	$HOME/bin/Pull-development.sh
+	wait
+	echo "Completed syncing Development."
+}	# end function
+
 function UpdateNotes ()
 {
 	echo "Now Syncing ~/Notes"
@@ -100,6 +108,7 @@ function Main ()
 {
 	ArchUpdateUpgrade
 	UpdateBinLib
+	UpdateDevelopment
 	UpdateNotes
 	UpdateZim
 	$HOME/lib/sh/funcReboot.sh
