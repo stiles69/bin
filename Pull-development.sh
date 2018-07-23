@@ -62,7 +62,7 @@ function Pull ()
 {
 	local GITDIR=$1
 	cd "$GITDIR"
-	git pull
+	git pull --rebase
 	SetPermissions "$GITDIR"
 }	# end function
 
