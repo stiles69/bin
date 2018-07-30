@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Generate-File-List.sh
@@ -29,8 +29,8 @@ function TrimFilenames ()
 
 function GenerateLoop ()
 {
-#	echo "What is the extension of the media you want to Concantonate? ex. .mp4, .mkv, etc."
-	INPUTEXT=".mp4"
+	echo "What is the extension of the media you want to Concantonate? ex. .mp4, .mkv, etc."
+	read INPUTEXT
 	
 	for f in ./*$INPUTEXT; 
 	do echo "file '$f'" >> inputlist.txt;

@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Concatonate-Media-FFMPEG.sh
@@ -23,22 +23,16 @@ result="$(echo -e "${PWD##*/}" | tr -d "[:space:]")"
 
 function Combine ()
 {
-#	echo "What is the output filename including extension? ex. output.mp4"
-#read OUTPUTFILENAME
-	OUTPUTFILENAME=$result.mp4
+	echo "What is the output filename including extension? ex. output.mp4"
+	read OUTPUTFILENAME
+	
 	ffmpeg -f concat -safe 0 -i inputlist.txt -c copy $OUTPUTFILENAME
 }	# End Function
-
-function MoveCompleted ()
-{
-	mv $OUTPUTFILENAME ../Completed/
-}	#	end
 
 function Main ()
 {
 	
 	Combine
-	MoveCompleted
 }	# End Function
 
 Main
