@@ -134,3 +134,4 @@ source $HOME/bin/files/Aliases/aliases-systemctl
 #======= SEPERATE MACHINE SPECIFIC ALIASES =========
 #source $HOME/bin/files/Aliases/Arch/aliases-arch
 #source $HOME/bin/files/Aliases/Raspbian/aliases-raspbian
+#source $HOME/bin/files/Aliases/Gentoo/aliases-gentoo
