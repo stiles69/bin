@@ -69,9 +69,15 @@ function SetPermissions ()
 	wait
 }	# end function
 
+function CopyFiles ()
+{
+	cp -r $HOME/bin/files $HOME/bin/TRANSFER/
+}	# end function
+
 function Main ()
 {
 	ProceedYes
+	CopyFiles
 }	# end function Main
 Main
 
