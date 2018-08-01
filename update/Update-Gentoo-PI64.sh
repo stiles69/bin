@@ -19,6 +19,7 @@
 
 set -o nounset                              # Treat unset variables as an error
 
+sudo emerge --update --newuse --deep @world
 sudo emerge --ask --depclean
 sudo revdep-rebuild
 eclean-dist --deep && eclean-pkg --deep
