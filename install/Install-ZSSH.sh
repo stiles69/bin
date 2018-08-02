@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Install-ZSSH.sh
@@ -22,8 +22,9 @@ set -o nounset                              # Treat unset variables as an error
 . $HOME/lib/sh/funcInstall.sh
 
 
-SOFTWAREINSTALL="zssh"
-SCRIPTDEFINITION="This will install $SOFTWAREINSTALL"
+SOFTWAREINSTALL1="zssh"
+SOFTWAREINSTALL2="lrzsz"
+SCRIPTDEFINITION="This will install $SOFTWAREINSTALL1 $SOFTWAREINSTALL2"
 function Proceed ()
 {
 	echo $SCRIPTDEFINITION
@@ -44,7 +45,8 @@ function Proceed ()
 
 function ProceedYes ()
 {
-	Install $SOFTWAREINSTALL
+	Install $SOFTWAREINSTALL1
+	Install $SOFTWAREINSTALL2
 }	# end function
 
 function ProceedNo ()
