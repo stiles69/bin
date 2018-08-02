@@ -18,6 +18,8 @@
 #===============================================================================
 #   MAIN SCRIPT
 #===============================================================================
+export AnException=100
+export AnotherException=101
 
 function FinalizeDVD ()
 {
@@ -47,7 +49,28 @@ function ProceedGenerateISOImage ()
 
 function Generate ()
 {
-	genisoimage -dvd-video -o "$ISONAME".iso ./OUTPUTDIR
+	try
+	(	genisoimage -dvd-video -o "$ISONAME".iso ./OUTPUTDIR
+		[ someErrorCondition ] && throw $AnException
+
+		throwErrors # automatically end the try block, if command-result is non null
+		mkisofs -dvd-video -o "$ISONAME".iso ./OUTPUTDIR
+	)
+	catch || {
+		case $ex_code in
+			$AnException)
+			echo "AnException was thrown"
+			;;
+			$AnotherException)
+			echo "AnotherException was thrown"
+			;;
+			*)
+			echo "An unexpected exception was thrown"
+			throw $ex_code # you can rethrow the "exception" causing the script to fail
+			;;
+		esac
+		}
+
 }	# end Generate
 
 function Main ()

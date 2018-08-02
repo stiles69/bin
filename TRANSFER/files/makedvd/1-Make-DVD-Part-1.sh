@@ -45,7 +45,7 @@ function ConvertVideo ()
 function Converter ()
 {
 	NAME="$(echo "$VIDEONAME" | cut -d'.' -f1)"
-	ffmpeg -i "$VIDEONAME" -target ntsc-dvd -aspect 16:9 "$NAME.mpg"
+	ffmpeg -i "$VIDEONAME" -target ntsc-dvd -aspect 16:9 "temp.mpg"
 }	# end Converter
 
 function AskContinue ()
