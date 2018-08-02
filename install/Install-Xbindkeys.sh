@@ -52,9 +52,15 @@ function ProceedNo ()
 	exit 0 # default action is exit for no
 }	# end function
 
+function MakeConfiguration ()
+{
+	touch ~/.xbindkeys config
+}	# end function
+
 function Main ()
 {
 	Proceed
+	MakeConfiguration	
 }	# end Main
 
 Main
