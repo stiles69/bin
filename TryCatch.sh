@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: TryCatch.sh
@@ -18,33 +18,31 @@
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
+#!/bin/bash
 
-function try()
-{
-    [[ $- = *e* ]]; SAVED_OPT_E=$?
-    set +e
+function a() {
+  # do some stuff here
+}
+function b() {
+  # do more stuff here
 }
 
-function throw()
-{
-    exit $1
-}
-
-function catch()
-{
-    export ex_code=$?
-    (( $SAVED_OPT_E )) && set +e
-    return $ex_code
-}
-
-function throwErrors()
-{
-    set -e
-}
-
-function ignoreErrors()
-{
-    set +e
-}
-
-
+# this subshell is a scope of try
+# try
+(
+  # this flag will make to exit from current subshell on any error
+  # inside it (all functions run inside will also break on any error)
+  set -e
+  a
+  b
+  # do more stuff here
+)
+# and here we catch errors
+# catch
+errorCode=$?
+if [ $errorCode -ne 0 ]; then
+  echo "We have an error"
+  # We exit the all script with the same error, if you don't want to
+  # exit it and continue, just delete this line.
+  exit $errorCode
+fi
