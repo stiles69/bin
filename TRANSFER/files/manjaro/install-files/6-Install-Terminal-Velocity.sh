@@ -42,7 +42,7 @@ function Install ()
 		sudo pip install terminal_velocity	
 		;;
 	
-		"Antergos Linux")  
+		"Antergos Linux"|"Manjaro-Arm")  
 		echo "Installing For Arch/Based"    
 		sudo pacman -S python2-pip
 		wait
