@@ -2,7 +2,7 @@
 
 
 SOFTWAREINSTALL="flatpak"
-SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
+SCRIPTDEFINITION="This will install $SOFTWAREINSTALL"
 function Proceed ()
 {
 	echo $SCRIPTDEFINITION
