@@ -1,9 +1,9 @@
-#!/bin/bash  
+#!/bin/bash - 
 #===============================================================================
 #
-#          FILE: Install-FFMPEG.sh
+#          FILE: Install-WireGuard.sh
 # 
-#         USAGE: ./Install-FFMPEG.sh 
+#         USAGE: ./Install-WireGuard.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -11,9 +11,9 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: YOUR NAME (), 
-#  ORGANIZATION: 
-#       CREATED: 07/15/2018 14:45
+#        AUTHOR: Brett Salemink (), admin@roguedesigns.us
+#  ORGANIZATION: Rogue Designs
+#       CREATED: 08/02/2018 06:26
 #      REVISION:  ---
 #===============================================================================
 
@@ -23,12 +23,10 @@ set -o nounset                              # Treat unset variables as an error
 . $HOME/lib/sh/funcInstall.sh
 
 
-SOFTWAREINSTALL1="ffmpeg"
-SOFTWAREINSTALL2="genisoimage"
-SOFTWAREINSTALL3="cdrkit"
-SOFTWAREINSTALL4="dvdauthor"
-
-SCRIPTDEFINITION="This will install $SOFTWAREINSTALL1 $SOFTWAREINSTALL2 $SOFTWAREINSTALL3 $SOFTWAREINSTALL4"
+SOFTWAREINSTALL1="wireguard-dkms" 
+SOFTWAREINSTALL2="wireguard-tools"
+SOFTWAREINSTALL3="linux-headers"
+SCRIPTDEFINITION="This will install $SOFTWAREINSTALL1 $SOFTWAREINSTALL2 $SOFTWAREINSTALL3"
 function Proceed ()
 {
 	echo $SCRIPTDEFINITION
@@ -49,10 +47,10 @@ function Proceed ()
 
 function ProceedYes ()
 {
-	Install $SOFTWAREINSTALL1
-	Install $SOFTWAREINSTALL2
-	Install $SOFTWAREINSTALL3
-	Install $SOFTWAREINSTALL4
+	sudo pacman -S $SOFTWAREINSTALL1
+	sudo pacman -S $SOFTWAREINSTALL2
+	sudo pacman -S $SOFTWAREINSTALL3
+
 }	# end function
 
 function ProceedNo ()
@@ -65,10 +63,10 @@ function Main ()
 	Proceed
 }	# end Main
 
-Main # Call Main
+Main
 
 # == Exit ==
-exit 0	# Always exit properly
+exit 0
 
 
 
