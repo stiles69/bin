@@ -70,6 +70,7 @@ function DebUpdateUpgrade ()
 function ArchUpdateUpgrade ()
 {
 	sudo pacman -Syu
+	yaourt -Syu
 }	# end function
 
 function UpdateBinLib ()
@@ -78,14 +79,6 @@ function UpdateBinLib ()
 	$HOME/bin/Pull-Bin-Sh.sh
 	wait
 	echo "Completed Syncing ~/bin and ~/lib/sh"
-}	# end function
-
-function UpdateDevelopment ()
-{
-	echo "Now syncing Development"
-	$HOME/bin/Pull-development.sh
-	wait
-	echo "Completed syncing Development."
 }	# end function
 
 function UpdateNotes ()
@@ -110,8 +103,6 @@ function Main ()
 	UpdateBinLib
 	UpdateNotes
 	UpdateZim
-	UpdateDevelopment
-	$HOME/lib/sh/funcReboot.sh
 }	# end Main
 
 Main # Call Main
