@@ -2,6 +2,9 @@
 #==== Added by Brett Salemink for Flutter Install ===
 #export PATH=$HOME/Development/flutter/bin:$PATH
 
+# added by Anaconda3 installer
+#export PATH="/home/brettsalemink/anaconda3/bin:$PATH"
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/lib/sh:$PATH
