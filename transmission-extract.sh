@@ -19,4 +19,23 @@
 #===============================================================================
 cd /torrents
 
-find /torrents -name '*.rar' -execdir unrar e -o- {} \; 
+function Extract ()
+{
+	find /torrents -name '*.rar' -execdir unrar e -o- {} \; 
+	wait
+}	# end function
+
+function MoveExtracted ()
+{
+	find /torrents -maxdepth 1 -name "*mp4" -name "*mkv" -name "*avi" -name "*mpg" -name "*webm" -name "*.mp3" -name "*.m4a" -exec mv {} /torrents/completed \;
+	wait
+}	# end function
+
+function Main ()
+{
+	Extract
+	MoveExtracted
+}	# end functioin
+
+#===EXIT===
+exit 0
