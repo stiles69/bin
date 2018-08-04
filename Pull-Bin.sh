@@ -62,6 +62,8 @@ function Push ()
 	echo "$DELIMITER"
 	echo "FINISHED PUSHING $GITDIR"
 	echo "$DELIMITER"
+	echo "               "
+	echo "               "
 }	# end function
 
 function Pull ()
@@ -72,6 +74,8 @@ function Pull ()
 	echo $DELIMITER
 	echo "FINISHED PULLING $GITDIR"
 	echo $DELIMITER
+	echo "               "
+	echo "               "
 }	# end function
 
 function PermissionsSet ()
@@ -81,6 +85,8 @@ function PermissionsSet ()
 	echo $DELIMITER
 	echo "FINISHED SETTING PERMISSION $GITDIR"
 	echo $DELIMITER
+	echo "               "
+	echo "               "
 }	# end function
 
 function Main ()
