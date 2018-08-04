@@ -26,6 +26,7 @@ set -o nounset                              # Treat unset variables as an error
 
 #---------- GLOBAL VARIABLES ---------
 DELIMITER="##########################################"
+SPACE=" "
 SYNCDIR=$HOME/development/stiles69/zim
 HOSTNAME="$(DisplayHostname)"
 #-------------------------------------
@@ -59,6 +60,7 @@ function Push ()
 	echo "$DELIMITER"
 	echo "FINISHED PUSHING $GITDIR"
 	echo "$DELIMITER"
+	echo $SPACE
 }	# end function
 
 function Pull ()
@@ -69,6 +71,7 @@ function Pull ()
 	echo $DELIMITER
 	echo "FINISHED PULLING $GITDIR"
 	echo $DELIMITER
+	echo $SPACE
 }	# end function
 
 function Main ()

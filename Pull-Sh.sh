@@ -25,7 +25,8 @@ set -o nounset                              # Treat unset variables as an error
 #----------------------------
 
 #---------- GLOBAL VARIABLES ---------
-DELIMITER="########################"
+DELIMITER="##################################"
+SPACE="            "
 SYNCDIR=$HOME/lib/sh
 HOSTNAME="$(DisplayHostname)"
 #-------------------------------------
@@ -64,6 +65,7 @@ function Push ()
 	echo $DELIMITER
 	echo "DONE PUSHING $GITDIR"
 	echo $DELIMITER
+	echo $SPACE
 }	# end function
 
 function Pull ()
@@ -74,6 +76,7 @@ function Pull ()
 	echo $DELIMITER
 	echo "FINISHED PULLING $GITDIR"
 	echo $DELIMITER
+	echo $SPACE
 }	# end function
 
 function PermissionsSet ()
@@ -83,6 +86,7 @@ function PermissionsSet ()
 	echo $DELIMITER
 	echo "FINISHED SETTING PERMISSIONS ON $SETPERMISSIONSDIR"
 	echo $DELIMITER
+	echo $SPACE
 }	# end function
 
 function Main ()
