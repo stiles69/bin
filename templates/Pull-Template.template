@@ -1,6 +1,7 @@
 SYNCDIR=
 
 . $HOME/lib/sh/funcDisplayHostname.sh
+. $HOME/lib/sh/funcSetPermissions.sh
 
 HOSTNAME="$(DisplayHostname)"
 
@@ -13,6 +14,9 @@ function ProceedYes ()
 	# Push SYNCDIR
 	Push "$SYNCDIR"
 	wait
+
+	# Set Permissions SYNCDIR
+	PermissionsSet "$SYNCDIR"
 }	# end function
 
 function Push ()
@@ -23,7 +27,6 @@ function Push ()
 	git add .
 	git commit -m "$COMMITMESSAGE"
 	git push
-	SetPermissions "$GITDIR"
 	echo "Done pushing $GITDIR"
 }	# end function
 
@@ -32,10 +35,13 @@ function Pull ()
 	local GITDIR=$1
 	cd "$GITDIR"
 	git pull --rebase
-	SetPermissions "$GITDIR"
 	echo "Done pulling $GITDIR"
 }	# end function
 
+function PermissionsSet ()
+{
+	SetPermissions "$GITDIR"
+}	# end function
 
 function Main ()
 {
