@@ -19,14 +19,14 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-GITPUSHDIR="$HOME/development/stiles69/zim"
+GITPUSHDIR="$HOME/Notes"
 
 function PushDir ()
 {
 	cd "$GITPUSHDIR"
 	git add .
 	git commit -m "Update"
-	echo "DONE COMMITING $GITPUSHDIR"
+	echo "Done COMMITING $GITPUSHDIR"
 }	# end function
 
 function Main ()
