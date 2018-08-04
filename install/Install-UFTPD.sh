@@ -1,5 +1,5 @@
-#!/bin/bash - 
-#===============================================================================
+#!/bin/bash 
+#=========================================================
 #
 #          FILE: Install-Uftpd.sh
 # 
@@ -15,41 +15,51 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 08/04/2018 10:04
 #      REVISION:  ---
-#===============================================================================
+#=========================================================
 
 set -o nounset                              # Treat unset variables as an error
 
-. $HOME/lib/sh/funcInstall.sh
+#---------- SOURCED ---------
 
+#----------------------------
 
+#---------- GLOBAL VARIABLES ---------
 SOFTWAREINSTALL="uftpd"
 SCRIPTDEFINITION="This will install $SOFTWAREINSTALL"
+#-------------------------------------
 function Proceed ()
 {
 	echo $SCRIPTDEFINITION
-	echo "Do you want to proceed? [Y/n]"
-	read PROCEED
-	case $PROCEED in
-		"Y"|"y")
-		ProceedYes
+	echo "Is this a Arch or Debian based system? [1 Arch 2 Debian]"
+	read SYSTEM
+	case $SYSTEM in
+		1)
+		ArchInstall
 		;;
-		"N"|"n")
-		ProceedNo
+		2)
+		DebianInstall
 		;;
 		*)
-		ProceedYes
+		echo "Invalid Response."
+		echo "Exiting..."
+		exit 1
 		;;
 	esac
 }	# end function
 
-function ProceedYes ()
+function ArchInstall ()
 {
-	Install $SOFTWAREINSTALL
+	yaourt uftpd
+}	# end function
+
+function DebianInstall ()
+{
+	sudo apt-get install uftp
 }	# end function
 
 function ProceedNo ()
 {
-	exit 0 # default action is exit for no
+	exit 0 
 }	# end function
 
 function Main ()
@@ -59,8 +69,5 @@ function Main ()
 
 Main
 
-# == Exit ==
+#===EXIT===
 exit 0
-
-
-
