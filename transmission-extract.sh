@@ -1,5 +1,5 @@
 #!/bin/bash
-#===============================================================================
+#=========================================================
 #
 #          FILE:  transmission-extract.sh
 # 
@@ -16,12 +16,12 @@
 #       VERSION:  1.0
 #       CREATED:  06/21/2018 11:38:11 PM CDT
 #      REVISION:  ---
-#===============================================================================
+#=========================================================
 cd /torrents
 
 function Extract ()
 {
-	find /torrents -name '*.rar' -execdir unrar e -o- {} \; 
+	find /torrents -name '*.rar' -execdir unrar e ../ -o- {} \; 
 	wait
 }	# end function
 
@@ -34,7 +34,6 @@ function MoveExtracted ()
 function Main ()
 {
 	Extract
-	MoveExtracted
 }	# end functioin
 
 #===EXIT===
