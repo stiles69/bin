@@ -22,6 +22,7 @@ set -o nounset                              # Treat unset variables as an error
 SYNCDIR=$HOME/bin
 
 . $HOME/lib/sh/funcDisplayHostname.sh
+. $HOME/lib/sh/funcSetPermissions.sh
 
 HOSTNAME="$(DisplayHostname)"
 
