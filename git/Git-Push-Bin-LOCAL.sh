@@ -26,8 +26,7 @@ function PushDir ()
 	cd "$GITPUSHDIR"
 	git add .
 	git commit -m "Update"
-	git push
-	echo "Done pushing $GITPUSHDIR"
+	echo "Done COMMITING $GITPUSHDIR"
 }	# end function
 
 function Main ()
