@@ -25,22 +25,23 @@ set -o nounset                                  # treat unset variables as error
 #---------- GLOBAL VARIABLES ---------
 DELIMITER='#############################################'
 LINE=' '
+DEPLOYDIR=$HOME/development/stiles69/Rogue-Designs-Google-Cloud-Deployment/Webserver1'
 #-------------------------------------
 function Main ()
 {
 	echo '**********DANGER THIS WILL USE RSYNC FROM THE CURRENT DIR USE CTRL-C IF YOU MADE A MISTAKE**************'
 	wait 3600
-	rsync -avz --progress ./ $HOME/development/stiles69/Rogue-Designs-Google-Cloud-Deployment/Webserver1/files/
+	rsync -avz --progress ./ $DEPLOYDIR/files/
 	gcloud app versions list
 	echo 'What should the next version be?'
-	read versionVariable
+	read VERSIONVARIABLE
 	
-	gcloud app deploy --version $versionVariable --quiet /home/brettsalemink/stiles69/Rogue-Designs-Google-Cloud-Deployment/Webserver1/app.yaml
+	gcloud app deploy --version $VERSIONVARIABLE --quiet $DEPLOYDIR/app.yaml
 	
 	gcloud app versions list
 	echo 'What was the old version to delete?'
-	read versionOldVariable
-	gcloud app versions delete $versionOldVariable
+	read VERSIONVARIABLEOLD
+	gcloud app versions delete $VERSIONVARIABLEOLD
 	echo $DELIMITER
 	echo 'DONE UPDATING WEBSITE'
 	echo $DELIMITER
