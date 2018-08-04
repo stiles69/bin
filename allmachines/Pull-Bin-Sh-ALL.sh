@@ -19,6 +19,8 @@
 
 set -o nounset                              # Treat unset variables as an error
 
+COMMAND="$HOME/bin/Pull-Bin-Sh.sh"
+
 function ProceedYes ()
 {
 	# Pull SYNCDIR Stretch
@@ -37,9 +39,9 @@ function ProceedYes ()
 function PullMachine ()
 {
 	local MACHINENAME="$1"
-	ssh brettsalemink@"$MACHINENAME" "$HOME/bin/Pull-Bin-Sh.sh"
+	ssh brettsalemink@"$MACHINENAME" "$COMMAND"
 	wait
-	echo "Finished Syncing $MACHINENAME"
+	echo "FINISHED SYNCING $MACHINENAME"
 }	# end PullMachine
 
 function Main ()
