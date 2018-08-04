@@ -25,7 +25,7 @@ set -o nounset                              # Treat unset variables as an error
 #----------------------------
 
 #---------- GLOBAL VARIABLES ---------
-DELIMITER="##################################"
+DELIMITER="#########################################"
 SPACE="            "
 SYNCDIR=$HOME/lib/sh
 HOSTNAME="$(DisplayHostname)"
@@ -63,7 +63,7 @@ function Push ()
 	git commit -m "$COMMITMESSAGE"
 	git push
 	echo $DELIMITER
-	echo "DONE PUSHING $GITDIR"
+	echo "FINISHED PUSHING $GITDIR"
 	echo $DELIMITER
 	echo $SPACE
 }	# end function
@@ -92,6 +92,10 @@ function PermissionsSet ()
 function Main ()
 {
 	ProceedYes
+	echo $DELIMITER
+	echo "DONE"
+	echo $DELIMITER
+	echo $SPACE
 }	# end function Main
 Main
 
