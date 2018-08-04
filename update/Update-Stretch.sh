@@ -1,5 +1,5 @@
 #!/bin/bash  
-#===============================================================================
+#==========================================================
 #
 #          FILE: Update-Stretch.sh
 # 
@@ -15,7 +15,7 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 08/04/2018 03:50
 #      REVISION:  ---
-#===============================================================================
+#==========================================================
 
 set -o nounset                              # Treat unset variables as an error
 
@@ -28,9 +28,10 @@ UPDATEHOSTNAME="$(DisplayHostname)"
 #-------------------------------------
 function Update ()
 {
-	sudo apt-get update -y
-	sudo apt-get upgrade -y
-	sudo apt-get dist-upgrade -y
+	sudo ucaresystem-core
+#	sudo apt-get update -y
+#	sudo apt-get upgrade -y
+#	sudo apt-get dist-upgrade -y
 }	# end function
 
 function UpdateBinLib ()
