@@ -34,7 +34,7 @@ function ProceedYes ()
 
 function PullMachine ()
 {
-	local MACHINENAME
+	local MACHINENAME="$1"
 	ssh brettsalemink@"$MACHINENAME" "$HOME/bin/Pull-Bin.sh"
 	wait
 	echo "Finished Syncing $MACHINENAME $SYNCDIR"
