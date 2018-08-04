@@ -25,8 +25,7 @@ function Main ()
 	sudo rm -r ./zimclip
 	sudo ln -s $HOME/.local/share/zim/plugins/zimclip
 	cd /usr/share/zim
-	sudo rm -r ./templates
-	sudo ln -s $HOME/bin/Zim/templates
+	sudo ln -s $HOME/bin/zim/templates
 	cd ~	
 }	# End Main
 

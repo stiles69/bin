@@ -45,7 +45,7 @@ function Proceed ()
 function ProceedYes ()
 {
 	Install $SOFTWAREINSTALL
-	$HOME/bin/Zim/Make-Zim-Links.sh
+	$HOME/bin/zim/Make-Zim-Links.sh
 }	# end function
 
 function ProceedNo ()
