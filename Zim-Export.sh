@@ -21,42 +21,25 @@
 
 set -o nounset                                  # treat unset variables as errors
 
-#===============================================================================
-#   GLOBAL DECLARATIONS
-#===============================================================================
-declare -rx SCRIPT=${0##*/}                     # the name of this script
-declare -rx mkdir='/bin/mkdir'                  # the mkdir(1) command
+function ExportNotes ()
+{
+	$HOME/bin/Zim-Build-Website.sh
+	wait
+}	# end function
 
-#===============================================================================
-#   SANITY CHECKS
-#===============================================================================
-if [ -z "$BASH" ] ; then
-printf "$SCRIPT:$LINENO: run this script with the BASH shell\n" >&2
-exit 192
-fi
+function SyncNotes ()
+{
+	$HOME/bin/Pull-Notes.sh
+	wait
+}	# end SyncNotes
 
-if [ ! -x "$mkdir" ] ; then
-printf "$SCRIPT:$LINENO: command '$mkdir' not available - aborting\n" >&2
-exit 192
-fi
+function Main ()
+{
+	ExportNotes
+	SyncNotes
+}	# end Main
 
-#===============================================================================
-#   MAIN SCRIPT
-#===============================================================================
+Main
 
-#-----------------Export Zim------------------
-zim --export -O /home/brettsalemink/Development/stiles69/zim --template ZeroFiveEight --index-page index -r /home/brettsalemink/Notes
-wait
-
-#-----------------Change Directories--------------
-cd $HOME/Development/stiles69/zim
-
-#----------------git push-------
-git add .
-git commit -m "update"
-git push
-
-#===============================================================================
-#   STATISTICS / CLEANUP
-#===============================================================================
+#===EXIT===
 exit 0

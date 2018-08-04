@@ -19,7 +19,7 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-SYNCDIR=$HOME/development/stiles69/zim
+SYNCDIR=$HOME/Notes
 
 . $HOME/lib/sh/funcDisplayHostname.sh
 
@@ -27,11 +27,11 @@ HOSTNAME="$(DisplayHostname)"
 
 function ProceedYes ()
 {
-	# Pull Bin zim
+	# Pull Bin Notes
 	Pull "$SYNCDIR"
 	wait
 
-	# Push Bin local
+	# Push Bin Notes
 	Push "$SYNCDIR"
 	wait
 }	# end function
