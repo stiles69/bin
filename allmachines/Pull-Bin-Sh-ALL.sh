@@ -19,6 +19,8 @@
 
 set -o nounset                              # Treat unset variables as an error
 
+. $HOME/lib/sh/funcRunRemoteCommand.sh
+
 COMMAND="$HOME/bin/Pull-Bin-Sh.sh"
 
 function ProceedYes ()
@@ -34,14 +36,17 @@ function ProceedYes ()
 	# Pull SYNCDIR Pi64
 	PullMachine "pi64.roguedesigns.us"
 	wait
+
+	# Pull Manjaro
+	PullMachine "manjaro.roguedesigns.us"
+	wait
 }	# end function
 
 function PullMachine ()
 {
 	local MACHINENAME="$1"
-	ssh brettsalemink@"$MACHINENAME" "$COMMAND"
+	RunRemoteCommand "$MACHINENAME" "$COMMAND"
 	wait
-	echo "FINISHED SYNCING $MACHINENAME"
 }	# end PullMachine
 
 function Main ()

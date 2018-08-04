@@ -19,33 +19,32 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-SYNCDIR="$HOME/bin"
-
-. $HOME/lib/sh/funcDisplayHostname.sh
-
-HOSTNAME="$(DisplayHostname)"
+. $HOME/lib/sh/funcRunRemoteCommand.sh
 
 function ProceedYes ()
 {
+	local COMMAND="$HOME/bin/Pull-Bin.sh"
+
 	# Pull SYNCDIR Stretch
-	PullMachine "stretch.roguedesigns.us"
+	PullMachine "stretch.roguedesigns.us" "$COMMAND"
 	wait
 
 	# Pull SYNCDIR Stiles
-	PullMachine "stiles.roguedesigns.us"
+	PullMachine "stiles.roguedesigns.us" "$COMMAND"
 	wait
 
 	# Pull SYNCDIR Pi64
-	PullMachine "pi64.roguedesigns.us"
+	PullMachine "pi64.roguedesigns.us" "$COMMAND"
 	wait
 }	# end function
 
 function PullMachine ()
 {
 	local MACHINENAME="$1"
-	ssh brettsalemink@"$MACHINENAME" "$HOME/bin/Pull-Bin.sh"
+	local COMMAND="$2"
+	RunRemoteCommand "$MACHINENAME" "$COMMAND"
 	wait
-	echo "Finished Syncing $MACHINENAME $SYNCDIR"
+	echo "FINISHED SYNCING $MACHINENAME"
 }	# end PullMachine
 
 function Main ()
