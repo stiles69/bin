@@ -17,24 +17,5 @@
 #       CREATED:  06/21/2018 11:38:11 PM CDT
 #      REVISION:  ---
 #=========================================================
-cd /torrents
 
-function Extract ()
-{
-	find /torrents -name '*.rar' -execdir unrar e ../ -o- {} \; 
-	wait
-}	# end function
-
-function MoveExtracted ()
-{
-	find /torrents -maxdepth 1 -name "*mp4" -name "*mkv" -name "*avi" -name "*mpg" -name "*webm" -name "*.mp3" -name "*.m4a" -exec mv {} /torrents/completed \;
-	wait
-}	# end function
-
-function Main ()
-{
-	Extract
-}	# end functioin
-
-#===EXIT===
-exit 0
+find /torrents -name '*.rar' -execdir `unrar e ../` -o- {} \; 
