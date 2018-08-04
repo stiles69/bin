@@ -2,6 +2,9 @@
 #==== Added by Brett Salemink for Flutter Install ===
 #export PATH=$HOME/Development/flutter/bin:$PATH
 
+# Needed to test out uftp this is the directory which will receive the files.
+export RECVDIR=/srv/ftp/Recv-Dir
+
 # added by Anaconda3 installer
 #export PATH="/home/brettsalemink/anaconda3/bin:$PATH"
 
