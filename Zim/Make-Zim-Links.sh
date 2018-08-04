@@ -22,6 +22,7 @@ set -o nounset                              # Treat unset variables as an error
 function Main ()
 {
 	cd  /usr/lib/python2.7/site-packages/zim/plugins
+	sudo rm -r ./zimclip
 	sudo ln -s $HOME/.local/share/zim/plugins/zimclip
 	cd /usr/share/zim
 	sudo rm -r ./templates
