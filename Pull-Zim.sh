@@ -1,5 +1,5 @@
 #!/bin/bash  
-#===============================================================================
+#==========================================================
 #
 #          FILE: Git-Bin-SH.sh
 # 
@@ -15,16 +15,20 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 06/24/2018 06:15
 #      REVISION:  ---
-#===============================================================================
+#==========================================================
 
 set -o nounset                              # Treat unset variables as an error
 
-SYNCDIR=$HOME/development/stiles69/zim
-
+#---------- SOURCED ---------
 . $HOME/lib/sh/funcDisplayHostname.sh
+. $HOME/lib/sh/funcSetPermissions.sh
+#----------------------------
 
+#---------- GLOBAL VARIABLES ---------
+DELIMITER="################################"
+SYNCDIR=$HOME/development/stiles69/zim
 HOSTNAME="$(DisplayHostname)"
-
+#-------------------------------------
 function ProceedYes ()
 {
 	# Push Local First
@@ -52,6 +56,9 @@ function Push ()
 	git add .
 	git commit -m "$COMMITMESSAGE"
 	git push
+	echo "$DELIMITER"
+	echo "FINISHED PUSHING $GITDIR"
+	echo "$DELIMITER"
 }	# end function
 
 function Pull ()
@@ -59,6 +66,9 @@ function Pull ()
 	local GITDIR=$1
 	cd "$GITDIR"
 	git pull --rebase
+	echo $DELIMITER
+	echo "FINISHED PULLING $GITDIR"
+	echo $DELIMITER
 }	# end function
 
 function Main ()

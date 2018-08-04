@@ -1,5 +1,5 @@
 #!/bin/bash
-#===============================================================================
+#==========================================================
 #
 #          FILE: Pull-Sh.sh
 # 
@@ -15,16 +15,20 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 08/03/2018 22:05
 #      REVISION:  ---
-#===============================================================================
+#==========================================================
 
 set -o nounset                              # Treat unset variables as an error
 
-SYNCDIR=$HOME/lib/sh
-
+#---------- SOURCED ---------
 . $HOME/lib/sh/funcDisplayHostname.sh
 . $HOME/lib/sh/funcSetPermissions.sh
+#----------------------------
 
+#---------- GLOBAL VARIABLES ---------
+DELIMITER="########################"
+SYNCDIR=$HOME/lib/sh
 HOSTNAME="$(DisplayHostname)"
+#-------------------------------------
 
 function ProceedYes ()
 {
@@ -57,7 +61,9 @@ function Push ()
 	git add .
 	git commit -m "$COMMITMESSAGE"
 	git push
-	echo "Done pushing $GITDIR"
+	echo $DELIMITER
+	echo "DONE PUSHING $GITDIR"
+	echo $DELIMITER
 }	# end function
 
 function Pull ()
@@ -65,13 +71,18 @@ function Pull ()
 	local GITDIR="$1"
 	cd "$GITDIR"
 	git pull --rebase
-	echo "Done pulling $GITDIR"
+	echo $DELIMITER
+	echo "FINISHED PULLING $GITDIR"
+	echo $DELIMITER
 }	# end function
 
 function PermissionsSet ()
 {
 	local SETPERMISSIONSDIR="$1"
 	SetPermissions "$SETPERMISSIONSDIR"
+	echo $DELIMITER
+	echo "FINISHED SETTING PERMISSIONS ON $SETPERMISSIONSDIR"
+	echo $DELIMITER
 }	# end function
 
 function Main ()
