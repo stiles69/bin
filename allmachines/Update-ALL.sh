@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Update-ALL.sh
@@ -21,25 +21,29 @@ set -o nounset                              # Treat unset variables as an error
 
 . $HOME/lib/sh/funcRunRemoteCommand.sh
 
-COMMAND="$HOME/bin/update"
+COMMANDSTRETCH="$HOME/bin/update/Update-Stretch.sh"
+COMMANDSTILES="$HOME/bin/update/Update-Stiles.sh"
+COMMANDPI64="$HOME/bin/update/Update-PI64S.sh"
+COMMANDMANJARO="$HOME/bin/update/Update-Manjaro.sh"
+COMMANDSTRETCH="$HOME/bin/update/Update-Stretch.sh"
 DELIMITER="###################################"
 SPACE=" "
 function ProceedYes ()
 {
 	# Pull SYNCDIR Stretch
-	PullMachine "stretch.roguedesigns.us" "$COMMAND/Update-Stretch.sh"
+	PullMachine "stretch.roguedesigns.us" "$COMMANDSTRETCH"
 	wait
 
 	# Pull SYNCDIR Stiles
-	PullMachine "stiles.roguedesigns.us" "$COMMAND/Update-Stiles.sh"
+	PullMachine "stiles.roguedesigns.us" "$COMMANDSTILES"
 	wait
 
 	# Pull SYNCDIR Pi64
-	PullMachine "pi64.roguedesigns.us" "$COMMAND/Update-PI64.sh"
+	PullMachine "pi64.roguedesigns.us" "$COMMANDPI64"
 	wait
 
 	# Pull Manjaro
-	PullMachine "manjaro.roguedesigns.us" "$COMMAND/Update-Manjaro.sh"
+	PullMachine "manjaro.roguedesigns.us" "$COMMANDMANJARO"
 	wait
 }	# end function
 
