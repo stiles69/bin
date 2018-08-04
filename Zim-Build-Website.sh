@@ -22,17 +22,18 @@ set -o nounset                              # Treat unset variables as an error
 
 function BuildWebsite ()
 {	
-#	cd "` dirname "$0"`"
+	cd $HOME/Notes
+	cd "` dirname "$0"`"
 #	cd ..
 #
 #	mkdir -p build
 #	cd build
-	cd $HOME/development/stiles69/zim-website
+	cd $HOME/development/stiles69/zim
 	[ -e _resources ] && rm -rf *
-	cd -
+	cd ~
 	zim --export \
 		--format=html --template=ZeroFiveEight \
-		--output="$HOME/development/stiles69/zim-website" --overwrite --index-page=index \
+		--output="$HOME/development/stiles69/zim" --overwrite --index-page=index \
 		$HOME/Notes
 }	# end function
 

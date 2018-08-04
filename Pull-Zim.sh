@@ -19,32 +19,21 @@
 
 set -o nounset                              # Treat unset variables as an error
 
+SYNCDIR=$HOME/development/stiles69/zim
+
 . $HOME/lib/sh/funcDisplayHostname.sh
 
 HOSTNAME="$(DisplayHostname)"
 
 function ProceedYes ()
 {
-
-	# Pull Development/stiles69/
-	Pull "$HOME/development/stiles69"
+	# Pull Bin zim
+	Pull "$SYNCDIR"
 	wait
 
-	# Push Development/stiles69
-	Push "$HOME/development/stiles69"
+	# Push Bin local
+	Push "$SYNCDIR"
 	wait
-
-	# Pull Development
-	Pull "$HOME/development"
-	wait
-
-	# Push Development
-	Push "$HOME/development"
-	wait
-
-
-
-
 }	# end function
 
 function Push ()
@@ -64,14 +53,6 @@ function Pull ()
 	cd "$GITDIR"
 	git pull --rebase
 	SetPermissions "$GITDIR"
-}	# end function
-
-function SetPermissions ()
-{
-	local GITDIR=$1
-	sudo chown -R brettsalemink:users $GITDIR
-	sudo chmod -R 774 $GITDIR
-	wait
 }	# end function
 
 function Main ()
