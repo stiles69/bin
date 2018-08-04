@@ -37,9 +37,15 @@ function BuildWebsite ()
 		$HOME/Notes
 }	# end function
 
+function SyncZim ()
+{
+	$HOME/Pull-Zim.sh
+}	# end function
+
 function Main ()
 {
 	BuildWebsite
+	SyncZim
 }	# end Main
 
 Main
