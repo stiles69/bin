@@ -1,4 +1,4 @@
-SYNCDIR=$1
+SYNCDIR=
 
 . $HOME/lib/sh/funcDisplayHostname.sh
 

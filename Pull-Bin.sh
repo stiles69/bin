@@ -1,9 +1,9 @@
-#!/bin/bash  
+#!/bin/bash
 #===============================================================================
 #
-#          FILE: Git-Bin-SH.sh
+#          FILE: Pull-Bin.sh
 # 
-#         USAGE: ./Git-Bin-SH.sh 
+#         USAGE: ./Pull-Bin.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -11,13 +11,15 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: Brett Salemink (), brett.salemink@gmail.com
+#        AUTHOR: Brett Salemink (), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 06/24/2018 06:15
+#       CREATED: 08/03/2018 22:04
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
+
+SYNCDIR=$HOME/bin
 
 . $HOME/lib/sh/funcDisplayHostname.sh
 
@@ -25,29 +27,40 @@ HOSTNAME="$(DisplayHostname)"
 
 function ProceedYes ()
 {
-	# Sync Bin
-	$HOME/bin/Pull-Bin.sh
+	# Pull SYNCDIR
+	Pull "$SYNCDIR"
+	wait
 
-	# Sync Sh
-	$HOME/bin/Pull-Sh.sh
+	# Push SYNCDIR
+	Push "$SYNCDIR"
+	wait
 }	# end function
 
-function SetPermissions ()
+function Push ()
 {
-	$HOME/bin/Set-Permissions-Bin.sh
-	$HOME/bin/Set-Permissions-Sh.sh
+	local GITDIR=$1
+	COMMITMESSAGE="$HOSTNAME Bash"
+	cd "$GITDIR"
+	git add .
+	git commit -m "$COMMITMESSAGE"
+	git push
+	SetPermissions "$GITDIR"
+	echo "Done pushing $GITDIR"
 }	# end function
 
-function CopyFiles ()
+function Pull ()
 {
-	cp -r $HOME/bin/files $HOME/bin/TRANSFER/
-	echo "Done copying files to TRANSFER"
+	local GITDIR=$1
+	cd "$GITDIR"
+	git pull --rebase
+	SetPermissions "$GITDIR"
+	echo "Done pulling $GITDIR"
 }	# end function
+
 
 function Main ()
 {
 	ProceedYes
-	CopyFiles
 }	# end function Main
 Main
 
