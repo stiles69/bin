@@ -35,29 +35,35 @@ function ProceedYes ()
 	# Push SYNCDIR
 	Push "$SYNCDIR"
 	wait
+
+	# Set Permissions SYNCDIR
+	PermissionsSet "$SYNCDIR"
 }	# end function
 
 function Push ()
 {
-	local GITDIR=$1
+	local GITDIR="$1"
 	COMMITMESSAGE="$HOSTNAME Bash"
 	cd "$GITDIR"
 	git add .
 	git commit -m "$COMMITMESSAGE"
 	git push
-	SetPermissions "$GITDIR"
 	echo "Done pushing $GITDIR"
 }	# end function
 
 function Pull ()
 {
-	local GITDIR=$1
+	local GITDIR="$1"
 	cd "$GITDIR"
 	git pull --rebase
-	SetPermissions "$GITDIR"
 	echo "Done pulling $GITDIR"
 }	# end function
 
+function PermissionsSet ()
+{
+	local SETPERMISSIONSDIR="$1"
+	SetPermissions "$SETPERMISSIONSDIR"
+}	# end function
 
 function Main ()
 {
