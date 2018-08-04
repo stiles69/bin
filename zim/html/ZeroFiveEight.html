@@ -30,6 +30,9 @@
 			height:100%;
 			position:relative;
 		}
+		#rogue {
+			color: #690303;
+		}
 		#navigation {
 			background-color:#F3F3F3;
 			display:inline-block;
@@ -48,6 +51,9 @@
 			max-width:960px;
 			padding:65px;
 		}
+		#navigation img {
+			margin-top: 150px;
+		}
 		#navigation ul {
 			margin-top:0;
 			margin-bottom:0;
@@ -58,10 +64,10 @@
 		}
 		#navigation a {
 			text-decoration:none;
-			color:gray;
+			color:#690303;
 		}
 		#navigation strong {
-			color:#4E9A06;
+			color:#690303;
 			font-weight:400;
 		}
 		#navigation a:hover {
@@ -71,7 +77,7 @@
 			margin-top:0;
 		}
 		h1,h2,h3,h4,h5,h6 {
-			color:#4E9A06;
+			color:#690303;
 			font-weight:300;
 			margin-bottom: 0;
 		}
@@ -139,10 +145,11 @@
 
 <body>
 	<div class="wrapper">
-		<div id="navigation"> [% index() %] </div>
+		<div id="navigation"><img src="https://storage.googleapis.com/stiles-images/StilesLogo.png" alt="Stiles Logo" /> [% index() %] </div>
 		<div id="content">
 		<!--[% FOR page IN pages %]-->
-			<h1>[% page.title %] <a name='[% anchor(page) %]'></a></h1>
+			<h1 id="rogue">[% page.title %] <a name='[% anchor(page) %]'></a></h1>
+			<img src="https://storage.googleapis.com/stiles-images/StilesLogo.png" alt="Stiles Logo" />
 
 			[% page.body %]
 
