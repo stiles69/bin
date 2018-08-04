@@ -49,7 +49,7 @@ function Proceed ()
 
 function ArchInstall ()
 {
-	yaourt uftpd
+	yaourt uftp
 }	# end function
 
 function DebianInstall ()
