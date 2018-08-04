@@ -65,16 +65,14 @@ function Pull ()
 
 function SetPermissions ()
 {
-	local GITDIR=$1
-	sudo chown -R brettsalemink:users $GITDIR
-	sudo chmod -R 774 $GITDIR
-	wait
-	echo "Done setting permissions on $GITDIR"
+	$HOME/bin/Set-Permissions-Bin.sh
+	$HOME/bin/Set-Permisssions-Sh.sh
 }	# end function
 
 function CopyFiles ()
 {
 	cp -r $HOME/bin/files $HOME/bin/TRANSFER/
+	echo "Done copying files to TRANSFER"
 }	# end function
 
 function Main ()

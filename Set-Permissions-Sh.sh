@@ -1,9 +1,9 @@
-#!/bin/bash  
+#!/bin/bash
 #===============================================================================
 #
-#          FILE: Set-Permissions-Bin.sh
+#          FILE: Set-Permissions-Sh.sh
 # 
-#         USAGE: ./Set-Permissions-Bin.sh 
+#         USAGE: ./Set-Permissions-Sh.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,13 +13,14 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 08/03/2018 21:56
+#       CREATED: 08/03/2018 21:59
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
-SETPERMISSIONSDIR=$HOME/bin
+
+SETPERMISSIONSDIR=$HOME/lib/sh
 
 function SetPermissions ()
 {
