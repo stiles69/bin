@@ -28,11 +28,17 @@ HOSTNAME="$(DisplayHostname)"
 function ProceedYes ()
 {
 	# Pull SYNCDIR Stretch
-	local HOSTER="Stretch"
-	ssh brettsalemink@stretch.roguedesigns.us "$HOME/bin/Pull-Bin.sh"
+	PullMachine "stretch.roguedesigns.us"
 	wait
-	echo "Finished Syncing Stretch $SYNCDIR"
 }	# end function
+
+function PullMachine ()
+{
+	local MACHINENAME
+	ssh brettsalemink@"$MACHINENAME" "$HOME/bin/Pull-Bin.sh"
+	wait
+	echo "Finished Syncing $MACHINENAME $SYNCDIR"
+}	# end PullMachine
 
 function Main ()
 {
