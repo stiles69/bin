@@ -18,44 +18,24 @@
 #      REVISION:  ---
 #===============================================================================
 
+SETPERMISSIONSDIR=$HOME/bin
 
-function Proceed ()
+function SetPermissions ()
 {
-	echo $SCRIPTDEFINITION
-	echo "Do you want to proceed? [Y/n]"
-	read PROCEED
-	case $PROCEED in
-		"Y"|"y")
-		ProceedYes
-		;;
-		"N"|"n")
-		ProceedNo
-		;;
-		*)
-		ProceedYes
-	esac
+	SETPERMISSIONSDIR=$1
+	sudo chown -R brettsalemink:users $SETPERMISSIONSDIR
+	sudo chmod -R 774 $SETPERMISSIONSDIR
+	wait
+	echo "Done setting permissions on $SETPERMISSIONSDIR"
 }	# end function
 
-function ProceedYes ()
-{
-	sudo chown -R brettsalemink:users ~/bin
-	sudo chmod -R 774 ~/bin
-	sudo chown -R brettsalemink:users $HOME/lib
-	sudo chmod -R 774 $HOME/lib
-}	# end function
-
-function ProceedNo ()
-{
-	exit 0 # default action is exit for no
-}	# end function
 
 function Main ()
 {
-	ProceedYes
+	SetPermissions "$SETPERMISSONSDIR"
 }	# end Main
 
-Main # Call Main
+Main
 
 # == Exit ==
-exit 0	# Always exit properly
-
+exit 0

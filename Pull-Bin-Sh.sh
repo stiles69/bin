@@ -51,6 +51,7 @@ function Push ()
 	git commit -m "$COMMITMESSAGE"
 	git push
 	SetPermissions "$GITDIR"
+	echo "Done pushing $GITDIR"
 }	# end function
 
 function Pull ()
@@ -59,6 +60,7 @@ function Pull ()
 	cd "$GITDIR"
 	git pull --rebase
 	SetPermissions "$GITDIR"
+	echo "Done pulling $GITDIR"
 }	# end function
 
 function SetPermissions ()
@@ -67,6 +69,7 @@ function SetPermissions ()
 	sudo chown -R brettsalemink:users $GITDIR
 	sudo chmod -R 774 $GITDIR
 	wait
+	echo "Done setting permissions on $GITDIR"
 }	# end function
 
 function CopyFiles ()

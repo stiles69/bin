@@ -1,6 +1,6 @@
 #. ~/lib/sh/funcReboot.sh
 SOFTWAREINSTALL="tmux"
-SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
+SCRIPTDEFINITION="This will install $SOFTWAREINSTALL"
 function Proceed ()
 {
 	echo $SCRIPTDEFINITION
@@ -34,8 +34,8 @@ function Main ()
 	Proceed
 }	# end Main
 
-Main # Call Main
+Main
 
-# == Exit ==
-exit 0	# Always exit properly
+# === Exit ===
+exit 0
 

@@ -39,7 +39,7 @@ function BuildWebsite ()
 
 function SyncZim ()
 {
-	$HOME/Pull-Zim.sh
+	$HOME/bin/Pull-Zim.sh
 }	# end function
 
 function Main ()
