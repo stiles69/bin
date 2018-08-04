@@ -50,6 +50,7 @@ function ProceedYes ()
 function PullMachine ()
 {
 	local MACHINENAME="$1"
+	local COMMAND="$2"
 	RunRemoteCommand "$MACHINENAME" "$COMMAND"
 	wait
 	echo $DELIMITER
