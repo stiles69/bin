@@ -25,7 +25,7 @@ set -o nounset                                  # treat unset variables as error
 #---------- GLOBAL VARIABLES ---------
 DELIMITER='#############################################'
 LINE=' '
-DEPLOYDIR=$HOME/development/stiles69/Rogue-Designs-Google-Cloud-Deployment/Webserver1'
+DEPLOYDIR=$HOME/development/stiles69/Rogue-Designs-Google-Cloud-Deployment/Webserver1
 #-------------------------------------
 function Main ()
 {
@@ -41,10 +41,10 @@ function Main ()
 	gcloud app versions list
 	echo 'What was the old version to delete?'
 	read VERSIONVARIABLEOLD
-	gcloud app versions delete $VERSIONVARIABLEOLD
-	echo $DELIMITER
-	echo 'DONE UPDATING WEBSITE'
-	echo $DELIMITER
+	gcloud app versions delete "$VERSIONVARIABLEOLD"
+	echo "$DELIMITER"
+	echo "DONE UPDATING WEBSITE"
+	echo "$DELIMITER"
 }	# end Main
 
 Main
