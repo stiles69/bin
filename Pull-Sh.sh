@@ -45,7 +45,7 @@ function ProceedYes ()
 
 function GitPushLocal ()
 {
-	$HOME/bin/git/Git-Push-Bin-LOCAL.sh
+	$HOME/bin/git/Git-Push-Sh-LOCAL.sh
 }	# end function
 
 
