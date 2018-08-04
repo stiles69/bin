@@ -41,7 +41,7 @@ function ProceedYes ()
 
 function GitPushLocal ()
 {
-	$HOME/bin/git/Git-Push-Bin-LOCAL.sh
+	$HOME/bin/git/Git-Push-Zim-LOCAL.sh
 }	# end function
 
 function Push ()
