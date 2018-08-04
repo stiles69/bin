@@ -21,13 +21,15 @@ set -o nounset                              # Treat unset variables as an error
 
 function Main ()
 {
+	cd  /usr/lib/python2.7/site-packages/zim/plugins
 	sudo ln -s $HOME/.local/share/zim/plugins/zimclip
-		
+	cd /usr/share/zim
+	sudo rm -r ./templates
+	sudo ln -s $HOME/bin/Zim/templates
+	cd ~	
 }	# End Main
 
 Main
 
 #===EXIT===
-exit
-
-
+exit 0
