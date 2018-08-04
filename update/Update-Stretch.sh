@@ -1,33 +1,65 @@
-#!/bin/bash
+#!/bin/bash  
 #===============================================================================
 #
-#          FILE:  Update-Stretch.sh
+#          FILE: Update-Stretch.sh
 # 
-#         USAGE:  ./Update-Stretch.sh 
+#         USAGE: ./Update-Stretch.sh 
 # 
-#   DESCRIPTION:  This will update Stretch and sync BashScripts.
+#   DESCRIPTION: 
 # 
-#       OPTIONS:  ---
-#  REQUIREMENTS:  ---
-#          BUGS:  ---
-#         NOTES:  ---
-#        AUTHOR:  Brett Salemink (), brett.salemink@gmail.com
-#       COMPANY:  Rogue Designs
-#       VERSION:  1.0
-#       CREATED:  05/15/2018 04:07:22 AM CDT
+#       OPTIONS: ---
+#  REQUIREMENTS: ---
+#          BUGS: ---
+#         NOTES: ---
+#        AUTHOR: Brett Salemink (), admin@roguedesigns.us
+#  ORGANIZATION: Rogue Designs
+#       CREATED: 08/04/2018 03:50
 #      REVISION:  ---
 #===============================================================================
-#   MAIN SCRIPT
-#===============================================================================
-echo "Starting Update"
-sudo apt-get update -y
-sudo apt-get upgrade -y
-sudo apt-get dist-upgrade -y
 
-echo "Finished Update"
+set -o nounset                              # Treat unset variables as an error
 
-$HOME/bin/Pull-Bin-Sh.sh
-#===============================================================================
-#   STATISTICS / CLEANUP
-#===============================================================================
+#---------- SOURCED ---------
+. $HOME/lib/sh/funcDisplayHostname.sh
+#----------------------------
+
+#---------- GLOBAL VARIABLES ---------
+UPDATEHOSTNAME="$(DisplayHostname)"
+#-------------------------------------
+function Update ()
+{
+	sudo apt-get update -y
+	sudo apt-get upgrade -y
+	sudo apt-get dist-upgrade -y
+}	# end function
+
+function UpdateBinLib ()
+{
+	echo "Now Syncing ~/bin and ~/lib/sh."
+	$HOME/bin/Pull-Bin-Sh.sh
+	wait
+	echo "Completed Syncing ~/bin and ~/lib/sh"
+}	# end function
+
+function UpdateNotes ()
+{
+	echo "Now Syncing ~/Notes"
+	$HOME/bin/Pull-Notes.sh
+	echo "Finished Syncing Notes."
+	
+}	# end function
+
+function Main ()
+{
+	Update
+	UpdateBinLib
+	UpdateNotes
+	echo "DONE UPDATING $UPDATEHOSTNAME"
+	echo "======================================="
+}	# end Main
+Main
+
+#===EXIT===
 exit 0
+
+

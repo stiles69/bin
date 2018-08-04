@@ -19,11 +19,53 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-sudo emerge --update --newuse --deep @world
-sudo emerge --ask --depclean
-sudo revdep-rebuild
-eclean-dist --deep && eclean-pkg --deep
+#---------- SOURCED ---------
 
-$HOME/bin/Pull-Bin-Sh.sh
+#----------------------------
+
+#---------- GLOBAL VARIABLES ---------
+
+#-------------------------------------
+function UpdateGentoo ()
+{
+	sudo emerge --update --newuse --deep @world
+	sudo emerge --ask --depclean
+	sudo revdep-rebuild
+	eclean-dist --deep && eclean-pkg --deep
+}	# end UpdateGentoo
+
+function UpdateBinLib ()
+{
+	echo "Now Syncing ~/bin and ~/lib/sh."
+	$HOME/bin/Pull-Bin-Sh.sh
+	wait
+	echo "Completed Syncing ~/bin and ~/lib/sh"
+}	# end function
+
+function UpdateNotes ()
+{
+	echo "Now Syncing ~/Notes"
+	$HOME/bin/Pull-Notes.sh
+	echo "Finished Syncing Notes."
+	
+}	# end function
+
+function UpdateZim ()
+{
+	echo "Syncing Zim"
+	$HOME/bin/Pull-Zim.sh
+	echo "Finished Exporting and Syncing."
+}	# end function
+
+function Main ()
+{
+	UpdateGentoo
+	UpdateBinLib
+	UpdateNotes
+	echo "DONE UPDATING GENTOO PI64"
+	echo "======================================="
+}	# end Main
+Main
+
+#===EXIT===
 exit 0
-
