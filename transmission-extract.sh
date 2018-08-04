@@ -18,4 +18,20 @@
 #      REVISION:  ---
 #=========================================================
 
-find /torrents -name '*.rar' -execdir `unrar e ../` -o- {} \; 
+#---------- SOURCED ---------
+
+#----------------------------
+
+#---------- GLOBAL VARIABLES ---------
+
+#-------------------------------------
+function Main ()
+{
+	find /torrents -name '*.rar' -execdir unrar e -o- {} \; 
+	find /torrents -name '*.mp4' -exec mv -t /torrents/complete {} +;
+}	# end Main
+
+Main
+
+#===EXIT===
+exit 0
