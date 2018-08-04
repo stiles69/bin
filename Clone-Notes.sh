@@ -23,7 +23,7 @@ set -o nounset                              # Treat unset variables as an error
 #----------------------------
 
 #---------- GLOBAL VARIABLES ---------
-GITADDDRESS="git@github.com:stiles69/Notes.git"
+GITADDRESS="git@github.com:stiles69/Notes.git"
 #-------------------------------------
 function Main ()
 {
