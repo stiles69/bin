@@ -19,10 +19,13 @@
 
 set -o nounset                              # Treat unset variables as an error
 
+. $HOME/lib/sh/funcDate.sh
+
 function Main ()
 {
 	NOTEDIR=./
-	NOTEDATE={date}
+	NOTEDATE="$(Date)"
+	echo "The NOTEDATE is $NOTEDATE"
 	echo "What is the title of the Note? [Use _ for all spaces and no extension]"
 	read NOTETITLE
 	NOTEPATH="$NOTEDIR/$NOTETITLE.txt"
@@ -30,7 +33,7 @@ function Main ()
 	echo "Wiki-Format: zim 0.4" >> "$NOTEPATH"
 	echo "Creation-Date: $NOTEDATE" >> "NOTEPATH"
 	echo "     " >> "$NOTEPATH"
-	echo "====== $NOTETITLE ======"
+	echo "====== $NOTETITLE ======" >> "$NOTEPATH"
 
 }	# End Main
 
