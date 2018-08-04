@@ -1,3 +1,4 @@
+COMMAND="
 
 function ProceedYes ()
 {
