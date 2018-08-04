@@ -30,6 +30,14 @@ function ProceedYes ()
 	# Pull SYNCDIR Stretch
 	PullMachine "stretch.roguedesigns.us"
 	wait
+
+	# Pull SYNCDIR Stiles
+	PullMachine "stiles.roguedesigns.us"
+	wait
+
+	# Pull SYNCDIR Pi64
+	PullMachine "pi64.roguedesigns.us"
+	wait
 }	# end function
 
 function PullMachine ()
