@@ -27,6 +27,9 @@ HOSTNAME="$(DisplayHostname)"
 
 function ProceedYes ()
 {
+	# Push Local First
+	GitPushLocal
+
 	# Pull Bin zim
 	Pull "$SYNCDIR"
 	wait
@@ -34,6 +37,11 @@ function ProceedYes ()
 	# Push Bin local
 	Push "$SYNCDIR"
 	wait
+}	# end function
+
+function GitPushLocal ()
+{
+	$HOME/bin/git/Git-Push-Bin-LOCAL.sh
 }	# end function
 
 function Push ()
