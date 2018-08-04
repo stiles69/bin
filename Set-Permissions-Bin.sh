@@ -1,22 +1,24 @@
-#!/bin/bash
+#!/bin/bash - 
 #===============================================================================
 #
-#          FILE:  Install-FFMPEG.sh
+#          FILE: Set-Permissions-Bin.sh
 # 
-#         USAGE:  ./Install-FFMPEG.sh
+#         USAGE: ./Set-Permissions-Bin.sh 
 # 
-#   DESCRIPTION:  This installs git and clones bin.
+#   DESCRIPTION: 
 # 
-#       OPTIONS:  ---
-#  REQUIREMENTS:  ---
-#          BUGS:  ---
-#         NOTES:  ---
-#        AUTHOR:  Brett Salemink (), brett.salemink@gmail.com
-#       COMPANY:  Rogue Designs
-#       VERSION:  1.0
-#       CREATED:  06/20/2018 08:30:04 AM CDT
+#       OPTIONS: ---
+#  REQUIREMENTS: ---
+#          BUGS: ---
+#         NOTES: ---
+#        AUTHOR: Brett Salemink (), admin@roguedesigns.us
+#  ORGANIZATION: Rogue Designs
+#       CREATED: 08/03/2018 21:56
 #      REVISION:  ---
 #===============================================================================
+
+set -o nounset                              # Treat unset variables as an error
+
 
 SETPERMISSIONSDIR=$HOME/bin
 
@@ -29,13 +31,13 @@ function SetPermissions ()
 	echo "Done setting permissions on $SETPERMISSIONSDIR"
 }	# end function
 
-
 function Main ()
 {
-	SetPermissions "$SETPERMISSONSDIR"
+	SetPermissions "$SETPERMISSIONSDIR"
 }	# end Main
 
 Main
 
-# == Exit ==
+#===EXIT===
 exit 0
+
