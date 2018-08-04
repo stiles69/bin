@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Update-Stiles.sh
@@ -28,9 +28,10 @@ UPDATEHOSTNAME="$(DisplayHostname)"
 #-------------------------------------
 function Update ()
 {
-	sudo apt-get update -y
-	sudo apt-get upgrade -y
-	sudo apt-get dist-upgrade -y
+	sudo ucaresystem-core
+#	sudo apt-get update -y
+#	sudo apt-get upgrade -y
+#	sudo apt-get dist-upgrade -y
 }	# end function
 
 function UpdateBinLib ()
