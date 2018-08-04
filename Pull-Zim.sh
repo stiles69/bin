@@ -25,7 +25,7 @@ set -o nounset                              # Treat unset variables as an error
 #----------------------------
 
 #---------- GLOBAL VARIABLES ---------
-DELIMITER="################################"
+DELIMITER="##########################################"
 SYNCDIR=$HOME/development/stiles69/zim
 HOSTNAME="$(DisplayHostname)"
 #-------------------------------------
