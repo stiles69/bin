@@ -62,11 +62,6 @@ function ProceedNo ()
 	exit 0 # default action is exit for no
 }	# end function
 
-function DebUpdateUpgrade ()
-{
-	sudo apt-get update -y && sudo apt-get upgrade -y
-}	# end function
-
 function ArchUpdateUpgrade ()
 {
 	sudo pacman -Syu
@@ -84,15 +79,15 @@ function UpdateBinLib ()
 function UpdateNotes ()
 {
 	echo "Now Syncing ~/Notes"
-	$HOME/bin/Sync-Notes.sh
+	$HOME/bin/Pull-Notes.sh
 	echo "Finished Syncing Notes."
 	
 }	# end function
 
 function UpdateZim ()
 {
-	echo "Exporting ~/Notes to ~/stiles69/zim and Syncing ~/stiles69/zim"
-	$HOME/bin/Zim-Export.sh
+	echo "Syncing Zim"
+	$HOME/bin/Pull-Zim.sh
 	echo "Finished Exporting and Syncing."
 }	# end function
 
@@ -105,7 +100,7 @@ function Main ()
 	UpdateZim
 }	# end Main
 
-Main # Call Main
+Main
 
 # == Exit ==
-exit 0	# Always exit properly
+exit 0
