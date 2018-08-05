@@ -18,7 +18,7 @@
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
-
+set -e
 . $HOME/lib/sh/funcRunRemoteCommand.sh
 
 COMMANDSTRETCH="$HOME/bin/update/Update-Debian.sh"

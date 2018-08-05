@@ -1,5 +1,5 @@
 #!/bin/bash  
-#===============================================================================
+#=========================================================
 #
 #          FILE: build.sh
 # 
@@ -15,10 +15,13 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 08/03/2018 18:49
 #      REVISION:  ---
-#===============================================================================
-
+#=========================================================
 set -o nounset                              # Treat unset variables as an error
 
+function SyncCloudToLocal ()
+{
+	rsync -rvz $HOME/brett.salemink@gmail.com/Notes/ $HOME/Notes/
+}	# end function
 
 function BuildWebsite ()
 {	
@@ -45,6 +48,7 @@ function SyncNotesZim ()
 
 function Main ()
 {
+	SyncCloudToLocal
 	BuildWebsite
 	SyncNotesZim
 }	# end Main
