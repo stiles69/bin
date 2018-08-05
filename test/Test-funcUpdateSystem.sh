@@ -22,18 +22,12 @@ set -o nounset                              # Treat unset variables as an error
 #---------- SOURCED ---------
 . $HOME/lib/sh/funcUpdateSystem.sh	# This function is called by UpdateSystem [1 for Arch, 2 for Debian, 3 for Gentoo]
 
-#---------- GLOBAL VARIABLES ---------
-
-DELIMITER='#############################################'
-LINE=' '
-#-------------------------------------
 function Main ()
 {
-	UpdateSystem "1"
+	UpdateSystem 1 
 }	# end Main
 
 Main
 
 #===EXIT===
 exit 0
-
