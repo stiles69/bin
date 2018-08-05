@@ -21,12 +21,10 @@ set -o nounset                              # Treat unset variables as an error
 
 . $HOME/lib/sh/funcRunRemoteCommand.sh
 
-COMMANDSTRETCH="$HOME/bin/update/Update-Stretch.sh"
-COMMANDSTILES="$HOME/bin/update/Update-Stiles.sh"
-COMMANDPI64="$HOME/bin/update/Update-PI64S.sh"
-COMMANDMANJARO="$HOME/bin/update/Update-Manjaro.sh"
-COMMANDSTRETCH="$HOME/bin/update/Update-Stretch.sh"
-DELIMITER="###################################"
+COMMANDSTRETCH="$HOME/bin/update/Update-Debian.sh"
+COMMANDSTILES="$HOME/bin/update/Update-Debian.sh"
+COMMANDPI64="$HOME/bin/update/Update-Arch.sh"
+COMMANDMANJARO="$HOME/bin/update/Update-Arch.sh"
 SPACE=" "
 function ProceedYes ()
 {
@@ -53,9 +51,9 @@ function PullMachine ()
 	local COMMAND="$2"
 	RunRemoteCommand "$MACHINENAME" "$COMMAND"
 	wait
-	echo $DELIMITER
-	echo "FINISHED UPDATING $MACHINENAME"
-	echo $DELIMITER
+	echo "####################################################"
+	echo "     FINISHED UPDATING $MACHINENAME"
+	echo "####################################################"
 	echo $SPACE
 }	# end PullMachine
 
