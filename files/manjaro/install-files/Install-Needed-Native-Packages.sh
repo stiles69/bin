@@ -1,9 +1,9 @@
 #!/bin/bash  
 #=========================================================
 #
-#          FILE: Generate-All-Installed-Packages-Arch.sh
+#          FILE: Install-Needed-Native-Packages.sh
 # 
-#         USAGE: ./Generate-All-Installed-Packages-Arch.sh 
+#         USAGE: ./Install-Needed-Native-Packages.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,7 +13,7 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 08/06/2018 18:30
+#       CREATED: 08/06/2018 18:41
 #      REVISION:  ---
 #=========================================================
 set -o nounset                              # Treat unset variables as an error
@@ -28,10 +28,8 @@ LINE=' '
 #-------------------------------------
 function Main ()
 {
-	# Native Packages
-	pacman -Qqettn > $HOME/bin/files/manjaro/Native-Package-List.txt
-	# Aur Packages
-	pacman -Qqettm > $HOME/bin/files/manjaro/Aur-Package-List.txt
+	sudo pacman -S --needed $(< $HOME/bin/files/manjaro/Native-Package-List.txt)
+	yaourt -S --needed --noconfirm $(< $HOME/bin/files/manjaro/Aur-Package-List.txt)
 }	# end Main
 
 Main
