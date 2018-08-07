@@ -55,6 +55,7 @@ etcher
 exfat-utils
 f2fs-tools
 fakeroot
+feh
 ffmpegthumbs
 ffms2
 firefox
@@ -115,7 +116,6 @@ linux417-virtualbox-guest-modules
 logrotate
 lrzsz
 lshw
-luxrender
 man-db
 man-pages
 manjaro-alsa
