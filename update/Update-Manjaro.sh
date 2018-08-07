@@ -1,5 +1,5 @@
 #!/bin/bash  
-#===============================================================================
+#=========================================================
 #
 #          FILE: update-upgrade.sh
 # 
@@ -15,8 +15,7 @@
 #  ORGANIZATION: 
 #       CREATED: 07/04/2018 01:37
 #      REVISION:  ---
-#===============================================================================
-
+#=========================================================
 set -o nounset                              # Treat unset variables as an error
 
 SCRIPTDEFINITION="This will install update the repositories."
@@ -64,7 +63,7 @@ function ProceedNo ()
 
 function ArchUpdateUpgrade ()
 {
-	sudo pacman -Syu
+	pacman -Syu
 	yaourt -Syu
 }	# end function
 

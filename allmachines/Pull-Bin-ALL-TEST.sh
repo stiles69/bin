@@ -18,8 +18,7 @@
 #=========================================================
 set -o nounset                              # Treat unset variables as an error
 #---------- SOURCED ---------
-. $HOME/lib/sh/funcRR.sh
-#----------------------------
+----------------------------
 
 #---------- GLOBAL VARIABLES ---------
 LINE=' '
@@ -27,14 +26,15 @@ LINE=' '
 #-------------------------------------
 function Main ()
 {
-	rr $HOME/bin/allmachines/Hosts.txt	
+	rr $HOME/bin/allmachines/Hosts.txt
+	wait
 }	# end Main
 
 function rr ()
 {
 	while IFS='' read -r line || [[ -n "$line" ]]; 
 	do    
-		ssh "$line" 'bash -s' < $HOME/bin/update/Update-Manjaro.sh
+		ssh -t -o StrictHostKeyChecking=no "$line" $HOME/bin/update/Update-Manjaro.sh
 	done < "$1"
 }	# end Main
 Main
@@ -43,4 +43,4 @@ Main
 exit 0
 
 
-
+#ssh -t -o StrictHostKeyChecking=no brettsalemink@pi64.roguedesigns.us $HOME/bin/update/Update-Manjaro.sh
