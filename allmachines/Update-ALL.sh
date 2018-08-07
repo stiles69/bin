@@ -1,5 +1,5 @@
 #!/bin/bash  
-#===============================================================================
+#=========================================================
 #
 #          FILE: Update-ALL.sh
 # 
@@ -15,33 +15,28 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 08/04/2018 05:06
 #      REVISION:  ---
-#===============================================================================
-
+#=========================================================
 set -o nounset                              # Treat unset variables as an error
 set -e
 . $HOME/lib/sh/funcRunRemoteCommand.sh
-
-COMMANDSTRETCH="$HOME/bin/update/Update-Upgrade.sh"
-COMMANDSTILES="$HOME/bin/update/Update-Upgrade.sh"
-COMMANDPI64="$HOME/bin/update/Update-Upgrade.sh"
-COMMANDMANJARO="$HOME/bin/update/Update-Upgrade.sh"
+COMMAND="$HOME/bin/update/Update-Upgrade.sh"
 SPACE=" "
 function ProceedYes ()
 {
 	# Pull SYNCDIR Stretch
-	PullMachine "stretch.roguedesigns.us" "$HOME/bin/update/Update-Upgrade.sh"
+	PullMachine "stretch.roguedesigns.us" "$COMMAND"
 	wait
 
 	# Pull SYNCDIR Stiles
-	PullMachine "stiles.roguedesigns.us" "$COMMANDSTILES"
+	PullMachine "stiles.roguedesigns.us" "$COMMAND"
 	wait
 
 	# Pull SYNCDIR Pi64
-	PullMachine "pi64.roguedesigns.us" "$COMMANDPI64"
+	PullMachine "pi64.roguedesigns.us" "$COMMAND"
 	wait
 
 	# Pull Manjaro
-	PullMachine "manjaro.roguedesigns.us" "$COMMANDMANJARO"
+	PullMachine "manjaro.roguedesigns.us" "$COMMAND"
 	wait
 }	# end function
 
