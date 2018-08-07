@@ -18,15 +18,25 @@
 #=========================================================
 set -o nounset                              # Treat unset variables as an error
 #---------- SOURCED ---------
-----------------------------
+#----------------------------
 
 #---------- GLOBAL VARIABLES ---------
 LINE=' '
+HOST1='pi64.roguedesigns.us'
+HOST2='stiles.roguedesigns.us'
+HOST3='stretch.roguedesigns.us'
+HOST4='manjaro.roguedesigns.us'
 
 #-------------------------------------
 function Main ()
 {
-	rr $HOME/bin/allmachines/Hosts.txt
+	ssh -t -o StrictHostKeyChecking=no "$HOST1" "$HOME/bin/update/Update-Manjaro.sh"
+	wait
+	ssh -t -o StrictHostKeyChecking=no "$HOST2" "$HOME/bin/update/Update-Debian.sh"
+	ssh -t -o StrictHostKeyChecking=no "$HOST3" "$HOME/bin/update/Update-Debian.sh"
+#	ssh -t -o StrictHostKeyChecking=no "$HOST4" "$HOME/bin/update/Update-Manjaro.sh"
+	wait
+	wait
 	wait
 }	# end Main
 
