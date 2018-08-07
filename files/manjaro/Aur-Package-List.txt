@@ -12,6 +12,7 @@ deb2targz
 deepin-help
 droidcam
 dvdstyler
+etcher-cli
 folder-color-bzr
 folder-color-switcher
 gnome-settings-daemon-elementary
@@ -22,6 +23,7 @@ insync-nemo
 jigdo
 jitsi
 libunity
+luxrender
 lwks
 masterpdfeditor
 matcha-gtk-theme
