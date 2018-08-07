@@ -4,6 +4,9 @@ alias ohmyzsh="cd ~/.oh-my-zsh"
 alias bb="bleachbit -s"
 alias cs="cd"
 
+#============ ALLOW REMOTE EXECUTION =======
+alias ssh-remote='ssh -t -o StrictHostKeyChecking=no '
+
 #========= HUMAN READABLE OUPUT =========
 alias ls='ls -lash'
 
