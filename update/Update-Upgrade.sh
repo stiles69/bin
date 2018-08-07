@@ -1,5 +1,5 @@
 #!/bin/bash  
-#===============================================================================
+#=========================================================
 #
 #          FILE: update-upgrade.sh
 # 
@@ -15,42 +15,24 @@
 #  ORGANIZATION: 
 #       CREATED: 07/04/2018 01:37
 #      REVISION:  ---
-#===============================================================================
-
+#=========================================================
 set -o nounset                              # Treat unset variables as an error
 
-SCRIPTDEFINITION="This will install update the repositories."
-function Proceed ()
-{
-	echo $SCRIPTDEFINITION
-	echo "Do you want to proceed? [Y/n]"
-	read PROCEED
-	case $PROCEED in
-		"Y"|"y")
-		ProceedYes
-		;;
-		"N"|"n")
-		ProceedNo
-		;;
-		*)
-		ProceedYes
-	esac
-}	# end function
-
+. $HOME/lib/sh/funcOS.sh
 function ProceedYes ()
 {
-	echo "Which system to you want to update? [1.Debian Based, 2.Arch Based, 3.Gentoo]"
-	read SYSTEMINFO
-	case $SYSTEMINFO in
-		1)
+		
+		RESULT=$(funcOS)
+		case $RESULT in
+		"Debian"|"Raspbian Linux")
 		DebUpdateUpgrade
 		UpdateBinLib
 		;;
-		2)
+		"Arch Linux"|"Manjaro Linux")
 		ArchUpdateUpgrade
 		UpdateBinLib
 		;;
-		3)
+		Gentoo)
 		GentooUpdateUpgrade
 		UpdateBinLib
 		;;
@@ -74,6 +56,7 @@ function DebUpdateUpgrade ()
 function ArchUpdateUpgrade ()
 {
 	sudo pacman -Syu
+	yaourt -Syu
 }	# end function
 
 function GentooUpdateUpgrade ()
@@ -91,11 +74,11 @@ function UpdateBinLib ()
 }
 function Main ()
 {
-	Proceed
-	$HOME/lib/sh/funcReboot.sh
+	ProceedYes
 }	# end Main
 
 Main # Call Main
 
 # == Exit ==
 exit 0	# Always exit properly
+
