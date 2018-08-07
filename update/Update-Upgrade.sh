@@ -25,7 +25,7 @@ function ProceedYes ()
 		RESULT=$(funcOS)
 		echo "$RESULT"
 		case $RESULT in
-		"Debian"|"Raspbian Linux")
+		"Debian"|"Raspbian GNU/Linux")
 		DebUpdateUpgrade
 		UpdateBinLib
 		;;
