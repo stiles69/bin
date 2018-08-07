@@ -27,10 +27,6 @@ function BuildWebsite ()
 {	
 	cd $HOME/Notes
 	cd "` dirname "$0"`"
-#	cd ..
-#
-#	mkdir -p build
-#	cd build
 	cd $HOME/development/stiles69/zim
 	[ -e _resources ] && rm -rf *
 	cd ~
