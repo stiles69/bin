@@ -21,15 +21,15 @@ set -o nounset                              # Treat unset variables as an error
 set -e
 . $HOME/lib/sh/funcRunRemoteCommand.sh
 
-COMMANDSTRETCH="$HOME/bin/update/Update-Debian.sh"
-COMMANDSTILES="$HOME/bin/update/Update-Debian.sh"
-COMMANDPI64="$HOME/bin/update/Update-Arch.sh"
-COMMANDMANJARO="$HOME/bin/update/Update-Arch.sh"
+COMMANDSTRETCH="$HOME/bin/update/Update-Upgrade.sh"
+COMMANDSTILES="$HOME/bin/update/Update-Upgrade.sh"
+COMMANDPI64="$HOME/bin/update/Update-Upgrade.sh"
+COMMANDMANJARO="$HOME/bin/update/Update-Upgrade.sh"
 SPACE=" "
 function ProceedYes ()
 {
 	# Pull SYNCDIR Stretch
-	PullMachine "stretch.roguedesigns.us" "$COMMANDSTRETCH"
+	PullMachine "stretch.roguedesigns.us" "$HOME/bin/update/Update-Upgrade.sh"
 	wait
 
 	# Pull SYNCDIR Stiles

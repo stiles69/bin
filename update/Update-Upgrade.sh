@@ -23,6 +23,7 @@ function ProceedYes ()
 {
 		
 		RESULT=$(funcOS)
+		echo "$RESULT"
 		case $RESULT in
 		"Debian"|"Raspbian Linux")
 		DebUpdateUpgrade
@@ -37,8 +38,9 @@ function ProceedYes ()
 		UpdateBinLib
 		;;
 		*)
-		echo "Your entry did not match any options. Exiting"
-		exit 0
+		echo "$RESULT"
+		sleep 7			
+#		exit 0
 		;;
 	esac
 }	# end function
@@ -77,8 +79,8 @@ function Main ()
 	ProceedYes
 }	# end Main
 
-Main # Call Main
+Main
 
 # == Exit ==
-exit 0	# Always exit properly
+exit 0
 
