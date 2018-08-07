@@ -1,5 +1,5 @@
 #!/bin/bash
-#===============================================================================
+#=========================================================
 #
 #          FILE: Pull-Bin-ALL.sh
 # 
@@ -15,10 +15,9 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 08/03/2018 22:33
 #      REVISION:  ---
-#===============================================================================
-
+#=========================================================
 set -o nounset                              # Treat unset variables as an error
-
+set -e
 . $HOME/lib/sh/funcRunRemoteCommand.sh
 
 COMMAND="$HOME/bin/Pull-Bin.sh"
@@ -46,7 +45,8 @@ function PullMachine ()
 {
 	local MACHINENAME="$1"
 	local COMMAND="$2"
-	RunRemoteCommand "$MACHINENAME" "$COMMAND"
+	ssh "$MACHINENAME" "bash -s" "$COMMAND"	
+	#RunRemoteCommand "$MACHINENAME" "$COMMAND"
 	wait
 }	# end PullMachine
 

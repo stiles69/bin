@@ -1,0 +1,4 @@
+manjaro.roguedesigns.us
+stretch.roguedesigns.us
+pi64.roguedesigns.us
+stiles.roguedesigns.us
