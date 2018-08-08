@@ -1,5 +1,5 @@
 #!/bin/bash
-#===============================================================================
+#=========================================================
 #
 #          FILE:  WGet-Complete-Website.sh
 # 
@@ -16,8 +16,7 @@
 #       VERSION:  1.0
 #       CREATED:  12/05/2017 02:14:01 AM CST
 #      REVISION:  ---
-#===============================================================================
-
+#=========================================================
 set -o nounset                                  # treat unset variables as errors
 
 #===============================================================================
@@ -46,7 +45,7 @@ echo "Please enter the FULL website address including the http: "
 
 read webAddress
 
-wget --wait=20 --limit-rate=20K -r -p -U Mozilla $webAddress
+wget -X 'Contents-amd64.gz' --wait=5 --limit-rate=5000K -r -p -U Mozilla $webAddress
 echo 'All Done!'
 #===============================================================================
 #   STATISTICS / CLEANUP
