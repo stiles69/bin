@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "stiles-storage",
+  "private_key_id": "f0d867eb2af14773ae2b192424e0e705a5b40fdd",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDur75Lc8OzOj5C\nnDZP4cznMt5Vn6MYRnGLY1uC1iNRBRWuYOlOhdjaN+24tlI47SjFj4dvfdMgPT/C\nb//TKMdOn1Jk+l7O6DREi9BklbJkvZ7vCptDtq+xhnXK8SQwAk1jyyd3Ym/iAGXA\n3JHrkaUz7NQP7Xsw4/DmjV6H2CKFM7qDsU/ySECrUFUkQ8YNKTzAQoRmgkGBjr3y\ncVf1YZdF35k0/GWUPPxwHJNeb/zdg4w7rZyWYXFcHW9YDLZYIxddth/0wCGw14U6\nHqf+UdCumctJ4A2ft3ru9OGxYbeONvcGqzvjGv+/cKF2zkbfgpuDWnzF1EJGBCBs\nkxXHdaD3AgMBAAECggEAAqCXKOx1dWX65K/PLJJCxdzzM+e+qZEFYfBY4FuIgvxo\nSWknkSze/uzRAsmMwgkZ0S4BVHmtlt7CK2k9o5lWJS9Z4huqTkZo1jXgcRTGwN4g\nW8rotPK3WScSPviS4XSglnORTLOBhTdHkh7X366qA115f+DwYZfG8zq6lUM3Sg9D\n38+3NQXLxAATawLJ0PEkIDTUH43N5Fq28GT5Dcd+kjNhVTDOyb5GkzB+Xvk0CgKk\nJTnGm/BntvRdkrHMJqlXojN9gDzwXP1wl4HF0+nzHzSwskUFbmn73lhgbtbOmbIi\nfWrtUTajPKOOceUjVlSrZoRwah34myPPo8eN3EjLBQKBgQD+2vcgxfBLNFM4L68o\nkNRImJVyTZVk+X25yTtWSBEGqKWbd5H/3brH6OdUCiYD6hE5bM/xkvNeD/M2NewC\nnSXzRcyT71Zxzd/gGe/YFXMdBDsyqlB0Ohq7zgIuRiCJ4+PC0akkbQQGKqhJ5QVA\njKQbIvjox68fSjqVGtfgdF0CGwKBgQDvwi/bW9sUeFOSqbVYKiep9lNjYoIBXLHn\nwJg+zYMRnpCRXF4fVO+W9UXEUakDqMfkBGuTkyXN+FPpJdIsNDgVNnxfRAyYlsJ7\n4Yl7L90ryxWWLFP9CkNbWjFBr2Iu4vtEnHFwEe79n4qfuV0FpQ8OdKpuAGnX45Ey\nqv3LpmqqVQKBgQCMUxphVDuD3RK5TCAgsOYB9unKnwdUKr9cLX3beyDMzs0otgSQ\nopC2g/njXxchbp7/RHeWpvgTYarjvXru0YJU2ajUB6NMVDQhm4ZhLyZL4smJkxdr\nd5bCs6Klwf0mj3EYEwMTyGa/0nsI/O4QZZ/yRSZSXaiCDQgGk1or/0Y64wKBgQDN\n5Yylq9+bV64loFpcyW7gleqMyfbtZoZdiNb18BVkFzD9tD4cWBudHyt36czkmJh4\n55be2Bo6JM0ixtkUHxAen3j1cwICNE32hvxC7xrX1gLGwXCrOJoZpH3yc8Q0kbbI\n+DSu0qfT5KPugQgypcolVulZqD89KG/z/EYSEus9NQKBgExSwSiBkbfEMGf1mbTN\n+h9COqcKJ0he0v2sljt8OmQu5+T/V0nmVB6HNbJGdYeGrftqBKNWPU3O2V12snD9\nVVoidLE/hJmHNbxbfK5vuH7deLBy339a3NcblIKJYRYtgHuWbQZRfGYU1v9OLPgN\nXAhPTzF9OU7Y43Zntl06SlLM\n-----END PRIVATE KEY-----\n",
+  "client_email": "transfer@stiles-storage.iam.gserviceaccount.com",
+  "client_id": "103700428621119770486",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/transfer%40stiles-storage.iam.gserviceaccount.com"
+}
