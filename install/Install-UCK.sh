@@ -1,5 +1,5 @@
-#!/bin/bash - 
-#===============================================================================
+#!/bin/bash  
+#=========================================================
 #
 #          FILE: Install-UCK.sh
 # 
@@ -15,15 +15,14 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 08/08/2018 01:42
 #      REVISION:  ---
-#===============================================================================
-
+#=========================================================
 set -o nounset                              # Treat unset variables as an error
 set -e
 . $HOME/lib/sh/funcInstall.sh
 
 
 SOFTWAREINSTALL="uck"
-SCRIPTDEFINITION="This will install $SOFTWAREINSTALL. You MUST HAVE UBUNTU OR A UBUNTU-BASED!""
+SCRIPTDEFINITION="This will install $SOFTWAREINSTALL. You MUST HAVE UBUNTU OR A UBUNTU-BASED!"
 function Proceed ()
 {
 	echo $SCRIPTDEFINITION
@@ -47,6 +46,7 @@ function Proceed ()
 function ProceedYes ()
 {
 	Install $SOFTWAREINSTALL
+	sudo apt-get install libfribidi-bin
 }	# end function
 
 function ProceedNo ()
@@ -63,6 +63,3 @@ Main
 
 # == Exit ==
 exit 0
-
-
-
