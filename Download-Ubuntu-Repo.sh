@@ -1,5 +1,5 @@
-#!/bin/bash - 
-#===============================================================================
+#!/bin/bash  
+#=========================================================
 #
 #          FILE: Download-Ubuntu-Repo.sh
 # 
@@ -15,8 +15,7 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 08/08/2018 02:28
 #      REVISION:  ---
-#===============================================================================
-
+#=========================================================
 set -o nounset                              # Treat unset variables as an error
 #---------- SOURCED ---------
 
@@ -30,9 +29,9 @@ function Main ()
 {
 	echo "This will Download a Ubuntu Repo. What is the URL of the repo you want to download?"
 	read URL
-	wget -r -nH -np -R "*.png, *.jpeg, *.gif, *.svg" --exclude-directories "/i18n" "$URL"
+	wget -r -c -nH -nc -np -R "Translation-*, *.png, *.jpeg, *.gif, *.svg" --exclude-directories /i18n "$URL"
 	
-	wget -r -nH -np -R "Translation-*, *.png, *.jpeg, *.gif, *.svg" -A "Translation-en.gz, Translation-en.xz, Translation-en.bz2, Translation-en" "$URL"
+	wget -r -nH -nc -np -R "Translation-*, *.png, *.jpeg, *.gif, *.svg" -A "Translation-en.gz, Translation-en.xz, Translation-en.bz2, Translation-en" "$URL"
 }	# end Main
 
 Main
