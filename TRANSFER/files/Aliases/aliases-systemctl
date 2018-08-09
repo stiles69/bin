@@ -4,6 +4,11 @@ alias vpn-start="sudo systemctl start openvpn@pia-midwest.service"
 alias vpn-status="sudo systemctl status openvpn@pia-midwest.service"
 alias vpn-restart="sudo systemctl restart openvpn@pia-midwest.service"
 
+alias caddy-stop="sudo systemctl stop caddy"
+alias caddy-start="sudo systemctl start caddy"
+alias caddy-status="sudo systemctl status caddy"
+alias caddy-restart="sudo systemctl restart caddy"
+
 alias t-stop="sudo systemctl stop transmission-daemon"
 alias t-start="sudo systemctl start transmission-daemon"
 alias t-status="sudo systemctl status transmission-daemon"
