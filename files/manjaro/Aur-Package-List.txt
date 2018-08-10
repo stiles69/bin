@@ -2,6 +2,7 @@ adb-sync-git
 adbfs-rootless-git
 ambiance-graphite
 android-sdk-platform-tools
+backintime
 bashish
 biosdisk-git
 bombono-dvd
@@ -16,7 +17,6 @@ etcher-cli
 folder-color-bzr
 folder-color-switcher
 gnome-settings-daemon-elementary
-gnomecast-git
 gocryptfs
 google-chrome
 insync-nemo
@@ -27,7 +27,6 @@ luxrender
 lwks
 masterpdfeditor
 matcha-gtk-theme
-megacmd-bin
 multibootusb
 nemo-compare
 nemo-emblems
@@ -43,6 +42,7 @@ pure-ftpd
 roxterm
 simple-mtpfs
 teamviewer
+ttyd
 ubuntu-themes-wildblueyonder
 uftp
 unetbootin
