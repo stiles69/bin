@@ -17,6 +17,7 @@
 #      REVISION:  ---
 #=========================================================
 set -o nounset                              # Treat unset variables as an error
+set -e
 #---------- SOURCED ---------
 
 #----------------------------
