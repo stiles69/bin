@@ -21,6 +21,7 @@ brasero
 breath-icon-theme
 breeze-icons
 breeze-maia-icon-themes
+certbot
 clamav
 claws-mail-themes
 clementine
@@ -139,6 +140,7 @@ materia-gtk-theme
 mediainfo
 mediainfo-gui
 mediterraneannight-theme
+megacmd
 memtest86+
 menda-circle-icon-theme
 menda-themes
@@ -222,7 +224,8 @@ syslog-ng
 systemd-sysvcompat
 terminator
 terminus-font
-thunar
+thunar-megasync
+thunderbird
 timeshift
 tk
 tlp
