@@ -1,9 +1,9 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: 0-Resize-Partition.sh
+#          FILE: Decrease-Volume.sh
 # 
-#         USAGE: ./0-Resize-Partition.sh 
+#         USAGE: ./Decrease-Volume.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -11,25 +11,28 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: Brett Salemink (), admin@roguedesigns.us
+#        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 08/01/2018 18:15
+#       CREATED: 08/11/2018 16:25
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
+#---------- SOURCED ---------
 
-function Resize ()
-{
-	sudo resize-sd
-}	# end function
+#----------------------------
 
+#---------- GLOBAL VARIABLES ---------
+LINE=' '
+
+#-------------------------------------
 function Main ()
 {
-	Resize
-}	# end function
+	amixer -q sset Master 5%-
+}	# end Main
 
 Main
 
-#==EXIT==
+#===EXIT===
 exit 0
+

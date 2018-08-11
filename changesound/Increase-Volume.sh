@@ -1,9 +1,9 @@
 #!/bin/bash  
 #=========================================================
 #
-#          FILE: Install-Needed-Native-Packages.sh
+#          FILE: Increase-Volume.sh
 # 
-#         USAGE: ./Install-Needed-Native-Packages.sh 
+#         USAGE: ./Increase-Volume.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -11,13 +11,12 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: Brett Salemink (), admin@roguedesigns.us
+#        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 08/06/2018 18:41
+#       CREATED: 08/11/2018 16:23
 #      REVISION:  ---
 #=========================================================
 set -o nounset                              # Treat unset variables as an error
-
 #---------- SOURCED ---------
 
 #----------------------------
@@ -28,8 +27,7 @@ LINE=' '
 #-------------------------------------
 function Main ()
 {
-	sudo pacman -S --needed $(< $HOME/bin/files/manjaro/Native-Package-List.txt)
-	yaourt -S --needed --noconfirm $(< $HOME/bin/files/manjaro/Aur-Package-List.txt)
+	amixer -q sset Master 5%+
 }	# end Main
 
 Main

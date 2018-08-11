@@ -1,9 +1,9 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: Install-SSH-Keys.sh
+#          FILE: Mute-Volume.sh
 # 
-#         USAGE: ./Install-SSH-Keys.sh 
+#         USAGE: ./Mute-Volume.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -11,16 +11,28 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: Brett Salemink (), brett.salemink@gmail.com
+#        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 06/24/2018 08:25
+#       CREATED: 08/11/2018 16:25
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
+#---------- SOURCED ---------
 
-mkdir ~/.ssh
+#----------------------------
 
-ssh-keygen -t rsa -b 2048 -C $(hostname)
+#---------- GLOBAL VARIABLES ---------
+LINE=' '
 
+#-------------------------------------
+function Main ()
+{
+	amixer -q sset Master toggle
+}	# end Main
+
+Main
+
+#===EXIT===
 exit 0
+
