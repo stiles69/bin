@@ -27,11 +27,16 @@ LINE=' '
 #-------------------------------------
 function Main ()
 {
-	for p in (testinputfile.txt)
+	filename='testinput.txt'
+	filelines=`cat $filename`
+	echo Start
+	for line in $filelines 
 	do
-    		echo "${p}"
-		yaourt -S --needed "${p}"
-	done
+   		 echo $line
+		 yaourt -S --needed "$line"
+		 wait
+	done	
+
 }	# end Main
 
 Main
