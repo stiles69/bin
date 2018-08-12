@@ -36,8 +36,9 @@ export VIDEO_FORMAT=NTSC
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 #== Added for NVM ==
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #=== THEMES ===
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -139,3 +140,6 @@ source $HOME/bin/files/Aliases/aliases-systemctl
 source $HOME/bin/files/Aliases/Arch/aliases-arch
 #source $HOME/bin/files/Aliases/Raspbian/aliases-raspbian
 #source $HOME/bin/files/Aliases/Gentoo/aliases-gentoo
+#
+#
+
