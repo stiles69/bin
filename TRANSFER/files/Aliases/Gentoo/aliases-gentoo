@@ -1,0 +1,3 @@
+# ====== Added by Brett Salemink for Gentoo =====
+# For unmasking emerge
+alias a='--autoumask-write'
