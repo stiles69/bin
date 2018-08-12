@@ -60,9 +60,9 @@ function Push ()
 	git add .
 	git commit -m "$COMMITMESSAGE"
 	git push
-	echo "###################################################"	
+	echo "#################################################"
 	echo "FINISHED PUSHING $GITDIR"
-	echo "###################################################"	
+	echo "#################################################"
 	echo $SPACE
 }	# end function
 
@@ -71,9 +71,9 @@ function Pull ()
 	local GITDIR="$1"
 	cd "$GITDIR"
 	git pull 
-	echo "###################################################"	
-	echo "FINISHED PULLING $GITDIR"
-	echo "###################################################"	
+	echo "#################################################"
+	echo " FINISHED PULLING $GITDIR"
+	echo "#################################################"
 	echo $SPACE
 }	# end function
 
@@ -81,9 +81,9 @@ function PermissionsSet ()
 {
 	local SETPERMISSIONSDIR="$1"
 	SetPermissions "$SETPERMISSIONSDIR"
-	echo "###################################################"	
+	echo "##################################################"
 	echo "FINISHED SETTING PERMISSIONS ON $SETPERMISSIONSDIR"
-	echo "###################################################"	
+	echo "##################################################"
 	echo $SPACE
 }	# end function
 
