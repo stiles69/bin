@@ -24,7 +24,6 @@ set -o nounset                              # Treat unset variables as an error
 #----------------------------
 
 #---------- GLOBAL VARIABLES ---------
-DELIMITER="#########################################################"
 SPACE="            "
 SYNCDIR=$HOME/lib/sh
 HOSTNAME="$(DisplayHostname)"
@@ -61,10 +60,9 @@ function Push ()
 	git add .
 	git commit -m "$COMMITMESSAGE"
 	git push
-	echo "########################################"
-	echo "     FINISHED PUSHING $GITDIR"
-	echo "########################################"
-	echo $DELIMITER
+	echo "#################################################"
+	echo "FINISHED PUSHING $GITDIR"
+	echo "#################################################"
 	echo $SPACE
 }	# end function
 
@@ -73,10 +71,9 @@ function Pull ()
 	local GITDIR="$1"
 	cd "$GITDIR"
 	git pull 
-	echo "########################################"
-	echo "   FINISHED PULLING $GITDIR"
-	echo "########################################"
-	echo $DELIMITER
+	echo "#################################################"
+	echo " FINISHED PULLING $GITDIR"
+	echo "#################################################"
 	echo $SPACE
 }	# end function
 
