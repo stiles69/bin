@@ -2,14 +2,12 @@
 #==== Added by Brett Salemink for Flutter Install ===
 #export PATH=$HOME/Development/flutter/bin:$PATH
 
-# Needed to test out uftp this is the directory which will receive the files.
-export RECVDIR=/srv/ftp/Recv-Dir
-
 # added by Anaconda3 installer
 #export PATH="/home/brettsalemink/anaconda3/bin:$PATH"
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin/install:$PATH
 export PATH=$HOME/lib/sh:$PATH
 
 # The next line enables catt for pip and python
@@ -38,8 +36,9 @@ export VIDEO_FORMAT=NTSC
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 #== Added for NVM ==
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #=== THEMES ===
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -138,6 +137,9 @@ source $HOME/bin/files/Aliases/aliases-common
 source $HOME/bin/files/Aliases/aliases-systemctl
 
 #======= SEPERATE MACHINE SPECIFIC ALIASES =========
-#source $HOME/bin/files/Aliases/Arch/aliases-arch
+source $HOME/bin/files/Aliases/Arch/aliases-arch
 #source $HOME/bin/files/Aliases/Raspbian/aliases-raspbian
 #source $HOME/bin/files/Aliases/Gentoo/aliases-gentoo
+#
+#
+

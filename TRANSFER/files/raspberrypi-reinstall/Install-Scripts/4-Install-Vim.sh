@@ -120,7 +120,7 @@ function InstallerVimBashSupport ()
 
 		"Y")
 		cp ~/.vim/bundle/bash-support.vim/bash-support/templates/Templates ~/.vim/bundle/bash-support.vim/bash-support/templates/Templates.backup
-		cp ~/bin/files/bash-support/Templates $HOME/.vim/bundles/bash-support.vim/bash-support/templates/
+		cp ~/bin/files/bash-support/Templates $HOME/.vim/bundle/bash-support.vim/bash-support/templates/
 		;;
 	
 	esac    # --- end of case ---
