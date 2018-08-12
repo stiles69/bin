@@ -27,20 +27,15 @@ read PROCEED
 
 case $PROCEED in
 	
-	"Y" | "y")
+	Y|y)
 	CloneBin
-	ProceedCloneSH
 	;;
-
-	"N" | "n")
+	N|n)
 	exit 0
 	;;
-
 	*)
 	CloneBin
-	ProceedCloneSH
 	;;
-
 esac
 }	# End Function
 
@@ -49,17 +44,16 @@ function CloneBin ()
 	echo 'Do you wish to clone https or use ssh? [1. https, 2. SSH]'
 	read GITCLONETYPE
 	case $GITCLONETYPE in
-		1)
+		"1")
 		cd $HOME
 		git clone https://github.com/stiles69/bin.git
 		;;
-		2)
+		"2")
 		cd $HOME
 		git clone git@github.com:stiles69/bin.git
 		;;
 		*)
-		echo 'Invalid choice not cloning.'
-		exit 0
+		git clone https://github.com/stiles69/bin.git
 		;;
 	esac
 } 	# end function	
@@ -69,47 +63,37 @@ function ProceedCloneSH ()
 	echo "Do you want to clone sh at this time? [Y/n]"
 	read PROCEED2
 	case PROCEED2 in
-		"Y"|"y")
+		Y|y)
 		CloneSH
 		;;
-		"N"|"n")
+		N|n)
 		exit 0
 		;;
 		*)
-		echo "Your answers did not match. Exiting."
-		exit 0
+		CloneSH
+		;;
 	esac
 }	# end function
 
 function CloneSH ()
 {
 	echo 'Do you wish to clone https or use ssh? [1. https, 2. SSH]'
-	read GITCLONETYPE
-	case $GITCLONETYPE in
+	read GITCLONETYPE2
+	case $GITCLONETYPE2 in
 		1)
-		if [ -d $HOME/lib ]
-		then
-			cd $HOME/lib
-		else
-			mkdir $HOME/lib
-			cd $HOME/lib
-		fi
+		mkdir $HOME/lib
+		cd $HOME/lib
 		git clone https://github.com/stiles69/sh.git
 		;;
 		2)
-		if [ -d $HOME/lib ]
-		then
-			cd $HOME/lib
-		else
-			mkdir $HOME/lib
-			cd $HOME/lib
-		fi
-		cd $HOME
+		mkdir $HOME/lib
+		cd $HOME/lib
 		git clone git@github.com:stiles69/sh.git
 		;;
 		*)
-		echo 'Invalid choice not cloning.'
-		exit 0
+		mkdir $HOME/lib
+		cd $HOME/lib
+		git clone https://github.com/stiles69/sh.git
 		;;
 	esac
 }	# End Function
@@ -117,6 +101,7 @@ function CloneSH ()
 function Main ()
 {
 	Proceed
+	ProceedCloneSH
 }	# End Function
 
 Main
