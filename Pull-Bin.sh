@@ -59,9 +59,9 @@ function Push ()
 	git add .
 	git commit -m "$COMMITMESSAGE"
 	git push
-	echo "$DELIMITER"
-	echo "FINISHED PUSHING $GITDIR"
-	echo "$DELIMITER"
+	echo "#######################################"
+	echo "        FINISHED PUSHING $GITDIR"
+	echo "#######################################"
 	echo "               "
 	echo "               "
 }	# end function
@@ -70,10 +70,10 @@ function Pull ()
 {
 	local GITDIR=$1
 	cd "$GITDIR"
-	git pull --rebase
-	echo $DELIMITER
-	echo "FINISHED PULLING $GITDIR"
-	echo $DELIMITER
+	git pull 
+	echo "#######################################"
+	echo "       FINISHED PULLING $GITDIR"
+	echo "#######################################"
 	echo "               "
 	echo "               "
 }	# end function
@@ -82,10 +82,9 @@ function PermissionsSet ()
 {
 	local GITDIR="$1"
 	SetPermissions "$GITDIR"
-	echo $DELIMITER
-	echo "FINISHED SETTING PERMISSION $GITDIR"
-	echo $DELIMITER
-	echo "               "
+	echo "#######################################"
+	echo "  FINISHED SETTING PERMISSION $GITDIR"
+	echo "#######################################"
 	echo "               "
 }	# end function
 

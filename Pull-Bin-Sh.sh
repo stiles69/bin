@@ -1,5 +1,5 @@
 #!/bin/bash  
-#===============================================================================
+#=========================================================
 #
 #          FILE: Git-Bin-SH.sh
 # 
@@ -15,8 +15,7 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 06/24/2018 06:15
 #      REVISION:  ---
-#===============================================================================
-
+#=========================================================
 set -o nounset                              # Treat unset variables as an error
 
 . $HOME/lib/sh/funcDisplayHostname.sh
@@ -41,7 +40,9 @@ function SetPermissions ()
 function CopyFiles ()
 {
 	cp -r $HOME/bin/files $HOME/bin/TRANSFER/
-	echo "Done copying files to TRANSFER"
+	echo "####################################"	
+	echo "   Done copying files to TRANSFER"
+	echo "####################################"	
 }	# end function
 
 function Main ()

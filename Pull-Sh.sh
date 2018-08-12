@@ -16,7 +16,6 @@
 #       CREATED: 08/03/2018 22:05
 #      REVISION:  ---
 #==========================================================
-
 set -o nounset                              # Treat unset variables as an error
 
 #---------- SOURCED ---------
@@ -62,8 +61,9 @@ function Push ()
 	git add .
 	git commit -m "$COMMITMESSAGE"
 	git push
-	echo $DELIMITER
-	echo "FINISHED PUSHING $GITDIR"
+	echo "########################################"
+	echo "     FINISHED PUSHING $GITDIR"
+	echo "########################################"
 	echo $DELIMITER
 	echo $SPACE
 }	# end function
@@ -72,9 +72,10 @@ function Pull ()
 {
 	local GITDIR="$1"
 	cd "$GITDIR"
-	git pull --rebase
-	echo $DELIMITER
-	echo "FINISHED PULLING $GITDIR"
+	git pull 
+	echo "########################################"
+	echo "   FINISHED PULLING $GITDIR"
+	echo "########################################"
 	echo $DELIMITER
 	echo $SPACE
 }	# end function
@@ -83,18 +84,18 @@ function PermissionsSet ()
 {
 	local SETPERMISSIONSDIR="$1"
 	SetPermissions "$SETPERMISSIONSDIR"
-	echo $DELIMITER
+	echo "##################################################"
 	echo "FINISHED SETTING PERMISSIONS ON $SETPERMISSIONSDIR"
-	echo $DELIMITER
+	echo "##################################################"
 	echo $SPACE
 }	# end function
 
 function Main ()
 {
 	ProceedYes
-	echo $DELIMITER
-	echo "DONE"
-	echo $DELIMITER
+	echo "######"
+	echo " DONE"
+	echo "######"
 	echo $SPACE
 }	# end function Main
 Main
