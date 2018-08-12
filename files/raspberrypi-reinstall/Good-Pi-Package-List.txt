@@ -1,3 +1,4 @@
 rsync
 bleachbit
+mosh
 
