@@ -16,7 +16,6 @@
 #       CREATED: 08/03/2018 22:04
 #      REVISION:  ---
 #==========================================================
-
 set -o nounset                              # Treat unset variables as an error
 
 #---------- SOURCED ---------
@@ -25,7 +24,6 @@ set -o nounset                              # Treat unset variables as an error
 #----------------------------
 
 #---------- GLOBAL VARIABLES ---------
-DELIMITER="#########################################################"
 SYNCDIR=$HOME/bin
 HOSTNAME="$(DisplayHostname)"
 #-------------------------------------
@@ -59,10 +57,9 @@ function Push ()
 	git add .
 	git commit -m "$COMMITMESSAGE"
 	git push
-	echo "#######################################"
-	echo "        FINISHED PUSHING $GITDIR"
-	echo "#######################################"
-	echo "               "
+	echo "#################################################"
+	echo "FINISHED PUSHING $GITDIR"
+	echo "#################################################"
 	echo "               "
 }	# end function
 
@@ -71,10 +68,9 @@ function Pull ()
 	local GITDIR=$1
 	cd "$GITDIR"
 	git pull 
-	echo "#######################################"
-	echo "       FINISHED PULLING $GITDIR"
-	echo "#######################################"
-	echo "               "
+	echo "#################################################"
+	echo "FINISHED PULLING $GITDIR"
+	echo "#################################################"
 	echo "               "
 }	# end function
 
@@ -82,9 +78,9 @@ function PermissionsSet ()
 {
 	local GITDIR="$1"
 	SetPermissions "$GITDIR"
-	echo "#######################################"
-	echo "  FINISHED SETTING PERMISSION $GITDIR"
-	echo "#######################################"
+	echo "#################################################"
+	echo " FINISHED SETTING PERMISSION $GITDIR"
+	echo "#################################################"
 	echo "               "
 }	# end function
 
