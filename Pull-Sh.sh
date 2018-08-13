@@ -59,16 +59,10 @@ function Push ()
 	git add .
 	git commit -m "$COMMITMESSAGE"
 	git push
-	echo "########################################"
-	echo "     FINISHED PUSHING $GITDIR"
-	echo "########################################"
-	echo $DELIMITER
-=======
 	echo "###################################################"	
 	echo "FINISHED PUSHING $GITDIR"
 	echo "###################################################"	
->>>>>>> Update
-	echo $SPACE
+	echo "   "
 }	# end function
 
 function Pull ()
@@ -98,7 +92,7 @@ function Main ()
 	echo "######"
 	echo " DONE"
 	echo "######"
-	echo $SPACE
+	echo "  "
 }	# end function Main
 Main
 
