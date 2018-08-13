@@ -30,17 +30,20 @@ HOSTNAME="$(DisplayHostname)"
 
 function ProceedYes ()
 {
-	# Push Local First
-	GitPushLocal
-
-	# Pull SYNCDIR
-	Pull "$SYNCDIR"
+	# Git Commit
+	GitCommit "$SYNCDIR"
 	wait
+
 
 	# Push SYNCDIR
 	Push "$SYNCDIR"
 	wait
 
+
+	# Pull SYNCDIR
+	Pull "$SYNCDIR"
+	wait
+	
 	# Set Permissions SYNCDIR
 	PermissionsSet "$SYNCDIR"
 }	# end function
@@ -50,6 +53,14 @@ function GitPushLocal ()
 	$HOME/bin/git/Git-Push-Sh-LOCAL.sh
 }	# end function
 
+function GitCommit ()
+{
+	local GITDIR="$1"
+	cd "$GITDIR"
+	git add .
+	git commit -m "Bash"
+
+}	# end function
 
 function Push ()
 {
@@ -80,9 +91,9 @@ function PermissionsSet ()
 {
 	local SETPERMISSIONSDIR="$1"
 	SetPermissions "$SETPERMISSIONSDIR"
-	echo "########################################################"	
+	echo "############################################################"	
 	echo "FINISHED SETTING PERMISSIONS ON $SETPERMISSIONSDIR"
-	echo "########################################################"	
+	echo "############################################################"	
 	echo "   "
 }	# end function
 
