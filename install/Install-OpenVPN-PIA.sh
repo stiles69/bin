@@ -1,5 +1,5 @@
-#!/bin/bash - 
-#===============================================================================
+#!/bin/bash  
+#======================================================
 #
 #          FILE: Install-OpenVPN-PIA.sh
 # 
@@ -15,8 +15,7 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 08/14/18 21:07
 #      REVISION:  ---
-#===============================================================================
-
+#======================================================
 set -o nounset                              # Treat unset variables as an error
 
 #------------ SOURCED ----------------
@@ -32,7 +31,7 @@ function InstallOpenVPN ()
 	sudo apt-get install openvpn
 }	# end function
 
-sudo InstallPIA ()
+function InstallPIA ()
 {
 	cd /etc/openvpn
 	sudo wget https://www.privateinternetaccess.com/openvpn/openvpn.zip
