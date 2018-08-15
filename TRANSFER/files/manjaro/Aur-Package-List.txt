@@ -4,6 +4,7 @@ dvdstyler
 google-chrome
 gtk-theme-numix-sx
 insync
+masterpdfeditor
 nautilus-compare
 nautilus-megasync
 nautilus-renamer
@@ -11,3 +12,5 @@ numix-bevel-icon-theme
 numix-frost-themes
 numix-icon-theme-git
 oomox
+peazip-gtk2
+plex-media-server

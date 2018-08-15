@@ -50,7 +50,6 @@ docker
 downgrade
 ecryptfs-utils
 efibootmgr
-emby-server
 enlightenment-manjaro-themes
 etcher
 evolution
