@@ -29,7 +29,7 @@ LINE=' '
 function Main ()
 {
 	counter=0
-	readarray a < testinput.txt
+	readarray a < $HOME/bin/files/manjaro/Native-Package-List.txt
 	cat testinput.txt | while read myline; 
 	do
 		echo value is: ${a[$counter]}
