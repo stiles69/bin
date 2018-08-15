@@ -1,7 +1,7 @@
 # Static table lookup for hostnames.
 # See hosts(5) for details.
 127.0.0.1	localhost
-127.0.1.1 ubuntu.roguedesigns.us		ubuntu
+127.0.1.1 orangepi.roguedesigns.us		orangepi
 10.0.0.5	stretch.roguedesigns.us		stretch
 10.0.0.6	stiles.roguedesigns.us		stiles
 10.0.0.11	manjaro.roguedesigns.us		manjaro
