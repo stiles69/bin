@@ -17,43 +17,121 @@
 #      REVISION:  ---
 #=========================================================
 set -o nounset                              # Treat unset variables as an error
-set -e
+set e
 #---------- SOURCED ---------
 
 #----------------------------
 
 #---------- GLOBAL VARIABLES ---------
-LINE=' '
-
+AURPACKAGELIST="$HOME/bin/files/manjaro/Aur-Package-List.txt"
+NATIVEPACKAGELIST="$HOME/bin/files/manjaro/Native-Package-List.txt"
+NOTINSTALLEDNATIVEPACKAGELIST="$HOME/bin/files/manjaro-Not-Installed-Native-Package-List.txt"
+NOTINSTALLEDAURPACKAGELIST="$HOME/bin/files/manjaro-Not-Installed-Aur-Package-List.txt"
 #-------------------------------------
 function Proceed ()
 {
 	echo "This will install the Native and Aur saved packages lists."
-	sleep 6
-	echo $(cat $HOME/files/manjaro/Aur-Package-List.txt)
+	echo $(cat $HOME/bin/files/manjaro/Aur-Package-List.txt)
 	echo "Do you want to continue? [Y/n]"
 	read PROCEED
 	case $PROCEED in
-		Y|y)
-		Main
+		"Y"|"y")
+		ReadArrayNative
+		ReadArrayAur
+		wait
 		;;
-		N|n)
+		"N"|"n")
 		exit 0
 		;;
 		*)
-		Main
+		echo "Unexpected response, exiting.."
+		exit 0
 		;;
 	esac
 }	# end function
 
-function Main ()
+function ReadArrayNative ()
 {
-	sudo pacman -S --needed $(< $HOME/bin/files/manjaro/Native-Package-List.txt)
-	yaourt -S --needed --noconfirm $(< $HOME/bin/files/manjaro/Aur-Package-List.txt)
+	counter=0
+	readarray native < "$NATIVEPACKAGELIST"
+	cat "$NATIVEPACKAGELIST" | while read myline; 
+	do
+#		echo "Do you want to install ${native[$counter]}?"
+#		read DOINSTALL
+#		case $DOINSTALL in
+#			Y|y)
+#			yaourt -S --needed --confirm ${native[$counter]}
+#			wait
+#			;;
+#			N|n)
+#			echo "Not installing ${native[$counter]}"
+#			echo ${native[$counter]} >> $NOTINSTALLEDNATIVEPACKAGELIST
+#			;;
+#			*)
+#			echo "Unexpected input, skipping package."
+#			echo ${native[$counter]} >> $NOTINSTALLEDNATIVEPACKAGELIST
+#			;;
+#		esac
+    		counter=$(($counter+1))
+	done
 }	# end Main
 
-Proceed
+function ReadArrayAur ()
+{
+	counter=0
+	readarray aur < "$AURPACKAGELIST"
+	cat "$AURPACKAGELIST" | while read myline 
+	do
+#		echo "Do you want to install ${aur[$counter]}?"
+#		read DOINSTALL
+#		case $DOINSTALL in
+#			Y|y)
+#			yaourt -S --needed --confirm ${aur[$counter]}
+#			wait
+#			;;
+#			N|n)
+#			echo "Not installing ${aur[$counter]}"
+#			echo ${aur[$counter]} >> $NOTINSTALLEDAURPACKAGELIST
+#			;;
+#			*)
+#			echo "Unexpected input, skipping package."
+#			echo ${aur[$counter]} >> $NOTINSTALLEDAURPACKAGELIST
+#			;;
+#		esac
+    		counter=$(($counter+1))
+	done
+}	# end Main
+
+function InstallNative ()
+{
+	tLen=${#native[@]}
+	# use for loop read all nameservers
+	for (( i=0; i<${tLen}; i++ ));
+	do
+  		yaourt -S --needed --confirm ${native[$i]}
+		wait
+	done	
+}	# end function
+
+function InstallAur ()
+{
+	tLen=${#aur[@]}
+	# use for loop read all nameservers
+	for (( i=0; i<${tLen}; i++ ));
+	do
+  		yaourt -S --needed --confirm ${aur[$i]}
+		wait
+	done	
+}	# end function
+
+function Main ()
+{
+	Proceed
+	InstallNative
+	InstallAur
+}	# end Main
+
+Main
 
 #===EXIT===
 exit 0
-
