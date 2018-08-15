@@ -1,5 +1,5 @@
 #!/bin/bash  
-#=========================================================
+#======================================================
 #
 #          FILE: update-upgrade.sh
 # 
@@ -15,7 +15,7 @@
 #  ORGANIZATION: 
 #       CREATED: 07/04/2018 01:37
 #      REVISION:  ---
-#=========================================================
+#======================================================
 set -o nounset                              # Treat unset variables as an error
 
 SCRIPTDEFINITION="This will install update the repositories."
@@ -39,8 +39,8 @@ function Proceed ()
 function ProceedYes ()
 {
 	echo "Which system to you want to update? [1.Debian Based, 2.Arch Based]"
-	read SYSTEMINFO
-	case $SYSTEMINFO in
+	read SYSTEM
+	case $SYSTEM in
 		1)
 		DebUpdateUpgrade
 		UpdateBinLib
@@ -63,7 +63,7 @@ function ProceedNo ()
 
 function ArchUpdateUpgrade ()
 {
-	pacman -Syu
+	sudo pacman -Syu
 	yaourt -Syu
 }	# end function
 
