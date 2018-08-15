@@ -52,3 +52,12 @@ jitsi
 libunity
 luxrender
 lwks
+adb-sync-git
+adbfs-rootless-git
+ambiance-graphite
+android-sdk-platform-tools
+backintime
+bashish
+biosdisk-git
+bombono-dvd
+burn-cd

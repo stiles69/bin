@@ -16,38 +16,23 @@
 #       CREATED: 06/24/2018 12:56
 #      REVISION:  ---
 #===============================================================================
-
 set -o nounset                              # Treat unset variables as an error
+#------------ SOURCED ----------------
 
+#-------------------------------------
 
-#===============================================================================
-#   GLOBAL DECLARATIONS
-#===============================================================================
-declare -rx SCRIPT=${0##*/}                     # the name of this script
-declare -rx mkdir='/bin/mkdir'                  # the mkdir(1) command
+#---------- GLOBAL VARIABLES ---------
 
-#===============================================================================
-#   SANITY CHECKS
-#===============================================================================
-if [ -z "$BASH" ] ; then
-	printf "$SCRIPT:$LINENO: run this script with the BASH shell\n" >&2
-	exit 192
-fi
+#-------------------------------------
+function Main ()
+{
+	sudo chown -R plex:brettsalemink /mnt/Media
+	sudo chmod -R 774 /mnt/Media
 
-if [ ! -x "$mkdir" ] ; then
-	printf "$SCRIPT:$LINENO: command '$mkdir' not available - aborting\n" >&2
-	exit 192
-fi
+	echo 'Permissions Changed for /mnt/Media'
+}	# end Main
 
-#===============================================================================
-#   MAIN SCRIPT
-#===============================================================================
-sudo chown -R emby:brettsalemink /mnt/Media
-sudo chmod -R 774 /mnt/Media
+Main
 
-echo 'Permissions Changed for /mnt/Media'
-#===============================================================================
-#   STATISTICS / CLEANUP
-#===============================================================================
+#===EXIT===
 exit 0
-
