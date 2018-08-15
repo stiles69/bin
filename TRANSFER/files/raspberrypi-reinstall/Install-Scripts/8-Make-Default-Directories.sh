@@ -1,5 +1,5 @@
-#!/bin/bash - 
-#===============================================================================
+#!/bin/bash  
+#====================================================
 #
 #          FILE: Make-Default-Directories.sh
 # 
@@ -15,8 +15,7 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 05/07/18 11:32
 #      REVISION:  ---
-#===============================================================================
-
+#====================================================
 set -o nounset                              # Treat unset variables as an error
 SCRIPTDEFINITION="This will make default Home directories."
 function Proceed ()
@@ -46,18 +45,12 @@ function ProceedYes ()
 		mkdir $HOME/Videos
 	fi
 	
-	if [ -d $HOME/Music ]
-	then
-		echo "Music already exists."
-	else
-		mkdir $HOME/Music
-	fi
 
-	if [ -d $HOME/stiles69 ]
+	if [ -d $HOME/development/stiles69 ]
 	then
 		echo "Stiles69 already exists."
 	else
-		mkdir $HOME/stiles69
+		mkdir -p $HOME/development/stiles69
 	fi
 
 	if [ -d $HOME/Downloads ]
