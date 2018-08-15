@@ -1,5 +1,5 @@
 #!/bin/bash  
-#=========================================================
+#=====================================================
 #
 #          FILE: Install-Needed-Native-Packages.sh
 # 
@@ -15,7 +15,7 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 08/06/2018 18:41
 #      REVISION:  ---
-#=========================================================
+#=====================================================
 set -o nounset                              # Treat unset variables as an error
 set e
 #---------- SOURCED ---------
@@ -56,22 +56,6 @@ function ReadArrayNative ()
 	readarray native < "$NATIVEPACKAGELIST"
 	cat "$NATIVEPACKAGELIST" | while read myline; 
 	do
-#		echo "Do you want to install ${native[$counter]}?"
-#		read DOINSTALL
-#		case $DOINSTALL in
-#			Y|y)
-#			yaourt -S --needed --confirm ${native[$counter]}
-#			wait
-#			;;
-#			N|n)
-#			echo "Not installing ${native[$counter]}"
-#			echo ${native[$counter]} >> $NOTINSTALLEDNATIVEPACKAGELIST
-#			;;
-#			*)
-#			echo "Unexpected input, skipping package."
-#			echo ${native[$counter]} >> $NOTINSTALLEDNATIVEPACKAGELIST
-#			;;
-#		esac
     		counter=$(($counter+1))
 	done
 }	# end Main
@@ -82,22 +66,6 @@ function ReadArrayAur ()
 	readarray aur < "$AURPACKAGELIST"
 	cat "$AURPACKAGELIST" | while read myline 
 	do
-#		echo "Do you want to install ${aur[$counter]}?"
-#		read DOINSTALL
-#		case $DOINSTALL in
-#			Y|y)
-#			yaourt -S --needed --confirm ${aur[$counter]}
-#			wait
-#			;;
-#			N|n)
-#			echo "Not installing ${aur[$counter]}"
-#			echo ${aur[$counter]} >> $NOTINSTALLEDAURPACKAGELIST
-#			;;
-#			*)
-#			echo "Unexpected input, skipping package."
-#			echo ${aur[$counter]} >> $NOTINSTALLEDAURPACKAGELIST
-#			;;
-#		esac
     		counter=$(($counter+1))
 	done
 }	# end Main
@@ -108,8 +76,23 @@ function InstallNative ()
 	# use for loop read all nameservers
 	for (( i=0; i<${tLen}; i++ ));
 	do
-  		yaourt -S --needed --confirm ${native[$i]}
-		wait
+  		echo "Do you want to install ${native[$i]}? [Y/n]"
+		read INSTALLNATIVE
+		case "$INSTALLNATIVE" in
+			Y|y)
+			yaourt -S --needed --noconfirm ${native[$i]}
+			wait
+			;;
+			N|n)
+			echo ${native[$i]} >> $NOTINSTALLEDNATIVEPACKAGELIST
+			;;
+			*)
+			echo "Unexpected input, skipping package ${native[$i]}."
+			echo ${native[$i]} >> $NOTINSTALLEDNATIVEPACKAGELIST
+			;;
+		esac
+#		yaourt -S --needed --confirm ${native[$i]}
+#		wait
 	done	
 }	# end function
 
@@ -119,8 +102,22 @@ function InstallAur ()
 	# use for loop read all nameservers
 	for (( i=0; i<${tLen}; i++ ));
 	do
-  		yaourt -S --needed --confirm ${aur[$i]}
-		wait
+  		echo "Do you want to install ${aur[$i]}? [Y/n]"
+		read INSTALLAUR
+		case $INSTALLAUR in
+			Y|y)
+			yaourt -S --needed --noconfirm ${aur[$i]}
+			wait
+			;;
+			N|n)
+			echo ${aur[$i]} >> $NOTINSTALLEDAURPACKAGELIST
+			wait
+			;;
+			*)
+			echo "Unexpected input, skipping package ${aur[i]}."
+			echo ${aur[$i]} >> $NOTINSTALLEDAURPACKAGELIST
+			;;
+		esac
 	done	
 }	# end function
 
