@@ -24,7 +24,6 @@ set -o nounset                              # Treat unset variables as an error
 #----------------------------
 
 #---------- GLOBAL VARIABLES ---------
-DELIMITER="#########################################################"
 SPACE=" "
 SYNCDIR=$HOME/Notes
 HOSTNAME="$(DisplayHostname)"
@@ -32,7 +31,8 @@ HOSTNAME="$(DisplayHostname)"
 function ProceedYes ()
 {
 	# Push Local First
-	GitPushLocal
+	GitCommit "$SYNCDIR"
+	wait
 
 	# Pull Bin Notes
 	Pull "$SYNCDIR"
@@ -43,9 +43,12 @@ function ProceedYes ()
 	wait
 }	# end function
 
-function GitPushLocal ()
+function GitCommit ()
 {
-	$HOME/bin/git/Git-Push-Notes-LOCAL.sh
+	local GITDIR="$1"	
+	cd "$GITDIR"
+	git add .
+	git commit -m "BASH"
 }	# end function
 
 function Push ()
@@ -56,9 +59,9 @@ function Push ()
 	git add .
 	git commit -m "$COMMITMESSAGE"
 	git push
-	echo "#####################################"
-	echo "   FINISHED PUSHING $GITDIR"
-	echo "#####################################"
+	echo "###############################################"
+	echo "FINISHED PUSHING $GITDIR"
+	echo "###############################################"
 	echo $SPACE
 }	# end function
 
@@ -67,9 +70,9 @@ function Pull ()
 	local GITDIR=$1
 	cd "$GITDIR"
 	git pull 
-	echo "#####################################"
-	echo "  FINISHED PULLING $GITDIR"
-	echo "#####################################"
+	echo "###############################################"
+	echo "FINISHED PULLING $GITDIR"
+	echo "###############################################"
 	echo $SPACE
 }	# end function
 
