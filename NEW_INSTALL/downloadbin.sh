@@ -17,7 +17,7 @@
 #      REVISION:  ---
 #===================================================
 set -o nounset                              # Treat unset variables as an error
-curl -L https://gist.githubusercontent.com/stiles69/763a58925703a637b1add4b4d61a127b/raw/abd660f1873de0a97cf26897632431bb6a335105/Download-Bin.sh | sh
+curl -L https://gist.githubusercontent.com/stiles69/763a58925703a637b1add4b4d61a127b/raw/a25fda7e105c9081f29762f585b50e937d6391d8/Download-Bin.sh | bash
 wait
 exit 0
 
