@@ -31,7 +31,18 @@ function Main ()
 		ManjaroLinux)
 		ManjaroLinuxAction
 		;;
-
+		Debian)
+		DebianAction
+		;;
+		Gentoo)
+		GentooAction
+		;;
+		Manjaro)
+		ManjaroAction
+		;;
+		*)	
+		UnknownAction
+		;;
 	esac
 }	# end Main
 
@@ -40,6 +51,30 @@ function ManjaroLinuxAction ()
 	echo "The Distro is Manjaro"
 }	# end
 
+function DebianAction ()
+{
+	echo "The Distro is Debian"
+}	# end
+
+function GentooAction ()
+{
+	echo "The Distro is Gentoo"
+}	# end
+
+function ArchAction ()
+{
+	echo "The Distro is Arch"
+}	# end
+
+function AntergosAction ()
+{
+	echo "The Distro is Antergos"
+}	# end
+
+function UnknownAction ()
+{
+	echo "The Distro is Unknown"
+}	# end
 Main
 
 #===EXIT===
