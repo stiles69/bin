@@ -1,9 +1,9 @@
 #!/bin/bash  
-#=====================================================
+#====================================================
 #
-#          FILE: Display-OS.sh
+#          FILE: Test-Tutorial.sh
 # 
-#         USAGE: ./Display-OS.sh 
+#         USAGE: ./Test-Tutorial.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -11,14 +11,15 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: Brett Salemink (), brett.salemink@gmail.com
+#        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 06/24/2018 00:53
+#       CREATED: 08/15/2018 20:20
 #      REVISION:  ---
-#=====================================================
+#====================================================
 set -o nounset                              # Treat unset variables as an error
+
 #------------ SOURCED ----------------
-. ~/lib/sh/funcOS.sh
+
 #-------------------------------------
 
 #---------- GLOBAL VARIABLES ---------
@@ -26,9 +27,13 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-	echo 'The Linux Distro is: '
-	RESULT=$(funcOS)
-	echo $RESULT
+	if [ -e /etc/hgdd ] 
+	then
+		echo 'True'
+	else
+		echo 'False'
+	fi
+
 }	# end Main
 
 Main
