@@ -22,7 +22,7 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 
 #---------- GLOBAL VARIABLES ---------
-OS='uname -s'
+OS="$(uname -s)"
 
 #-------------------------------------
 function Main ()
@@ -39,8 +39,6 @@ function Main ()
 	elif [ "$OS" = "Darwin" ]
 	then
 		echo "This is Mac OSX"
-	elif [ "$OS" = "Linux" ]
-	then
 	elif [ "$OS" = "Linux" ]
 	then
 		echo "This is Linux"
