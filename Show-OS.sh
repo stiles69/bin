@@ -40,6 +40,9 @@ function Main ()
 		Manjaro)
 		ManjaroAction
 		;;
+		Ubuntu)
+		UbuntuAction
+		;;
 		*)	
 		UnknownAction
 		;;
@@ -69,6 +72,11 @@ function ArchAction ()
 function AntergosAction ()
 {
 	echo "The Distro is Antergos"
+}	# end
+
+function UbuntuAction ()
+{
+	echo "The Distro is Ubuntu"
 }	# end
 
 function UnknownAction ()
