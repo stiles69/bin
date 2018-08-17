@@ -1,5 +1,5 @@
-#!/bin/bash - 
-#===============================================================================
+#!/bin/bash  
+#====================================================
 #
 #          FILE: Start-OpenVPN-Ubuntu.sh
 # 
@@ -15,8 +15,7 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 08/15/18 11:41
 #      REVISION:  ---
-#===============================================================================
-
+#====================================================
 set -o nounset                              # Treat unset variables as an error
 #------------ SOURCED ----------------
 
@@ -27,7 +26,7 @@ CONFDIR=/etc/openvpn
 #-------------------------------------
 function Main ()
 {
-	sudo --cd $CONFDIR --daemon --config US_Chicago.ovpn
+	sudo openvpn --cd $CONFDIR --daemon --config US_Chicago.ovpn
 }	# end Main
 
 Main
