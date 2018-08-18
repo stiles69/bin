@@ -27,7 +27,7 @@ SITEDIR="$HOME/development/stiles69/Hometown-Cab-Project/dist"
 #-------------------------------------
 function Main ()
 {
-	read -p 'This will rsync the CWD for the deployment. If you do not want this hit ctrl-c now! (Y/n)' ANSWER
+	read -p 'This will rsync the $SITEDIR for the deployment. Do you want to proceed? [Y/n]' ANSWER
 	case "$ANSWER" in
 		Y|y)
 		Proceed
