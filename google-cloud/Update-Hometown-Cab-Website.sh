@@ -1,5 +1,5 @@
 #!/bin/bash
-#===============================================================================
+#====================================================
 #
 #          FILE:  Update-Rogue-Designs-Website.sh
 # 
@@ -16,58 +16,46 @@
 #       VERSION:  1.0
 #       CREATED:  03/02/2018 10:10:12 PM CST
 #      REVISION:  1.0
-#===============================================================================
-
-
+#====================================================
 set -o nounset                                  # treat unset variables as errors
+#------------ SOURCED ----------------
 
-#===============================================================================
-#   GLOBAL DECLARATIONS
-#===============================================================================
-declare -rx SCRIPT=${0##*/}                     # the name of this script
-declare -rx mkdir='/bin/mkdir'                  # the mkdir(1) command
+#-------------------------------------
 
-#===============================================================================
-#   SANITY CHECKS
-#===============================================================================
-if [ -z "$BASH" ] ; then
-printf "$SCRIPT:$LINENO: run this script with the BASH shell\n" >&2
-exit 192
-fi
+#---------- GLOBAL VARIABLES ---------
+SITEDIR="$HOME/development/stiles69/Hometown-Cab-Project/dist"
+#-------------------------------------
+function Main ()
+{
+	read -p 'This will rsync the CWD for the deployment. If you do not want this hit ctrl-c now! (Y/n)' ANSWER
+	case "$ANSWER" in
+		Y|y)
+		Proceed
+		;;
+		N|n)
+		exit 0
+		;;
+		*)
+		Proceed
+		;;
+	esac
+}	# end Main
 
-if [ ! -x "$mkdir" ] ; then
-printf "$SCRIPT:$LINENO: command '$mkdir' not available - aborting\n" >&2
-exit 192
-fi
+function Proceed ()
+{
+	rsync -avz --progress --delete-before "$SITEDIR/" "$HOME/development/stiles69/Hometown-Cab-Google-Cloud-Deployment/Webserver1/files/"
+	gcloud app versions list
+	echo 'What should the next version be?'
+	read VERSIONVARIABLE
+	gcloud app deploy --quiet --version "$VERSIONVARIABLE" "$HOME/development/stiles69/Hometown-Cab-Google-Cloud-Deployment/Webserver1/app.yaml"
+	gcloud app versions list
+	echo 'What was the old version to delete?'
+	read VERSIONOLDVARIABLE
+	gcloud app versions --quiet delete "$VERSIONOLDVARIABLE"
+	echo 'Done Updating Website'
+}	# end
 
-#===============================================================================
-#   MAIN SCRIPT
-#===============================================================================
+Main
 
-
-read -p 'This will rsync the CWD for the deployment. If you do not want this hit ctrl-c now! (Y/n)' answer
-
-rsync -avz --progress --delete-before ./ /home/brettsalemink/development/stiles69/Hometown-Cab-Google-Cloud-Deployment/Webserver1/files/
-
-gcloud app versions list
-
-echo 'What should the next version be?'
-
-read versionVariable
-
-gcloud app deploy --quiet --version $versionVariable /home/brettsalemink/development/stiles69/Hometown-Cab-Google-Cloud-Deployment/Webserver1/app.yaml
-
-gcloud app versions list
-
-echo 'What was the old version to delete?'
-
-read versionOldVariable
-
-gcloud app versions --quiet delete $versionOldVariable
-
-echo 'Done Updating Website'
-
-#===============================================================================
-#   STATISTICS / CLEANUP
-#===============================================================================
+#===EXIT===
 exit 0
