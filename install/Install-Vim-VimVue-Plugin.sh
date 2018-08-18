@@ -1,9 +1,9 @@
-#!/bin/bash  
+#!/bin/bash 
 #====================================================
 #
-#          FILE: Install-Vim-HTML5-Plugin.sh
+#          FILE: Install-Vim-VimVue-Plugin.sh
 # 
-#         USAGE: ./Install-Vim-HTML5-Plugin.sh 
+#         USAGE: ./Install-Vim-VimVue-Plugin.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,7 +13,7 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 08/17/2018 18:58
+#       CREATED: 08/17/2018 19:06
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
@@ -24,16 +24,11 @@ set -o nounset                              # Treat unset variables as an error
 #---------- GLOBAL VARIABLES ---------
 
 #-------------------------------------
-
-function Install ()
-{
-	cd $HOME/.vim/bundle
-	git clone https://github.com/othree/html5.vim
-}	# end
-
 function Main ()
 {
-	Install
+	cd $HOME/.vim/bundle
+	git clone https://github.com/posva/vim-vue
+
 }	# end Main
 
 Main
