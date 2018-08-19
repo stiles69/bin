@@ -1,9 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: Start-OpenVPN-Ubuntu.sh
+#          FILE: Install-Vim-HTML5-Plugin.sh
 # 
-#         USAGE: ./Start-OpenVPN-Ubuntu.sh 
+#         USAGE: ./Install-Vim-HTML5-Plugin.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,7 +13,7 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 08/15/18 11:41
+#       CREATED: 08/17/2018 18:58
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
@@ -22,11 +22,18 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 
 #---------- GLOBAL VARIABLES ---------
-CONFDIR=/etc/openvpn
+
 #-------------------------------------
+
+function Install ()
+{
+	cd $HOME/.vim/bundle
+	git clone https://github.com/othree/html5.vim
+}	# end
+
 function Main ()
 {
-	sudo openvpn --cd $CONFDIR --daemon --config US_Chicago.ovpn
+	Install
 }	# end Main
 
 Main

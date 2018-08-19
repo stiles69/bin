@@ -1,5 +1,5 @@
 #!/bin/bash  
-#=========================================================
+#=====================================================
 #
 #          FILE: Display-OS.sh
 # 
@@ -15,15 +15,24 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 06/24/2018 00:53
 #      REVISION:  ---
-#=========================================================
+#=====================================================
 set -o nounset                              # Treat unset variables as an error
-# Include Lib
+#------------ SOURCED ----------------
 . ~/lib/sh/funcOS.sh
-# Use Function
-echo 'The Linux Distro is: '
-RESULT=$(funcOS)
-echo $RESULT
-# Exit
-exit 0
+#-------------------------------------
 
+#---------- GLOBAL VARIABLES ---------
+
+#-------------------------------------
+function Main ()
+{
+	echo 'The Linux Distro is: '
+	RESULT=$(funcOS)
+	echo $RESULT
+}	# end Main
+
+Main
+
+#===EXIT===
+exit 0
 

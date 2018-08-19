@@ -1,9 +1,9 @@
-#!/bin/bash  
+#!/bin/bash 
 #====================================================
 #
-#          FILE: Start-OpenVPN-Ubuntu.sh
+#          FILE: Install-Vim-VimVue-Plugin.sh
 # 
-#         USAGE: ./Start-OpenVPN-Ubuntu.sh 
+#         USAGE: ./Install-Vim-VimVue-Plugin.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,7 +13,7 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 08/15/18 11:41
+#       CREATED: 08/17/2018 19:06
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
@@ -22,11 +22,13 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 
 #---------- GLOBAL VARIABLES ---------
-CONFDIR=/etc/openvpn
+
 #-------------------------------------
 function Main ()
 {
-	sudo openvpn --cd $CONFDIR --daemon --config US_Chicago.ovpn
+	cd $HOME/.vim/bundle
+	git clone https://github.com/posva/vim-vue
+
 }	# end Main
 
 Main

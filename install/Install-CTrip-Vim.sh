@@ -1,9 +1,9 @@
-#!/bin/bash  
+#!/bin/bash
 #====================================================
 #
-#          FILE: Start-OpenVPN-Ubuntu.sh
+#          FILE: Install-CTrip-Vim.sh
 # 
-#         USAGE: ./Start-OpenVPN-Ubuntu.sh 
+#         USAGE: ./Install-CTrip-Vim.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,7 +13,7 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 08/15/18 11:41
+#       CREATED: 08/16/2018 09:43
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
@@ -22,15 +22,26 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 
 #---------- GLOBAL VARIABLES ---------
-CONFDIR=/etc/openvpn
+
 #-------------------------------------
+function Install ()
+{
+	cd $HOME/.vim
+	git clone https://github.com/kien/ctrlp.vim.git bundle/ctrlp.vim
+}	# end
+
+function SetVim ()
+{
+	echo "set runtimepath^=~/.vim/bundle/ctrlp.vim" >> $HOME/.vimrc
+}	# end
+
 function Main ()
 {
-	sudo openvpn --cd $CONFDIR --daemon --config US_Chicago.ovpn
+	Install
+	SetVim
 }	# end Main
 
 Main
 
 #===EXIT===
 exit 0
-
