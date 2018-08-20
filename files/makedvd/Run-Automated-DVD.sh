@@ -76,7 +76,8 @@ function Generate ()
 	genisoimage -dvd-video -o "$ISONAME".iso ./OUTPUTDIR
 else
 	mkisoimage -dvd-video -o "$ISONAME".iso ./OUTPUTDIR
-}	# end Generate
+fi
+} 
 
 function Main ()
 {
