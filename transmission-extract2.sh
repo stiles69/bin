@@ -27,8 +27,11 @@
 function Main ()
 {
 	find /torrents -name '*.rar' -execdir unrar e -o- {} \; 
+	wait
 	find /torrents -name '*.mp4' -name '*.avi' -name '*.mkv' -execdir mv -t /completed {} +;
+	wait
 	find /torrents -name '*.mp4' -name '*.avi' -name '*.mkv' -exec mv -t /completed {} +;
+	wait
 }	# end Main
 
 Main
