@@ -26,9 +26,8 @@
 #-------------------------------------
 function Main ()
 {
-	find $HOME/Test -name '*.rar' -execdir unrar e -o- {} \; 
-	find $HOME/Test -name '*.mp4' -name '*.avi' -name '*.mkv' -execdir mv -t $HOME/Test-Completed {} +;
-	find $HOME/Test -name '*.mp4' -name '*.avi' -name '*.mkv' -exec mv -t $HOME/Test-Completed {} +;
+	find /torrents -name '*.rar' -execdir unrar e -o- {} \; 
+	find /torrents -name '*.mp4' -name '*.mkv' -name '*avi' -execdir mv -t /torrents/completed {} +;
 }	# end Main
 
 Main
