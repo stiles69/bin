@@ -4,4 +4,4 @@
 #    Copyright (C) 2009-2010 Canonical Ltd.
 #
 printf "##########################################################"
-printf "/n"
+printf \n
