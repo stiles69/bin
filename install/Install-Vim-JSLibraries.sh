@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/bash 
 #====================================================
 #
-#          FILE: Install-Vim-Stylus.sh
+#          FILE: Install-Vim-JSLibraries.sh
 # 
-#         USAGE: ./Install-Vim-Stylus.sh 
+#         USAGE: ./Install-Vim-JSLibraries.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,10 +13,11 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 08/22/2018 17:35
+#       CREATED: 08/22/2018 17:40
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
+
 #------------ SOURCED ----------------
 
 #-------------------------------------
@@ -27,8 +28,9 @@ set -o nounset                              # Treat unset variables as an error
 function Install ()
 {
 	cd ~/.vim/bundle
-	git clone https://github.com/wavded/vim-stylus
+	git clone https://github.com/othree/javascript-libraries-syntax.vim
 }	# end
+
 
 function Main ()
 {
