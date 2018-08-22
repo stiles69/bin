@@ -26,14 +26,9 @@ function SyncCloudToLocal ()
 function BuildWebsite ()
 {	
 	cd $HOME/Notes
-	cd "` dirname "$0"`"
-	cd $HOME/development/stiles69/zim
-	[ -e _resources ] && rm -rf *
-	cd ~
 	zim --export \
-		--format=html --template=ZeroFiveEight \
-		--output="$HOME/development/stiles69/zim" --overwrite --index-page=index \
-		$HOME/Notes
+		--format=html --template=/usr/share/zim/templates/html/ZeroFiveEight.html --index-page=index \
+		--output="$HOME/development/stiles69/zim" --overwrite 
 }	# end function
 
 function SyncNotesZim ()
