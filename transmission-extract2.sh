@@ -27,8 +27,14 @@
 function Main ()
 {
 	find /torrents -name '*.rar' -execdir unrar e -o- {} \; 
-	find /torrents -name '*.mp4' -name '*.avi' -name '*.mkv' -execdir mv -t /torrents/completed {} +;
-	find /torrents -name '*.mp4' -name '*.avi' -name '*.mkv' -exec mv -t /torrents/completed {} +;
+	wait
+	echo "Finished unrar" > ~/Transmission-Extract2.Log
+	find /torrents -name '*.mp4' -name '*.avi' -name '*.mkv' -execdir mv -t /completed {} +;
+	wait
+	echo "Finished Moving to /Completed" >> ~/Transmission-Extract2.Log
+	find /torrents -name '*.mp4' -name '*.avi' -name '*.mkv' -exec mv -t /completed {} +;
+	wait
+	echo "Finished Moving to /Completed" >> ~/Transmission-Extract2.Log
 }	# end Main
 
 Main
