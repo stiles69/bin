@@ -37,18 +37,9 @@ function SetPermissions ()
 	$HOME/bin/Set-Permissions-Sh.sh
 }	# end function
 
-function CopyFiles ()
-{
-	cp -r $HOME/bin/files $HOME/bin/TRANSFER/
-	echo "####################################"	
-	echo "   Done copying files to TRANSFER"
-	echo "####################################"	
-}	# end function
-
 function Main ()
 {
 	ProceedYes
-	CopyFiles
 }	# end function Main
 Main
 
