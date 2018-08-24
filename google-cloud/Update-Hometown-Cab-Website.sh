@@ -23,7 +23,7 @@ set -o nounset                                  # treat unset variables as error
 #-------------------------------------
 
 #---------- GLOBAL VARIABLES ---------
-SITEDIR="$HOME/development/stiles69/cab-home/dist"
+SITEDIR="$1"
 #-------------------------------------
 function Main ()
 {
