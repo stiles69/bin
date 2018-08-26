@@ -28,10 +28,6 @@ HOSTNAME="$(DisplayHostname)"
 #-------------------------------------
 function ProceedYes ()
 {
-	# Push Local First
-#	GitPushLocal
-#	wait
-	
 	# Commit SYNCDIR
 	GitCommit "$SYNCDIR"
 	wait
@@ -46,11 +42,6 @@ function ProceedYes ()
 
 	# Set Permissions SYNCDIR
 	PermissionsSet "$SYNCDIR"
-}	# end function
-
-function GitPushLocal ()
-{
-	$HOME/bin/git/Git-Push-Bin-LOCAL.sh
 }	# end function
 
 function GitCommit ()

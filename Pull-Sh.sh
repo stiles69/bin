@@ -48,11 +48,6 @@ function ProceedYes ()
 	PermissionsSet "$SYNCDIR"
 }	# end function
 
-function GitPushLocal ()
-{
-	$HOME/bin/git/Git-Push-Sh-LOCAL.sh
-}	# end function
-
 function GitCommit ()
 {
 	local GITDIR="$1"
