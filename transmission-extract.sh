@@ -31,6 +31,7 @@ function Main ()
 	find /torrents -name '*.mkv' -exec mv -t /completed {} +
 	find /torrents -name '*.avi' -exec mv -t /completed {} +
 	find /torrents -name '*.mpg' -exec mv -t /completed {} +
+	find /torrents -name '*.wmv' -exec mv -t /completed {} +
 	find /torrents -name '*.mpeg' -exec mv -t /completed {} +
 }	# end Main
 

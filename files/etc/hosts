@@ -1,7 +1,7 @@
 # Static table lookup for hostnames.
 # See hosts(5) for details.
 127.0.0.1	localhost
-127.0.1.1 iowa.roguedesigns.us		iowa
+127.0.1.1 manjaro.roguedesigns.us		manjaro
 10.0.0.5	ubuntu.roguedesigns.us		ubuntu
 10.0.0.6	stiles.roguedesigns.us		stiles
 10.0.0.11	manjaro.roguedesigns.us		manjaro
