@@ -32,6 +32,7 @@ function Main ()
 	wait
 	unzip $HOME/master.zip
 	sudo chmod +x $HOME/bin-master
+	sudo rm -r $HOME/master.zip
 }	# end Main
 
 Main
