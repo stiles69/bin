@@ -29,7 +29,7 @@ function Main ()
 {
 	sudo chown -R minidlna:sambashare "$DIR"
 	sudo chmod -R 774 "$DIR"
-	sudo service minidlna.service force-reload
+	sudo service minidlna force-reload
 }	# end Main
 
 Main
