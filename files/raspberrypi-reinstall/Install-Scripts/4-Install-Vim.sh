@@ -1,5 +1,5 @@
 #!/bin/bash  
-#===============================================================================
+#====================================================
 #
 #          FILE: Extra-Install-Vim.sh
 # 
@@ -15,8 +15,7 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 06/28/2018 17:29
 #      REVISION:  ---
-#===============================================================================
-
+#====================================================
 set -o nounset                              # Treat unset variables as an error
 
 function InstallerVimDeb ()
@@ -105,7 +104,7 @@ function InstallerVimBashSupport ()
 	touch ~/.vimrc
 	echo "execute pathogen#infect()" >> ~/.vimrc
 	echo "syntax on" >> ~/.vimrc
-	echo "set numbers" >> ~/.vimrc
+	echo "set number" >> ~/.vimrc
 	echo "filetype plugin indent on" >> ~/.vimrc
 	echo "Finished Installing Pathogen."
 	echo "Commencing Installation of Vim-Bash-Support"
