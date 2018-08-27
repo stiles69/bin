@@ -1,5 +1,5 @@
 #!/bin/bash  
-#===============================================================================
+#====================================================
 #
 #          FILE: Install-Hosts-Hostname.sh
 # 
@@ -15,8 +15,7 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 08/12/2018 14:57
 #      REVISION:  ---
-#===============================================================================
-
+#====================================================
 set -o nounset                              # Treat unset variables as an error
 
 SOFTWAREINSTALL="hosts hostname"
@@ -49,10 +48,10 @@ function ProceedYes ()
 	echo "# See hosts(5) for details." >> $HOME/bin/files/etc/hosts
 	echo "127.0.0.1	localhost" >> $HOME/bin/files/etc/hosts
 	echo "127.0.1.1 $HOSTER.roguedesigns.us		$HOSTER" >> $HOME/bin/files/etc/hosts
-	echo "10.0.0.5	stretch.roguedesigns.us		stretch">> $HOME/bin/files/etc/hosts
+	echo "10.0.0.5	ubuntu.roguedesigns.us		ubuntu">> $HOME/bin/files/etc/hosts
 	echo "10.0.0.6	stiles.roguedesigns.us		stiles" >> $HOME/bin/files/etc/hosts
 	echo "10.0.0.11	manjaro.roguedesigns.us		manjaro" >> $HOME/bin/files/etc/hosts
-	echo "10.0.0.12	pi64.roguedesigns.us		pi64" >> $HOME/bin/files/etc/hosts
+	echo "10.0.0.12	iowa.roguedesigns.us		iowa" >> $HOME/bin/files/etc/hosts
 	echo "10.0.0.14	orangepi.roguedesigns.us	orangepi" >> $HOME/bin/files/etc/hosts
 	echo "::1	localhost ip6-localhost ip6-loopback" >> $HOME/bin/files/etc/hosts
 	echo "ff02::1 ip6-allnodes" >> $HOME/bin/files/etc/hosts
