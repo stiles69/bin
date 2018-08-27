@@ -46,6 +46,7 @@ function InstallNextCloud()
 	sudo apt-get install apache2
 	sudo apt-get install php7.0 php7.0-gd sqlite php7.0-sqlite php7.0-curl php7.0-zip php7.0-xml php7.0-mbstring
 	sudo service apache2 restart
+	cd /var/www/html
 	curl https://download.nextcloud.com/server/releases/nextcloud-13.0.4.tar.bz2 | sudo tar -jxv
 	sudo mkdir -p /var/www/html/nextcloud/data
 	sudo chown -R www-data:www-data /var/www/html/nextcloud/

@@ -47,6 +47,7 @@ function InstallNextCloud()
 	sudo etc-update
 	sudo emerge virtual/httpd-php
 #	sudo service apache2 restart
+	cd /var/www/html
 	curl https://download.nextcloud.com/server/releases/nextcloud-13.0.4.tar.bz2 | sudo tar -jxv
 	sudo mkdir -p /var/www/html/nextcloud/data
 	sudo chown -R www-data:www-data /var/www/html/nextcloud/
