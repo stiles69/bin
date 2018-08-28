@@ -32,7 +32,7 @@ BUILDDIR="$1"
 function Main ()
 {
 	echo '**********DANGER THIS WILL USE RSYNC FROM THE CURRENT DIR USE CTRL-C IF YOU MADE A MISTAKE**************'
-	wait 3600
+	sleep 6
 	rsync -avz --progress "$BUILDDIR" $DEPLOYDIR/files/
 	gcloud app versions list
 	echo 'What should the next version be?'
