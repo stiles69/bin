@@ -1,10 +1,17 @@
 archive-mounter
+bashdb
 bombono-dvd
+code
+deepin-help
+dpkg
 dvdstyler
 google-chrome
+gtk-theme-murrine-collection
 gtk-theme-numix-sx
 insync
 masterpdfeditor
+mc-solarized-git
+motion
 nautilus-compare
 nautilus-megasync
 nautilus-renamer
@@ -12,5 +19,5 @@ numix-bevel-icon-theme
 numix-frost-themes
 numix-icon-theme-git
 oomox
-peazip-gtk2
+peazip-gtk2-portable
 plex-media-server

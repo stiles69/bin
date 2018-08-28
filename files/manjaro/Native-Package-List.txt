@@ -31,7 +31,6 @@ deepin-boot-maker
 deepin-calculator
 deepin-calendar
 deepin-draw
-deepin-help
 deepin-image-viewer
 deepin-music
 deepin-picker
@@ -46,7 +45,7 @@ dhcpcd
 ditaa
 dmidecode
 dnsmasq
-docker
+docker-compose
 downgrade
 ecryptfs-utils
 efibootmgr
@@ -86,7 +85,8 @@ gvfs-mtp
 gvfs-smb
 hexchat
 htop
-hunspell-en
+hunspell-en_AU
+hunspell-en_CA
 hyphen-en
 i3-default-artwork
 i3-help
@@ -105,8 +105,8 @@ ipw2100-fw
 ipw2200-fw
 isousb
 jfsutils
-jre8-openjdk
 kdenlive
+kodi
 lib32-flex
 lib32-libva-vdpau-driver
 lib32-mesa-demos
@@ -117,11 +117,13 @@ libdvdcss
 libreoffice-fresh
 libva-mesa-driver
 libva-vdpau-driver
+lighttpd
 linux414-headers
 linux417-headers
 logrotate
 lrzsz
 lshw
+lxc
 man-db
 man-pages
 manjaro-alsa
@@ -165,6 +167,7 @@ networkmanager-pptp
 networkmanager-vpnc
 nfs-utils
 nitrux-icon-theme
+nmap
 nss-mdns
 ntfs-3g
 ntp
@@ -191,11 +194,13 @@ python-gtkspellcheck
 python2-gtkspellcheck
 python2-lxml
 python2-pip
+qemu-arch-extra
 qpdfview
 qt5-translations
 redshift
 reiserfsprogs
 rmlint-shredder
+ruby-bundler
 s-nail
 screenfetch
 seahorse
@@ -221,9 +226,10 @@ vertex-maia-themes
 vertex-theme
 vi
 vim-spell-en
+virtualbox
 vulkan-intel
 vulkan-radeon
-which
+wipe
 xarchiver
 xcursor-breeze
 xdg-su
