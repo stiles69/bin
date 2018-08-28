@@ -33,7 +33,7 @@ function Main ()
 {
 	echo '**********DANGER THIS WILL USE RSYNC FROM THE CURRENT DIR USE CTRL-C IF YOU MADE A MISTAKE**************'
 	sleep 6
-	rsync -avz --progress "$BUILDDIR" $DEPLOYDIR/files/
+	rsync -avz --delete-before --progress "$BUILDDIR" $DEPLOYDIR/files/
 	gcloud app versions list
 	echo 'What should the next version be?'
 	read VERSIONVARIABLE
