@@ -18,6 +18,7 @@
 #      REVISION:  1.0
 #=========================================================
 set -o nounset                                  # treat unset variables as errors
+set -e
 #---------- SOURCED ---------
 
 #----------------------------
@@ -25,13 +26,14 @@ set -o nounset                                  # treat unset variables as error
 #---------- GLOBAL VARIABLES ---------
 DELIMITER='#############################################'
 LINE=' '
-DEPLOYDIR="$1"
+DEPLOYDIR="$HOME/development/stiles69/Rogue-Designs-Google-Cloud-Deployment/Webserver1"
+BUILDDIR="$1"
 #-------------------------------------
 function Main ()
 {
 	echo '**********DANGER THIS WILL USE RSYNC FROM THE CURRENT DIR USE CTRL-C IF YOU MADE A MISTAKE**************'
 	wait 3600
-	rsync -avz --progress ./ $DEPLOYDIR/files/
+	rsync -avz --progress "$BUILDDIR" $DEPLOYDIR/files/
 	gcloud app versions list
 	echo 'What should the next version be?'
 	read VERSIONVARIABLE
