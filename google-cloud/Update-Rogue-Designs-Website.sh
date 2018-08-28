@@ -25,7 +25,7 @@ set -o nounset                                  # treat unset variables as error
 #---------- GLOBAL VARIABLES ---------
 DELIMITER='#############################################'
 LINE=' '
-DEPLOYDIR=$HOME/development/stiles69/Rogue-Designs-Google-Cloud-Deployment/Webserver1
+DEPLOYDIR="$1"
 #-------------------------------------
 function Main ()
 {
