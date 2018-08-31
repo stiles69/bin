@@ -90,11 +90,20 @@ function ProceedBashSupport ()
 
 function InstallerVimBashSupport ()
 {
-	sudo rm -r ~/.vim
-	mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+	if [ -d $HOME/.vim ] 
+	then
+		sudo rm -r ~/.vim
+	fi
+	
+	mkdir -p ~/.vim/autoload ~/.vim/bundle
 	curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-	sudo rm ~/.vimrc
-	touch ~/.vimrc
+	
+	if [ -d $HOME/.vimrc ]
+	then
+		sudo rm ~/.vimrc
+		touch ~/.vimrc
+	fi
+	
 	echo "execute pathogen#infect()" >> ~/.vimrc
 	echo "syntax on" >> ~/.vimrc
 	echo "set number >> ~/.vimrc
@@ -103,20 +112,8 @@ function InstallerVimBashSupport ()
 	echo "Commencing Installation of Vim-Bash-Support"
 	cd ~/.vim/bundle
 	git clone https://github.com/vim-scripts/bash-support.vim
-	echo "The script will now make a backup file of the base template and you will have to customize the file. It is located at $HOME/.vim/bundle/bash-support.vim/bash-support/templates/Template"
-	echo "Are you ready to proceed (Y/n)?"
-	read PROCEED2
-	case $PROCEED2 in
-		"N"|"n")
-		cp $HOME/bin/files/bash-support/Template $HOME/.vim/bundle/bash-support.vim/bash-support/templates/
-		exit 0
-		;;
-		"Y")
-		cp ~/.vim/bundle/bash-support.vim/bash-support/templates/Templates ~/.vim/bundle/bash-support.vim/bash-support/templates/Templates.backup	
-		cp $HOME/bin/files/bash-support/Template $HOME/.vim/bundle/bash-support.vim/bash-support/templates/
-		;;
-	esac    # --- end of case ---
-echo "Installation of both Pathogen and Vim-Bash is complete."
+	cp $HOME/bin/files/bash-support/Template $HOME/.vim/bundle/bash-support.vim/bash-support/templates/
+	echo "Installation of both Pathogen and Vim-Bash is complete."
 } 	# End Function
 
 function Main ()
