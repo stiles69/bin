@@ -106,7 +106,7 @@ function InstallerVimBashSupport ()
 	
 	echo "execute pathogen#infect()" >> ~/.vimrc
 	echo "syntax on" >> ~/.vimrc
-	echo "set number >> ~/.vimrc
+	echo "set number" >> ~/.vimrc
 	echo "filetype plugin indent on" >> ~/.vimrc
 	echo "Finished Installing Pathogen."
 	echo "Commencing Installation of Vim-Bash-Support"
