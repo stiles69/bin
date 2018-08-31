@@ -27,7 +27,7 @@ set -o nounset                              # Treat unset variables as an error
 function Main ()
 {
 	docker pull haugene/transmission-openvpn
-	docker pull dperson/samba
+	docker pull trnape/rpi-samba
 }	# end Main
 
 Main
