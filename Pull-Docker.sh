@@ -37,7 +37,11 @@ function ProceedYes ()
 	wait
 
 	# Pull SYNCDIR
-	Pull "$SYNCDIR"
+	#Pull "$SYNCDIR"
+	#wait
+
+	# Fetch SYNCDIR
+	Fetch "$SYNCDIR"
 	wait
 
 }	# end function
@@ -74,6 +78,16 @@ function Pull ()
 	echo "#########################################################"
 	echo "               "
 }	# end function
+
+function Fetch ()
+{
+	local GITDIR=$1
+	cd "$GITDIR"
+	git fetch
+	echo "#######################################################"
+	echo "FINISHED FETCHING $GITDIR"
+	echo "#######################################################"
+}	# end
 
 function PermissionsSet ()
 {
