@@ -15,8 +15,6 @@ done
 . /etc/os-release
 . /etc/armbian-release
 
-KERNELID=$(uname -r)
-
 HOSTNAME=$(cat /etc/hostname)
 
-printf "$HOSTNAME"
+printf '\nWelcome to \e[0;91mARMBIAN\x1B[0m %s %s %s %s\n' "$HOSTNAME $IMAGE_TYPE $PRETTY_NAME $KERNELID"
