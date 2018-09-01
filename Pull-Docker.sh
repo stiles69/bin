@@ -38,11 +38,11 @@ function ProceedYes ()
 
 	# Pull SYNCDIR
 	#Pull "$SYNCDIR"
-	#wait
+	wait
 
 	# Fetch SYNCDIR
-	Fetch "$SYNCDIR"
-	wait
+	#Fetch "$SYNCDIR"
+	#wait
 
 }	# end function
 
