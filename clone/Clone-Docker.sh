@@ -27,7 +27,7 @@ set -o nounset                              # Treat unset variables as an error
 function Main ()
 {
 	cd $HOME/development
-	git clone git@github.com:stiles69/docker.git
+	git clone --recurse-submodules git@github.com:stiles69/docker.git
 }	# end Main
 
 Main
