@@ -14,7 +14,10 @@ done
 
 . /etc/os-release
 . /etc/armbian-release
+. /home/brettsalemink/lib/sh/funcOS.sh
 
+THEOS=$(funcOS)
+KERNELID=$(uname -r)
 HOSTNAME=$(cat /etc/hostname)
 
-printf '\nWelcome to \e[0;91mARMBIAN\x1B[0m %s %s %s %s\n' "$HOSTNAME $IMAGE_TYPE $PRETTY_NAME $KERNELID"
+printf '\nWelcome to \e[0;91m$THEOS\x1B[0m %s %s %s %s\n' "$HOSTNAME $IMAGE_TYPE $PRETTY_NAME $KERNELID"
