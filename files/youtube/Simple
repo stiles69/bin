@@ -1,1 +1,1 @@
--o '%(title)s.%(ext)s' --restrict-filenames
+"-o '$HOME/Videos/Youtube/''%(title)s.%(ext)s'"

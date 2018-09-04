@@ -20,51 +20,29 @@
 set -o nounset                              # Treat unset variables as an error
 #===Variables===
 CONFIG="-o %(title)s.%(ext)s"
+DOWNLOADER="--external-downloader wget"
+EXTRACTAUDIO="--extract-audio --audio-format m4a"
+EMBEDTHUMBNAIL="--embed-thumbnail"
+REENCODEVIDEO="--recode-video mp4"
+FORMAT="-f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"
+AUDIOFORMAT="m4a"
+EXTRACTAUDIO="--extract-audio"
 function GetVideoAudio ()
 {
-	echo "Do you want to download [1. best, 2. bestvideo, 3. bestaudio, 4. m4a, 5. mp3, 6. wav, 7. webm, 8. mp4, 9. ogg]"
+	echo "Do you want to download [1. audio, 2. video]"
 	read DOWNLOADFORMAT
 
 	case $DOWNLOADFORMAT in
 		1)
-		FORMAT='bestvideo'
-		AUDIOONLY='N'
-		;;
-		2)
-		FORMAT='bestvideo'
-		AUDIOONLY='N'
-		;;
-		3)
-		FORMAT='bestaudio'
 		AUDIOONLY='Y'
 		;;
-		4)
-		FORMAT='m4a'
-		AUDIOONLY='YES'
-		;;
-		5)
-		FORMAT='mp3'
-		AUDIOONLY='Yes'
-		;;
-		6)
-		FORMAT='wav'
-		AUDIOONLY='Yes';
-		;;
-		7)
-		FORMAT='webm'
-		AUDIOONLY='N'
-		;;
-		8)
-		FORMAT='mp4'
-		AUDIOONLY='N'
-		;;
-		9)
-		FORMAT='ogg'
+		2)
 		AUDIOONLY='N'
 		;;
 		*)
-		echo "Invalid Selection exiting."
+		echo "Invalid Selection exiting.."
 		exit 0
+		;;
 	esac
 }	# end function
 
@@ -91,9 +69,9 @@ function DownloadLink ()
 
 	if [ $AUDIOONLY = 'Y' ]
 	then
-		COMMANDSTRING="-f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best  --extract-audio --audio-format m4a "$CONFIG" "$(echo $URL)""
+		COMMANDSTRING=""$FORMAT" "$EXTRACTAUDIO" "$DOWNLOADER" "$EMBEDTHUMNAIL" "$CONFIG"  "$(echo $URL)""
 	else
-		COMMANDSTRING="-f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best --recode-video mp4 --embed-thumbnail "$CONFIG" "$(echo $URL)""
+		COMMANDSTRING=""$FORMAT" "$REENCODEVIDEO" "$EMBEDTHUMBNAIL" "$DOWNLOADER" "$CONFIG" "$(echo $URL)""
 	fi
 
 	echo $COMMANDSTRING
@@ -114,9 +92,9 @@ function DownloadList ()
 
 	if [ $AUDIOONLY = 'Y' ]
 	then
-		COMMANDSTRING="-a $(echo $LIST) $(echo $FORMAT) --extract-audio --audio-format $CONVERTFORMAT"
+		COMMANDSTRING="-a $(echo $LIST) "$FORMAT" "$EXTRACTAUDIO" --audio-format $CONVERTFORMAT"
 	else
-		COMMANDSTRING="-a "$(echo $LIST)" $FORMAT -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best --recode-video mp4 --embed-thumbnail $CONFIG"
+		COMMANDSTRING="-a "$(echo $LIST)" $FORMAT "$REENCODEVIDEO" "$EMBEDTHUMBNAIL" "$CONFIG""
 	fi
 
 	echo $COMMANDSTRING
