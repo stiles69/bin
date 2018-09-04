@@ -27,6 +27,7 @@ REENCODEVIDEO="--recode-video mp4"
 FORMAT="-f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"
 AUDIOFORMAT="m4a"
 EXTRACTAUDIO="--extract-audio"
+LOGIN="--username brett.salemink@gmail.com --password Samsung#2013"
 function GetVideoAudio ()
 {
 	echo "Do you want to download [1. audio, 2. video]"
@@ -69,9 +70,9 @@ function DownloadLink ()
 
 	if [ $AUDIOONLY = 'Y' ]
 	then
-		COMMANDSTRING=""$FORMAT" "$EXTRACTAUDIO" "$DOWNLOADER" "$EMBEDTHUMNAIL" "$CONFIG"  "$(echo $URL)""
+		COMMANDSTRING=""$LOGIN" "$FORMAT" "$EXTRACTAUDIO" "$DOWNLOADER" "$EMBEDTHUMNAIL" "$CONFIG"  "$(echo $URL)""
 	else
-		COMMANDSTRING=""$FORMAT" "$REENCODEVIDEO" "$EMBEDTHUMBNAIL" "$DOWNLOADER" "$CONFIG" "$(echo $URL)""
+		COMMANDSTRING=""$LOGIN" "$FORMAT" "$REENCODEVIDEO" "$EMBEDTHUMBNAIL" "$DOWNLOADER" "$CONFIG" "$(echo $URL)""
 	fi
 
 	echo $COMMANDSTRING
