@@ -18,6 +18,7 @@
 #====================================================
 set -o nounset                              # Treat unset variables as an error
 #===Variables===
+THUMBNAIL="--write-thumbnail"
 CONFIG="-o %(title)s.%(ext)s"
 DOWNLOADER="--external-downloader wget"
 EXTRACTAUDIO="--extract-audio --audio-format m4a"
@@ -64,9 +65,9 @@ function DownloadLink ()
 
 	if [ $AUDIOONLY = 'Y' ]
 	then
-		COMMANDSTRING="--netrc "$FORMAT" "$EXTRACTAUDIO" "$AUDIOFORMAT" "$DOWNLOADER" "$EMBEDTHUMNAIL" "$CONFIG"  "$(echo $URL)""
+		COMMANDSTRING="--netrc "$FORMAT" "$EXTRACTAUDIO" "$AUDIOFORMAT" "$DOWNLOADER" "$THUMNAIL" "$CONFIG"  "$(echo $URL)""
 	else
-		COMMANDSTRING="--netrc "$FORMAT" "$REENCODEVIDEO" "$EMBEDTHUMBNAIL" "$DOWNLOADER" "$CONFIG" "$(echo $URL)""
+		COMMANDSTRING="--netrc "$FORMAT" "$REENCODEVIDEO" "$THUMBNAIL" "$DOWNLOADER" "$CONFIG" "$(echo $URL)""
 	fi
 
 	echo $COMMANDSTRING
@@ -80,9 +81,9 @@ function DownloadList ()
 
 	if [ $AUDIOONLY = 'Y' ]
 	then
-		COMMANDSTRING="--netrc -a "$(echo $LIST)" $FORMAT "$EXTRACTAUDIO" --audio-format "$CONVERTFORMAT""
+		COMMANDSTRING="--netrc -a "$(echo $LIST)" $FORMAT "$EXTRACTAUDIO" --audio-format "$CONVERTFORMAT" "$THUMBNAIL""
 	else
-		COMMANDSTRING="--netrc -a "$(echo $LIST)" $FORMAT "$REENCODEVIDEO" "$EMBEDTHUMBNAIL" "$CONFIG""
+		COMMANDSTRING="--netrc -a "$(echo $LIST)" $FORMAT "$REENCODEVIDEO" "$THUMBNAIL" "$CONFIG""
 	fi
 
 	echo $COMMANDSTRING
