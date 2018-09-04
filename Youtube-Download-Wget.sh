@@ -1,5 +1,5 @@
 #!/bin/bash  
-#===============================================================================
+#====================================================
 #
 #          FILE: Youtube-Download-Simple.sh
 # 
@@ -15,8 +15,7 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 07/04/2018 23:48
 #      REVISION:  ---
-#===============================================================================
-
+#====================================================
 set -o nounset                              # Treat unset variables as an error
 #===Variables===
 CONFIG="-o %(title)s.%(ext)s"
@@ -27,7 +26,8 @@ REENCODEVIDEO="--recode-video mp4"
 FORMAT="-f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"
 AUDIOFORMAT="m4a"
 EXTRACTAUDIO="--extract-audio"
-LOGIN="--username brett.salemink@gmail.com --password Samsung#2013"
+LOGIN="--username 'brett.salemink@gmail.com' --password 'Samsung#2013'"
+CONVERTFORMAT="m4a"
 function GetVideoAudio ()
 {
 	echo "Do you want to download [1. audio, 2. video]"
@@ -61,18 +61,12 @@ function DownloadLink ()
 		DownloadList
 	fi
 
-	if [ $FORMAT = 'bestaudio' ]
-	then	
-		CONVERTFORMAT='m4a'
-	else
-		CONVERTFORMAT=$FORMAT
-	fi	
 
 	if [ $AUDIOONLY = 'Y' ]
 	then
-		COMMANDSTRING=""$LOGIN" "$FORMAT" "$EXTRACTAUDIO" "$DOWNLOADER" "$EMBEDTHUMNAIL" "$CONFIG"  "$(echo $URL)""
+		COMMANDSTRING="--netrc "$FORMAT" "$EXTRACTAUDIO" "$AUDIOFORMAT" "$DOWNLOADER" "$EMBEDTHUMNAIL" "$CONFIG"  "$(echo $URL)""
 	else
-		COMMANDSTRING=""$LOGIN" "$FORMAT" "$REENCODEVIDEO" "$EMBEDTHUMBNAIL" "$DOWNLOADER" "$CONFIG" "$(echo $URL)""
+		COMMANDSTRING="--netrc "$FORMAT" "$REENCODEVIDEO" "$EMBEDTHUMBNAIL" "$DOWNLOADER" "$CONFIG" "$(echo $URL)""
 	fi
 
 	echo $COMMANDSTRING
@@ -84,18 +78,11 @@ function DownloadList ()
 	echo "Please enter the complete path including the name of the file containing the list. [ex. ~/List.txt]"
 	read LIST
 
-	if [ $FORMAT = 'bestaudio' ]
-	then	
-		CONVERTFORMAT='m4a'
-	else
-		CONVERTFORMAT='m4a'
-	fi	
-
 	if [ $AUDIOONLY = 'Y' ]
 	then
-		COMMANDSTRING="-a $(echo $LIST) "$FORMAT" "$EXTRACTAUDIO" --audio-format $CONVERTFORMAT"
+		COMMANDSTRING="--netrc -a "$(echo $LIST)" $FORMAT "$EXTRACTAUDIO" --audio-format "$CONVERTFORMAT""
 	else
-		COMMANDSTRING="-a "$(echo $LIST)" $FORMAT "$REENCODEVIDEO" "$EMBEDTHUMBNAIL" "$CONFIG""
+		COMMANDSTRING="--netrc -a "$(echo $LIST)" $FORMAT "$REENCODEVIDEO" "$EMBEDTHUMBNAIL" "$CONFIG""
 	fi
 
 	echo $COMMANDSTRING
