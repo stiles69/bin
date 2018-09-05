@@ -25,7 +25,7 @@ EXTRACTAUDIO="--extract-audio --audio-format m4a"
 EMBEDTHUMBNAIL="--embed-thumbnail"
 REENCODEVIDEO="--recode-video mp4"
 FORMAT="-f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"
-AUDIOFORMAT="m4a"
+AUDIOFORMAT="-f bestaudio[ext=m4a]"
 EXTRACTAUDIO="--extract-audio"
 LOGIN="--username 'brett.salemink@gmail.com' --password 'Samsung#2013'"
 CONVERTFORMAT="m4a"
@@ -62,10 +62,9 @@ function DownloadLink ()
 		DownloadList
 	fi
 
-
 	if [ $AUDIOONLY = 'Y' ]
 	then
-		COMMANDSTRING="--netrc "$FORMAT" "$EXTRACTAUDIO" "$AUDIOFORMAT" "$DOWNLOADER" "$THUMNAIL" "$CONFIG"  "$(echo $URL)""
+		COMMANDSTRING="--netrc "$AUDIOFORMAT" "$DOWNLOADER" "$THUMBNAIL" "$CONFIG" "$EXTRACTAUDIO" "$(echo $URL)""
 	else
 		COMMANDSTRING="--netrc "$FORMAT" "$REENCODEVIDEO" "$THUMBNAIL" "$DOWNLOADER" "$CONFIG" "$(echo $URL)""
 	fi
@@ -81,9 +80,10 @@ function DownloadList ()
 
 	if [ $AUDIOONLY = 'Y' ]
 	then
-		COMMANDSTRING="--netrc -a "$(echo $LIST)" $FORMAT "$EXTRACTAUDIO" --audio-format "$CONVERTFORMAT" "$THUMBNAIL""
+		COMMANDSTRING="--netrc -a "$LIST" 
+"$AUDIOFORMAT" "$EXTRACTAUDIO" "$THUMBNAIL""
 	else
-		COMMANDSTRING="--netrc -a "$(echo $LIST)" $FORMAT "$REENCODEVIDEO" "$THUMBNAIL" "$CONFIG""
+		COMMANDSTRING="--netrc -a "$(echo $LIST)" "$FORMAT" "$REENCODEVIDEO" "$THUMBNAIL" "$CONFIG""
 	fi
 
 	echo $COMMANDSTRING
