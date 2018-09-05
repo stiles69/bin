@@ -25,6 +25,7 @@ set -o nounset                              # Treat unset variables as an error
 #---------- GLOBAL VARIABLES ---------
 SYNCDIR=$HOME/bin
 HOSTNAME="$(DisplayHostname)"
+COMMITMESSAGE="$HOSTNAME Bash"
 #-------------------------------------
 function ProceedYes ()
 {
@@ -32,12 +33,12 @@ function ProceedYes ()
 	GitCommit "$SYNCDIR"
 	wait
 
-	# Push SYNCDIR
-	Push "$SYNCDIR"
-	wait
-
 	# Pull SYNCDIR
 	Pull "$SYNCDIR"
+	wait
+	
+	# Push SYNCDIR
+	Push "$SYNCDIR"
 	wait
 
 	# Set Permissions SYNCDIR
@@ -49,7 +50,8 @@ function GitCommit ()
 	local GITDIR=$1
 	cd "$GITDIR"
 	git add .
-	git commit -m "BASH"
+	git commit -m "$COMMITMESSAGE"
+	echo "Commited $COMMITMESSAGE"
 }	# end function
 
 function Push ()
