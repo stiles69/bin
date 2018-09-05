@@ -80,6 +80,7 @@ function Pull ()
 
 function PermissionsSet ()
 {
+	local GITDIR="$1"
 	SetPermissions "$GITDIR"
 }	# end function
 
