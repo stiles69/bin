@@ -19,8 +19,6 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-
-
 function Main ()
 {
 	echo "Setting up Hosts file."
