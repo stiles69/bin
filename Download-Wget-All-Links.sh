@@ -28,10 +28,15 @@ function Main ()
 {
 	echo "This will Download all links on a page. What is the URL of the repo you want to download?"
 	read URL
-	wget -r -c -nH -nc -np --show-progress "$URL"
 	
-}	# end Main
+	wget -A dtb -r -l 5 --convert-links -nd "$URL"	
 
+
+	# -A: only accept zip files
+	#-r: recurse	
+	#-l 1: one level deep (ie, only files directly linked from this page)
+	#-nd: don't create a directory structure, just download all the files into this directory.
+}	# end Main
 Main
 
 #===EXIT===
