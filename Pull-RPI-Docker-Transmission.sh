@@ -42,7 +42,7 @@ function ProceedYes ()
 	wait
 
 	# Set Permissions SYNCDIR
-	PermissionsSet "$SYNCDIR"
+#	PermissionsSet "$SYNCDIR"
 }	# end function
 
 GitCommit()
