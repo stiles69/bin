@@ -2,6 +2,9 @@
 #==== Added by Brett Salemink for Flutter Install ===
 #export PATH=$HOME/Development/flutter/bin:$PATH
 
+#Added by Brett Salemink
+export ADULT=brettsalemink@manjaro.roguedesigns.us:/mnt/Media/Adult
+
 # added by Anaconda3 installer
 #export PATH="/home/brettsalemink/anaconda3/bin:$PATH"
 
