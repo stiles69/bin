@@ -1,7 +1,7 @@
 #==== ENVIRONMENT ====
 #=====TEMPORARY ADD TO ALLOW WORK ON THIS PROJECT WIHOUT LOGGING IN========
 
-export GOOGLE_APPLICATION_CREDENTIALS="/home/brettsalemink/brett.salemink@gmail.com/Development/Google-Cloud/Deadmans-Key-2013/deadman-key-2013-87aebaf55efb.json"
+#export GOOGLE_APPLICATION_CREDENTIALS="/home/brettsalemink/brett.salemink@gmail.com/Development/Google-Cloud/Deadmans-Key-2013/deadman-key-2013-87aebaf55efb.json"
 
 #==== Added by Brett Salemink for Flutter Install ===
 #export PATH=$HOME/Development/flutter/bin:$PATH
@@ -106,10 +106,10 @@ plugins=(
 
 #=== USER CONFIGURATION ===
 
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
  if [[ -n $SSH_CONNECTION ]]; then
@@ -131,7 +131,7 @@ plugins=(
 
 #====== SOURCES =======
 # ZSH
-#source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 #======= COMMON ALIASES =======
 source $HOME/bin/files/Aliases/aliases-common
