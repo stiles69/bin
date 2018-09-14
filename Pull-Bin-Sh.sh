@@ -1,5 +1,5 @@
 #!/bin/bash  
-#======================================================
+#====================================================
 #
 #          FILE: Git-Bin-SH.sh
 # 
@@ -17,8 +17,7 @@
 #      REVISION:  ---
 #======================================================
 set -o nounset                              # Treat unset variables as an error
-
-. $HOME/lib/sh/funcDisplayHostname.sh
+source $HOME/lib/sh/funcDisplayHostname.sh
 
 HOSTNAME="$(DisplayHostname)"
 
@@ -29,6 +28,12 @@ function ProceedYes ()
 
 	# Sync Sh
 	$HOME/bin/Pull-Sh.sh
+
+	# Sync RPI-Docker-Transmission
+	$HOME/bin/Pull-RPI-Docker-Transmission.sh
+
+	#Sync Hometown-Cab-Project
+	$HOME/bin/Pull-Hometown-Cab-Project.sh
 }	# end function
 
 function SetPermissions ()
