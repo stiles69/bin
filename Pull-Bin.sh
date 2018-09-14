@@ -96,7 +96,7 @@ function PermissionsSet ()
 
 function SetSource ()
 {
-	source $HOME/.zshrc
+	. $HOME/.zshrc
 }	# end
 
 function Main ()
