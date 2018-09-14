@@ -26,7 +26,9 @@ set -o nounset                              # Treat unset variables as an error
 function Main ()
 {
 	echo "Displaying all users"
-	cut -d: -f1 /etc/passwd
+	cut d: -f1 /etc/passwd
+
+#	cut d: -f1 /etc/group  
 }	# end Main
 
 Main
