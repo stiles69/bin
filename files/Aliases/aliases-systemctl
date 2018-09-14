@@ -4,6 +4,11 @@ alias vpn-start="sudo systemctl start openvpn@pia-midwest.service"
 alias vpn-status="sudo systemctl status openvpn@pia-midwest.service"
 alias vpn-restart="sudo systemctl restart openvpn@pia-midwest.service"
 
+alias teamviwer-stop="sudo systemctl stop teamviewerd.service"
+alias teamviwer-start="sudo systemctl start teamviewerd.service"
+alias teamviwer-status="sudo systemctl status teamviewerd.service"
+alias teamviwer-restart="sudo systemctl restart teamviewerd.service"
+
 alias caddy-stop="sudo systemctl stop caddy"
 alias caddy-start="sudo systemctl start caddy"
 alias caddy-status="sudo systemctl status caddy"
