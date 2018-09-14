@@ -9,6 +9,9 @@
 # added by Anaconda3 installer
 #export PATH="/home/brettsalemink/anaconda3/bin:$PATH"
 
+# Added by Brett Salemink for Google Cloud
+#export CLOUDSDK_PYTHON=/usr/bin/python.2.7
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/bin/install:$PATH
@@ -19,7 +22,7 @@ export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
 
 # The next line enables catt for pip and python
 #export PATH="$PATH:$HOME/.local/bin"
-#export PYTHONPATH="/usr/lib/python3/dist-packages/:$PYTHONPATH"
+#export PYTHONPATH="/usr/lib/python2.7/dist-packages/:$PYTHONPATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
