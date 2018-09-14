@@ -26,6 +26,7 @@ set -o nounset                              # Treat unset variables as an error
 SPACE="            "
 SYNCDIR=$HOME/lib/sh
 HOSTNAME="$(DisplayHostname)"
+COMMITMESSAGE="$HOSTNAME Bash"
 #-------------------------------------
 
 function ProceedYes ()
@@ -34,71 +35,87 @@ function ProceedYes ()
 	GitCommit "$SYNCDIR"
 	wait
 
+	# Pull SYNCDIR
+	Pull "$SYNCDIR"
+	wait
+
+	# Set Permissions SYNCDIR
+	PermissionsSet "$SYNCDIR"
+	wait
+
+	# Git Commit
+	GitCommit "$SYNCDIR"
+	wait
 
 	# Push SYNCDIR
 	Push "$SYNCDIR"
 	wait
-
-
-	# Pull SYNCDIR
-	Pull "$SYNCDIR"
-	wait
-	
-	# Set Permissions SYNCDIR
-	PermissionsSet "$SYNCDIR"
 }	# end function
 
 function GitCommit ()
 {
 	local GITDIR="$1"
-	cd "$GITDIR"
-	git add .
-	git commit -m "Bash"
-
+	if [ -d "$GITDIR" ]
+	then
+		cd "$GITDIR"
+		git add .
+		git commit -m "$COMMITMESSAGE"
+		echo "$COMMITMESSAGE"
+	else
+		echo "No directory $GITDIR, ending GitCommit"
+	fi
 }	# end function
 
 function Push ()
 {
 	local GITDIR="$1"
-	COMMITMESSAGE="$HOSTNAME Bash"
-	cd "$GITDIR"
-	git add .
-	git commit -m "$COMMITMESSAGE"
-	git push
-	echo "###################################################"	
-	echo "FINISHED PUSHING $GITDIR"
-	echo "###################################################"	
-	echo "   "
+	if [ -d "$GITDIR" ]
+	then
+		cd "$GITDIR"
+		git push
+		echo "###################################################"	
+		echo "FINISHED PUSHING $GITDIR"
+		echo "###################################################"	
+		echo "   "
+	else
+		echo "No directory $GITDIR, ending Push."
+	fi
 }	# end function
 
 function Pull ()
 {
 	local GITDIR="$1"
-	cd "$GITDIR"
-	git pull 
-	echo "#####################################################"	
-	echo "FINISHED PULLING $GITDIR"
-	echo "#####################################################"	
-	echo "  "
+	if [ -d "$GITDIR" ]
+	then
+		cd "$GITDIR"
+		git pull 
+		echo "#####################################################"	
+		echo "FINISHED PULLING $GITDIR"
+		echo "#####################################################"	
+		echo "  "
+	else
+		echo "No directory $GITDIR, ending Pull."
+	fi
 }	# end function
 
 function PermissionsSet ()
 {
 	local SETPERMISSIONSDIR="$1"
-	SetPermissions "$SETPERMISSIONSDIR"
-	echo "############################################################"	
-	echo "FINISHED SETTING PERMISSIONS ON $SETPERMISSIONSDIR"
-	echo "############################################################"	
-	echo "   "
+	if [ -d "$SETPERMISSIONSDIR" ]
+	then
+		SetPermissions "$SETPERMISSIONSDIR"
+		echo "############################################################"	
+		echo "FINISHED SETTING PERMISSIONS ON $SETPERMISSIONSDIR"
+		echo "############################################################"	
+		echo "   "
+	else
+		echo "No directory $SETPERMISSIONSDIR, ending PermissionsSet."
+	fi
 }	# end function
 
 function Main ()
 {
 	ProceedYes
-	echo "######"
-	echo " DONE"
-	echo "######"
-	echo "  "
 }	# end function Main
 Main
 

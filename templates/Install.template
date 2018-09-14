@@ -1,8 +1,10 @@
+#------------ SOURCED ----------------
 . $HOME/lib/sh/funcInstall.sh
-
-
+#-------------------------------------
+#---------- GLOBAL VARIABLES ---------
 SOFTWAREINSTALL="flatpak"
 SCRIPTDEFINITION="This will install $SOFTWAREINSTALL"
+#-------------------------------------
 function Proceed ()
 {
 	echo $SCRIPTDEFINITION
@@ -38,7 +40,5 @@ function Main ()
 
 Main
 
-# == Exit ==
+#===EXIT===
 exit 0
-
-

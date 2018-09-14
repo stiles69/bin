@@ -1,6 +1,10 @@
-#. ~/lib/sh/funcReboot.sh
-SOFTWAREINSTALL="tmux"
+#------------ SOURCED ----------------
+. $HOME/lib/sh/funcInstall.sh
+#-------------------------------------
+#---------- GLOBAL VARIABLES ---------
+SOFTWAREINSTALL="flatpak"
 SCRIPTDEFINITION="This will install $SOFTWAREINSTALL"
+#-------------------------------------
 function Proceed ()
 {
 	echo $SCRIPTDEFINITION
@@ -21,7 +25,7 @@ function Proceed ()
 
 function ProceedYes ()
 {
-	sudo # $SOFTWAREINSTALL
+	Install $SOFTWAREINSTALL
 }	# end function
 
 function ProceedNo ()
@@ -36,6 +40,5 @@ function Main ()
 
 Main
 
-# === Exit ===
+#===EXIT===
 exit 0
-
