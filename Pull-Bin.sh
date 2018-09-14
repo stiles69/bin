@@ -16,7 +16,7 @@
 #       CREATED: 08/03/2018 22:04
 #      REVISION:  ---
 #======================================================
-set -o nounset                              # Treat unset variables as an error
+#set -o nounset                              # Treat unset variables as an error
 #---------- SOURCED ---------
 . $HOME/lib/sh/funcDisplayHostname.sh
 . $HOME/lib/sh/funcSetPermissions.sh
