@@ -57,6 +57,7 @@ function GitCommit ()
 		echo "$COMMITMESSAGE"
 	else
 		echo "No directory $GITDIR, ending GitCommit."
+	fi
 }	# end function
 
 function Push ()
