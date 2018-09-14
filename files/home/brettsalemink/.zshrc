@@ -1,9 +1,10 @@
 #==== ENVIRONMENT ====
+#=====TEMPORARY ADD TO ALLOW WORK ON THIS PROJECT WIHOUT LOGGING IN========
+
+export GOOGLE_APPLICATION_CREDENTIALS="/home/brettsalemink/brett.salemink@gmail.com/Development/Google-Cloud/Deadmans-Key-2013/deadman-key-2013-87aebaf55efb.json"
+
 #==== Added by Brett Salemink for Flutter Install ===
 #export PATH=$HOME/Development/flutter/bin:$PATH
-
-#Added by Brett Salemink
-export ADULT=brettsalemink@manjaro.roguedesigns.us:/mnt/Media/Adult
 
 # added by Anaconda3 installer
 #export PATH="/home/brettsalemink/anaconda3/bin:$PATH"
@@ -13,24 +14,28 @@ export PATH=$HOME/bin:$PATH
 export PATH=$HOME/bin/install:$PATH
 export PATH=$HOME/lib/sh:$PATH
 
+# Ruby Path
+export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
+
 # The next line enables catt for pip and python
 #export PATH="$PATH:$HOME/.local/bin"
 #export PYTHONPATH="/usr/lib/python3/dist-packages/:$PYTHONPATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export ZSH_CACHE_DIR=$ZSH/cache
 
 # Path to golang
-#export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin
 
 # Path to Go
-#export GOPATH=$HOME/go
+export GOPATH=$HOME/go
 
 # Path to GoBin
-#export GOBIN=$HOME/go/bin
+export GOBIN=$HOME/go/bin
 
 # Path to User GoLang
-#export PATH=$PATH:$GOBIN
+export PATH=$PATH:$GOBIN
 
 # Variable for DVDAuthor
 export VIDEO_FORMAT=NTSC
@@ -51,7 +56,7 @@ ZSH_THEME="Soliah"
 
 #=== AUTOLOADS ===
 #==	ZSH Autoloads Added by Brett Salemink ==
-#autoload zmv
+autoload zmv
 
 #=== OH-MY-ZSH ===
 # Uncomment the following line to use case-sensitive completion.
@@ -97,7 +102,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
+  git,vim-interaction
 )
 
 #=== USER CONFIGURATION ===
@@ -108,11 +113,11 @@ plugins=(
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='vim'
+ fi
 
 # Compilation flags do not use for Raspberry Pi ARCH ONLY
 # export ARCHFLAGS="-arch x86_64"
@@ -126,12 +131,6 @@ plugins=(
 #
 
 #====== SOURCES =======
-# The next line updates PATH for the Google Cloud SDK.
-#if [ -f '/home/brettsalemink/google-cloud-sdk/path.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-#if [ -f '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc'; fi
-
 # ZSH
 source $ZSH/oh-my-zsh.sh
 
@@ -143,6 +142,11 @@ source $HOME/bin/files/Aliases/aliases-systemctl
 source $HOME/bin/files/Aliases/Arch/aliases-arch
 #source $HOME/bin/files/Aliases/Raspbian/aliases-raspbian
 #source $HOME/bin/files/Aliases/Gentoo/aliases-gentoo
-#
-#
 
+#export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/brettsalemink/google-cloud-sdk/path.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc'; fi
