@@ -37,7 +37,7 @@ function ProceedYes ()
 	wait
 
 	# Pull SYNCDIR
-	#Pull "$SYNCDIR"
+	Pull "$SYNCDIR"
 	wait
 
 	# Fetch SYNCDIR
