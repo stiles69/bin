@@ -20,22 +20,26 @@ set -o nounset                              # Treat unset variables as an error
 
 #---------- SOURCED ---------
 . $HOME/lib/sh/funcDisplayHostname.sh
-. $HOME/lib/sh/funcSetPermissions.sh
 #----------------------------
 
 #---------- GLOBAL VARIABLES ---------
 SPACE=" "
 SYNCDIR=$HOME/Notes
 HOSTNAME="$(DisplayHostname)"
+COMMITMESSAGE="$HOSTNAME Bash"
 #-------------------------------------
 function ProceedYes ()
 {
-	# Push Local First
+	# Commit First
 	GitCommit "$SYNCDIR"
 	wait
 
 	# Pull Bin Notes
 	Pull "$SYNCDIR"
+	wait
+
+	# Commit After Pull
+	GitCommit "$SYNCDIR"
 	wait
 
 	# Push Bin Notes
@@ -45,35 +49,48 @@ function ProceedYes ()
 
 function GitCommit ()
 {
-	local GITDIR="$1"	
-	cd "$GITDIR"
-	git add .
-	git commit -m "BASH"
+	local GITDIR="$1"
+	if [ -d "$GITDIR" ]
+	then	
+		cd "$GITDIR"
+		git add .
+		git commit -m "$COMMITMESSAGE"
+		echo "$COMMITMESSAGE"
+	else
+		echo "No directory $GITDIR, ending GitCommit."
+	fi
 }	# end function
 
 function Push ()
 {
 	local GITDIR=$1
-	COMMITMESSAGE="$HOSTNAME Bash"
-	cd "$GITDIR"
-	git add .
-	git commit -m "$COMMITMESSAGE"
-	git push
-	echo "###############################################"
-	echo "FINISHED PUSHING $GITDIR"
-	echo "###############################################"
-	echo $SPACE
+	if [ -d "$GITDIR" ]
+	then
+		cd "$GITDIR"
+		git push
+		echo "###############################################"
+		echo "FINISHED PUSHING $GITDIR"
+		echo "###############################################"
+		echo $SPACE
+	else
+		echo "No directory $GITDIR, ending Push."
+	fi
 }	# end function
 
 function Pull ()
 {
 	local GITDIR=$1
-	cd "$GITDIR"
-	git pull 
-	echo "###############################################"
-	echo "FINISHED PULLING $GITDIR"
-	echo "###############################################"
-	echo $SPACE
+	if [ -d "$GITDIR" ]
+	then
+		cd "$GITDIR"
+		git pull 
+		echo "###############################################"
+		echo "FINISHED PULLING $GITDIR"
+		echo "###############################################"
+		echo $SPACE
+	else
+		echo "No directory $GITDIR, ending Pull."
+	fi
 }	# end function
 
 function Main ()

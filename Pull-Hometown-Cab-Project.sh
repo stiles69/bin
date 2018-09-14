@@ -25,6 +25,7 @@ set -o nounset                              # Treat unset variables as an error
 #---------- GLOBAL VARIABLES ---------
 SYNCDIR=$HOME/development/stiles69/Hometown-Cab-Project
 HOSTNAME="$(DisplayHostname)"
+COMMITMESSAGE="$HOSTNAME Bash"
 #-------------------------------------
 function ProceedYes ()
 {
@@ -40,63 +41,84 @@ function ProceedYes ()
 	Pull "$SYNCDIR"
 	wait
 
-	# Fetch SYNCDIR
-	#Fetch "$SYNCDIR"
-	#wait
-
+	# Commit SYNCDIR
+	GitCommit "$SYNCDIR"
+	wait
 }	# end function
 
 function GitCommit ()
 {
 	local GITDIR=$1
-	cd "$GITDIR"
-	git add .
-	git commit -m "BASH"
+	if [ -d "$GITDIR" ]
+	then
+		cd "$GITDIR"
+		git add .
+		git commit -m "$COMMITMESSAGE"
+		echo "$COMMITMESSAGE"
+	else
+		echo "No directory $GITDIR, ending GitCommit."
 }	# end function
 
 function Push ()
 {
 	local GITDIR=$1
-	COMMITMESSAGE="$HOSTNAME Bash"
-	cd "$GITDIR"
-	git add .
-	git commit -m "$COMMITMESSAGE"
-	git push
-	echo "#########################################################"
-	echo "FINISHED PUSHING $GITDIR"
-	echo "#########################################################"
-	echo "               "
+	if [ -d "$GITDIR" ]
+	then
+		cd "$GITDIR"
+		git push
+		echo "#########################################################"
+		echo "FINISHED PUSHING $GITDIR"
+		echo "#########################################################"
+		echo "               "
+	else
+		echo "No directory $GITDIR, ending Push."
+	fi
 }	# end function
 
 function Pull ()
 {
 	local GITDIR=$1
-	cd "$GITDIR"
-	git pull 
-	echo "#########################################################"
-	echo "FINISHED PULLING $GITDIR"
-	echo "#########################################################"
-	echo "               "
+	if [ -d "$GITDIR" ]
+	then
+		cd "$GITDIR"
+		git pull 
+		echo "#########################################################"
+		echo "FINISHED PULLING $GITDIR"
+		echo "#########################################################"
+		echo "               "
+	else
+		echo "No directory $GITDIR, ending Pull."
+	fi
 }	# end function
 
 function Fetch ()
 {
 	local GITDIR=$1
-	cd "$GITDIR"
-	git fetch
-	echo "#######################################################"
-	echo "FINISHED FETCHING $GITDIR"
-	echo "#######################################################"
+	if [ -d "$GITDIR" ]
+	then
+		cd "$GITDIR"
+		git fetch
+		echo "#######################################################"
+		echo "FINISHED FETCHING $GITDIR"
+		echo "#######################################################"
+	else
+		echo "No directory $GITDIR, ending Fetch."
+	fi
 }	# end
 
 function PermissionsSet ()
 {
 	local GITDIR="$1"
-	SetPermissions "$GITDIR"
-	echo "#########################################################"
-	echo " FINISHED SETTING PERMISSION $GITDIR"
-	echo "#########################################################"
-	echo "               "
+	if [ -d "$GITDIR" ]
+	then
+		SetPermissions "$GITDIR"
+		echo "#########################################################"
+		echo " FINISHED SETTING PERMISSION $GITDIR"
+		echo "#########################################################"
+		echo "               "
+	else
+		echo "No directory $GITDIR, ending PermissionsSet."
+	fi
 }	# end function
 
 function Main ()
