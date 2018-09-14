@@ -40,9 +40,6 @@ function ProceedYes ()
 	# Push SYNCDIR
 	Push "$SYNCDIR"
 	wait
-
-	# Set Permissions SYNCDIR
-#	PermissionsSet "$SYNCDIR"
 }	# end function
 
 GitCommit()
