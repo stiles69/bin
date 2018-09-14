@@ -23,7 +23,6 @@ export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export ZSH_CACHE_DIR=$ZSH/cache
 
 # Path to golang
 export PATH=$PATH:/usr/local/go/bin
@@ -56,7 +55,7 @@ ZSH_THEME="Soliah"
 
 #=== AUTOLOADS ===
 #==	ZSH Autoloads Added by Brett Salemink ==
-autoload zmv
+#autoload zmv
 
 #=== OH-MY-ZSH ===
 # Uncomment the following line to use case-sensitive completion.
@@ -132,7 +131,7 @@ plugins=(
 
 #====== SOURCES =======
 # ZSH
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 #======= COMMON ALIASES =======
 source $HOME/bin/files/Aliases/aliases-common
