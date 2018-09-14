@@ -31,7 +31,7 @@ set -o nounset                              # Treat unset variables as an error
 function Main ()
 {
 		# -F for each Field        
-        curl -s -d "jsname=$JSNAME&submit=SUBMIT" <URL> > out.html
+        curl -sd 'jsname=$JSNAME&submit=SUBMIT' <$URL> | lynx -dump -nolist -stdin > out.html
 
  #       <input type="text" class="whsOnd zHQkBf" jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label="Enter sitemap URL" autofocus="" autocorrect="off" autocapitalize="off" spellcheck="false" data-initial-value="" badinput="false">
  #       <input type="text" class="whsOnd zHQkBf" jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label="Enter sitemap URL" autofocus="" autocorrect="off" autocapitalize="off" spellcheck="false" data-initial-value="" badinput="false">
