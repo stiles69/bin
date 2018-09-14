@@ -26,8 +26,7 @@ SITEDIR="$1"
 #-------------------------------------
 function Main ()
 {
-
-	echo'This will rsync the $SITEDIR for the deployment. Do you want to proceed? [Y/n]'
+	echo "This will rsync the $SITEDIR for the deployment. Do you want to proceed? [Y/n]"
 	read ANSWER
 
 	case "$ANSWER" in
@@ -47,7 +46,8 @@ function Proceed ()
 {
 	rsync -avz --progress --delete-before "$SITEDIR/" "$HOME/development/stiles69/Hometown-Cab-Google-Cloud-Deployment/Webserver1/files/"
 
-	"$HOME/development/stiles69/Hometown-Cab-Google-Cloud-Deployment/Webserver1/goapp serve --host 10.0.0.11"
+	cd $HOME/development/stiles69/Hometown-Cab-Google-Cloud-Deployment/Webserver1/
+	goapp serve --host 10.0.0.11
 }	# end
 Main
 
