@@ -43,6 +43,11 @@ function ProceedYes ()
 
 	# Set Permissions SYNCDIR
 	PermissionsSet "$SYNCDIR"
+	wait
+
+	# Set Source
+	SetSource
+	wait
 }	# end function
 
 function GitCommit ()
@@ -88,6 +93,11 @@ function PermissionsSet ()
 	echo "#########################################################"
 	echo "               "
 }	# end function
+
+function SetSource ()
+{
+	source $HOME/.zshrc
+}	# end
 
 function Main ()
 {
