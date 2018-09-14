@@ -101,7 +101,7 @@ function Pull ()
 function PermissionsSet ()
 {
 	local SETPERMISSIONSDIR="$1"
-	if [ -d "$SEPERMISSIONSDIR" ]
+	if [ -d "$SETPERMISSIONSDIR" ]
 	then
 		SetPermissions "$SETPERMISSIONSDIR"
 		echo "############################################################"	
