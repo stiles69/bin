@@ -1,9 +1,9 @@
 #!/bin/bash 
 #====================================================
 #
-#          FILE: Install-Kodi-Stubs.sh
+#          FILE: -Install-Vim-Python-Mode.sh
 # 
-#         USAGE: ./Install-Kodi-Stubs.sh 
+#         USAGE: ./-Install-Vim-Python-Mode.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,7 +13,7 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 09/15/2018 08:03
+#       CREATED: 09/15/2018 08:22
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
@@ -21,7 +21,7 @@ set -o nounset                              # Treat unset variables as an error
 . $HOME/lib/sh/funcInstall.sh
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-SOFTWAREINSTALL="kodistubs"
+SOFTWAREINSTALL="vim python-mode"
 SCRIPTDEFINITION="This will install $SOFTWAREINSTALL"
 #-------------------------------------
 function Proceed ()
@@ -44,7 +44,8 @@ function Proceed ()
 
 function ProceedYes ()
 {
-	sudo pip2 install Kodistubs
+	cd ~/.vim/bundle
+	git clone --recursive https://github.com/python-mode/python-mode.git	
 }	# end function
 
 function ProceedNo ()

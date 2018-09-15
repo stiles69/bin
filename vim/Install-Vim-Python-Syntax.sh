@@ -1,9 +1,9 @@
 #!/bin/bash 
 #====================================================
 #
-#          FILE: Install-Kodi-Stubs.sh
+#          FILE: Install-Vim-Python-Syntax.sh
 # 
-#         USAGE: ./Install-Kodi-Stubs.sh 
+#         USAGE: ./Install-Vim-Python-Syntax.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,7 +13,7 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 09/15/2018 08:03
+#       CREATED: 09/15/2018 08:34
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
@@ -21,7 +21,7 @@ set -o nounset                              # Treat unset variables as an error
 . $HOME/lib/sh/funcInstall.sh
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-SOFTWAREINSTALL="kodistubs"
+SOFTWAREINSTALL="vim python syntax"
 SCRIPTDEFINITION="This will install $SOFTWAREINSTALL"
 #-------------------------------------
 function Proceed ()
@@ -44,7 +44,8 @@ function Proceed ()
 
 function ProceedYes ()
 {
-	sudo pip2 install Kodistubs
+	cd ~/.vim/bundle
+	git clone https://github.com/hdima/python-syntax
 }	# end function
 
 function ProceedNo ()
