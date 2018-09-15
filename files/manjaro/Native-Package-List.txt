@@ -7,13 +7,16 @@ arc-themes-maia
 arc-themes-solid-breath
 arc-themes-solid-maia
 aspell-en
+atomicparsley
 audacity
 automake
+axel
 b43-fwcutter
 baobab
 bison
 bleachbit
 blender
+bluefish
 brasero
 breath-icon-theme
 breeze-icons
@@ -47,6 +50,7 @@ dmidecode
 dnsmasq
 docker-compose
 downgrade
+easytag
 ecryptfs-utils
 efibootmgr
 enlightenment-manjaro-themes
@@ -58,6 +62,7 @@ fakeroot
 feh
 ffmpegthumbs
 ffms2
+firefox-developer-edition
 firefox-i18n-en-us
 flatix-theme
 flatix-theme-dark
@@ -74,6 +79,7 @@ gnome-terminal
 gnome-themes-maia
 gnuplot
 gparted
+gprename
 grub-theme-manjaro-dev
 gst-libav
 gst-plugins-ugly
@@ -105,7 +111,9 @@ ipw2100-fw
 ipw2200-fw
 isousb
 jfsutils
+k3b
 kdenlive
+kleopatra
 kodi
 lib32-flex
 lib32-libva-vdpau-driver
@@ -119,11 +127,12 @@ libva-mesa-driver
 libva-vdpau-driver
 lighttpd
 linux414-headers
-linux417-headers
+linux418-headers
 logrotate
 lrzsz
 lshw
 lxc
+lynx
 man-db
 man-pages
 manjaro-alsa
@@ -181,6 +190,7 @@ pamac
 paper-icon-theme-git
 papirus-maia-icon-theme
 patchutils
+perl-rename
 picard
 pkgconf
 playonlinux
@@ -220,6 +230,7 @@ ttf-indic-otf
 uget
 ultraflatorange-icon-theme
 unified-manjaro-themes-openbox
+unrar
 veracrypt
 vertex-maia-icon-theme
 vertex-maia-themes
@@ -250,6 +261,7 @@ xsane-gimp
 yaourt
 yay
 youtube-dl
+yubico-pam
 yubikey-manager-qt
 yubikey-personalization-gui
 zim
