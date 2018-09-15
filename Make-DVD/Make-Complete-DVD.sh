@@ -16,7 +16,7 @@
 #       CREATED: 09/14/2018 21:49
 #      REVISION:  ---
 #====================================================
-set -o nounset                              # Treat unset variables as an error
+#set -o nounset                              # Treat unset variables as an error
 #------------ SOURCED ----------------
 
 #-------------------------------------
@@ -34,7 +34,6 @@ function Bootstrap ()
     CheckDVDMOVIE
     GetSOURCEVIDEO
     GetDVDISONAME
-    GetASPECTRATIO
 }
 
 function GetDVDISONAME ()
@@ -49,23 +48,23 @@ function GetASPECTRATIO ()
     echo "Which aspect ratio do you want to use 16:9 Widescreen or the old 4:3 Normal? [1. 16x9, 2. 4x3]"
     read ASPECTRATIO
 
-    case $ASPECTRATIO in
-        1)
-        ASPECTRATIO="16x9"
-        ;;
-        2)
-        ASPECTRATIO="4x3"
-        ;;
-        *)
-        echo "Unknown answer, exiting..."
-        exit 1
-        ;;
+    case "$ASPECTRATIO" in
+	1)
+	ConvertVideo16by9
+	;;
+	2)
+	ConvertVideo4by3
+	;;
+	*)
+	echo "Unknown response, exiting..."
+	exit 1
+	;;
     esac
 }
 
 function GetSOURCEVIDEO ()
 {
-    if [ -z "$1" ]
+    if [ ! -z "$1" ]
     then
         echo "No argument supplied for the name of the file you want for the source video. Please enter the name of the video to convert to DVD. The program will assume it is in the same path as you are in now. [Filename:]"
         read SOURCEVIDEO       
@@ -76,21 +75,9 @@ function GetSOURCEVIDEO ()
 
 function CheckDVDMOVIE ()
 {
-    if [ -d "$DVDMOVIE" ]
+    if [ ! -d "$DVDMOVIE" ]
     then
-       end
-    else
         mkdir "$DVDMOVIE"
-    fi
-}
-
-function CheckASPECTRATIO ()
-{
-    if [ $ASPECTRATIO = 1 ]
-    then
-        ConvertVideo16by9
-    else
-        ConvertVideo4by3
     fi
 }
 
@@ -142,9 +129,13 @@ function BurnDVD ()
 function Main ()
 {
     Bootstrap
-    CheckASPECTRATIO
+    wait
+    GetASPECTRATIO
+    wait
     AssembleDVDFiles
+    wait
     GenerateISOFile
+    wait
     BurnDVD
 }	# end Main
 
