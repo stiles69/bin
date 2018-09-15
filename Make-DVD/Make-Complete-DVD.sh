@@ -51,9 +51,11 @@ function GetASPECTRATIO ()
     case "$ASPECTRATIO" in
 	1)
 	ConvertVideo16by9
+	wait
 	;;
 	2)
 	ConvertVideo4by3
+	wait
 	;;
 	*)
 	echo "Unknown response, exiting..."
@@ -81,21 +83,21 @@ function CheckDVDMOVIE ()
     fi
 }
 
-function ConvertVideo16by9 ()
+function ConvertVideo4by3 ()
 {
-    ffmpeg -i "$SOURCEVIDEO" -filter:v "scale='if(gt(a,720/480),720,-1)':'if(gt(a,720/480),-1,480)',pad=w=720:h=480:x=(ow-iw)/2:y=(oh-ih)/2" -target ntsc-dvd temp.mpg
+    ffmpeg -i "$SOURCEVIDEO" -filter:v "scale='if(gt(a,720/480),720,-1)':'if(gt(a,720/480),-1,480)',pad=w=720:h=480:x=(ow-iw)/2:y=(oh-ih)/2" -target ntsc-dvd "temp.mpg"
     wait
 }
 
-function ConvertVideo4by3 ()
+function ConvertVideo16by9 ()
 {
-    ffmpeg -i "$SOURCEVIDEO" -filter:v "scale='if(gt(a,720/480),720,-1)':'if(gt(a,720/480),-1,480)',pad=w=720:h=480:x=(ow-iw)/2:y=(oh-ih)/2" -aspect 16:9 -target ntsc-dvd temp.mpg
+    ffmpeg -i "$SOURCEVIDEO" -filter:v "scale='if(gt(a,720/480),720,-1)':'if(gt(a,720/480),-1,480)',pad=w=720:h=480:x=(ow-iw)/2:y=(oh-ih)/2" -aspect 16:9 -target ntsc-dvd "temp.mpg"
     wait
 }
 
 function AssembleDVDFiles ()
 {
-    dvdauthor --title -o "$DVDMOVIE" -f temp.mpg
+    dvdauthor --title -o "$DVDMOVIE" -f "temp.mpg"
     wait
     dvdauthor -T -o "$DVDMOVIE"
     wait
