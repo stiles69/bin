@@ -21,27 +21,19 @@
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-
+SOURCEVIDEO="$1"
 #-------------------------------------
 function Overseer ()
 {
     export VIDEO_FORMAT=NTSC
     DVDMOVIE=DVDMOVIEDIR
     CURRENTDIR="$PWD"
-    SOURCEVIDEO="$1"
     
     # Check if Directory is there
     if [ ! -d "$DVDMOVIE" ]
     then
         mkdir "$DVDMOVIE"
-    fi
-  
-    # Check if there is a sourcevideo
-    if [ ! -z "$SOURCEVIDEO" ]
-    then
-        echo "No argument supplied for the name of the file you want for the source video. Please enter the name of the video to convert to DVD. The program will assume it is in the same path as you are in now. [Filename:]"
-        read SOURCEVIDEO                    
-    fi
+    fi 
    
     # Get DVDISONAME
     echo "What name do you want for the iso, it should be all uppercase and no characters or spaces. ex. MYDVD The extension of iso will be added to your name. [Name of iso: ]"
