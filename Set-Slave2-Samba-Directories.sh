@@ -21,7 +21,7 @@ set -o nounset                              # Treat unset variables as an error
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-DIR1=/mnt/usb//edia
+DIR1=/mnt/usb/Media
 DIR2=/media
 #-------------------------------------
 function Main ()
@@ -29,7 +29,7 @@ function Main ()
 	sudo chown -R nobody:nogroup "$DIR1"
 	sudo chmod -R 774 "$DIR1"
 	sudo chown -R nobody:nogroup "$DIR2"
-	sudo chmod -R 774 "DIR2"
+	sudo chmod -R 774 "$DIR2"
 }	# end Main
 
 Main
