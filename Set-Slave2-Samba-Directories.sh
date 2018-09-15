@@ -21,7 +21,7 @@ set -o nounset                              # Treat unset variables as an error
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-DIR1=/mnt/usb//Media
+DIR1=/mnt/usb//edia
 DIR2=/media
 #-------------------------------------
 function Main ()
