@@ -16,7 +16,7 @@
 #       CREATED: 09/15/2018 17:14
 #      REVISION:  ---
 #====================================================
-set -o nounset                              # Treat unset variables as an error
+#set -o nounset                              # Treat unset variables as an error
 function WhichOS ()
 {
 	echo 'Which OS are you using 1. Debian based, 2. Arch based, 3. Gento? [1,2,3]'
@@ -45,14 +45,15 @@ function InstallMEGAsyncDeb ()
 	sudo apt-get install -y build-essential autoconf automake m4 libtool libtool-bin qt4-qmake make libqt4-dev libcrypto++-dev libsqlite3-dev libc-ares-dev libcurl4-openssl-dev libssl-dev libraw-dev libnautilus-extension-dev
 
 	# Make Build Directory
-	export BUILDDIR ="$(mktemp -d /tmp/XXXXXXXX)"
-	
+	export BUILDDIR=$(mktemp -p "${TMPDIR:-.}" -d dir-XXXX) || exit 1
+
 	# Clone MEGAsync
 	cd "$BUILDDIR"
 	git clone --recursive https://github.com/meganz/MEGAsync.git
+	cd "$BUILDDIR/MEGAsync"
 
 	# Build MEGAsync
-	cd src
+	cd "$BUILDDIR/MEGAsync/src"
 	./Configure
 	qmake MEGA.pro
 	lrelease MEGASync/MEGASync.pro
@@ -65,14 +66,15 @@ function InstallMEGAsyncArch ()
 	echo "Installing For Arch."
 
 	# Make Build Directory
-	export BUILDDIR ="$(mktemp -d /tmp/XXXXXXXX)"
+	export BUILDDIR=$(mktemp -p "${TMPDIR:-.}" -d dir-XXXX) || exit 1	
 	
 	# Clone MEGAsync
 	cd "$BUILDDIR"
 	git clone --recursive https://github.com/meganz/MEGAsync.git
+	cd "$BUILDDIR/MEGAsync"
 
 	# Build MEGAsync
-	cd src
+	cd "$BUILDDIR/MEGAsync/src"
 	./Configure
 	qmake MEGA.pro
 	lrelease MEGASync/MEGASync.pro
