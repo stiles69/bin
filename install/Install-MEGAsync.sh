@@ -50,10 +50,10 @@ function InstallMEGAsyncDeb ()
 	# Clone MEGAsync
 	cd "$BUILDDIR"
 	git clone --recursive https://github.com/meganz/MEGAsync.git
-	cd "$BUILDDIR/MEGAsync"
+	cd "MEGAsync"
 
 	# Build MEGAsync
-	cd "$BUILDDIR/MEGAsync/src"
+	cd "src"
 	./Configure
 	qmake MEGA.pro
 	lrelease MEGASync/MEGASync.pro
@@ -71,10 +71,10 @@ function InstallMEGAsyncArch ()
 	# Clone MEGAsync
 	cd "$BUILDDIR"
 	git clone --recursive https://github.com/meganz/MEGAsync.git
-	cd "$BUILDDIR/MEGAsync"
+	cd "MEGAsync"
 
 	# Build MEGAsync
-	cd "$BUILDDIR/MEGAsync/src"
+	cd "src"
 	./Configure
 	qmake MEGA.pro
 	lrelease MEGASync/MEGASync.pro
