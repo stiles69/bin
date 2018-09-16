@@ -25,7 +25,7 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-    rsync -rvz ./ brettsalemink@manjaro.roguedesigns.us:/mnt/Media/Adult
+    rsync -rvz --progress ./ brettsalemink@manjaro.roguedesigns.us:/mnt/Media/Adult
 
     ssh cp.manjaro sudo chown -R plex:brettsalemink /mnt/Media
 
