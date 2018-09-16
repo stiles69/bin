@@ -45,16 +45,19 @@ function InstallMEGAsyncDeb ()
 	sudo apt-get install -y build-essential autoconf automake m4 libtool libtool-bin qt4-qmake make libqt4-dev libcrypto++-dev libsqlite3-dev libc-ares-dev libcurl4-openssl-dev libssl-dev libraw-dev libnautilus-extension-dev
 
 	# Make Build Directory
-	export BUILDDIR=$(mktemp -p "${TMPDIR:-.}" -d dir-XXXX) || exit 1
-
+	#export BUILDDIR=$(mktemp -p "${TMPDIR:-.}" -d dir-XXXX) || exit 1
+	mkdir "$HOME/buildmegasync"
+	export BUILDDIR="$HOME/buildmegasync"
+	echo "The build dir is $BUILDDIR."	
+	
 	# Clone MEGAsync
 	cd "$BUILDDIR"
 	git clone --recursive https://github.com/meganz/MEGAsync.git
-	cd "MEGAsync"
+	cd MEGAsync
 
 	# Build MEGAsync
-	cd "src"
-	./Configure
+	cd src
+	./configure
 	qmake MEGA.pro
 	lrelease MEGASync/MEGASync.pro
 	make
@@ -66,16 +69,19 @@ function InstallMEGAsyncArch ()
 	echo "Installing For Arch."
 
 	# Make Build Directory
-	export BUILDDIR=$(mktemp -p "${TMPDIR:-.}" -d dir-XXXX) || exit 1	
+	#export BUILDDIR=$(mktemp -p "${TMPDIR:-.}" -d dir-XXXX) || exit 1
+	mkdir "$HOME/buildmegasync"
+	export BUILDDIR="$HOME/buildmegasync"
+	echo "The build dir is $BUILDDIR."	
 	
 	# Clone MEGAsync
 	cd "$BUILDDIR"
 	git clone --recursive https://github.com/meganz/MEGAsync.git
-	cd "MEGAsync"
+	cd MEGAsync
 
 	# Build MEGAsync
-	cd "src"
-	./Configure
+	cd src
+	./configure
 	qmake MEGA.pro
 	lrelease MEGASync/MEGASync.pro
 	make
