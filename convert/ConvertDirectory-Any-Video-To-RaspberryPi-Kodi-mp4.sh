@@ -18,14 +18,19 @@
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
-CURRENTDIR="$PWD"
+
 function MakeDir ()
 {
-	if [ ! -d "$HOME/Kodi-Exports/$CURRENTDIR" ]
-	then
-		echo "Making Directory in $HOME/Kodi-Exports/$CURRENTDIR"
-		mkdir -p "$HOME/Kodi-Exports/$CURRENTDIR"
-	fi
+	echo "What do you want to name the directory that the converted files will be located in? [$HOME/Kodi-Exports/????]"
+	read OUTPUTDIR
+
+	mkdir "Converted/$OUTPUTDIR"
+
+	#if [ ! -d "$HOME/Kodi-Exports/$OUTPUTDIR" ]
+	#then
+	#	echo "Making Directory in $HOME/Kodi-Exports/$OUTPUTDIR"
+	#	mkdir -p "$HOME/Kodi-Exports/$OUTPUTDIR"
+	#fi
 }	# end function
 
 function Convert () 
@@ -36,7 +41,7 @@ function Convert ()
 		name=`echo $i | cut -d'.' -f1`
 		echo $name
 		#ffmpeg -i "$i" -c:a libfdk_aac -vn "./Converted/$name.m4a"
-		ffmpeg -i "$i" -vcodec libx264 -profile:v high -preset fast -crf 18 -b-pyramid none -acodec ac3 -ab 1536k -scodec copy "HOME/Kodi-Exports/$CURRENTDIR/$name.mp4"
+		/usr/bin/ffmpeg -i "$i" -vcodec libx264 -profile:v high -level 4.1 -preset fast -crf 18 -b-pyramid none -acodec ac3 -ab 1536k -scodec copy "Converted/$OUTPUTDIR/$name.mp4"
 		wait
 	done
 }	# end function

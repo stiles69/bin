@@ -5,6 +5,9 @@ alias bb="bleachbit --shred"
 alias cs="cd"
 alias wipe="wipe -rcf"
 
+#======THIS IS TO ENSURE FFMPEG USES CORRECT VERSION======
+alias ffmpeg="/usr/bin/ffmpeg"
+
 #=== SET DEFAULT EDITOR FOR VISUDO ====
 alias visudo='EDITOR=nano visudo'
 
