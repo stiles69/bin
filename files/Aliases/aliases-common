@@ -21,7 +21,7 @@ alias ls='ls -lash'
 alias mkdir='mkdir -p'
 
 #----	Dont have to add --progress to rsync
-alias rsync='rsync --progress'
+alias rsync='rsync --ignore-existing --progress'
 
 #====== Referenced from http:/LDP/abs/html/sample-bashrc.html
 #-------------------------------------------------------------
