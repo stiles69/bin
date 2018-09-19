@@ -21,7 +21,7 @@ set -o nounset                              # Treat unset variables as an error
 
 function MakeDir ()
 {
-	echo "What do you want to name the directory that the converted files will be located in? [$HOME/Kodi-Exports/????]"
+	echo "What do you want to NAME the directory that the converted files will be located in? [$HOME/Kodi-Exports/????]"
 	read OUTPUTDIR
 
 	mkdir "Converted/$OUTPUTDIR"
@@ -36,12 +36,14 @@ function MakeDir ()
 function Convert () 
 {
 	
-	for i in *
+	for FILENAME in *
 	do 
-		name=`echo $i | cut -d'.' -f1`
-		echo $name
-		#ffmpeg -i "$i" -c:a libfdk_aac -vn "./Converted/$name.m4a"
-		/usr/bin/ffmpeg -i "$i" -vcodec libx264 -profile:v high -level 4.1 -preset fast -crf 18 -b-pyramid none -acodec ac3 -ab 1536k -scodec copy "Converted/$OUTPUTDIR/$name.mp4"
+		NAME="echo $FILENAME | cut -d'.' -f1"
+		echo $NAME
+		NEWNAME="$NAME.mp4"
+		
+		/usr/bin/ffmpeg -i "$FILENAME" -vcodec libx264 -profile:v high -level 4.1 -preset fast -crf 18 -b-pyramid none \
+    -acodec ac3 -ab 1536k -scodec copy "Converted/$OUTPUTDIR/$NEWNAME"
 		wait
 	done
 }	# end function

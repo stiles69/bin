@@ -45,11 +45,12 @@ function MakeDir ()
 
 function Convert () 
 {
-		name=`echo "$FILENAME" | cut -d'.' -f1`
-		echo $name
-		#ffmpeg -i "$i" -c:a libfdk_aac -vn "./Converted/$name.m4a"
-		/usr/bin/ffmpeg -i "$FILENAME" -vcodec libx264 -profile:v high -level 4.1 -preset fast -crf 18 -b-pyramid none 
-    -acodec ac3 -ab 1536k -scodec copy "Converted/$OUTPUTDIR/$name.mp4"
+		NAME="echo "$FILENAME" | cut -d'.' -f1"
+		echo "$NAME"
+		NEWNAME="$NAME.mp4"
+		
+		/usr/bin/ffmpeg -i "$FILENAME" -vcodec libx264 -profile:v high -level 4.1 -preset fast -crf 18 -b-pyramid none \
+    -acodec ac3 -ab 1536k -scodec copy "Converted/$OUTPUTDIR/$NEWNAME"
 		wait	
 }	# end function
 
