@@ -1,5 +1,5 @@
 #!/bin/bash  
-#===============================================================================
+#===========================================================================
 #
 #          FILE: Walk-Thru-Subdirectories-Example.sh
 # 
@@ -15,7 +15,7 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 06/29/2018 01:47
 #      REVISION:  ---
-#===============================================================================
+#===========================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
@@ -48,7 +48,7 @@ do
 		if [ $FILEEXT = "mp3" ]
 		then
 			NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
-			ffmpeg -n -i "$i" -c:a libfdk_aac -vn "./Converted/$NAME.m4a"
+			/usr/bin/ffmpeg -n -i "$i" -c:a libfdk_aac -vn "./Converted/$NAME.m4a"
 			wait
 		fi
 	wait	
