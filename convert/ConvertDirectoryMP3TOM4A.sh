@@ -1,9 +1,9 @@
 #!/bin/bash  
-#===============================================================================
+#===========================================================================
 #
-#          FILE: Test-Walk2.sh
+#          FILE: Convert-Dircectory-To-M4A.sh
 # 
-#         USAGE: ./Test-Walk2.sh 
+#         USAGE: ./Convert-Dircectory-To-M4A.sh
 # 
 #   DESCRIPTION: 
 # 
@@ -11,42 +11,56 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: Brett Salemink (), admin@roguedesigns.us
+#        AUTHOR: Brett Salemink (), brett.salemink@gmail.com
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 07/12/2018 06:42
+#       CREATED: 06/29/2018 01:47
 #      REVISION:  ---
-#===============================================================================
+#===========================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
-function MakeDir ()
-{
-	if [ ! -d "$PWD/Converted" ]
-	then
-		echo "Making Directory Converted."
-		mkdir Converted
-	fi
-}	# end function
+shopt -s globstar
 
-function Convert () 
+function Walk ()
 {
-	
-	for i in *.mp3
-	do 
-		name=`echo $i | cut -d'.' -f1`
-		echo $name
-		ffmpeg -i "$i" -c:a libfdk_aac -vn "./Converted/$name.m4a"
-		wait
+	for i in ./**/*		
+	do
+		FILEEXT="${i##*.}"	
+		FILENAME="${i##*/}"
+		PATHER="${i%/*}"
+		
+		mkdir "./Converted"
+		if [ -d "Converted" ]
+		then
+			if [ -f "$i" ]
+			then        
+				NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
+				echo "The name is $NAME"
+				NEWNAME="$NAME.m4a"
+				/usr/bin/ffmpeg -n -i "$i" -c:a libfdk_aac -vn "./Converted/$NEWNAME"
+				wait
+			fi
+		else
+			mkdir ./Converted
+			if [ -f "$i" ]
+			then        
+				NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
+				echo "The name is $NAME"
+				NEWNAME="$NAME.m4a"
+				/usr/bin/ffmpeg -n -i "$i" -c:a libfdk_aac -vn "./Converted/$NEWNAME"
+				wait
+			fi
+		fi
+				
 	done
-}	# end function
+}	# End function
 
 function Main ()
 {
-	MakeDir
-	Convert
-}	# end function
+	Walk
+}	# End function
 
 Main
 
-# == EXIT ==
+#== Exit ==
 exit 0

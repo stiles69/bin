@@ -37,7 +37,8 @@ do
 		#printf "Extension: %s\n"  "${i##*.}"
 		#printf "\n\n"
 		#printf "Filesize: %s\n" "$(du -b "$i" | awk '{print $1}')"
-	       	FILEEXT="${i##*.}"	
+		PATH="${i%/*}"
+	    FILEEXT="${i##*.}"	
 		FILENAME="${i##*/}"
 		#NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
 
