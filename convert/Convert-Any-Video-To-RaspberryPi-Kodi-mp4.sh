@@ -34,18 +34,13 @@ function MakeDir ()
 	echo "What do you want to name the directory that the converted files will be located in? [$HOME/Kodi-Exports/????]"
 	read OUTPUTDIR
 
-	mkdir -p "Converted/$OUTPUTDIR"
+	mkdir -p "Converted/$OUTPUTDIR"	
 	
-	#if [ ! -d "$HOME/Kodi-Exports/$OUTPUTDIR" ]
-	#then
-	#	echo "Making Directory in $HOME/Kodi-Exports/$OUTPUTDIR"
-	#	mkdir -p "$HOME/Kodi-Exports/$OUTPUTDIR"
-	#fi
 }	# end function
 
 function Convert () 
 {
-		NAME="echo "$FILENAME" | cut -d'.' -f1"
+		NAME=`echo "$FILENAME" | cut -d'.' -f1`
 		echo "$NAME"
 		NEWNAME="$NAME.mp4"
 		

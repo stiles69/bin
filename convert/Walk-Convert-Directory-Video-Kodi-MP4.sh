@@ -23,13 +23,14 @@ shopt -s globstar
 
 function Walk ()
 {
-	echo "What do you want for the directory name to put the converted files into? [It will be in Converted/Your/DirectoryName]"
-	read DIRECTORYNAME
+	echo "What do you want for the directory name to put the converted files into? [It will be in Converted/Your/OUTPUTDIR]"
+	read OUTPUTDIR
 
 	for i in ./**/*
 	do
-		mkdir "./Converted/$DIRECTORYNAME"
-		if [ -f "$i" ];
+		mkdir "./Converted/$OUTPUTDIR"
+
+		if [ -f "$i" ]
 		then        
 			#printf "Path: %s\n" "${i%/*}" # shortest suffix removal
 			#printf "Filename: %s\n" "${i##*/}" # longest prefix removal
@@ -45,13 +46,16 @@ function Walk ()
 			#echo "FILENAME is $FILENAME"
 			#echo "NAME =  $NAME"
 
-			if [ $FILEEXT = "mp3" ]
-			then
-				NAME="$(echo "$FILENAME" | cut -d'.' -f1)"
-				/usr/bin/ffmpeg -n -i "$i" -c:a libfdk_aac -vn "./Converted/$NAME.m4a"
+			for FILE in *
+			do
+				NAME=`echo "$FILENAME" | cut -d'.' -f1`
+                echo "$NAME"
+                NEWNAME="$NAME.mp4"
+                
+                /usr/bin/ffmpeg -i "$FILENAME" -vcodec libx264 -profile:v high -level 4.1 -preset fast -crf 18 -b-pyramid none \
+            -acodec ac3 -ab 1536k -scodec copy "Converted/$OUTPUTDIR/$NEWNAME"
 				wait
-			fi
-		wait	
+            done			
 		fi
 	done
 }	# End function
