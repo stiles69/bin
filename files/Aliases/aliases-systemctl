@@ -1,4 +1,11 @@
 # ============= SYSTEMCTL ALIASES ===============
+alias minidlna-stop="sudo systemctl stop minidlna.service"
+alias minidlna-start="sudo systemctl start minidlna.service"
+alias minidlna-status="sudo systemctl status minidlna.service"
+alias minidlna-restart="sudo systemctl restart minidlna.service"
+alias minidlna-disable="sudo systemctl disable minidlna.service"
+alias minidlna-enable="sudo systemctl enable minidlna.service"
+
 alias vpn-stop="sudo systemctl stop openvpn@pia-midwest.service"
 alias vpn-start="sudo systemctl start openvpn@pia-midwest.service"
 alias vpn-status="sudo systemctl status openvpn@pia-midwest.service"
