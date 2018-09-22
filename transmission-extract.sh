@@ -36,7 +36,7 @@ UnRarDataDir()
 	echo "Changed to $PWD"
 	echo "Starting $DIR2 extraction"
 	find . -name '*.rar' -execdir unrar e -o- {} \; 
-	echo "Finished $DIR2 extration"
+	echo "Finished $DIR2 extraction"
 	wait	
 }	# end
 
@@ -48,6 +48,7 @@ UnRarTorrentsDir()
 	find . -name '*.rar' -execdir unrar e -o- {} \;
 	echo "Finished $DIR1 extraction"
 	wait
+	echo "Finished $DIR1 extraction" >> "$LOGDIR/$LOGFILE"
 }	# end
 
 MoveTorrentsDir()
@@ -61,7 +62,8 @@ MoveTorrentsDir()
 	find $DIR1 -name '*.mpeg' -exec mv -t "$DIRCOMPLETEDTORRENTS" {} +
 	find $DIR1 -name '*.flv' -exec mv -t "$DIRCOMPLETEDTORRENTS" {} +
 	find $DIR1 -name '*.flac' -exec mv -t "$DIRCOMPLETEDTORRENTS" {} +
-	echo "Finished move on $DIR"
+	echo "Finished move on $DIR1"
+	echo "Finished move on $DIR1" >> "$LOGDIR/$LOGFILE"
 }	# end
 
 MoveDataDir()
