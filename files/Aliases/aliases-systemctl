@@ -6,6 +6,13 @@ alias minidlna-restart="sudo systemctl restart minidlna.service"
 alias minidlna-disable="sudo systemctl disable minidlna.service"
 alias minidlna-enable="sudo systemctl enable minidlna.service"
 
+alias samba-stop="sudo systemctl stop samba.service"
+alias samba-start="sudo systemctl start samba.service"
+alias samba-status="sudo systemctl status samba.service"
+alias samba-restart="sudo systemctl restart samba.service"
+alias samba-disable="sudo systemctl disable samba.service"
+alias samba-enable="sudo systemctl enable samba.service"
+
 alias nginx-stop="sudo systemctl stop nginx.service"
 alias nginx-start="sudo systemctl start nginx.service"
 alias nginx-status="sudo systemctl status nginx.service"
