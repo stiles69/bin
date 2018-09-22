@@ -6,13 +6,6 @@ alias minidlna-restart="sudo systemctl restart minidlna.service"
 alias minidlna-disable="sudo systemctl disable minidlna.service"
 alias minidlna-enable="sudo systemctl enable minidlna.service"
 
-alias sshd-stop="sudo systemctl stop sshd.service"
-alias sshd-start="sudo systemctl start sshd.service"
-alias sshd-status="sudo systemctl status sshd.service"
-alias sshd-restart="sudo systemctl restart sshd.service"
-alias sshd-disable="sudo systemctl disable sshd.service"
-alias sshd-enable="sudo systemctl enable sshd.service"
-
 alias nginx-stop="sudo systemctl stop nginx.service"
 alias nginx-start="sudo systemctl start nginx.service"
 alias nginx-status="sudo systemctl status nginx.service"
