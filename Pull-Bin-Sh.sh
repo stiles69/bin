@@ -28,13 +28,7 @@ function ProceedYes ()
 
 	# Sync Sh
 	$HOME/bin/Pull-Sh.sh
-
-	# Sync RPI-Docker-Transmission
-	$HOME/bin/Pull-RPI-Docker-Transmission.sh
-
-	#Sync Hometown-Cab-Project
-	$HOME/bin/Pull-Hometown-Cab-Project.sh
-}	# end function
+}
 
 function SetPermissions ()
 {
