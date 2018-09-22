@@ -6,6 +6,13 @@ alias minidlna-restart="sudo systemctl restart minidlna.service"
 alias minidlna-disable="sudo systemctl disable minidlna.service"
 alias minidlna-enable="sudo systemctl enable minidlna.service"
 
+alias nginx-stop="sudo systemctl stop nginx.service"
+alias nginx-start="sudo systemctl start nginx.service"
+alias nginx-status="sudo systemctl status nginx.service"
+alias nginx-restart="sudo systemctl restart nginx.service"
+alias nginx-disable="sudo systemctl disable nginx.service"
+alias nginxminidlna-enable="sudo systemctl enable nginx.service"
+
 alias vpn-stop="sudo systemctl stop openvpn@pia-midwest.service"
 alias vpn-start="sudo systemctl start openvpn@pia-midwest.service"
 alias vpn-status="sudo systemctl status openvpn@pia-midwest.service"
