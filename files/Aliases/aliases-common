@@ -4,6 +4,7 @@ alias ohmyzsh="cd ~/.oh-my-zsh"
 alias bb="bleachbit --shred"
 alias cs="cd"
 alias wipe="wipe -rcf"
+alias code="code-oss"
 
 #======THIS IS TO ENSURE FFMPEG USES CORRECT VERSION======
 alias ffmpeg="/usr/bin/ffmpeg"
