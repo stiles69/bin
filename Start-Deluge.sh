@@ -27,6 +27,7 @@ set -o nounset                              # Treat unset variables as an error
 function Main ()
 {
 	sudo service deluged start
+	deluge-web
 
 }	# end Main
 
