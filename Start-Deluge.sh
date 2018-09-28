@@ -27,6 +27,10 @@ set -o nounset                              # Treat unset variables as an error
 function Main ()
 {
 	sudo service deluged start
+	wait
+	echo "Current IP address is:"
+	curl http://ipinfo.io/ip
+	wait
 	deluge-web
 
 }	# end Main
