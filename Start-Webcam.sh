@@ -26,7 +26,7 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-	ffmpeg -f v4l2 -framerate 25 -video_size 320x232 -i /dev/video0 $HOME/Videos/Output.mkv
+	ffmpeg -f v4l2 -framerate 20 -video_size 320x232 -i /dev/video0 -c:v libx264 -preset veryfast -maxrate 3000k -bufsize 10000k -vf "format=yuvj422p" $HOME/Videos/output.mp4
 }	# end Main
 
 Main
