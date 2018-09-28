@@ -36,6 +36,18 @@ function InstallPIA ()
 	cd /etc/openvpn
 	sudo wget https://www.privateinternetaccess.com/openvpn/openvpn.zip
 	sudo unzip openvpn.zip	
+	echo "Please enter your PIA login:"
+	read PIALOGIN
+	echo "Please enter your PIA password:"
+	read PIAPASSWORD
+	sudo echo $PIALOGIN > login.conf
+	sudo echo $PIAPASSWORD >> login.conf
+	sudo chmod 400 login.conf
+	sudo cp US\ Chicago.ovpn ./Chicago.conf
+	sudo cat /etc/openvpn/Chicago.conf | sed -e "s/auth-user-pass/auth-user-pass /etc/openvpn/login.conf/" > /etc/openvpn/temp_file
+	sudo mv /etc/openvpn/temp_file /etc/openvpn/Chicago.conf
+	echo "To start openvpn run [sudo openvpn Chicago.conf], or to autostart create a new line under the last AUTOSTART in /etc/default/openvpn with this line [AUTOSTART=Chicago]"
+	
 }	# end function
 
 function Main ()
