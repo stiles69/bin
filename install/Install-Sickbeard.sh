@@ -26,10 +26,10 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-	wget http://pypi.python.org/packages/source/C/Cheetah/Cheetah-2.4.4.tar.gz
+	wget https://pypi.python.org/packages/source/C/Cheetah/Cheetah-2.4.4.tar.gz
 	tar -zxvf Cheetah-2.4.4.tar.gz
 	cd Cheetah-2.4.4
-	sudo python setup.py install
+	sudo python2.7 setup.py install
 	cd $HOME/development/stiles69
 	git clone git://github.com/midgetspy/Sick-Beard.git my-sickbeard-install
 	cd my-sickbeard-install
