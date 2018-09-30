@@ -6,6 +6,13 @@ alias minidlna-restart="sudo systemctl restart minidlna.service"
 alias minidlna-disable="sudo systemctl disable minidlna.service"
 alias minidlna-enable="sudo systemctl enable minidlna.service"
 
+alias sabnzbdplus-stop="sudo systemctl stop sabnzbdplus.service"
+alias sabnzbdplus-start="sudo systemctl start sabnzbdplus.service"
+alias sabnzbdplus-status="sudo systemctl status sabnzbdplus.service"
+alias sabnzbdplus-restart="sudo systemctl restart sabnzbdplus.service"
+alias sabnzbdplus-disable="sudo systemctl disable sabnzbdplus.service"
+alias sabnzbdplus-enable="sudo systemctl enable sabnzbdplus.service"
+
 alias smbd-stop="sudo systemctl stop smbd.service"
 alias smbd-start="sudo systemctl start smbd.service"
 alias smbd-status="sudo systemctl status smbd.service"
