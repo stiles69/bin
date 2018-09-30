@@ -5,6 +5,10 @@ alias bb="bleachbit --shred"
 alias cs="cd"
 alias wipe="wipe -rcf"
 alias code="code-oss"
+alias untar='tar -zxvf '
+alias wget='wget -c '
+alias ipe='curl ipinfo.io/ip'
+alias c='clear'
 
 #======THIS IS TO ENSURE FFMPEG USES CORRECT VERSION======
 alias ffmpeg="/usr/bin/ffmpeg"
