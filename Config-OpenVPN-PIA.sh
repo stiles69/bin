@@ -1,9 +1,9 @@
-#!/bin/bash  
-#======================================================
+#!/bin/bash 
+#====================================================
 #
-#          FILE: Install-OpenVPN-PIA.sh
+#          FILE: Config-OpenVPN-PIA.sh
 # 
-#         USAGE: ./Install-OpenVPN-PIA.sh 
+#         USAGE: ./Config-OpenVPN-PIA.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,35 +13,28 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 08/14/18 21:07
+#       CREATED: 09/29/2018 21:25
 #      REVISION:  ---
-#======================================================
+#====================================================
 set -o nounset                              # Treat unset variables as an error
 
 #------------ SOURCED ----------------
 
 #-------------------------------------
-
 #---------- GLOBAL VARIABLES ---------
 
 #-------------------------------------
-function InstallOpenVPN ()
-{
-	sudo apt-get update -y && sudo apt-get upgrade -y
-	sudo apt-get install openvpn
-}	# end function
-
-function InstallPIA ()
+function Main ()
 {
 	cd /etc/openvpn
 	sudo wget https://www.privateinternetaccess.com/openvpn/openvpn.zip
 	sudo unzip openvpn.zip	
 	sudo rm openvpn.zip
+	sudo touch login.conf
 	echo "Please enter your PIA login:"
 	read PIALOGIN
 	echo "Please enter your PIA password:"
 	read PIAPASSWORD
-	sudo touch login.conf
 	sudo echo $PIALOGIN >> login.conf
 	sudo echo $PIAPASSWORD >> login.conf
 	sudo chmod 400 login.conf
@@ -49,13 +42,7 @@ function InstallPIA ()
 	sudo cat /etc/openvpn/Chicago.conf | sed -e "s/auth-user-pass/auth-user-pass /etc/openvpn/login.conf/" > /etc/openvpn/temp_file
 	sudo mv /etc/openvpn/temp_file /etc/openvpn/Chicago.conf
 	echo "To start openvpn run [sudo openvpn Chicago.conf], or to autostart create a new line under the last AUTOSTART in /etc/default/openvpn with this line [AUTOSTART=Chicago]"
-	
-}	# end function
 
-function Main ()
-{
-	InstallOpenVPN
-	InstallPIA
 }	# end Main
 
 Main
