@@ -1,5 +1,5 @@
 #!/bin/bash  
-#===============================================================================
+#====================================================
 #
 #          FILE: Install-NVM.sh
 # 
@@ -15,11 +15,8 @@
 #  ORGANIZATION: 
 #       CREATED: 07/01/2018 22:48
 #      REVISION:  ---
-#===============================================================================
-
+#====================================================
 set -o nounset                              # Treat unset variables as an error
-
-
 SOFTWAREINSTALL="NVM"
 SCRIPTDEFINITION="This will install "$SOFTWAREINSTALL
 
@@ -38,14 +35,12 @@ function Proceed ()
 	case $PROCEED in
 		"Y"|"y")
 		ProceedYes
-		InstallNode
 		;;
 		"N"|"n")
 		ProceedNo
 		;;
 		*)
 		ProceedYes
-		InstallNode
 	esac
 }	# end function
 
