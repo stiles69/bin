@@ -31,12 +31,12 @@ function Main ()
 	sudo unzip openvpn.zip	
 	sudo rm openvpn.zip
 	sudo touch login.conf
-	sudo echo "Please enter your PIA login:"
-	sudo read PIALOGIN
-	sudo echo "Please enter your PIA password:"
-	sudo read PIAPASSWORD
-	sudo echo "$PIALOGIN" >> login.conf
-	sudo echo "$PIAPASSWORD" >> login.conf
+	echo "Please enter your PIA login:"
+	read PIALOGIN
+	echo "Please enter your PIA password:"
+	read PIAPASSWORD
+	echo "$PIALOGIN" >> login.conf
+	echo "$PIAPASSWORD" >> login.conf
 	sudo chmod 400 login.conf
 	sudo touch /etc/openvpn/temp_file
 	sudo cp US\ Chicago.ovpn ./Chicago.conf
