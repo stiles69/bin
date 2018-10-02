@@ -27,7 +27,7 @@ CONFDIR=/etc/openvpn
 function Main ()
 {
 	cd "$CONFDIR"
-	sudo openvpn --daemon --config US_Chicago.ovpn
+	sudo openvpn --daemon --config Chicago.conf
 	$HOME/bin/Ip-Check.sh
 }	# end Main
 
