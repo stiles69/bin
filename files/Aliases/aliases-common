@@ -9,6 +9,7 @@ alias untar='tar -zxvf '
 alias wget='wget -c '
 alias ipe='curl ipinfo.io/ip'
 alias c='clear'
+alias dallfiles='find . -name "*" -delete'
 
 #======THIS IS TO ENSURE FFMPEG USES CORRECT VERSION======
 alias ffmpeg="/usr/bin/ffmpeg"
