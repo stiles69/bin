@@ -26,7 +26,7 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-	docker start sabnzdb
+	docker start sabnzbd
 	wait
 	docker start sickbeard
 	wait
