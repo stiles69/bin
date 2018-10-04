@@ -28,13 +28,8 @@ function Main ()
 	sudo apt-get update && sudo apt-get upgrade -y
 	sudo git clone https://github.com/rembo10/headphones.git /opt/headphones
 
-	sudo chown -R brettsalemink:brettsalemink
-
-	sudo touch /etc/default/headphones
-
-	sudo echo HP_USER=pi >> /etc/default/headphones
-	sudo echo HP_HOME=/opt/headphones >>/etc/default/headphones
-	sudo echo HP_PORT=8181 >> /etc/default/headphones
+	sudo chown -R brettsalemink:brettsalemink /opt/headphones
+	sudo cp $HOME/bin/files/etc/default/headphones /etc/default/
 
 	sudo cp /opt/headphones/init-scripts/init.ubuntu /etc/init.d/headphones
 
