@@ -1,4 +1,5 @@
 #==== ENVIRONMENT ====
+
 #=====TEMPORARY ADD TO ALLOW WORK ON THIS PROJECT WIHOUT LOGGING IN========
 
 #export GOOGLE_APPLICATION_CREDENTIALS="/home/brettsalemink/brett.salemink@gmail.com/Development/Google-Cloud/Deadmans-Key-2013/deadman-key-2013-87aebaf55efb.json"
@@ -21,8 +22,8 @@ export PATH=$HOME/lib/sh:$PATH
 export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
 
 # The next line enables catt for pip and python
-#export PATH="$PATH:$HOME/.local/bin"
-#export PYTHONPATH="/usr/lib/python2.7/dist-packages/:$PYTHONPATH"
+export PATH="$PATH:$HOME/.local/bin"
+export PYTHONPATH="/usr/lib/python2.7/dist-packages/:$PYTHONPATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -141,14 +142,14 @@ source $HOME/bin/files/Aliases/aliases-common
 source $HOME/bin/files/Aliases/aliases-systemctl
 
 #======= SEPERATE MACHINE SPECIFIC ALIASES =========
-source $HOME/bin/files/Aliases/Arch/aliases-arch
-#source $HOME/bin/files/Aliases/Raspbian/aliases-raspbian
+#source $HOME/bin/files/Aliases/Arch/aliases-arch
+source $HOME/bin/files/Aliases/Raspbian/aliases-raspbian
 #source $HOME/bin/files/Aliases/Gentoo/aliases-gentoo
 
 #export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/brettsalemink/google-cloud-sdk/path.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/path.zsh.inc'; fi
+## The next line updates PATH for the Google Cloud SDK.
+#if [ -f '/home/brettsalemink/google-cloud-sdk/path.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc'; fi
+#if [ -f '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc'; fi

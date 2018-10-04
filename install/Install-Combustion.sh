@@ -26,9 +26,10 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-	echo "Simply move the files from the release archives (unzipped) to Transmission's web theme folder:"
 
-	wget https://github.com/Secretmapper/combustion/archive/release.zip
+	sudo rm -f release.zip && wget https://github.com/Secretmapper/combustion/archive/release.zip && unzip release.zip
+
+
 }	# end Main
 
 Main
