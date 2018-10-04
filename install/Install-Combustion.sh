@@ -26,7 +26,7 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-
+	echo 'Download to a temp dir, then move to transmission/web dir and reboot.'
 	sudo rm -f release.zip && wget https://github.com/Secretmapper/combustion/archive/release.zip && unzip release.zip
 
 
