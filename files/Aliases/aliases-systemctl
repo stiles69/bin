@@ -6,6 +6,13 @@ alias minidlna-restart="sudo systemctl restart minidlna.service"
 alias minidlna-disable="sudo systemctl disable minidlna.service"
 alias minidlna-enable="sudo systemctl enable minidlna.service"
 
+alias headphones-stop="sudo systemctl stop headphones.service"
+alias headphones-start="sudo systemctl start headphones.service"
+alias headphones-status="sudo systemctl status headphones.service"
+alias headphones-restart="sudo systemctl restart headphones.service"
+alias headphones-disable="sudo systemctl disable headphones.service"
+alias headphones-enable="sudo systemctl enable headphones.service"
+
 alias sabnzbdplus-stop="sudo systemctl stop sabnzbdplus.service"
 alias sabnzbdplus-start="sudo systemctl start sabnzbdplus.service"
 alias sabnzbdplus-status="sudo systemctl status sabnzbdplus.service"
