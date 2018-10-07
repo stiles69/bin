@@ -17,16 +17,16 @@
 #      REVISION:  ---
 #====================================================
 #!/bin/bash
-readonly USER="ubuntu"
-readonly PRIVATE_KEY="./key.rsa"
+readonly USER="brettsalemink"
+readonly PRIVATE_KEY="~/.ssh/id_rsa.pub"
 readonly SCRIPT='echo -----STARTING;  
 echo "WhoAmI? $(whoami)";  
 echo -----DONE;
 '
 readonly TARGETS=(  
-"127.0.0.1:2020"  
-"127.0.0.1:2021"  
-"127.0.0.1:2022")
+"10.0.0.5:22"  
+"10.0.0.6:22"  
+"10.0.0.14:22")
 
 main () 
 {        
@@ -36,6 +36,7 @@ main ()
 	for target in "${TARGETS[@]}"; do
 		ip=${target%:*}
 		port=${target#*:}
+
 	done
 }
 
@@ -48,8 +49,9 @@ execute_script_in_machine ()
 		-p $port \                
 		$USER@$ip
 }
+
+
 main 
-
-set -o nounset                              # Treat unset variables as an error
-
+execute_script_in_machine
+exit 0
 
