@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash  
 #===============================================================================
 #
 #          FILE: Test.sh
@@ -17,22 +17,39 @@
 #      REVISION:  ---
 #===============================================================================
 
-set -o nounset                              # Treat unset variables as an error
+readonly private_key='/home/brettsalemink/.ssh/id_rsa'
+readonly SCRIPT='echo -----STARTING;
+echo "WhoAmI? $(whoami)";
+echo -----DONE;'
 
-main ()
-{
-readonly private_key='$HOME/.ssh/id_rsa' 
-readonly command='echo test' 
-readonly ip='10.0.0.5' 
-readonly user='brettsalemink' 
-readonly port='22' 
-echo "$command" | ssh \
-	-i ${private_key} \
-	-p ${port} \
-	${user}:${ip}
+readonly user='brettsalemink'
+
+readonly TARGETS=( 
+"slave1.roguedesigns.us1:22" "10.0.0.12:22" )
+
+main () 
+{ 
+	local ip 
+	local port 
+	for target in "${TARGETS[@]}"; do
+		ip=${target%:*}
+		port=${target#*:}
+	done 
+}
+
+
+execute_script_in_machine () 
+{ 
+	local ip=$1 
+	local port=$2 
+	echo "$SCRIPT" | ssh \
+	-o "StrictHostKeyChecking=no" \ 
+	-i "$PRIVATE_KEY" \ 
+	-p $port \
+	$USER@$ip 
 }
 
 main
 
 #==EXIT==
-exit
+exit 0
