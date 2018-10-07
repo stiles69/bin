@@ -1,5 +1,5 @@
 #!/bin/bash
-#===============================================================================
+#====================================================
 #
 #          FILE:  0-Bin-Install.sh
 # 
@@ -16,8 +16,7 @@
 #       VERSION:  1.0
 #       CREATED:  06/20/2018 08:30:04 AM CDT
 #      REVISION:  ---
-#===============================================================================
-
+#====================================================
 
 function Proceed ()
 {
@@ -76,42 +75,17 @@ function ProceedCloneSH ()
 		exit 0
 		;;
 		*)
-		echo "Your answers did not match. Exiting."
-		exit 0
+		CloneSH
+		;;
 	esac
 }	# end function
 
 function CloneSH ()
 {
-	echo 'Do you wish to clone https or use ssh? [1. https, 2. SSH]'
-	read GITCLONETYPE
-	case $GITCLONETYPE in
-		1)
-		if [ -d $HOME/lib ]
-		then
-			cd $HOME/lib
-		else
-			mkdir $HOME/lib
-			cd $HOME/lib
-		fi
-		git clone https://github.com/stiles69/sh.git
-		;;
-		2)
-		if [ -d $HOME/lib ]
-		then
-			cd $HOME/lib
-		else
-			mkdir $HOME/lib
-			cd $HOME/lib
-		fi
 		cd $HOME
-		git clone git@github.com:stiles69/sh.git
-		;;
-		*)
-		echo 'Invalid choice not cloning.'
-		exit 0
-		;;
-	esac
+		mkdir $HOME/lib
+		cd $HOME/lib
+		git clone https://github.com/stiles69/sh.git
 }	# End Function
 
 function Main ()
