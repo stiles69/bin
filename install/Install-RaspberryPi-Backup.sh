@@ -27,8 +27,8 @@ set -o nounset                              # Treat unset variables as an error
 function Main ()
 {
 	sudo apt-get update -y
-	sudo apt-get install dcfldd -y
-	sudo apt-get install gparted -y
+	sudo apt-get install dcfldd 
+	sudo apt-get install gpart 
 }	# end Main
 
 Main
