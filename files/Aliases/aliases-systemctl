@@ -6,6 +6,13 @@ alias minidlna-restart="sudo systemctl restart minidlna.service"
 alias minidlna-disable="sudo systemctl disable minidlna.service"
 alias minidlna-enable="sudo systemctl enable minidlna.service"
 
+alias lighttpd-stop="sudo systemctl stop lighttpd.service"
+alias lighttpd-start="sudo systemctl start lighttpd.service"
+alias lighttpd-status="sudo systemctl status lighttpd.service"
+alias lighttpd-restart="sudo systemctl restart lighttpd.service"
+alias lighttpd-disable="sudo systemctl disable lighttpd.service"
+alias lighttpd-enable="sudo systemctl enable lighttpd.service"
+
 alias headphones-stop="sudo systemctl stop headphones.service"
 alias headphones-start="sudo systemctl start headphones.service"
 alias headphones-status="sudo systemctl status headphones.service"
