@@ -16,17 +16,17 @@
 #       CREATED: 10/07/2018 16:03
 #      REVISION:  ---
 #====================================================
-#!/bin/bash
 readonly USER="brettsalemink"
-readonly PRIVATE_KEY="~/.ssh/id_rsa.pub"
-readonly SCRIPT='echo -----STARTING;  
-echo "WhoAmI? $(whoami)";  
+readonly PRIVATE_KEY="$HOME/.ssh/id_rsa.pub"
+readonly SCRIPT='echo -----STARTING;
+echo "WhoAmI? $(whoami)";
 echo -----DONE;
 '
-readonly TARGETS=(  
-"10.0.0.5:22"  
-"10.0.0.6:22"  
-"10.0.0.14:22")
+readonly TARGETS=(
+	"127.0.0.1:2020"  
+	"127.0.0.1:2021"  
+	"127.0.0.1:2022"
+)
 
 main () 
 {        
@@ -36,22 +36,24 @@ main ()
 	for target in "${TARGETS[@]}"; do
 		ip=${target%:*}
 		port=${target#*:}
-
 	done
 }
 
 execute_script_in_machine () 
 {        
 	local ip=$1        
-	local port=$2        
+	local port=$2
+
 	echo "$SCRIPT" | ssh \                
-		-o StrictHostKeyChecking=no \                		-i "$PRIVATE_KEY" \                
+		-o StrictHostKeyChecking=no \
+		-i "$PRIVATE_KEY" \                
 		-p $port \                
 		$USER@$ip
 }
 
 
 main 
-execute_script_in_machine
+
+#==EXIT==
 exit 0
 
