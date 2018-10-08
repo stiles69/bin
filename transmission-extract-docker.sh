@@ -80,6 +80,11 @@ MoveDataDir()
 	echo "Finished move on $DIR2"
 }	# end
 
+funtion SendMessage ()
+{
+	ssh brettsalemink@10.0.0.11 "export Display=:0;notify-send "Transmission Extract Update" "Finished extracting and moving file.""
+}	# end
+
 function Main ()
 {
 	UnRarTorrentsDir
