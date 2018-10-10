@@ -27,7 +27,7 @@ set -o nounset                              # Treat unset variables as an error
 function Main ()
 {
 	cat /torrents/Transmission-Status.txt
-	rm /torrents/Transmission-Status.txt
+	rm /torrents/Extraction-Status.txt
 }	# end Main
 
 Main
