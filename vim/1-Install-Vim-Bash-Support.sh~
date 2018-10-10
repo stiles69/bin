@@ -112,7 +112,7 @@ function InstallerVimBashSupport ()
 	echo "Commencing Installation of Vim-Bash-Support"
 	cd ~/.vim/bundle
 	git clone https://github.com/vim-scripts/bash-support.vim
-	cp $HOME/bin/files/bash-support/Templates $HOME/.vim/bundle/bash-support.vim/bash-support/templates/
+	cp $HOME/bin/files/bash-support/Template $HOME/.vim/bundle/bash-support.vim/bash-support/templates/
 	echo "Installation of both Pathogen and Vim-Bash is complete."
 } 	# End Function
 
