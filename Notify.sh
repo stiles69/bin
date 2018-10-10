@@ -26,7 +26,9 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-	curl https://xdroid.net/api/message?k=u-440890b42fee&t=title&c= content&u=http://roguedesigns.us
+#	curl https://xdroid.net/api/message?k=u-440890b42fee&t=title&c= content&u=http://roguedesigns.us
+
+	curl https://xdroid.net/api/message -X POST -d "k=u-440890b42fee" -d "t=Transmission" -d "c=Extraction Complete" -d "u=http://roguedesigns.us"
 }	# end Main
 
 Main
