@@ -27,7 +27,7 @@ set -o nounset                              # Treat unset variables as an error
 
 function SendMessage ()
 {
-	ssh brettsalemink@10.0.0.11 "export Display=:0;notify-send "Transmission Extract Update" "Finished extracting and moving file.""
+	ssh brettsalemink@10.0.0.11 'export Display=:0;notify-send -a "Transmission" -t 5000 "Transmission Extract Update" "Finished extracting and moving file."'
 }	# end
 
 function Main ()
