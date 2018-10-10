@@ -39,7 +39,6 @@ UnRarTorrentsDir()
 {
 	cd $DIR1
 	find . -name '*.rar' -execdir unrar e -o- {} \;
-	find . -name '*.7z' -execdir 7z x -o- {} \;
 	wait
 }	# end
 
