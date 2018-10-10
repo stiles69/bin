@@ -52,10 +52,12 @@ MoveTorrentsDir()
 	find $DIR1 -name '*.mpeg' -exec mv -t "$DIRCOMPLETEDTORRENTS" {} +
 	find $DIR1 -name '*.flv' -exec mv -t "$DIRCOMPLETEDTORRENTS" {} +
 	find $DIR1 -name '*.flac' -exec mv -t "$DIRCOMPLETEDTORRENTS" {} +
+	echo "Finished move on $DIR"
 }	# end
 
 MoveDataDir()
 {
+	echo "Starting move on $DIR2"	
 	find $DIR2 -name '*.mp4' -exec mv -t "$DIRCOMPLETEDDATA" {} +
 	find $DIR2 -name '*.mkv' -exec mv -t "$DIRCOMPLETEDDATA" {} +
 	find $DIR2 -name '*.avi' -exec mv -t "$DIRCOMPLETEDDATA" {} +
@@ -66,10 +68,19 @@ MoveDataDir()
 	find $DIR2 -name '*.flac' -exec mv -t "$DIRCOMPLETEDDATA" {} +
 }	# end
 
+function SendMessage ()
+{
+	ssh brettsalemink@10.0.0.11 "export Display=:0;notify-send "Transmission Extract Update" "Finished extracting and moving file.""
+	echo "Extraction Complete" > $TORRENTSDIR/Extraction-Status.txt
+}	# end
+
 function Main ()
 {
 	UnRarTorrentsDir
+#	UnRarDataDir
 	MoveTorrentsDir
+#	MoveDataDir
+	SendMessage
 }	# end Main
 
 Main
