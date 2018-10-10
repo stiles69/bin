@@ -1,0 +1,87 @@
+#!/bin/sh
+
+
+#
+# Path to installation directory
+#
+EXEC_PATH="/opt/urserver/urserver"
+PID_PATH="$HOME/.urserver/urserver.pid"
+ICON_PATH="/usr/share/icons/hicolor/96x96/apps/urserver.png"
+REMOTES_PATH="$HOME/.urserver/remotes"
+BACKUP_PATH="$HOME/.urserver/backup"
+
+
+#
+# Check arguments
+#
+NO_COPY=false
+NO_MANAGER=false
+NO_NOTIFY=false
+
+for var in "$@"
+do
+	if [ "$var" = "--no-copy" ]; then
+		NO_COPY=true
+	elif [ "$var" = "--no-manager" ]; then
+		NO_MANAGER=true
+	elif [ "$var" = "--no-notify" ]; then
+		NO_NOTIFY=true
+	fi
+done
+
+
+#
+# Copy user files
+#
+if ! "$NO_COPY" = true; then
+   echo "copying user files"
+   mkdir -p "$HOME/.config/autostart/"
+   yes | cp -u /opt/urserver/urserver-autostart.desktop $HOME/.config/autostart/urserver.desktop
+   
+   echo "backup remotes"
+   mkdir -p $BACKUP_PATH/
+   yes | cp -a $REMOTES_PATH/. $BACKUP_PATH/
+   
+   echo "create custom folder"
+   mkdir -p $REMOTES_PATH/custom/
+   
+   echo "copying remotes"
+   rm -rf $REMOTES_PATH/remotes/
+   rm -rf $REMOTES_PATH/bundled/
+   mkdir -p $REMOTES_PATH/bundled/
+   yes | cp -a /opt/urserver/remotes/. $REMOTES_PATH/bundled/
+else
+   echo "skipping copy"
+fi
+
+
+#
+# Start the server if not already running
+#
+if ! ps -p $(cat $PID_PATH) 2>/dev/null; then
+   echo "starting server"
+   if ! "$NO_NOTIFY" = true; then
+	   if hash notify-send 2>/dev/null; then
+		  notify-send -i $ICON_PATH 'Unified Remote' 'Starting Unified Remote Server'
+	   else
+		  echo "notify-send not available"
+	   fi
+   fi
+   mkdir -p "$HOME/.urserver"
+   $EXEC_PATH --remotes=$REMOTES_PATH --daemon --pidfile=$PID_PATH
+else
+   echo "server already running"
+fi
+
+
+#
+# Open the web manager
+#
+if ! "$NO_MANAGER" = true; then
+   echo "opening manager"
+   sleep 1
+   xdg-open http://localhost:9510/web 2> /dev/null
+else
+   echo "skipping manager"	
+fi
+
