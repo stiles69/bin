@@ -32,12 +32,14 @@ UnRarDataDir()
 	#Docker Folder
 	cd $DIR2
 	find . -name '*.rar' -execdir unrar e -o- {} \; 
+	find . -name '*.z' -execdir 7z d -o- {} \;
 	wait	
 }	# end
 
 UnRarTorrentsDir()
 {
 	cd $DIR1
+	find . -name '*.z' -execdir 7z d -o- {} \;
 	find . -name '*.rar' -execdir unrar e -o- {} \;
 	wait
 }	# end
@@ -52,7 +54,6 @@ MoveTorrentsDir()
 	find $DIR1 -name '*.mpeg' -exec mv -t "$DIRCOMPLETEDTORRENTS" {} +
 	find $DIR1 -name '*.flv' -exec mv -t "$DIRCOMPLETEDTORRENTS" {} +
 	find $DIR1 -name '*.flac' -exec mv -t "$DIRCOMPLETEDTORRENTS" {} +
-	echo "Finished move on $DIR"
 }	# end
 
 MoveDataDir()
