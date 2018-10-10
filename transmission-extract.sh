@@ -72,7 +72,7 @@ MoveDataDir()
 function SendMessage ()
 {
 	ssh brettsalemink@10.0.0.11 "export Display=:0;notify-send "Transmission Extract Update" "Finished extracting and moving file.""
-	echo "Extraction Complete" > $TORRENTSDIR/Extraction-Status.txt
+	echo "Extraction Complete" > /torrents/Extraction-Status.txt
 	$HOME/bin/Notify.sh
 }	# end
 
