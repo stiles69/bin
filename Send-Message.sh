@@ -22,14 +22,15 @@ set -o nounset                              # Treat unset variables as an error
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-TITLE=''
-MSG=''
+TYPE='$1'
+TITLE='$2'
+MSG='$3'
 #-------------------------------------
 function Main ()
 {
 	
-	ssh brettsalemink@10.0.0.11 export Display=:0;notify-send "$TITLE" "$MSG"
-	curl https://xdroid.net/api/message -X POST -d "k=u-440890b42fee" -d "t=$TITLE" -d "c=$MSG" -d "u=http://roguedesigns.us"
+	ssh brettsalemink@10.0.0.11 export Display=:0;notify-send "$TYPE" "$MSG"
+	curl https://xdroid.net/api/message -X POST -d "k=u-440890b42fee" -d "t=$TYPE" -d "c=$MSG" -d "u=http://roguedesigns.us"
 }	# end Main
 
 Main
