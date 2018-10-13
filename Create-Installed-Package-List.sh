@@ -28,7 +28,9 @@ set -o nounset                                  # treat unset variables as error
 #-------------------------------------
 function Main ()
 {
-	pacman -Qqen > pkglist.txt
+	sudo pacman -Qn > ~/bin/files/manjaro/Native-Installed-Packages.txt
+	sudo pacman -Qm > ~/bin/files/manjaro/Foriegn-Installed-Packages.txt
+	sudo pacman -Qmq > ~/bin/files/manjaro/Aur-Installed-Packages.txt
 }	# end Main
 
 Main
