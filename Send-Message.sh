@@ -28,7 +28,7 @@ function Main ()
 {
 	
 	ssh brettsalemink@10.0.0.11 "export Display=:0;notify-send "Transmission Extract Update" "Finished extracting and moving file.""
-	$HOME/bin/Notify.sh
+	curl https://xdroid.net/api/message -X POST -d "k=u-440890b42fee" -d "t=Transmission" -d "c=Extraction Complete" -d "u=http://roguedesigns.us"
 }	# end Main
 
 Main
