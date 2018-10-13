@@ -16,7 +16,6 @@
 #       CREATED: 10/08/2018 00:58
 #      REVISION:  ---
 #====================================================
-<<<<<<< HEAD
 set -o nounset                              # Treat unset variables as an error
 
 #------------ SOURCED ----------------
@@ -27,8 +26,7 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-	port=3333
-	nc master.roguedesigns.us $port
+	ssh brettsalemink@10.0.0.11 "export Display:0,notify-send "Done" "Finished""
 }	# end Main
 
 Main
