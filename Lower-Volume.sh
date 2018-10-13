@@ -1,9 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: Raise-Volume.sh
+#          FILE: Lower-Volume.sh
 # 
-#         USAGE: ./Raise-Volume.sh 
+#         USAGE: ./Lower-Volume.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,7 +13,7 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 10/13/2018 17:00
+#       CREATED: 10/13/2018 17:07
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
@@ -26,7 +26,7 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-	amixer -D pulse sset Master 5%+
+	amixer -D pulse sset Master 5%-
 }	# end Main
 
 Main
