@@ -23,7 +23,7 @@ set -o nounset                              # Treat unset variables as an error
 
 #---------- GLOBAL VARIABLES ---------
 DIR1=/mnt/Media
-DIR2=$HOME/Media
+DIR2=/media
 #-------------------------------------
 function Main ()
 {
@@ -33,9 +33,9 @@ function Main ()
 	sudo chmod -R 774 $DIR2
 
 	echo 'Permissions Changed for $DIR1'
-	ls -l /mnt/Media
+	ls -l "$DIR1"
 	echo 'Persmissions Changed for $DIR2'
-	ls -l $HOME/Media
+	ls -l "$DIR2"
 }	# end Main
 
 Main
