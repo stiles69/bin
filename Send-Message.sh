@@ -29,7 +29,7 @@ MSG='$3'
 function Main ()
 {
 	
-	ssh brettsalemink@10.0.0.11 export Display=:0;notify-send "$TYPE" "$MSG"
+	ssh brettsalemink@salemink.duckdns.org:58134 export Display=:0;notify-send "$TYPE" "$MSG"
 	curl https://xdroid.net/api/message -X POST -d "k=u-440890b42fee" -d "t=$TYPE" -d "c=$MSG" -d "u=http://roguedesigns.us"
 }	# end Main
 
