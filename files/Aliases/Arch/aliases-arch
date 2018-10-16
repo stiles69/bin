@@ -5,6 +5,7 @@ alias sshd-status="sudo systemctl status sshd.service"
 alias sshd-restart="sudo systemctl restart sshd.service"
 alias sshd-disable="sudo systemctl disable sshd.service"
 alias sshd-enable="sudo systemctl enable sshd.service"
+alias dev_appserver.py='python2.7 $HOME/google-cloud-sdk/bin/dev_appserver.py'
 
 # Pretty-print of some PATH variables:
 alias path='echo -e ${PATH//:/\\n}'
