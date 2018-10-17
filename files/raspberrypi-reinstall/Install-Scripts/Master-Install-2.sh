@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/bash  
 #====================================================
 #
-#          FILE: Install-SSH-Keys.sh
+#          FILE: Master-Install2.sh
 # 
-#         USAGE: ./Install-SSH-Keys.sh 
+#         USAGE: ./Master-Install2.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -11,9 +11,9 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: Brett Salemink (), brett.salemink@gmail.com
+#        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 06/24/2018 08:25
+#       CREATED: 10/17/2018 00:51
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
@@ -26,12 +26,21 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-	mkdir $HOME/.ssh
-	ssh-keygen -t rsa -b 2048 -C $(hostname)
-	wait
-	cat $HOME/id_rsa.pub
-	echo 'You now need to copy this ssh-key to github at https://github.com/settings/keys'
-	echo 'When done start Master-Install-2.sh'
+    ./0-Install-Git.sh
+    wait
+    ./9-Clone-Bin.sh
+    wait
+    ./10-Clone-Sh.sh
+    wait
+    ./4-Install-Vim.sh
+    wait
+    ./5-Install-Oh-My-Zsh.sh
+    wait
+    ./7-Install-Tmux.sh
+    wait
+    ./8-Make-Default-Directories.sh
+    wait
+    echo 'Installation Complete'
 }	# end Main
 
 Main

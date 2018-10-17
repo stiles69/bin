@@ -20,7 +20,6 @@ set -o nounset                              # Treat unset variables as an error
 
 function InstallerVimDeb ()
 {
-	sudo apt-get update -y && sudo apt-get upgrade -y
 	sudo apt-get install vim
 }	# End Function
 
@@ -34,27 +33,6 @@ function InstallerVimGentoo ()
 	sudo emerge vim
 }	# End Function
 
-function Proceed ()
-{
-	echo "This will install Vim text editor. Do you want to proceed? [Y/n]"
-	read PROCEED
-
-	case $PROCEED in
-		"Y"|"y")
-		WhichDistro
-		;;
-
-		"N"|"n")
-		exit 0
-		;;
-
-		*)
-		WhichDistro
-		;;
-
-	esac
-}	# End Function
-
 function WhichDistro ()
 {
 	echo "Which Distro are you installing to? [1.Debian 2.Arch 3.Gentoo]"
@@ -64,13 +42,14 @@ function WhichDistro ()
 		1)
 		InstallerVimDeb
 		;;
-
 		2)
 		InstallerVimArch
 		;;
-
 		3)
 		InstallerVimGentoo
+		;;
+		*)
+		echo 'Incorrect response exiting..'
 		;;
 	esac
 }	# End Function
@@ -81,16 +60,15 @@ function ProceedBashSupport ()
 	read PROCEEDVIMBASHSUPPORT
 
 	case $PROCEEDVIMBASHSUPPORT in
-		"Y"|"y")
+		Y|y)
 		InstallerVimBashSupport
 		;;
-
-		"N"|"n")
+		N|n)
 		exit 0
 		;;
-
 		*)
-		InstallerVimBashSupport
+		echo 'Incorrect response exiting...'
+		exit 0
 		;;
 	esac
 }	# End Function
@@ -109,28 +87,17 @@ function InstallerVimBashSupport ()
 	echo "Finished Installing Pathogen."
 	echo "Commencing Installation of Vim-Bash-Support"
 	cd ~/.vim/bundle
-	git clone https://github.com/vim-scripts/bash-support.vim
-	echo "The script will now make a backup file of the base template and copy custom template."
-	echo "Are you ready to proceed (Y/n)?"
-	read PROCEED2
-	case $PROCEED2 in
-		"N"|"n")
-		exit 0
-		;;
-
-		"Y")
-		cp ~/.vim/bundle/bash-support.vim/bash-support/templates/Templates ~/.vim/bundle/bash-support.vim/bash-support/templates/Templates.backup
-		cp ~/bin/files/bash-support/Templates $HOME/.vim/bundle/bash-support.vim/bash-support/templates/
-		;;
-	
-	esac    # --- end of case ---
-echo "Installation of both Pathogen and Vim-Bash is complete."
+	git clone https://github.com/vim-scripts/bash-support.vim	
+	cp ~/bin/files/bash-support/Templates $HOME/.vim/bundle/bash-support.vim/bash-support/templates/	
+	echo "Installation of both Pathogen and Vim-Bash is complete."
 } 	# End Function
 
 function Main ()
 {
-	Proceed
+	WhichDistro
+	wait
 	ProceedBashSupport
+	wait
 }	# End Function
 
 Main

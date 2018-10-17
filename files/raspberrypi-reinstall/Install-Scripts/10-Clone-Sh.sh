@@ -18,63 +18,6 @@
 #      REVISION:  ---
 #===============================================================================
 
-
-function Proceed ()
-{
-
-echo 'Do you want to pull down bin and lib/sh from repo? (Y/n)'
-read PROCEED
-
-case $PROCEED in
-	
-	Y|y)
-	CloneBin
-	;;
-	N|n)
-	exit 0
-	;;
-	*)
-	CloneBin
-	;;
-esac
-}	# End Function
-
-function CloneBin ()
-{
-	echo 'Do you wish to clone https or use ssh? [1. https, 2. SSH]'
-	read GITCLONETYPE
-	case $GITCLONETYPE in
-		"1")
-		cd $HOME
-		git clone https://github.com/stiles69/bin.git
-		;;
-		"2")
-		cd $HOME
-		git clone git@github.com:stiles69/bin.git
-		;;
-		*)
-		git clone https://github.com/stiles69/bin.git
-		;;
-	esac
-} 	# end function	
-
-function ProceedCloneSH ()
-{
-	echo "Do you want to clone sh at this time? [Y/n]"
-	read PROCEED2
-	case PROCEED2 in
-		Y|y)
-		CloneSH
-		;;
-		N|n)
-		exit 0
-		;;
-		*)
-		CloneSH
-		;;
-	esac
-}	# end function
-
 function CloneSH ()
 {
 	echo 'Do you wish to clone https or use ssh? [1. https, 2. SSH]'
@@ -100,8 +43,7 @@ function CloneSH ()
 
 function Main ()
 {
-	Proceed
-	ProceedCloneSH
+	CloneSH
 }	# End Function
 
 Main
