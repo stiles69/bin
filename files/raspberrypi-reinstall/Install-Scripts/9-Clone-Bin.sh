@@ -20,22 +20,9 @@
 
 function CloneBin ()
 {
-	echo 'Do you wish to clone https or use ssh? [1. https, 2. SSH]'
-	read GITCLONETYPE
-	case $GITCLONETYPE in
-		"1")
-		cd $HOME
-		git clone https://github.com/stiles69/bin.git
-		;;
-		"2")
-		cd $HOME
+		cd $HOME		
 		git clone git@github.com:stiles69/bin.git
-		;;
-		*)
-		echo 'Invalid answer exiting...'
-		exit 0
-		;;
-	esac
+	
 } 	# end function	
 
 function Main ()

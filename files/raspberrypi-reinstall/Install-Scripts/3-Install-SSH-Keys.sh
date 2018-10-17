@@ -32,7 +32,7 @@ function Main ()
 	cat $HOME/id_rsa.pub
 	echo 'You now need to copy this ssh-key to github at https://github.com/settings/keys'
 	echo 'When done start Master-Install-2.sh'
-}	# end Main
+}	
 
 Main
 

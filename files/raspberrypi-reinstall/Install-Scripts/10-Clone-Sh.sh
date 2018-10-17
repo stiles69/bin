@@ -20,31 +20,15 @@
 
 function CloneSH ()
 {
-	echo 'Do you wish to clone https or use ssh? [1. https, 2. SSH]'
-	read GITCLONETYPE2
-	case $GITCLONETYPE2 in
-		1)
 		mkdir $HOME/lib
 		cd $HOME/lib
-		git clone https://github.com/stiles69/sh.git
-		;;
-		2)
-		mkdir $HOME/lib
-		cd $HOME/lib
-		git clone git@github.com:stiles69/sh.git
-		;;
-		*)
-		mkdir $HOME/lib
-		cd $HOME/lib
-		git clone https://github.com/stiles69/sh.git
-		;;
-	esac
-}	# End Function
+		git clone git@github.com:stiles69/sh.git		
+}	
 
 function Main ()
 {
 	CloneSH
-}	# End Function
+}	
 
 Main
 

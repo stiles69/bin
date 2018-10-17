@@ -21,57 +21,7 @@ set -o nounset                              # Treat unset variables as an error
 function InstallerVimDeb ()
 {
 	sudo apt-get install vim
-}	# End Function
-
-function InstallerVimArch ()
-{
-	sudo pacman -S vim
-}	# End Function
-
-function InstallerVimGentoo ()
-{
-	sudo emerge vim
-}	# End Function
-
-function WhichDistro ()
-{
-	echo "Which Distro are you installing to? [1.Debian 2.Arch 3.Gentoo]"
-	read DISTRO
-
-	case $DISTRO in
-		1)
-		InstallerVimDeb
-		;;
-		2)
-		InstallerVimArch
-		;;
-		3)
-		InstallerVimGentoo
-		;;
-		*)
-		echo 'Incorrect response exiting..'
-		;;
-	esac
-}	# End Function
-
-function ProceedBashSupport ()
-{
-	echo "Do you wish to add Vim Bash Support? [Y/n]"
-	read PROCEEDVIMBASHSUPPORT
-
-	case $PROCEEDVIMBASHSUPPORT in
-		Y|y)
-		InstallerVimBashSupport
-		;;
-		N|n)
-		exit 0
-		;;
-		*)
-		echo 'Incorrect response exiting...'
-		exit 0
-		;;
-	esac
-}	# End Function
+}	
 
 function InstallerVimBashSupport ()
 {
@@ -90,15 +40,15 @@ function InstallerVimBashSupport ()
 	git clone https://github.com/vim-scripts/bash-support.vim	
 	cp ~/bin/files/bash-support/Templates $HOME/.vim/bundle/bash-support.vim/bash-support/templates/	
 	echo "Installation of both Pathogen and Vim-Bash is complete."
-} 	# End Function
+} 	
 
 function Main ()
 {
-	WhichDistro
+	InstallerVimDeb
 	wait
-	ProceedBashSupport
+	InstallerVimBashSupport
 	wait
-}	# End Function
+}	
 
 Main
 

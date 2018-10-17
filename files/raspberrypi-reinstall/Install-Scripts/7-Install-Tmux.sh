@@ -18,24 +18,15 @@
 #====================================================
 
 set -o nounset                              # Treat unset variables as an error
-. $HOME/lib/sh/funcInstall.sh
 
-
-SOFTWAREINSTALL="tmux"
-
-function ProceedYes ()
+function InstallTmux ()
 {
-	Install	$SOFTWAREINSTALL
-}	
-
-function ProceedNo ()
-{
-	exit 0 
+	sudo apt-get install tmux -y
 }	
 
 function Main ()
 {
-	ProceedYes
+	InstallTmux
 }	
 
 Main 
