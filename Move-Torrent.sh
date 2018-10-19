@@ -22,14 +22,14 @@ set -o nounset                              # Treat unset variables as an error
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-TORRENTDIR='/torrents'
-MOVEDIR='/torrents/watch'
+TORRENTDIR='/torrents/slave3/'
+DESTITNATION="brettsalemink@slave3.roguedesigns.us:/torrents/watch"
 #-------------------------------------
 function Main ()
 {
-	cd '$TORRENTDIR'
-	rsync -rvz ./ brettsalemink@slave3.roguedesigns.us/torrents/watch
-	find . -name "*" -delete
+	echo "Move-Torrent Started" > /torrents/Status.txt
+	rsync -rvz "$TORRENTDIR/" "$DESTITNATION"
+	find "$TORRENTDIR" -name "*.torrent" -delete
 }	# end Main
 
 Main
