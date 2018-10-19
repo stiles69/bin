@@ -16,3 +16,6 @@ alias mkdir='mkdir -p'
 
 #==== Running LibreELEC Installer
 alias libre='sudo /mnt/Data/Software/LibreELEC.USB-SD.Creator.Linux-64bit.bin'
+
+#===== Need this for ffmpeg ========
+alias ffmpeg='/usr/bin/ffmpeg-git'
