@@ -85,9 +85,9 @@ function SendMessage ()
 
 function Main ()
 {
-	UnRarTorrentsDir
+#	UnRarTorrentsDir
 	UnRarDataDir
-	MoveTorrentsDir
+#	MoveTorrentsDir
 	MoveDataDir
 	wait
 
