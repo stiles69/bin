@@ -23,7 +23,7 @@
 
 #---------- GLOBAL VARIABLES ---------
 DIR1="/torrents"
-DIR2="/data"
+DIR2="/downloads"
 DIRCOMPLETEDTORRENTS="$DIR1/completed"
 DIRCOMPLETEDDATA="$DIR2/completed"
 PARAM1="$1"
@@ -85,9 +85,9 @@ function SendMessage ()
 
 function Main ()
 {
-#	UnRarTorrentsDir
+	UnRarTorrentsDir
 	UnRarDataDir
-#	MoveTorrentsDir
+	MoveTorrentsDir
 	MoveDataDir
 	wait
 
