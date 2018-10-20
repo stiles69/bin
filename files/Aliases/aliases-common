@@ -11,6 +11,9 @@ alias ipe='curl ipinfo.io/ip'
 alias c='clear'
 alias yay -S='yay -S --noconfirm'
 
+#======ADDED FOR BFG GIT REPO CLEANER=====
+alias bfg='java -jar $HOME/bin/Java/bfg.jar'
+
 #======THIS IS TO ENSURE FFMPEG USES CORRECT VERSION======
 alias ffmpeg="/usr/bin/ffmpeg"
 
