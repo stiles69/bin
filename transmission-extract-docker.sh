@@ -33,16 +33,14 @@ UnRarDataDir()
 {
 	#Docker Folder
 	cd $DIR2
-	find . -name '*.rar' -execdir unrar e -o- {} \; 
-	find . -name '*.zip' -execdir unzip -o- {} \; 
+	find . -name '*.rar' -execdir unrar e ./completed -o- {} \; 
 	wait	
 }	# end
 
 UnRarTorrentsDir()
 {
 	cd $DIR1
-	find . -name '*.rar' -execdir unrar e -o- {} \;
-	find . -name '*.zip' -execdir unzip -o- {} \; 
+	find . -name '*.rar' -execdir unrar e ./completed -o- {} \;
 	wait
 }	# end
 
@@ -91,8 +89,8 @@ function Main ()
 	UnRarDataDir
 	wait
 #	MoveTorrentsDir
-	MoveDataDir
-	wait
+#	MoveDataDir
+#	wait
 
 	#Check $1
 	if [ -z "$PARAM1" ]
