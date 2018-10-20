@@ -26,12 +26,12 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-	echo "deb-src http://archive.raspbian.org/raspbian/ stretch main contrib non-free rpi" >> /etc/apt/sources.list
+	sudo cp $HOME/bin/Build-UnRar/source.list /etc/apt/
 
 	mkdir $HOME/Temp-Build-Dir
 
-	apt-get build-dep unrar-nonfree
-	apt-get source -b unrar-nonfree
+	sudo apt-get build-dep unrar-nonfree
+	sudo apt-get source -b unrar-nonfree
 
 
 }	# end Main
