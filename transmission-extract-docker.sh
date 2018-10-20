@@ -22,9 +22,9 @@
 #----------------------------
 
 #---------- GLOBAL VARIABLES ---------
-DIR1="/torrents"
-DIR2="/downloads"
-DIRCOMPLETEDTORRENTS="$DIR1/completed"
+#DIR1="/torrents"
+DIR2="/data"
+#DIRCOMPLETEDTORRENTS="$DIR1/completed"
 DIRCOMPLETEDDATA="$DIR2/completed"
 PARAM1="$1"
 PARAM2="$2"
@@ -33,15 +33,15 @@ UnRarDataDir()
 {
 	#Docker Folder
 	cd $DIR2
-	find . -name '*.rar' -execdir unrar e ./completed -o- {} \; 
+	find . -name '*.rar' -execdir 7z e -o./completed -o- {} \; 
 	wait	
 }	# end
 
 UnRarTorrentsDir()
 {
-	cd $DIR1
-	find . -name '*.rar' -execdir unrar e ./completed -o- {} \;
-	wait
+	#cd $DIR1
+	#find . -name '*.rar' -execdir unrar e ./completed -o- {} \;
+	#wait
 }	# end
 
 MoveTorrentsDir()
