@@ -22,17 +22,17 @@ set -o nounset                              # Treat unset variables as an error
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-
+DIR="$PWD"
 #-------------------------------------
 function Main ()
 {
-	sudo cp $HOME/bin/Build-UnRar/source.list /etc/apt/
-
-	mkdir $HOME/Temp-Build-Dir
-
+	mkdir $DIR/Temp-Build-Dir
+	cd $DIR/Temp-Build-Dir
+	sudo cp ~/bin/Build-Unrar/unrar.list /etc/apt/sources.list.d/
+	
+	sudo apt-get update
 	sudo apt-get build-dep unrar-nonfree
 	sudo apt-get source -b unrar-nonfree
-
 
 }	# end Main
 
