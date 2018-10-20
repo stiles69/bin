@@ -1,9 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: Convert-Flac-to-M4A.sh
+#          FILE: Move-Torrent.sh
 # 
-#         USAGE: ./Convert-Flac-to-M4A.sh 
+#         USAGE: ./Move-Torrent.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,7 +13,7 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 10/16/2018 21:41
+#       CREATED: 10/18/2018 19:26
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
@@ -22,13 +22,14 @@ set -o nounset                              # Treat unset variables as an error
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-
+TORRENTDIR='/torrents/slave3/'
+DESTITNATION="brettsalemink@slave3.roguedesigns.us:/torrents/watch"
 #-------------------------------------
 function Main ()
 {
-	#find . -name '*.flac' -exec sh -c 'ffmpeg -i "$1" -c:a libfdk_aac -b:a 320k "${1%.flac}.m4a"' _ {} \;
-
-	find . -name '*.flac' -exec sh -c '/usr/bin/ffmpeg-git -i "$1" -c:v copy -c:a libfdk_aac -b:a 384k "${1%.flac}.m4a"' _ {} \;
+	echo "Move-Torrent Started" > /torrents/Status.txt
+	rsync -rvz "$TORRENTDIR/" "$DESTITNATION"
+	find "$TORRENTDIR" -name "*.torrent" -delete
 }	# end Main
 
 Main

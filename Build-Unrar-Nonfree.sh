@@ -1,9 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: Convert-Flac-to-M4A.sh
+#          FILE: Build-Unrar-Nonfree.sh
 # 
-#         USAGE: ./Convert-Flac-to-M4A.sh 
+#         USAGE: ./Build-Unrar-Nonfree.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,7 +13,7 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 10/16/2018 21:41
+#       CREATED: 10/19/2018 22:42
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
@@ -26,9 +26,14 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-	#find . -name '*.flac' -exec sh -c 'ffmpeg -i "$1" -c:a libfdk_aac -b:a 320k "${1%.flac}.m4a"' _ {} \;
+	echo "deb-src http://archive.raspbian.org/raspbian/ stretch main contrib non-free rpi" >> /etc/apt/sources.list
 
-	find . -name '*.flac' -exec sh -c '/usr/bin/ffmpeg-git -i "$1" -c:v copy -c:a libfdk_aac -b:a 384k "${1%.flac}.m4a"' _ {} \;
+	mkdir $HOME/Temp-Build-Dir
+
+	apt-get build-dep unrar-nonfree
+	apt-get source -b unrar-nonfree
+
+
 }	# end Main
 
 Main
