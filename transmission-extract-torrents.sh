@@ -42,7 +42,7 @@ MoveDir()
 	find $DIR -name '*.mpg' -exec mv -t "$DIRCOMPLETED" {} +
 	find $DIR -name '*.wmv' -exec mv -t "$DIRCOMPLETED" {} +
 	find $DIR -name '*.mpeg' -exec mv -t "$DIRCOMPLETED" {} +
-	find $DIR1 -name '*.flv' -exec mv -t "$DIRCOMPLETED" {} +
+	find $DIR -name '*.flv' -exec mv -t "$DIRCOMPLETED" {} +
 
 }	# end
 
@@ -82,7 +82,6 @@ function Main ()
 
 
 	URGENCY='normal'		# Array OPTIONAL (low normal critical)
-#	EXPIRETIME=6000			# Time in Milliseconds OPTIONAL
 	ICONPATH='dialog-information'	# Path to ICON OPTIONAL or Name of Icon ex. --icon=dialog-information
 #	TITLE				# Title or Summary MANDATORY
 #	MSG				# Actual Message OPTIONAL

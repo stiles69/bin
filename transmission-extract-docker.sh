@@ -31,7 +31,7 @@ UnrarDir()
 {
 	#Docker Folder
 	cd $DIR
-	find . -name '*.rar' -execdir 7z e -o- {} \;
+	find . -name '*.rar' -execdir "7z e" -o- {} \;
 	wait	
 }	# end
 
@@ -42,7 +42,7 @@ MoveDir()
 	find $DIR -name '*.avi' -exec mv -t "$DIRCOMPLETED" {} +
 	find $DIR -name '*.mpg' -exec mv -t "$DIRCOMPLETED" {} +
 	find $DIR -name '*.wmv' -exec mv -t "$DIRCOMPLETED" {} +
-	find $DIR -name '*.mpeg' -exec mv -t "$DIRCOMPLETE" {} +
+	find $DIR -name '*.mpeg' -exec mv -t "$DIRCOMPLETED" {} +
 	find $DIR -name '*.flv' -exec mv -t "$DIRCOMPLETED" {} +
 }	
 
