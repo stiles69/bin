@@ -4,7 +4,7 @@
 DIR1="$HOME/development/Docker/docker-mediacenter-armhf"
 DIR2=/torrents
 
-main 
+function main () 
 {
 	sudo chown -R brettsalemink:docker "$DIR1"
 	sudo chmod -R 774 "$DIR1"
