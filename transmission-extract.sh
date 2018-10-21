@@ -30,7 +30,7 @@ PARAM2="$2"
 UnRarTorrentsDir()
 {
 	cd $DIR1
-	find $DIR -name '*.rar' -exec unrar e -o- {} \;
+	find . -name '*.rar' -exec unrar e -o- {} \;
 	wait
 }	# end
 
