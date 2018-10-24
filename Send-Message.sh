@@ -21,6 +21,10 @@
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
+HOST=localhost
+PORT=22
+#HOST=173.29.176.138
+#PORT=60001
 #-------------------------------------
 function SendMessage ()
 {
@@ -29,7 +33,7 @@ function SendMessage ()
 	local TITLE="$3"
 	local MSG="$4"
 	
-	ssh brettsalemink@173.29.176.138 -p 60001 "export Display=:0;notify-send '$TITLE' '$MSG' -t 15000 --icon='$ICONPATH'"
+	ssh brettsalemink@$HOST -p $PORT "export Display=:0;notify-send '$TITLE' '$MSG' -t 15000 --icon='$ICONPATH'"
 	curl https://xdroid.net/api/message -X POST -d "k=u-440890b42fee" -d "t='$TITLE'" -d "c='$MSG'" -d "u=http://roguedesigns.us"
 }	# end
 
