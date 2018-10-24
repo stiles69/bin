@@ -15,8 +15,14 @@ gimp-plugin-registry
 gnome-mime-data
 gnome-vfs
 google-chrome
+gstreamer0.10
+gstreamer0.10-base
+gstreamer0.10-base-plugins
+gstreamer0.10-good
+gstreamer0.10-good-plugins
 insync
 intel-media-sdk
+jdownloader2
 kvazaar
 lcms
 libbonobo

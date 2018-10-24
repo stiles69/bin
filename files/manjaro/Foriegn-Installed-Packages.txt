@@ -15,8 +15,14 @@ gimp-plugin-registry 7.20170217-1
 gnome-mime-data 2.18.0-8
 gnome-vfs 2.24.4-10
 google-chrome 70.0.3538.67-1
+gstreamer0.10 0.10.36-17
+gstreamer0.10-base 0.10.36-11
+gstreamer0.10-base-plugins 0.10.36-11
+gstreamer0.10-good 0.10.31-29
+gstreamer0.10-good-plugins 0.10.31-29
 insync 1.5.2-2
-intel-media-sdk 1:2018.3.0-1
+intel-media-sdk 1:2018.3.0-2
+jdownloader2 latest-13
 kvazaar 1.2.0-5
 lcms 1.19-7
 libbonobo 2.32.1-4
@@ -29,7 +35,7 @@ libgnomeui 2.24.5-3
 libilbc 2.0.2-1
 libmysofa 0.6-2
 libopenmpt-svn 0.4.r10911-1
-masterpdfeditor 5.1.60-1
+masterpdfeditor 5.1.68-1
 mc-solarized-git 2-1
 megacmd-bin 1.0.0-1
 megasync 3.7.1.0-2
@@ -50,7 +56,7 @@ python2-yubico 1.3.2-1
 rar 5.6.1-3
 rockchip-mpp 20171218-1
 shine 3.1.1-2
-signal 1.16.3-1
+signal 1.17.0-1
 vmaf 1.3.9-2
 vo-amrwbenc 0.1.3-1
 woeusb 3.2.10-1
