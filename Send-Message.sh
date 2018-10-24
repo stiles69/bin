@@ -16,7 +16,6 @@
 #       CREATED: 10/08/2018 00:58
 #      REVISION:  ---
 #====================================================
-set -o nounset                              # Treat unset variables as an error
 
 #------------ SOURCED ----------------
 
