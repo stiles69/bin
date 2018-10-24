@@ -94,6 +94,8 @@ function Main ()
 	FinalizeDVD
 	wait
 	Generate 
+	wait
+	$HOME/bin/Send-Message.sh
 }	# end Main
 
 Main
