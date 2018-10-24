@@ -1,5 +1,5 @@
 #!/bin/bash
-#===============================================================================
+#====================================================
 #
 #          FILE:  Update-RogueDesigns-2.sh
 # 
@@ -16,21 +16,29 @@
 #       VERSION:  1.0
 #       CREATED:  03/23/2018 06:52:09 PM CDT
 #      REVISION:  ---
-#===============================================================================
-DEPLOYDIR='/home/brettsalemink/stiles69/roguedesigns-190602-google-cloud'
-sudo rm -r dist
-npm run build
-wait
-cd dist
-rm -r $DEPLOYDIR/Webserver1/files
-mkdir $DEPLOYDIR/Webserver1/files 
-rsync -rvz --progress ./ $DEPLOYDIR/Webserver1/files
-wait
-cd $DEPLOYDIR/Webserver1
-gcloud app versions list
-read -p 'What is the next version:' versionanswer
-gcloud app deploy -v $versionanswer .
-gcloud app versions list
-read -p 'What version to delete:' deleteanswer
-gcloud app versions delete $deleteanswer
+#====================================================
+
+#------------ SOURCED ----------------
+
+#-------------------------------------
+#---------- GLOBAL VARIABLES ---------
+CURRENTDIR="$1"
+DEPLOYDIR="$HOME/development/stiles69/Rogue-Designs-Google-Cloud-Deployment/Webserver1"
+#-------------------------------------
+function Main ()
+{
+	rsync -rvz --progress --delete-before "$CURRENTDIR/" "$DEPLOYDIR/files"
+	wait
+	gcloud app versions list
+	read -p 'What is the next version:' VERSIONANSWER
+	gcloud app deploy -v $VERSIONANSWER "$DEPLOYDIR/app.yaml"
+	gcloud app versions list
+	read -p 'What version to delete:' DELETEANSWER
+	gcloud app versions delete $DELETEANSWER
  
+}	# end Main
+
+Main
+
+#===EXIT===
+exit 0
