@@ -48,6 +48,7 @@ openh264
 orbit2
 pb-for-desktop
 peazip-gtk2-portable
+phantomjs-bin
 plex-media-server
 pngquant
 pure-ftpd
@@ -56,7 +57,6 @@ python2-yubico
 rar
 rockchip-mpp
 shine
-signal
 vmaf
 vo-amrwbenc
 woeusb
