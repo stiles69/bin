@@ -26,7 +26,7 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-	docker swarm join --token SWMTKN-1-0298x2h55x5bu70b682y6xj2mlc1ohrmzgpu49sozodgehmyvp-c9cxt29bej8llx1cwuevpp1dj 10.0.0.5:2377
+	docker swarm join --token SWMTKN-1-177qjrk2jurisx5u7l99zadsk58lk14sudbhnuqye1gvf9ntep-e2jnhzcet9jjkl9qi24ryczx1 10.0.0.5:2377
 }	# end Main
 
 Main
