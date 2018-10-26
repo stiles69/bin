@@ -22,17 +22,19 @@ set -o nounset                              # Treat unset variables as an error
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-DIR='$1'
+DIR="$1"
+DESTDIR="/srv/http"
 #-------------------------------------
 function Main ()
 {
-	sudo rsync -rvz '$DIR' /srv/http
-	sudo chown -R http:http /srv/http
-	sudo chmod -R 774 /srv/http
+	local RSYNCDIR=$1
+	sudo rsync -rvz "$RSYNCDIR/" "$DESTDIR"
+	sudo chown -R http:http "$DESTDIR"
+	sudo chmod -R 774 "$DESTDIR"
 
 }	# end Main
 
-Main
+Main "$1"
 
 #===EXIT===
 exit 0
