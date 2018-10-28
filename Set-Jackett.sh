@@ -33,8 +33,9 @@ function Main ()
 	sudo chmod -R 774 "$DIR1"
 	sudo chmod -R 774 "$DIR2"
 
-	ll $DIR1
-	ll $DIR2
+	ls -l /
+	ls -l $DIR1
+	ls -l $DIR2
 }	# end Main
 
 Main
