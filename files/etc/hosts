@@ -1,9 +1,15 @@
 # Static table lookup for hostnames.
 # See hosts(5) for details.
 127.0.0.1	localhost
+<<<<<<< HEAD
 127.0.1.1 	slave1.roguedesigns.us		slave1
 10.0.0.5	slave1.roguedesigns.us		slave1
 10.0.0.6 	slave2.roguedesigns.us		slave2
+=======
+127.0.1.1 	slave2.roguedesigns.us		slave2
+10.0.0.5	slave1.roguedesigns.us		slave1
+10.0.0.6	slave2.roguedesigns.us		slave2
+>>>>>>> 54a70639622e14cf6dd215c10629777e2ccac07d
 10.0.0.11	manjaro.roguedesigns.us		manjaro
 10.0.0.12	slave3.roguedesigns.us		slave3
 10.0.0.14	master.roguedesigns.us		master
