@@ -1,5 +1,5 @@
 #!/bin/bash
-#===============================================================================
+#====================================================
 #
 #          FILE:  3-Install-Packages# 
 #         USAGE:  
@@ -15,11 +15,7 @@
 #       VERSION:  1.0
 #       CREATED:  12/04/2017 04:02:50 PM CST
 #      REVISION:  
-#===============================================================================`
-
-sudo pacman -S zsh
-# Set zsh for user
-sudo chsh -s /bin/zsh brettsalemink
+#====================================================`
 
 #Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
