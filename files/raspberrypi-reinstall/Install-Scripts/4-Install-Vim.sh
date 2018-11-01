@@ -46,8 +46,8 @@ function Main ()
 {
 	InstallerVimDeb
 	wait
-	InstallerVimBashSupport
-	wait
+#	InstallerVimBashSupport
+#	wait
 }	
 
 Main
