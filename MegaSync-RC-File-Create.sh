@@ -34,8 +34,8 @@ function Main ()
 	read PASSWORD
 
 	echo '[Login]' > $HOME/.megarc
-	echo 'Username = $USERNAME' >> $HOME/.megarc
-	echo 'Password = $PASSWORD' >> $HOME/.megarc
+	echo "Username = "$USERNAME"" >> $HOME/.megarc
+	echo "Password = "$PASSWORD"" >> $HOME/.megarc
 }	# end Main
 
 Main
