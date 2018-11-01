@@ -27,6 +27,7 @@ function Main ()
 {
 	cd $HOME
 	mkdir $HOME/lib
+	cd $HOME/lib
 	git clone git@github.com:stiles69/sh.git
 }	# end Main
 
