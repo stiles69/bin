@@ -24,7 +24,7 @@ set -o nounset                              # Treat unset variables as an error
 DIR1=$HOME/development/Docker/rpi-docker-transmission-open-vpn
 DIR2=/torrents
 DIR3=$HOME/development/Docker/build-rpi-docker-transmission-openvpn
-DIR4=$HOME/development/Docker/build-rpi-docker-transmission-openvpn-proxy
+DIR4=$HOME/development/Docker/docker-duplicati-armhf
 #-------------------------------------
 function Main ()
 {
