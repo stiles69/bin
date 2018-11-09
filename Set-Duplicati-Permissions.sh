@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #=======GLOBAL=======
-DIR1="$HOME/development/Docker/docker-mediacenter-armhf"
-DIR2=/torrents
+DIR1="$HOME/development/Docker/docker-duplicati-armhf"
+DIR2="/backups"
 
 function main () 
 {
