@@ -28,13 +28,13 @@ DIR4=$HOME/development/Docker/build-rpi-docker-transmission-openvpn-proxy
 #-------------------------------------
 function Main ()
 {
-	sudo chown -R brettsalemink:docker "$DIR1"
+	sudo chown -R brettsalemink:users "$DIR1"
 	sudo chmod -R 774 "$DIR1"
-	sudo chown -R brettsalemink:docker "$DIR2"
+	sudo chown -R brettsalemink:users "$DIR2"
 	sudo chmod -R 774 "$DIR2"
-	sudo chown -R brettsalemink:docker "$DIR3"
+	sudo chown -R brettsalemink:users "$DIR3"
 	sudo chmod -R 774 "$DIR3"
-	sudo chown -R brettsalemink:docker "$DIR4"
+	sudo chown -R brettsalemink:users "$DIR4"
 	sudo chmod -R 774 "$DIR4"
 	ls -l "$DIR1"
 	ls -l "$DIR2"
