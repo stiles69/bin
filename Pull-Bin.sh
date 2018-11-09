@@ -32,16 +32,20 @@ function ProceedYes ()
 	GitCommit "$SYNCDIR"
 	wait
 
-	# Set Permissions SYNCDIR
-	PermissionsSet "$SYNCDIR"
+	# Pull SYNCDIR
+	Pull "$SYNCDIR"
+	wait
+
+	# Commit SYNCDIR
+	GitCommit "$SYNCDIR"
 	wait
 
 	# Push SYNCDIR
 	Push "$SYNCDIR"
 	wait
-
-	# Pull SYNCDIR
-	Pull "$SYNCDIR"
+	
+	# Set Permissions SYNCDIR
+	PermissionsSet "$SYNCDIR"
 	wait
 	
 	# Commit SYNCDIR
