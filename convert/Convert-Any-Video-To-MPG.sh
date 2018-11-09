@@ -1,9 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: Extra-Install-Vim.sh
+#          FILE: Convert-Any-Video-To-MPG.sh
 # 
-#         USAGE: ./Extra-Install-Vim.sh 
+#         USAGE: ./Convert-Any-Video-To-MPG.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -11,26 +11,28 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: Brett Salemink (), brett.salemink@gmail.com
+#        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 06/28/2018 17:29
+#       CREATED: 11/05/2018 00:41
 #      REVISION:  ---
 #====================================================
+
 set -o nounset                              # Treat unset variables as an error
 
-#------------ SOURCED ----------------
+VIDEONAME="$1"
 
-#-------------------------------------
-#---------- GLOBAL VARIABLES ---------
+function Converter ()
+{
+	NAME="$(echo "$VIDEONAME" | cut -d'.' -f1)"
+	ffmpeg -i "$VIDEONAME" -target ntsc-dvd -aspect 16:9 "$NAME.mpg"
+}	# end Converter
 
-#-------------------------------------
 function Main ()
 {
-	sudo pacman -S vim
+	Converter
 }	# end Main
 
 Main
 
-#===EXIT===
+#== EXIT==
 exit 0
-

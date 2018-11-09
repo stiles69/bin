@@ -1,0 +1,11 @@
+<dvdauthor>
+   <vmgm />
+      <titleset>
+         <titles>
+	    <pgc>
+	       <vob file="video1.mpg" />
+               <vob file="video2.mpg" />
+            </pgc>
+         </titles>
+      </titleset>
+</dvdauthor>

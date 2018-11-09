@@ -1,9 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: Install-Tmux.sh
+#          FILE: MegaSync-RC-File-Create.sh
 # 
-#         USAGE: ./Install-Tmux.sh 
+#         USAGE: ./MegaSync-RC-File-Create.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -11,9 +11,9 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: Brett Salemink (), brett.salemink@gmail.com
+#        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 06/24/2018 08:38
+#       CREATED: 10/31/2018 23:40
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
@@ -27,10 +27,19 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-	sudo pacman -S tmux
+	echo 'This will write a mega.rc file for automatic login.'
+	echo 'Please enter your username. [user@domain.com]'
+	read USERNAME
+	echo 'Please enter your password'
+	read PASSWORD
+
+	echo '[Login]' > $HOME/.megarc
+	echo "Username = "$USERNAME"" >> $HOME/.megarc
+	echo "Password = "$PASSWORD"" >> $HOME/.megarc
 }	# end Main
 
 Main
 
 #===EXIT===
 exit 0
+

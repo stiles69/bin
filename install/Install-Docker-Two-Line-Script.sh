@@ -1,9 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: Install-Tmux.sh
+#          FILE: Install-Docker-Two-Line-Script.sh
 # 
-#         USAGE: ./Install-Tmux.sh 
+#         USAGE: ./Install-Docker-Two-Line-Script.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -11,13 +11,12 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: Brett Salemink (), brett.salemink@gmail.com
+#        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 06/24/2018 08:38
+#       CREATED: 11/06/2018 13:40
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
-
 
 #------------ SOURCED ----------------
 
@@ -27,10 +26,12 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-	sudo pacman -S tmux
+	curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
+	wait
 }	# end Main
 
 Main
 
 #===EXIT===
 exit 0
+

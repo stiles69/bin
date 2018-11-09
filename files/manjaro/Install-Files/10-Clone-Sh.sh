@@ -1,9 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: Install-Tmux.sh
+#          FILE: Clone-Sh.sh
 # 
-#         USAGE: ./Install-Tmux.sh 
+#         USAGE: ./Clone-Sh.sh
 # 
 #   DESCRIPTION: 
 # 
@@ -11,14 +11,12 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: Brett Salemink (), brett.salemink@gmail.com
+#        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 06/24/2018 08:38
+#       CREATED: 10/10/2018 00:23
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
-
-
 #------------ SOURCED ----------------
 
 #-------------------------------------
@@ -27,7 +25,10 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-	sudo pacman -S tmux
+	cd $HOME
+	mkdir $HOME/lib
+	cd $HOME/lib
+	git clone git@github.com:stiles69/sh.git
 }	# end Main
 
 Main
