@@ -25,6 +25,8 @@
 #PORT=22
 HOST=173.29.176.138
 PORT=60001
+PARAM1="$1"
+PARAM2="$2"
 #-------------------------------------
 function SendMessage ()
 {
@@ -51,7 +53,7 @@ function Main ()
 	if [ -z "$PARAM2" ]
 	then
 		echo 'What is the Message you want to send'
-		read $MSG
+		read MSG
 	else
 		MSG="$PARAM2"
 	fi
