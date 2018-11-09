@@ -21,10 +21,10 @@
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-HOST=localhost
-PORT=22
-#HOST=173.29.176.138
-#PORT=60001
+#HOST=localhost
+#PORT=22
+HOST=173.29.176.138
+PORT=60001
 #-------------------------------------
 function SendMessage ()
 {
