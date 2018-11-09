@@ -21,10 +21,12 @@
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-HOST=localhost
-PORT=22
-#HOST=173.29.176.138
-#PORT=60001
+#HOST=localhost
+#PORT=22
+HOST=173.29.176.138
+PORT=60001
+PARAM1="$1"
+PARAM2="$2"
 #-------------------------------------
 function SendMessage ()
 {
@@ -42,7 +44,7 @@ function Main ()
 	#Check $1
 	if [ -z "$PARAM1" ]
 	then
-		TITLE="MANJARO"
+		TITLE="$(hostname)"
 	else
 		TITLE="$PARAM1"
 	fi
@@ -50,7 +52,8 @@ function Main ()
 	#Check $2
 	if [ -z "$PARAM2" ]
 	then
-		MSG="FFMPEG Completed"
+		echo 'What is the Message you want to send'
+		read MSG
 	else
 		MSG="$PARAM2"
 	fi
