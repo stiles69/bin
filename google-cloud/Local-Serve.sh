@@ -29,17 +29,7 @@ DESTDIR=/srv/http
 function Main ()
 {
 	
-	echo 'This will sync $SRCDIR in 10 seconds hit Ctrl-C to cancel'
-	echo '10'
-	sleep 1
-	echo '9'
-	sleep 1
-	echo '8'
-	sleep 1
-	echo '7'
-	sleep 1
-	echo '6'
-	sleep 1
+	echo 'This will sync $SRCDIR in 5 seconds hit Ctrl-C to cancel'
 	echo '5'
 	sleep 1
 	echo '4'
@@ -49,13 +39,11 @@ function Main ()
 	echo '2'
 	sleep 1
 	echo '1'
-	cd $DESTDIR
-	sudo find . -name "*" -delete
-	rsync -rvz $SRCDIR $DESTDIR
+	sudo rsync -rvz --delete-before $SRCDIR $DESTDIR
 	sudo chown -R http:brettsalemink $DESTDIR
-	sudo chmod -R 700 $DESTDIR
+	sudo chmod -R 774 $DESTDIR
 	echo 'Completed Serving on port 3000'
-	cd "$SRCDIR"
+	
 }	# end Main
 
 Main
