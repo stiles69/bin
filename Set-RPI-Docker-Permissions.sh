@@ -23,19 +23,21 @@ set -o nounset                              # Treat unset variables as an error
 #---------- GLOBAL VARIABLES ---------
 DIR1=$HOME/development/Docker/rpi-docker-transmission-open-vpn
 DIR2=/torrents
-DIR4=$HOME/development/Docker/docker-duplicati-armhf
+DIR3=$HOME/development/Docker/docker-duplicati-armhf
+GROUPER=docker
+USERER=brettsalemink
 #-------------------------------------
 function Main ()
 {
-	sudo chown -R brettsalemink:users "$DIR1"
+	sudo chown -R $USERER:$GROUPER "$DIR1"
 	sudo chmod -R 774 "$DIR1"
-	sudo chown -R brettsalemink:users "$DIR2"
+	sudo chown -R $USERER:$GROUPER "$DIR2"
 	sudo chmod -R 774 "$DIR2"
-	sudo chown -R brettsalemink:users "$DIR4"
-	sudo chmod -R 774 "$DIR4"
+	sudo chown -R $USERER:$GROUPER "$DIR3"
+	sudo chmod -R 774 "$DIR3"
 	ls -l "$DIR1"
 	ls -l "$DIR2"
-	ls -l "$DIR4"
+	ls -l "$DIR3"
 
 }	# end Main
 
