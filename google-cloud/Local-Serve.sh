@@ -22,12 +22,13 @@ set -e
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-SRCDIR=./
-DESTDIR=/srv/http/
+SRCDIR="$1"
+DESTDIR=/srv/http
 
 #-------------------------------------
 function Main ()
 {
+	
 	echo 'This will sync $SRCDIR in 10 seconds hit Ctrl-C to cancel'
 	echo '10'
 	sleep 1
@@ -48,12 +49,13 @@ function Main ()
 	echo '2'
 	sleep 1
 	echo '1'
-	
-	sudo find "$DESTDIR" -name "*" -delete
-	rsync -rvz "$SRCDIR" "$DESTDIR"
-	sudo chown -R http:brettsalemink "$DESTDIR"
-	sudo chmod -R 700 "$DESTDIR"
-	echo 'Completed Serving on port 3000'	
+	cd $DESTDIR
+	sudo find . -name "*" -delete
+	rsync -rvz $SRCDIR $DESTDIR
+	sudo chown -R http:brettsalemink $DESTDIR
+	sudo chmod -R 700 $DESTDIR
+	echo 'Completed Serving on port 3000'
+	cd "$SRCDIR"
 }	# end Main
 
 Main
