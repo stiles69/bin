@@ -37,7 +37,7 @@ function Main ()
 	mkdir build 
 	cd build && rm -rf * 
 	cd .. 
-	zim --export --format=html -O --template=Print --output="$EXPORTDIR/build" --index-page=sitemap "$INPUTDIR"
+	zim --export --format=html -O --template=$HOME/bin/zim/custom/Rogue-Print-Custom.html --output="$EXPORTDIR/build" --index-page=sitemap "$INPUTDIR"
 	wait
 	rsync -rvz "$EXPORTDIR/build/" "$RSYNCDIR"
 	wait
