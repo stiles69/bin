@@ -1,9 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: Test.sh
+#          FILE: Syncs.sh
 # 
-#         USAGE: ./Test.sh 
+#         USAGE: ./Syncs.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,7 +13,7 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 11/12/2018 10:21
+#       CREATED: 11/12/2018 10:30
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
@@ -22,14 +22,11 @@ set -o nounset                              # Treat unset variables as an error
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-SYNCFROMDIR=/media/TV-Shows/
-SYNCTODIR=/Media/TV-Shows/
+
 #-------------------------------------
 function Main ()
 {
-	mega-cmd
-	mega-sync "$SYNCFROMDIR" "$SYNCTODIR"
-
+	mega-sync
 }	# end Main
 
 Main
