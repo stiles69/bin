@@ -1,9 +1,9 @@
-#!/bin/bash 
+#!/bin/bash  
 #====================================================
 #
-#          FILE: Sync-TV-Shows.sh
+#          FILE: Create-Custom-Sync.sh
 # 
-#         USAGE: ./Sync-TV-Shows.sh 
+#         USAGE: ./Create-Custom-Sync.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,7 +13,7 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 11/12/2018 10:42
+#       CREATED: 11/12/2018 11:05
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
@@ -22,19 +22,17 @@ set -o nounset                              # Treat unset variables as an error
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-SYNCFROMDIR1=/mnt/Media/TV-Shows/
-SYNCFROMDIR2=/media/TV-Shows/
-SYNCTODIR=/Media/TV-Shows/
+
 #-------------------------------------
 function Main ()
 {
-	mega-login brett.salemink@gmail.com Vizio#2013
-	wait
-	mega-sync "$SYNCFROMDIR1" "$SYNCTODIR"
-	wait
-	mega-sync "$SYNCFROMDIR2" "$SYNCTODIR"
-	wait
-	mega-logout
+	echo "What is the full path of the SYNCFROMDIR?"
+	read SYNCFROMDIR
+	echo "What is the full path of the SYNCTODIR on Mega?"
+	read SYNCTODIR
+	mega-sync "$SYNCFROMDIR" "$SYNCTODIR"
+
+	mega-sync "
 }	# end Main
 
 Main
