@@ -24,12 +24,14 @@ set -o nounset                              # Treat unset variables as an error
 #---------- GLOBAL VARIABLES ---------
 DIR1=/mnt/Media
 DIR2=/media
+USER=emby
+GROUP=brettsalemink
 #-------------------------------------
 function Main ()
 {
-	sudo chown -R plex:brettsalemink $DIR1
+	sudo chown -R $USER:$GROUP $DIR1
 	sudo chmod -R 774 $DIR1
-	sudo chown -R plex:brettsalemink $DIR2
+	sudo chown -R $USER:$GROUP $DIR2
 	sudo chmod -R 774 $DIR2
 
 	echo 'Permissions Changed for $DIR1'
