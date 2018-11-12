@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/bash 
 #====================================================
 #
-#          FILE: Stop-Sync.sh
+#          FILE: Sync-TV-Shows.sh
 # 
-#         USAGE: ./Stop-Sync.sh 
+#         USAGE: ./Sync-TV-Shows.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,7 +13,7 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 11/12/2018 10:32
+#       CREATED: 11/12/2018 10:42
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
@@ -22,14 +22,19 @@ set -o nounset                              # Treat unset variables as an error
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-
+SYNCFROMDIR1=/mnt/Media/TV-Shows/
+SYNCFROMDIR2=/media/TV-Shows/
+SYNCTODIR=/Media/TV-Shows/
 #-------------------------------------
 function Main ()
 {
-	mega-sync
-	echo "Which sync do you want to stop?"
-	read SYNCNUM
-	mega-sync -d "$SYNCNUM" 
+	mega-login brett.salemink@gmail.com
+	wait
+	mega-sync "$SYNCFROMDIR1" "$SYNCTODIR"
+	wait
+	mega-sync "$SYNCFROMDIR2" "$SYNCTODIR"
+	wait
+	mega-logout
 }	# end Main
 
 Main
