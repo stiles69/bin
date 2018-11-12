@@ -31,8 +31,7 @@ function Main ()
 	echo "What is the full path of the SYNCTODIR on Mega?"
 	read SYNCTODIR
 	mega-sync "$SYNCFROMDIR" "$SYNCTODIR"
-
-	mega-sync "
+	
 }	# end Main
 
 Main
