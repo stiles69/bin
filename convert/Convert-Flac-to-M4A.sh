@@ -28,7 +28,7 @@ function Main ()
 {
 	#find . -name '*.flac' -exec sh -c 'ffmpeg -i "$1" -c:a libfdk_aac -b:a 320k "${1%.flac}.m4a"' _ {} \;
 
-	find . -name '*.flac' -exec sh -c '/usr/bin/ffmpeg-git -i "$1" -c:v copy -c:a libfdk_aac -b:a 384k "${1%.flac}.m4a"' _ {} \;
+	find . -name '*.flac' -exec sh -c '/usr/bin/ffmpeg -i "$1" -c:v copy -c:a libfdk_aac -b:a 384k "${1%.flac}.m4a"' _ {} \;
 }	# end Main
 
 Main
