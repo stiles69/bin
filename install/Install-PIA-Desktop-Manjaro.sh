@@ -25,22 +25,15 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
+	sudo pacman -S openvpn
 	cd $HOME/Downloads
-	wget https://www.privateinternetaccess.com/installer/pia.nm.sh
-	wait
-	echo "Preparing to install PIA in 5 seconds. Hit Ctrl-C to terminate install."
-	echo "5"
-	sleep 1
-	echo "4"
-	sleep 1
-	echo "3"
-	sleep 1
-	echo "2"
-	sleep 1
-	echo "1"
-	sleep 1
-	sudo bash pis-nm.sh
+	mkdir OpenVPN-setup-PIA
+	cd OpenVPN-setup-PIA
+	wget https://www.privateinternetaccess.com/openvpn/openvpn.zip
+	unzip openvpn.zip
+	cat $HOME/files/pia-instructions.txt
 	
+		
 }	# end Main
 
 Main

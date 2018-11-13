@@ -1,0 +1,81 @@
+p2685989
+
+(optional manual OpenVPN config)
+Now Configure Network Manager (Manual config)
+=============================================
+- Right click the Network Manager on the menu bar
+    - and click "Edit Connections..."
+    - then click "Add"
+    - choose "OpenVPN" for the connection type from the drop down menu
+    - then click "Create..."
+    - for the "Connection name:" type in "Private Internet Access VPN"
+    - for the "Gateway:" type in "us-west.privateinternetaccess.com" or...
+        - whatever Hostname you would like to use from...
+            https://www.privateinternetaccess.com/pages/network/
+            - Ex. "brazil.privateinternetaccess.com"
+            - Ex. "mexico.privateinternetaccess.com"
+    - for the "Type:" select "Password" from the dropdown menu
+    - for the "User name:" type in your "p1234567" username
+    - for the "Password:" type in the password that goes with your "p-xxxxx" username
+    - for the "CA Certificate:" browse and select the CA Certificate from ~/OpenVPN-setup-PIA folder
+    - now click on "Advanced..."
+    - Check "Use custom gateway port:" and set it to "1198"
+    - Put a check in "Use LZO compression"
+    - Click on the "Security" tab
+    - Set the "Cipher:" to "AES-128-CBC"
+    - Set the "HMAC Authentication:" to "SHA-1"
+    - Click "OK"
+    - Click "Save"
+        - You may get asked to save a keyring password (you can leave this blank)
+
+Now connect to the VPN
+=============================================
+- Now Left click the Network Manager on the menu bar
+    - click "VPN Connections"
+    - click "Private Internet Access"
+    - wait for it to connect
+    
+- Test by opening your Internet browser and going to...
+    https://www.privateinternetaccess.com/pages/whats-my-ip/
+    https://ipleak.net/
+
+
+Import the PIA OpenVPN config file
+=============================================
+- Right click the Network Manager on the menu bar
+    - and click "Edit Connections..."
+    - then click "Add"
+    - choose "Import a saved VPN configuration..." for the connection type from the drop down menu
+    - then click "Create..."
+    - double click to go into "OpenVPN-setup-PIA" folder
+    - choose which server you would like to setup and connect to
+    - then click "Open"
+    - Remove only the ":1198" from the "Gateway:" ( if present ) as only the domain name should be in this box
+    - for the "User name:" type in your "p1234567" username
+    - for the "Password:" type in the password that goes with your "p-xxxxx" username
+    - Then click "Advanced..."
+    - Check "Use custom gateway port:" and set it to "1198"
+    - Click on the "Security" tab
+    - Set the "Cipher:" to "AES-128-CBC"
+    - Set the "HMAC Authentication:" to "SHA-1"
+    - Click "OK"
+    - Click "Save"
+
+Note: Go back into the "Edit Connections..." and recheck all the settings.  Some times it seem to take setting the "AES-128-CBC" two times for it to stay set.  This might be a small bug with NetworkManager's import process.
+
+
+Now connect to the VPN
+=============================================
+- Now Left click the Network Manager on the menu bar
+    - click "VPN Connections"
+    - click Ex. "Mexico" {This will be the name of the server you chose to setup}
+    - wait for it to connect
+    
+- Test by opening your Internet browser and going to...
+    https://www.privateinternetaccess.com/pages/whats-my-ip/
+    https://ipleak.net/
+    
+Enjoy!
+
+
+
