@@ -1,6 +1,6 @@
 #==== ENVIRONMENT ====
 #==== SET JAVA_HOME ===
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/jre
+#export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/jre
 
 #=====TEMPORARY ADD TO ALLOW WORK ON THIS PROJECT WIHOUT LOGGING IN========
 
@@ -145,14 +145,14 @@ source $HOME/bin/files/Aliases/aliases-common
 source $HOME/bin/files/Aliases/aliases-systemctl
 
 #======= SEPERATE MACHINE SPECIFIC ALIASES =========
-source $HOME/bin/files/Aliases/Arch/aliases-arch
-#source $HOME/bin/files/Aliases/Raspbian/aliases-raspbian
+#source $HOME/bin/files/Aliases/Arch/aliases-arch
+source $HOME/bin/files/Aliases/Raspbian/aliases-raspbian
 #source $HOME/bin/files/Aliases/Gentoo/aliases-gentoo
 
 #export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 ## The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/brettsalemink/google-cloud-sdk/path.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/path.zsh.inc'; fi
+#if [ -f '/home/brettsalemink/google-cloud-sdk/path.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc'; fi
+#if [ -f '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc'; fi
