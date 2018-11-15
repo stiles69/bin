@@ -95,7 +95,7 @@ function Main ()
 	wait
 	Generate 
 	wait
-	$HOME/bin/Send-Message.sh
+	$HOME/bin/Send-Message.sh Manjaro 'DVD Complete'
 }	# end Main
 
 Main
