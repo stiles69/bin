@@ -26,7 +26,7 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-	mega-transfers --limit=5 --path-display-size=130 --only-uploads
+	mega-transfers --path-display-size=40
 }	# end Main
 
 Main
