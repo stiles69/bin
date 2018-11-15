@@ -1,5 +1,7 @@
+backupninja-borg-git
 blackmagic-decklink-sdk
 bombono-dvd
+brave
 chromaprint-fftw
 codec2
 davs2-git
@@ -8,6 +10,7 @@ deepin-help
 discord
 dvdstyler
 ffmpeg-git-nc
+ffmpeg-libfdk_aac
 flite1-patched
 gimp-elsamuko-scripts
 gimp-plugin-beautify
@@ -39,6 +42,7 @@ masterpdfeditor
 mc-solarized-git
 megacmd-bin
 megasync
+megatools
 mhwd-nvidia-304xx
 motion
 nautilus-megasync
@@ -46,16 +50,16 @@ ndi-sdk
 nvm
 openh264
 orbit2
-pb-for-desktop
 peazip-gtk2-portable
+perl-compress-raw-lzma
 phantomjs-bin
 plex-media-server
-pngquant
 pure-ftpd
 python-yubico
 python2-yubico
 rar
 rockchip-mpp
+sendmail
 shine
 vmaf
 vo-amrwbenc

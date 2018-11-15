@@ -24,7 +24,7 @@ set -o nounset                              # Treat unset variables as an error
 #---------- GLOBAL VARIABLES ---------
 DIR1=/mnt/Media
 DIR2=/media
-USER=emby
+USER=plex
 GROUP=brettsalemink
 #-------------------------------------
 function Main ()
