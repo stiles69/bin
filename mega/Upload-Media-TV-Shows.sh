@@ -24,7 +24,7 @@ set -o nounset                              # Treat unset variables as an error
 #---------- GLOBAL VARIABLES ---------
 DIR1=/mnt/Media/TV-Shows
 DIR2=/media/TV-Shows
-MEGADIR=/Media/TV-Shows
+MEGADIR=/Media/
 #-------------------------------------
 function Main ()
 {
