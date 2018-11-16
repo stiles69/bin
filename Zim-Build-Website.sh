@@ -17,42 +17,39 @@
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
-
+set -e
 
 #------------ SOURCED ----------------
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
 INPUTDIR=$HOME/Notes
-EXPORTDIR=$HOME/zim-export
-RSYNCDIR=$HOME/development/stiles69/zim
+EXPORTDIR=$HOME/development/stiles69/zim
+
 #-------------------------------------
 function Main ()
 {
-	sudo rm -r "$EXPORTDIR/build"
+	rsync -avz "$INPUTDIR/" --exclude "*.txt" --exclude ".git*" "$EXPORTDIR"
+	wait
+	echo "****Completed RSyncing $INPUTDIR to $EXPORTDIR****"
+	sleep 3
 	zim --index "$INPUTDIR"
-	echo "Completed indexing $INPUTDIR."
 	wait
+	echo "****Completed indexing $INPUTDIR.****"
+	sleep 3
+	cd "$INPUTDIR"
+	zim --export --format=html -O --template=$HOME/bin/zim/custom/Rogue-Print-Custom.html --output="$EXPORTDIR" --index-page=sitemap "$INPUTDIR"
+	wait
+	echo "****Completed exporting $INPUTDIR to $EXPORTDIR****"
+	sleep 3
 	cd "$EXPORTDIR"
-	mkdir build 
-	cd build && rm -rf * 
-	cd .. 
-	zim --export --format=html -O --template=$HOME/bin/zim/custom/Rogue-Print-Custom.html --output="$EXPORTDIR/build" --index-page=sitemap "$INPUTDIR"
-	wait
-	rsync -rvz "$EXPORTDIR/build/" "$RSYNCDIR"
-	wait
-	cd "$RSYNCDIR"
 	git add .
 	wait
-	git commit -m "Update Zim-Export"
+	git commit -m "Update Zim"
 	wait
 	git push
 	wait
-
-	echo "Completed indexing $INPUTDIR."
-	echo "Completed Website Build from $INPUTDIR to $EXPORTDIR/build"
-	echo "Completed syncing $EXPORTDIR/build to $RSYNCDIR"
-	echo "Completed pushing $RSYNCDIR. Website can be found at https://stiles69.github.io/zim/sitemap.html"
+	echo "Completed pushing $EXPORTDIR. Website can be found at https://stiles69.github.io/zim/sitemap.html"
 
 	
 }	# end Main
