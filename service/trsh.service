@@ -1,0 +1,23 @@
+[Unit]
+Description=Telegram Controller
+After=network.target
+
+[Service]
+Type=simple
+# Another Type option: forking
+User=trsh
+WorkingDirectory=/home/trsh
+ExecStart=/usr/bin/python /home/trsh/controller.py
+Restart=on-failure
+# Other Restart options: or always, on-abort, etc.
+
+[Install]
+WantedBy=multi-user.target
+#[program:trsh]
+#command = /usr/bin/python /home/trsh/controller.py
+#stdout_logfile = /var/log/trsh-stdout.log
+#stdout_logfile_maxbytes = 10MB
+#stdout_logfile_backups = 5
+#stderr_logfile = /var/log/trsh-stderr.log
+#stderr_logfile_maxbytes = 10MB
+#stderr_logfile_backups = 5
