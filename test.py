@@ -6,6 +6,6 @@ import telepot
 chat_id=597519149
 now = datetime.datetime.now()
 message = (sys.argv[1])
-telegram_bot = telepot.Bot('NEED TO PUT API-KEY HERE')
+telegram_bot = telepot.Bot('API KEY GOES HERE')
 
-telegram_bot.sendMessage(chat_id, str(now.hour)+str(":")+str(now.minute)+message)
+telegram_bot.sendMessage(chat_id, str(now.hour)+str(":")+str(now.minute)+str(" ")+str(" ")+message)
