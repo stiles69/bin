@@ -22,37 +22,37 @@ export PATH=$HOME/bin/mega:$PATH
 export PATH=$HOME/lib/sh:$PATH
 
 # Ruby Path
-export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
+#export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
 
 # The next line enables catt for pip and python
-export PATH="$PATH:$HOME/.local/bin"
-export PYTHONPATH="/usr/lib/python2.7/dist-packages/:$PYTHONPATH"
+#export PATH="$PATH:$HOME/.local/bin"
+#export PYTHONPATH="/usr/lib/python2.7/dist-packages/:$PYTHONPATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
 # Path to golang
-export PATH=$PATH:/usr/local/go/bin
+#export PATH=$PATH:/usr/local/go/bin
 
 # Path to Go
-export GOPATH=$HOME/go
+#export GOPATH=$HOME/go
 
 # Path to GoBin
-export GOBIN=$HOME/go/bin
+#export GOBIN=$HOME/go/bin
 
 # Path to User GoLang
-export PATH=$PATH:$GOBIN
+#export PATH=$PATH:$GOBIN
 
 # Variable for DVDAuthor
-export VIDEO_FORMAT=NTSC
+#export VIDEO_FORMAT=NTSC
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 #== Added for NVM ==
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #=== THEMES ===
 # Set name of the theme to load. Optionally, if you set this to "random"
