@@ -25,7 +25,7 @@ set -o nounset                              # Treat unset variables as an error
 DIR1=/mnt/Media
 DIR2=/media
 DIR3=/home/brettsalemink/Music
-USER=plex
+USER=emby
 GROUP=brettsalemink
 #-------------------------------------
 function Main ()
