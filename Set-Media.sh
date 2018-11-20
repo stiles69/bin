@@ -22,26 +22,62 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 
 #---------- GLOBAL VARIABLES ---------
-DIR1=/mnt/Media
-DIR2=/media
-DIR3=/home/brettsalemink/Music
-USER=emby
+
+DIR1=/media
+DIR2=/mnt/Media
+
+DIR3=/mnt/Media/Movies
+DIR4=/mnt/Media/TV-Shows
+DIR5=/media/Movies
+DIR6=/media/TV-Shows
+DIR7=/home/brettsalemink/Music
+
+DIRSSL=/media/ssl
+
+USERPLEX=plex
+USEREMBY=emby
 GROUP=brettsalemink
 #-------------------------------------
 function Main ()
 {
-	sudo chown -R $USER:$GROUP $DIR1
+	sudo chown -R $USERPLEX:$GROUP $DIR1
 	sudo chmod -R 774 $DIR1
-	sudo chown -R $USER:$GROUP $DIR2
+	sudo chown -R $USERPLEX:$GROUP $DIR2
 	sudo chmod -R 774 $DIR2
-	sudo chown -R $USER:$GROUP $DIR3
-	sudo chmod -R 774 $DIR2
+	sudo chown -R $USEREMBY:$GROUP $DIR3
+	sudo chmod -R 774 $DIR3
+
+	sudo chown -R $USEREMBY:$GROUP $DIR4
+	sudo chmod -R 774 $DIR4
+	sudo chown -R $USEREMBY:$GROUP $DIR5
+	sudo chmod -R 774 $DIR5
+	sudo chown -R $USEREMBY:$GROUP $DIR6
+	sudo chmod -R 774 $DIR6
+	sudo chown -R $USEREMBY:$GROUP $DIR7
+	sudo chmod -R 774 $DIR7
+	
+	sudo chown -R $USEREMBY:$GROUP $DIRSSL
+	sudo chmod -$ 774 $DIRSSL
+
 	echo "Permissions Changed for $DIR1"
 	ls -l "$DIR1"
-	echo "Persmissions Changed for $DIR2"
+	echo "Permissions Changed for $DIR2"
 	ls -l "$DIR2"
 	echo "Permissions Changed for $DIR3"
 	ls -l "$DIR3"
+	echo "Permissions Changed for $DIR4"
+	ls -l "$DIR4"
+	echo "Permissions Changed for $DIR5"
+	ls -l "$DIR5"
+	echo "Permissions Changed for $DIR6"
+	ls -l "$DIR6"
+
+	echo "Permissions Changed for $DIR7"
+	ls -l "$DIR7"
+
+	echo "Permissions Changed for $DIRSSL"
+	ls -l $DIRSSL
+
 }	# end Main
 
 Main
