@@ -22,15 +22,17 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 
 #---------- GLOBAL VARIABLES ---------
+DIR0=/media
 
-DIR1=/media
+DIR1=/media/Adult
 DIR2=/mnt/Media
+
 
 DIR3=/mnt/Media/Movies
 DIR4=/mnt/Media/TV-Shows
 DIR5=/media/Movies
 DIR6=/media/TV-Shows
-DIR7=/home/brettsalemink/Music
+DIR7=/media/Music
 
 DIRSSL=/media/ssl
 
@@ -40,6 +42,9 @@ GROUP=brettsalemink
 #-------------------------------------
 function Main ()
 {
+	sudo chown -R $USEREMBY:$GROUP $DIR0
+	sudo chmod -R 774 $DIR0
+
 	sudo chown -R $USERPLEX:$GROUP $DIR1
 	sudo chmod -R 774 $DIR1
 	sudo chown -R $USERPLEX:$GROUP $DIR2
@@ -59,6 +64,9 @@ function Main ()
 	sudo chown -R $USEREMBY:$GROUP $DIRSSL
 	sudo chmod -$ 774 $DIRSSL
 
+	echo "Permissions Changed for $DIR0"
+	ls -l $DIR0
+
 	echo "Permissions Changed for $DIR1"
 	ls -l "$DIR1"
 	echo "Permissions Changed for $DIR2"
@@ -73,7 +81,7 @@ function Main ()
 	ls -l "$DIR6"
 
 	echo "Permissions Changed for $DIR7"
-	ls -l "$DIR7"
+	ls -l $DIR7
 
 	echo "Permissions Changed for $DIRSSL"
 	ls -l $DIRSSL
