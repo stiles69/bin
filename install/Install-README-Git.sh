@@ -43,7 +43,8 @@ function Proceed ()
 
 function ProceedYes ()
 {
-	echo "![Image of Stiles](https://storage.googleapis.com/stiles-images/StilesLogo.png)" >> ./README.md
+	echo "![Rogue Designs Logo](https://storage.googleapis.com/stiles-images/MadHatter-465x640.png)" >> ./README.md
+	echo "**Rogue Designs**" >> ./README.md
 	echo "# "$RESULT >> ./README.md
 }	# end function
 
@@ -57,9 +58,9 @@ function Main ()
 	Proceed
 }	# end Main
 
-Main # Call Main
+Main 
 
 # == Exit ==
-exit 0	# Always exit properly
+exit 0
 
 
