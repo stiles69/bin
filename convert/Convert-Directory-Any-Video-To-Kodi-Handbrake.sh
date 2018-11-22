@@ -57,7 +57,7 @@ function Convert ()
 		echo $NAME
 		NEWNAME="$NAME.mp4"
 		
-		HandbrakeCLI -Z "Fast 720p30" -O -i "$FILENAME" -o "$OUTPUTDIR/Converted/$NEWNAME"
+		HandBrakeCLI -Z "Fast 720p30" -O -i "$FILENAME" -o "$OUTPUTDIR/Converted/$NEWNAME"
 		wait
 	done
 }	# end function
