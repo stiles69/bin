@@ -40,10 +40,10 @@ DIRSSL=/media/ssl
 
 USERPLEX=plex
 USEREMBY=emby
-GROUPEMBY=users
-GROUPPLEX=users
+GROUPEMBY=brettsalemink
+GROUPPLEX=brettsalemink
 
-PERM=777
+PERM=774
 #-------------------------------------
 function Main ()
 {
