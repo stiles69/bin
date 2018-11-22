@@ -40,34 +40,36 @@ DIRSSL=/media/ssl
 
 USERPLEX=plex
 USEREMBY=emby
-GROUPEMBY=emby
-GROUPPLEX=plex
+GROUPEMBY=users
+GROUPPLEX=users
+
+PERM=777
 #-------------------------------------
 function Main ()
 {
 	# Emby
 	sudo chown -R $USEREMBY:$GROUPEMBY $DIR0
-	sudo chmod -R 774 $DIR0
+	sudo chmod -R $PERM $DIR0
 	sudo chown -R $USEREMBY:$GROUPEMBY $DIR3
-	sudo chmod -R 774 $DIR3
+	sudo chmod -R $PERM $DIR3
 	# Plex
 	sudo chown -R $USERPLEX:$GROUPPLEX $DIR1
-	sudo chmod -R 774 $DIR1
+	sudo chmod -R $PERM $DIR1
 	sudo chown -R $USERPLEX:$GROUPPLEX $DIR2
-	sudo chmod -R 774 $DIR2
+	sudo chmod -R $PERM $DIR2
 	# Emby
 	sudo chown -R $USEREMBY:$GROUPEMBY $DIR4
-	sudo chmod -R 774 $DIR4
+	sudo chmod -R $PERM $DIR4
 	sudo chown -R $USEREMBY:$GROUPEMBY $DIR5
-	sudo chmod -R 774 $DIR5
+	sudo chmod -R $PERM $DIR5
 	sudo chown -R $USEREMBY:$GROUPEMBY $DIR6
-	sudo chmod -R 774 $DIR6
+	sudo chmod -R $PERM $DIR6
 	sudo chown -R $USEREMBY:$GROUPEMBY $DIR7
-	sudo chmod -R 774 $DIR7
+	sudo chmod -R $PERM $DIR7
 	sudo chown -R $USEREMBY:$GROUPEMBY $DIR8
-	sudo chmod -R 774 $DIR8	
+	sudo chmod -R $PERM $DIR8	
 	sudo chown -R $USEREMBY:$GROUPEMBY $DIRSSL
-	sudo chmod -$ 774 $DIRSSL
+	sudo chmod -R $PERM $DIRSSL
 	# Emby
 	echo "Permissions Changed for $DIR0"
 	ls -l $DIR0
