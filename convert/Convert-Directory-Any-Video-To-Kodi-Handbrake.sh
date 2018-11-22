@@ -19,28 +19,52 @@
 
 set -o nounset                              # Treat unset variables as an error
 
+#== GLOBAL VARS ==
+INPUTDIR="$1"
+OUTPUTDIR="$2"
+
+function CheckVars()
+{
+	if [ ! -d "$INPUTDIR" ]
+	then
+		echo "Correct cli usage is Convert-Directory-Any-Video-To-Kodi-Handbrake.sh InputDirFilePath OutputDirFilePath"
+		echo "Please enter the filepath of the Input Directory?"
+		read INPUTDIR
+	fi
+
+	if [ ! -d "$OUTPUTDIR" ]
+	then
+		
+		echo "Correct cli usage is Convert-Directory-Any-Video-To-Kodi-Handbrake.sh InputDirFilePath OutputDirFilePath"
+		echo "Please enter the filepath of the Output Directory?"
+		read OUTPUTDIR
+	fi	
+}
+
 function MakeDir ()
 {
-	mkdir Converted
+	mkdir "$OUTPUTDIR/Converted"
 
 }	# end function
 
 function Convert () 
 {
-	
+	cd "$INPUTDIR"	
+
 	for FILENAME in *
 	do 
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
 		echo $NAME
 		NEWNAME="$NAME.mp4"
 		
-		HandbrakeCLI -Z "Fast 720p30" -O -i "$FILENAME" -o "./Converted/$NEWNAME"
+		HandbrakeCLI -Z "Fast 720p30" -O -i "$FILENAME" -o "$OUTPUTDIR/Converted/$NEWNAME"
 		wait
 	done
 }	# end function
 
 function Main ()
 {
+	CheckVars
 	MakeDir
 	Convert
 }	# end function
