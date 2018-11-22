@@ -27,7 +27,7 @@ SYNCTODIR=/Media/TV-Shows/
 #-------------------------------------
 function Main ()
 {
-	mega-transfers --show-syncs --limit=5
+	mega-transfers --show-syncs --path-display-size=60 --limit=5
 
 }	# end Main
 
