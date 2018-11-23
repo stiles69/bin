@@ -26,7 +26,7 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-	sudo cp /root/slave1/home/brettsalemink/config /home/brettsalemink/.ssh/
+	sudo cp /boot/slave1/home/brettsalemink/config /home/brettsalemink/.ssh/
 }	# end Main
 
 Main
