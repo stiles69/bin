@@ -48,6 +48,10 @@ function Main ()
 	cp "$BINHOMEDIR/.zlogout" "$SLAVE1HOMEDIR"
 	cp -r "$BINHOMEDIR/.ssh" "$SLAVE1HOMEDIR"
 
+	cd "$RASPBIANCONFIGDIR"
+	git add .
+	git commit -m "Manjaro"
+	git push
 	echo "Finished Configuration Setup"
 }	# end Main
 
