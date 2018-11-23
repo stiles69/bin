@@ -42,6 +42,10 @@ function Main ()
 	wait
 	echo "****Completed exporting $INPUTDIR to $EXPORTDIR****"
 	sleep 3
+
+	cp $HOME/bin/zim/custom/Commands.html "$EXPORTDIR/Mega-Cmd/"
+	cp $HOME/bin/zim/custom/List_of_Commands.html "$EXPORTDIR/Mega-Cmd/"
+
 	cd "$EXPORTDIR"
 	git add .
 	wait

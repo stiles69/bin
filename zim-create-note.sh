@@ -17,7 +17,7 @@
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
-
+set -e # Needed for sleep
 #------------ SOURCED ----------------
 
 #-------------------------------------
@@ -25,19 +25,13 @@ set -o nounset                              # Treat unset variables as an error
 NOTEDIR=$HOME/Notes
 CURRENTDIR="./"
 NOTENAME="$1"
-#DATE=`date +%Y-%m-%d`
-# get day
-DD=$(D+"%d")
-# get month 
-MM=$(D+"%M")
-# get year
-YY=$(D+"%Y")
-# get date
-DATE=$("%d")
-
 #-------------------------------------
-function Main (
+function Main ()
 {
+	read YYYY MM DD <<<$(date +'%Y %m %d')
+	MONTH=$(date +"%B")
+	DOW=$(date +"%a")
+
 	if [ ! "$NOTENAME" ]
 	then
 		echo "Please enter note name:"
@@ -45,9 +39,16 @@ function Main (
 	fi
 
 	echo "===== $NOTENAME =====" > "$CURRENTDIR/$NOTENAME.txt"
-	echo"Content-Type: text/x-zim-wiki Wiki-Format: zim 0.4" >> "$CURRENTDIR/$NOTENAME.txt"
-	echo "Created $DD $DATE $MM $YY" >> "$CURRENTDIR/$NOTENAME.txt"
+	wait
+	echo "Content-Type: text/x-zim-wiki Wiki-Format: zim 0.4" >> "$CURRENTDIR/$NOTENAME.txt"
+	wait
+	echo " " >> "$CURRENTDIR/$NOTENAME.txt"
+	echo "Created $DOW $DD $MONTH $YYYY" >> "$CURRENTDIR/$NOTENAME.txt"
+	wait
+	vim "$CURRENTDIR/$NOTENAME.txt"
+	wait
 }	# end Main
+
 
 Main
 
