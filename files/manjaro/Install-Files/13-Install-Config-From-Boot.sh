@@ -1,9 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: 12-Install-Oh-My-Zsh-From-Config.sh
+#          FILE: 13-Install-config-From-root.sh
 # 
-#         USAGE: ./12-Install-Oh-My-Zsh-From-Config.sh 
+#         USAGE: ./13-Install-config-From-root.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,11 +13,11 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 11/22/2018 23:31
+#       CREATED: 11/22/2018 23:43
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
-set -e # Need for sleep
+
 #------------ SOURCED ----------------
 
 #-------------------------------------
@@ -27,17 +27,11 @@ HOMEDIR=/home/brettsalemink
 #-------------------------------------
 function Main ()
 {
-	
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-	wait
-	sudo cp "$INSTALLDIR/slave1/home/brettsalemink/.zshrc" "$HOMEDIR"
-	wait
-	echo 'Oh My ZSH installed.'
-	sleep 5
-	
+	sudo cp "$INSTALLDIR/slave1/home/brettsalemink/.ssh/config" "$HOMEDIR/.ssh"
 }	# end Main
 
 Main
 
 #===EXIT===
 exit 0
+
