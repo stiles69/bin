@@ -1,9 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: 12-Install-Oh-My-Zsh-From-Config.sh
+#          FILE: 16-Install-All-Vim-From-Boot.sh
 # 
-#         USAGE: ./12-Install-Oh-My-Zsh-From-Config.sh 
+#         USAGE: ./16-Install-All-Vim-From-Boot.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,28 +13,23 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 11/22/2018 23:31
+#       CREATED: 11/23/2018 00:04
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
-set -e # Need for sleep
+
 #------------ SOURCED ----------------
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
 INSTALLDIR=$HOME/raspbian-config
 HOMEDIR=/home/brettsalemink
+ETCDIR=/etc
 #-------------------------------------
 function Main ()
 {
-	
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-	wait
-	sudo cp "$INSTALLDIR/slave1/home/brettsalemink/.zshrc" "$HOMEDIR"
-	wait
-	echo 'Oh My ZSH installed.'
-	sleep 5
-	
+	sudo cp -r "$INSTALLDIR/slave1/home/brettsalemink/.vim" "$HOMEDIR"
+	sudo cp "$INSTALLDIR/slave1/home/brettsalemink/.vimrc" "$HOMEDIR"
 }	# end Main
 
 Main
