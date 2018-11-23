@@ -26,7 +26,9 @@ INSTALLDIR=$HOME/raspbian-config
 HOMEDIR=/home/brettsalemink
 ETCDIR=/etc
 #-------------------------------------
-	sudo cp -r "$INSTALLDIRslave1/home/brettsalemink/.vim" "$HOMEDIR"
+function Main ()
+{
+	sudo cp -r "$INSTALLDIR/slave1/home/brettsalemink/.vim" "$HOMEDIR"
 	sudo cp "$INSTALLDIR/slave1/home/brettsalemink/.vimrc" "$HOMEDIR"
 }	# end Main
 
