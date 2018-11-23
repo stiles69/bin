@@ -22,28 +22,30 @@ set -e # Needed for sleep
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-
+INSTALLDIR=$HOME/raspbian-config
+HOMEDIR=/home/brettsalemink
+ETCDIR=/etc
 #-------------------------------------
 function Main ()
 {
 	echo "Installing dhcpcd.conf"
 	sleep 3
-	sudo cp /boot/slave1/etc/dhcpcd.conf /etc/
+	sudo cp "$INSTALLDIR/slave1/etc/dhcpcd.conf" "$ETCDIR"
 	wait
 
 	echo "Installing hostname"
 	sleep 3
-	sudo cp /boot/slave1/etc/hostname /etc/
+	sudo cp "$INSTALLDIR/slave1/etc/hostname" "$ETCDIR"
 	wait
 
 	echo "Installing hosts"
 	sleep 3
-	sudo cp /boot/slave1/etc/hosts /etc/
+	sudo cp "$INSTALLDIR/slave1/etc/hosts" "$ETCDIR"
 	wait
 
 	echo "Installing sshd_config"
 	sleep 3
-	sudo cp /boot/slave1/etc/ssh/sshd_config /etc/ssh/
+	sudo cp "$INSTALLDIR/slave1/etc/ssh/sshd_config" "$ETCDIR/ssh/"
 	wait
 }	# end Main
 

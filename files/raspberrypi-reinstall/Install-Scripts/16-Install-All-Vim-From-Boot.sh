@@ -22,10 +22,12 @@ set -o nounset                              # Treat unset variables as an error
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
+INSTALLDIR=$HOME/raspbian-config
 HOMEDIR=/home/brettsalemink
+ETCDIR=/etc
 #-------------------------------------
-	sudo cp -r /boot/slave1/home/brettsalemink/.vim /home/brettsalemink/
-	sudo cp /boot/slave1/home/brettsalemink/.vimrc "$HOMEDIR/"
+	sudo cp -r "$INSTALLDIRslave1/home/brettsalemink/.vim" "$HOMEDIR"
+	sudo cp "$INSTALLDIR/slave1/home/brettsalemink/.vimrc" "$HOMEDIR"
 }	# end Main
 
 Main

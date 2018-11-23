@@ -22,11 +22,12 @@ set -o nounset                              # Treat unset variables as an error
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-
+INSTALLDIR=$HOME/raspbian-config
+HOMEDIR=/home/brettsalemink
 #-------------------------------------
 function Main ()
 {
-	sudo cp /boot/slave1/home/brettsalemink/config /home/brettsalemink/.ssh/
+	sudo cp "$INSTALLDIR/slave1/home/brettsalemink/config" "$HOMEDIR/.ssh"
 }	# end Main
 
 Main

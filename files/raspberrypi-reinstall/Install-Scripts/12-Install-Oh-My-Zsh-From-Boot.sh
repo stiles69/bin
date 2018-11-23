@@ -22,32 +22,19 @@ set -e # Need for sleep
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-
+INSTALLDIR=$HOME/raspbian-config
+HOMEDIR=/home/brettsalemink
 #-------------------------------------
 function Main ()
 {
 	
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 	wait
-	sudo cp /boot/slave1/home/brettsalemink/.zshrc /home/brettsalemink/
+	sudo cp "$INSTALLDIR/slave1/home/brettsalemink/.zshrc" "$HOMEDIR"
 	wait
 	echo 'Oh My ZSH installed.'
 	sleep 5
-
-	echo "Do you want to check .zshrc? [Y/n]"
-	read ANSWER
-
-	case "$ANSWER" in
-		Y|y)
-		vim /home/brettsalemink/.zshrc
-		;;
-		N|n)
-		exit 0
-		;;
-		*)
-		vim /home/brettsalemink/.zshrc
-		;;
-	esac
+	
 }	# end Main
 
 Main

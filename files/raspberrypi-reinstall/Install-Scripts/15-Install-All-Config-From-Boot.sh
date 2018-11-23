@@ -22,36 +22,38 @@ set -e # Needed for sleep
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-
+INSTALLDIR=$HOME/raspbian-config
+HOMEDIR=/home/brettsalemink
+ETCDIR=/etc
 #-------------------------------------
 function Main ()
 {
 	
-	sudo cp /boot/slave1/home/brettsalemink/config /home/brettsalemink/.ssh/
+	sudo cp "$INSTALLDIR/slave1/home/brettsalemink/config" "$HOMEDIR/.ssh"
 	
 	echo "Installing dhcpcd.conf"
 	sleep 3
-	sudo cp /boot/slave1/etc/dhcpcd.conf /etc/
+	sudo cp "$INSTALLDIR/slave1/etc/dhcpcd.conf" "$ETCDIR"
 	wait
 
 	echo "Installing hostname"
 	sleep 3
-	sudo cp /boot/slave1/etc/hostname /etc/
+	sudo cp "$INSTALLDIR/slave1/etc/hostname" "$ETCDIR"
 	wait
 
 	echo "Installing hosts"
 	sleep 3
-	sudo cp /boot/slave1/etc/hosts /etc/
+	sudo cp "$INSTALLDIR/slave1/etc/hosts" "$ETCDIR"
 	wait
 
 	echo "Installing sshd_config"
 	sleep 3
-	sudo cp /boot/slave1/etc/ssh/sshd_config /etc/ssh/
+	sudo cp "$INSTALLDIR/slave1/etc/ssh/sshd_config" "$ETCDIR/ssh"
 	wait
 	
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 	wait
-	sudo cp /boot/slave1/home/brettsalemink/.zshrc /home/brettsalemink/
+	sudo cp "$INSTALLDIR/slave1/home/brettsalemink/.zshrc" "$HOMEDIR"
 	wait
 	echo 'Oh My ZSH installed.'
 	sleep 5
@@ -61,13 +63,13 @@ function Main ()
 
 	case "$ANSWER" in
 		Y|y)
-		vim /home/brettsalemink/.zshrc
+		vim "$HOMEDIR/.zshrc"
 		;;
 		N|n)
 		exit 0
 		;;
 		*)
-		vim /home/brettsalemink/.zshrc
+		vim "$HOMEDIR/.zshrc"
 		;;
 	esac
 }	# end Main
