@@ -59,9 +59,9 @@ function SendMessage ()
 
 function Main ()
 {
-	UnrarDir
+#	UnrarDir
 	wait
-	MoveDir
+#	MoveDir
 	wait
 
 	#Check $1
