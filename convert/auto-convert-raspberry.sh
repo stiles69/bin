@@ -21,8 +21,8 @@ set -o nounset                              # Treat unset variables as an error
 
 #== GLOBAL VARS ==
 INPUTDIR="$1"
-OUTPUTDIR="$HOME/Transcode-Emby"
-
+OUTPUTDIR="$HOME/Transcode-Emby-Completed"
+COMPLETEDDIR="$HOME/Transcode-Emby-Completed"
 function CheckVars()
 {
 	if [ ! -d "$INPUTDIR" ]
@@ -33,12 +33,25 @@ function CheckVars()
 
 function MakeDir ()
 {
-	if [ ! -d "$HOME/Transcode-Emby/Converted" ]
+	if [ ! -d "$OUTPUTDIR/Converted" ]
 	then
 		mkdir "$OUTPUTDIR/Converted"
 	fi
 
 }	# end function
+
+function MoveCompletedFile ()
+{
+	OLDFILENAME="$1"
+
+	if [ ! -d "$OUTPUTDIR" ]
+	then
+		mkdir "$OUTPUTDIR" 
+		mkdir "$OUTPUTDIR/Old"
+	fi
+
+	mv "$INPUTDIR/$FILENAME" "$HOME/Transcode-Emby-Completed/Old/$OLDFILENAME"
+}
 
 function Convert () 
 {
@@ -51,6 +64,8 @@ function Convert ()
 		NEWNAME="$NAME.mp4"
 		
 		ffmpeg -i "$FILENAME" -vcodec libx264 -profile:v high -level 4.1 -preset fast -crf 18 -b-pyramid none -acodec ac3 -ab 1536k -scodec copy "$OUTPUTDIR/Converted/$NAME.mp4"
+		wait
+		MoveCompletedFile "$FILENAME"
 		wait
 	done
 }	# end function
