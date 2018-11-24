@@ -27,8 +27,11 @@ set -o nounset                              # Treat unset variables as an error
 function Main ()
 {
 	wget -O - https://raw.github.com/resin-io/docker-install-script/master/install.sh | sh
-	echo 'net.ipv4.ip_forward=1' >> /etc/sysctl.d/40-ip-forward.conf
+	wait
+	sudo echo 'net.ipv4.ip_forward=1' >> /etc/sysctl.d/40-ip-forward.conf
+	wait
 	sudo systemctl enable docker.service
+	wait
 	echo 'You must now reboot'
 
 }	# end Main
