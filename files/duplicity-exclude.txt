@@ -1,0 +1,3 @@
+/home/brettsalemink/.*
+/home/brettsalemink/*
+
