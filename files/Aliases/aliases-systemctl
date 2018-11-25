@@ -1,10 +1,17 @@
 # ============= SYSTEMCTL ALIASES ===============
 alias minidlna-stop="sudo systemctl stop minidlna.service"
+alias minidlna-stop="sudo systemctl stop minidlna.service"
 alias minidlna-start="sudo systemctl start minidlna.service"
 alias minidlna-status="sudo systemctl status minidlna.service"
 alias minidlna-restart="sudo systemctl restart minidlna.service"
-alias minidlna-disable="sudo systemctl disable minidlna.service"
-alias minidlna-enable="sudo systemctl enable minidlna.service"
+
+alias incrond-disable="sudo systemctl disable incrond.service"
+alias incrond-enable="sudo systemctl enable incrond.service"
+alias incrond-start="sudo systemctl start incrond.service"
+alias incrond-status="sudo systemctl status incrond.service"
+alias incrond-restart="sudo systemctl restart incrond.service"
+alias incrond-disable="sudo systemctl disable incrond.service"
+alias incrond-enable="sudo systemctl enable incrond.service"
 
 alias lighttpd-stop="sudo systemctl stop lighttpd.service"
 alias lighttpd-start="sudo systemctl start lighttpd.service"

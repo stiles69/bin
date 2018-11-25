@@ -17,7 +17,6 @@
 #      REVISION:  ---
 #===============================================================================
 
-set -o nounset                              # Treat unset variables as an error
 
 #== GLOBAL VARS ==
 INPUTDIR="$1"
