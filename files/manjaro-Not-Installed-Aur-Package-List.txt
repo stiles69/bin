@@ -1,4 +1,0 @@
-brave
-discord
-mc-solarized-git
-motion

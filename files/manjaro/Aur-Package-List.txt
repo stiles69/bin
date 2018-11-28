@@ -29,8 +29,10 @@ gimp-script-white-balance-puzzle
 google-chrome
 gstreamer0.10-base-plugins
 gstreamer0.10-good-plugins
+handbrake-cli-fdkaac-git
 insync
 jdownloader2
+kodi-addon-superrepo-adult
 masterpdfeditor
 megacmd-bin
 megatools
@@ -39,11 +41,12 @@ nautilus-megasync
 peazip-gtk2-portable
 perl-compress-raw-lzma
 phantomjs-bin
-plex-media-server
+plex-media-server-plexpass
 pure-ftpd
 python-yubico
 python2-yubico
 rar
 sendmail
+tragtor
 woeusb
 zymp3

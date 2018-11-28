@@ -10,12 +10,15 @@ aspell-en
 atomicparsley
 audacity
 automake
+aws-cli
 axel
 b43-fwcutter
 baobab
+bind-tools
 bison
 bleachbit
 blender
+borg
 brasero
 breath-icon-theme
 breeze-icons
@@ -48,7 +51,7 @@ dialog
 ditaa
 dmidecode
 dnsmasq
-docker
+docker-compose
 downgrade
 duplicity
 easytag
@@ -68,6 +71,7 @@ firefox
 flatix-theme
 flatix-theme-dark
 flatpak-builder
+frei0r-plugins
 galculator
 gcolor2
 gedit
@@ -77,6 +81,7 @@ gnome-icon-theme-extras
 gnome-terminal
 gnome-themes-maia
 gnuplot
+gpart
 gparted
 gprename
 grub-customizer
@@ -91,6 +96,7 @@ gvfs-afc
 gvfs-gphoto2
 gvfs-mtp
 gvfs-smb
+handbrake
 hexchat
 htop
 hyphen-en
@@ -104,6 +110,7 @@ isousb
 jdk10-openjdk
 jdk8-openjdk
 jfsutils
+kdenlive
 kleopatra
 lib32-flex
 lib32-libva-vdpau-driver
@@ -146,6 +153,7 @@ manjaro-tools-pkg
 materia-gtk-theme
 mediainfo
 mediainfo-gui
+mediawiki
 mediterraneannight-theme
 memtest86+
 menda-circle-icon-theme
@@ -158,6 +166,7 @@ mkinitcpio-openswap
 mlocate
 modemmanager
 mosh
+mtr
 nano
 nautilus-admin
 nautilus-image-converter
@@ -187,6 +196,7 @@ papirus-maia-icon-theme
 patchutils
 perl-rename
 php-fpm
+php-gd
 picard
 pkgconf
 pngquant
@@ -219,11 +229,13 @@ spectre-meltdown-checker
 speedtest-cli
 subversion
 sunxi-tools
+supervisor
 sushi
 syslog-ng
 systemd-sysvcompat
 telegram-desktop
 terminus-font
+texvc
 timeshift
 tlp
 tmux
@@ -242,7 +254,6 @@ vertex-theme
 vi
 vim-spell-en
 virtualbox
-vlc
 vulkan-intel
 vulkan-radeon
 wipe
