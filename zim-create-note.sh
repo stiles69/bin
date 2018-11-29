@@ -18,7 +18,7 @@
 #====================================================
 set -o nounset                              # Treat unset variables as an error
 #------------ SOURCED ----------------
-. $HOME/lib/sh/funcReplaceUnderlineWithSpace.sh
+source $HOME/lib/sh/funcParseUnderlines.sh
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
 NOTEDIR=$HOME/Notes
@@ -43,8 +43,9 @@ function Main ()
 	#	NOTENAME="$1"
 	#fi
 	
-	echo $(ReplaceUnderlineWithSpace $NOTENAME)
-
+	#OS=$(funcOS)
+	NOTETITLE=$(ParseUnderLines NOTENAME)
+	echo $NOTETITLE
 	#echo "Content-Type: text/x-zim-wiki" >> "$CURRENTDIR/$NOTENAME.txt"
 	#wait
 	#echo "Wiki-Format: zim 0.4" >> "$CURRENTDIR/$NOTENAME.txt"
