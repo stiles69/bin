@@ -25,7 +25,8 @@ set -e
 #---------- GLOBAL VARIABLES ---------
 INPUTDIR=$HOME/Notes
 EXPORTDIR=$HOME/development/stiles69/zim
-
+FILE1=$HOME/bin/zim/custom/Commands.html
+FILE2=$HOME/bin/zim/custom/List_of_Commands.html
 #-------------------------------------
 function Main ()
 {

@@ -18,53 +18,52 @@
 #====================================================
 set -o nounset                              # Treat unset variables as an error
 #------------ SOURCED ----------------
-source $HOME/lib/sh/funcParseUnderlines.sh
+. $HOME/lib/sh/funcParseUnderlines.sh
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-NOTEDIR=$HOME/Notes
-CURRENTDIR="./"
-NOTENAME="$1"
-#-------------------------------------
+#===================================
 function Main ()
 {
-	echo $NOTENAME
+	local NOTENAME
+	NOTEDIR="$HOME/Notes"
+	CURRENTDIR="./"
+	E_BADARGS=85
+
+	if [ $# -ne 1 ]
+	then
+		echo "Usage: `basename $0` Note-Title-With-Underlines NO EXT"
+		exit $E_BADARGS
+	fi
+	
+	NOTENAME="$1"
+
 	read YYYY MM DD <<<$(date +'%Y %m %d')
 	MONTH=$(date +"%B")
 	DOW=$(date +"%a")
 	TIMESTAMP=`date --rfc-3339=seconds`
 	
-	
-	#if [ ! "$NOTENAME" ]
-	#then
-	#	echo "No Command Line Arguement."
-	#	echo "Please enter note name:"
-	#	read NOTENAME 
-	#else
-	#	NOTENAME="$1"
-	#fi
-	
-	#OS=$(funcOS)
-	NOTETITLE=$(ParseUnderLines NOTENAME)
-	echo $NOTETITLE
-	#echo "Content-Type: text/x-zim-wiki" >> "$CURRENTDIR/$NOTENAME.txt"
-	#wait
-	#echo "Wiki-Format: zim 0.4" >> "$CURRENTDIR/$NOTENAME.txt"
-	#wait
-	#echo "Creation-Date: $TIMESTAMP" >> "$CURRENTDIR/$NOTENAME.txt"
-	#wait
-	#echo "" >> "$CURRENTDIR/$NOTENAME.txt"
-	#wait
-	#echo "====== $NOTENAME ======" > "$CURRENTDIR/$NOTENAME.txt"
-	#wait
-	#echo "Created $DOW $DD $MONTH $YYYY" >> "$CURRENTDIR/$NOTENAME.txt"
-	#wait
-	#vim "$CURRENTDIR/$NOTENAME.txt"
-	#wait
+	NOTETITLE=$(ParseUnderlines $NOTENAME)
+	wait
+
+	echo "Content-Type: text/x-zim-wiki" > "$CURRENTDIR/$NOTENAME.txt"
+	wait
+	echo "Wiki-Format: zim 0.4" >> "$CURRENTDIR/$NOTENAME.txt"
+	wait
+	echo "Creation-Date: $TIMESTAMP" >> "$CURRENTDIR/$NOTENAME.txt"
+	wait
+	echo " " >> "$CURRENTDIR/$NOTENAME.txt"
+	wait
+	echo "====== $NOTETITLE ======" >> "$CURRENTDIR/$NOTENAME.txt"
+	wait
+	echo "Created $DOW $DD $MONTH $YYYY" >> "$CURRENTDIR/$NOTENAME.txt"
+	wait
+	vim "$CURRENTDIR/$NOTENAME.txt"
+	wait
 }	# end Main
 
 
 
-Main
+Main $1
 
 #===EXIT===
 exit 0
