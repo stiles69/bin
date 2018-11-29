@@ -38,8 +38,8 @@ DIR7=/media/TV-Shows
 DIR8=/media/Music
 DIRSSL=/media/ssl
 
-USERPLEX=plex
-USEREMBY=emby
+USERPLEX=brettsalemink
+USEREMBY=brettsalemink
 GROUPEMBY=brettsalemink
 GROUPPLEX=brettsalemink
 
