@@ -17,7 +17,6 @@
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
-set -e # Needed for sleep
 #------------ SOURCED ----------------
 . $HOME/lib/sh/funcReplaceUnderlineWithSpace.sh
 #-------------------------------------
@@ -28,36 +27,38 @@ NOTENAME="$1"
 #-------------------------------------
 function Main ()
 {
+	echo $NOTENAME
 	read YYYY MM DD <<<$(date +'%Y %m %d')
 	MONTH=$(date +"%B")
 	DOW=$(date +"%a")
 	TIMESTAMP=`date --rfc-3339=seconds`
 	
 	
-	if [ ! "$NOTENAME" ]
-	then
-		echo "Please enter note name:"
-		read NOTENAME 
-	fi
-	#	(echo '$NOTENAME' | sed -e 's/_/ /g')
+	#if [ ! "$NOTENAME" ]
+	#then
+	#	echo "No Command Line Arguement."
+	#	echo "Please enter note name:"
+	#	read NOTENAME 
+	#else
+	#	NOTENAME="$1"
+	#fi
 	
-	NOTETITLE = ReplaceUnderlineWithSpace("$NOTENAME")
-	echo $NOTETITLE
+	echo $(ReplaceUnderlineWithSpace $NOTENAME)
 
-	echo "Content-Type: text/x-zim-wiki" >> "$CURRENTDIR/$NOTENAME.txt"
-	wait
-	echo "Wiki-Format: zim 0.4" >> "$CURRENTDIR/$NOTENAME.txt"
-	wait
-	echo "Creation-Date: $TIMESTAMP" >> "$CURRENTDIR/$NOTENAME.txt"
-	wait
-	echo "" >> "$CURRENTDIR/$NOTENAME.txt"
-	wait
-	echo "====== $NOTENAME ======" > "$CURRENTDIR/$NOTENAME.txt"
-	wait
-	echo "Created $DOW $DD $MONTH $YYYY" >> "$CURRENTDIR/$NOTENAME.txt"
-	wait
-	vim "$CURRENTDIR/$NOTENAME.txt"
-	wait
+	#echo "Content-Type: text/x-zim-wiki" >> "$CURRENTDIR/$NOTENAME.txt"
+	#wait
+	#echo "Wiki-Format: zim 0.4" >> "$CURRENTDIR/$NOTENAME.txt"
+	#wait
+	#echo "Creation-Date: $TIMESTAMP" >> "$CURRENTDIR/$NOTENAME.txt"
+	#wait
+	#echo "" >> "$CURRENTDIR/$NOTENAME.txt"
+	#wait
+	#echo "====== $NOTENAME ======" > "$CURRENTDIR/$NOTENAME.txt"
+	#wait
+	#echo "Created $DOW $DD $MONTH $YYYY" >> "$CURRENTDIR/$NOTENAME.txt"
+	#wait
+	#vim "$CURRENTDIR/$NOTENAME.txt"
+	#wait
 }	# end Main
 
 
