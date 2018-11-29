@@ -26,28 +26,46 @@ NOTEDIR=$HOME/Notes
 CURRENTDIR="./"
 NOTENAME="$1"
 #-------------------------------------
+function RemoveUnderlines ()
+{
+	ORIGINALNAME="$1"
+	NEWNAME=echo ${"$ORIGINALNAME"//_ / )
+	return echo "$NEWNAME"
+}
+
 function Main ()
 {
 	read YYYY MM DD <<<$(date +'%Y %m %d')
 	MONTH=$(date +"%B")
 	DOW=$(date +"%a")
-
+	TIMESTAMP=`date --rfc-3339=seconds`
+	
+	
 	if [ ! "$NOTENAME" ]
 	then
 		echo "Please enter note name:"
-		read NOTENAME
+		read NOTENAME 
 	fi
+	#	(echo '$NOTENAME' | sed -e 's/_/ /g')
+	
+	RemoveUnderLines "$NOTENAME"
 
-	echo "===== $NOTENAME =====" > "$CURRENTDIR/$NOTENAME.txt"
+	echo "Content-Type: text/x-zim-wiki" >> "$CURRENTDIR/$NOTENAME.txt"
 	wait
-	echo "Content-Type: text/x-zim-wiki Wiki-Format: zim 0.4" >> "$CURRENTDIR/$NOTENAME.txt"
+	echo "Wiki-Format: zim 0.4" >> "$CURRENTDIR/$NOTENAME.txt"
 	wait
-	echo " " >> "$CURRENTDIR/$NOTENAME.txt"
+	echo "Creation-Date: $TIMESTAMP" >> "$CURRENTDIR/$NOTENAME.txt"
+	wait
+	echo "" >> "$CURRENTDIR/$NOTENAME.txt"
+	wait
+	echo "====== $NOTENAME ======" > "$CURRENTDIR/$NOTENAME.txt"
+	wait
 	echo "Created $DOW $DD $MONTH $YYYY" >> "$CURRENTDIR/$NOTENAME.txt"
 	wait
 	vim "$CURRENTDIR/$NOTENAME.txt"
 	wait
 }	# end Main
+
 
 
 Main
