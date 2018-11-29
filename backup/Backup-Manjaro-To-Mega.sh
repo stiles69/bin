@@ -27,11 +27,14 @@ EXCLUDEDIR=/home/brettsalemink/.*
 DESTDIR=/backups/manjaro/Manjaro-Home-Backup/
 MEGANAME=brett.salemink@gmail.com
 SIGNKEY=duplicity@roguedesigns.us
-
+MEGAEXT=mega.co.nz
+DUPOPT1="--progress"
+DUPOPT2="--encrypt-key=$SIGNKEY"
+FINALDEST="mega://$MEGANAME@$MEGAEXT/$DESTDIR"
 #-------------------------------------
 function Main ()
 {
-
+	duplicity $DUPOPT1 $DUPOPT2 $SRCDIR --exclude $EXCLUDEDIR $FINALDEST
 }	# end Main
 
 Main
