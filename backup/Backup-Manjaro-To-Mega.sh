@@ -22,19 +22,20 @@ set -o nounset                              # Treat unset variables as an error
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-SRCDIR=/home/brettsalemink
-EXCLUDEDIR=/home/brettsalemink/.*
-DESTDIR=/backups/manjaro/Manjaro-Home-Backup/
-MEGANAME=brett.salemink@gmail.com
-SIGNKEY=duplicity@roguedesigns.us
-MEGAEXT=mega.co.nz
+SRCDIR="/home/brettsalemink"
+EXCLUDEDIR1="/home/brettsalemink/.*"
+DESTDIR="/backups/manjaro/Manjaro-Home-Backup"
+MEGANAME="brett.salemink@gmail.com"
+SIGNKEY="duplicity@roguedesigns.us"
+MEGAEXT="mega.co.nz"
 DUPOPT1="--progress"
 DUPOPT2="--encrypt-key=$SIGNKEY"
-FINALDEST="mega://$MEGANAME@$MEGAEXT/$DESTDIR"
+FINALDEST="mega://$MEGANAME@$MEGAEXT$DESTDIR"
+DUPCOMMAND="duplicity $DUPOPT1 $DUPOPT2 $SRCDIR $FINALDEST"
 #-------------------------------------
 function Main ()
 {
-	duplicity $DUPOPT1 $DUPOPT2 $SRCDIR --exclude $EXCLUDEDIR $FINALDEST
+	"$DUPCOMMAND"
 }	# end Main
 
 Main
