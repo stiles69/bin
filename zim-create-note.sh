@@ -19,20 +19,13 @@
 set -o nounset                              # Treat unset variables as an error
 set -e # Needed for sleep
 #------------ SOURCED ----------------
-
+. $HOME/lib/sh/funcReplaceUnderlineWithSpace.sh
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
 NOTEDIR=$HOME/Notes
 CURRENTDIR="./"
 NOTENAME="$1"
 #-------------------------------------
-function RemoveUnderlines ()
-{
-	ORIGINALNAME="$1"
-	NEWNAME=echo ${"$ORIGINALNAME"//_ / )
-	return echo "$NEWNAME"
-}
-
 function Main ()
 {
 	read YYYY MM DD <<<$(date +'%Y %m %d')
@@ -48,7 +41,8 @@ function Main ()
 	fi
 	#	(echo '$NOTENAME' | sed -e 's/_/ /g')
 	
-	RemoveUnderLines "$NOTENAME"
+	NOTETITLE = ReplaceUnderlineWithSpace("$NOTENAME")
+	echo $NOTETITLE
 
 	echo "Content-Type: text/x-zim-wiki" >> "$CURRENTDIR/$NOTENAME.txt"
 	wait
