@@ -114,9 +114,15 @@ function PermissionsSet ()
 	fi
 }	# end function
 
+function CreateInstalledPackageList ()
+{
+	. /home/brettsalemink/bin/Create-Installed-Package-List.sh
+}
+
 function Main ()
 {
 	ProceedYes
+	CreateInstalledPackageList
 }	# end function Main
 Main
 

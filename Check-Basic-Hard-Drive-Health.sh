@@ -33,7 +33,7 @@ function Main ()
 		read HARDDRIVE
 	fi
 
-	sudo cmartctl -a $HARDDRIVE | less
+	sudo smartctl -d $HARDDRIVE | less
 	wait	
 }	# end Main
 
