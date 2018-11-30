@@ -43,7 +43,7 @@ USEREMBY=emby
 GROUPEMBY=brettsalemink
 GROUPPLEX=brettsalemink
 
-PERM=774
+PERM=770
 #-------------------------------------
 function Main ()
 {
