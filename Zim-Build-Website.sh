@@ -28,6 +28,14 @@ EXPORTDIR=$HOME/development/stiles69/zim
 FILE1=$HOME/bin/zim/custom/Commands.html
 FILE2=$HOME/bin/zim/custom/List_of_Commands.html
 #-------------------------------------
+function UpdateNotesDir ()
+{
+	cd $INPUTDIR
+	git add .
+	git commit -m "Updating for Zim-Build-Website.sh"
+	git push
+}
+
 function Main ()
 {
 	rsync -avz "$INPUTDIR/" --exclude "*.txt" --exclude ".git*" "$EXPORTDIR"
@@ -60,6 +68,6 @@ function Main ()
 }	# end Main
 
 Main
-
+UpdateNotesDir
 #===EXIT===
 exit 0
