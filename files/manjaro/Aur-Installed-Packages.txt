@@ -1,4 +1,4 @@
-dolphin-megasync-git
+automoc4
 dvdstyler
 envoy-git
 ffmpeg-libfdk_aac
@@ -18,6 +18,7 @@ libgnomeui
 megacmd-bin
 megasync
 orbit2
+phonon-qt4
 plex-media-server-plexpass
 wxsvg
 zulucrypt

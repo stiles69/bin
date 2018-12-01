@@ -1,4 +1,4 @@
-dolphin-megasync-git v3.7.1.0.6.gae4cc93b-1
+automoc4 0.9.88-9
 dvdstyler 3.0.4-5
 envoy-git 14.35.g50c069f-1
 ffmpeg-libfdk_aac 1:4.1-1
@@ -18,6 +18,7 @@ libgnomeui 2.24.5-3
 megacmd-bin 1.0.0-1
 megasync 3.7.1.0-2
 orbit2 2.14.19-7
+phonon-qt4 4.10.1-3
 plex-media-server-plexpass 1.14.0.5470-1
 wxsvg 1.5.15-1
 zulucrypt 5.4.0-1
