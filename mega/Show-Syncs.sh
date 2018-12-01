@@ -1,9 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: Test.sh
+#          FILE: Show-Syncs.sh
 # 
-#         USAGE: ./Test.sh 
+#         USAGE: ./Show-Syncs.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -27,7 +27,7 @@ SYNCTODIR=/Media/TV-Shows/
 #-------------------------------------
 function Main ()
 {
-	mega-transfers --show-syncs --path-display-size=60 --limit=5
+	mega-transfers --show-syncs --path-display-size=50 --limit=3
 
 }	# end Main
 
