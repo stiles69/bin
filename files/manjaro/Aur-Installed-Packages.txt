@@ -18,6 +18,7 @@ libgnomeui
 megacmd-bin
 megasync
 orbit2
+peazip-gtk2-portable
 phonon-qt4
 plex-media-server-plexpass
 wxsvg

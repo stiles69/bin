@@ -18,6 +18,7 @@ libgnomeui 2.24.5-3
 megacmd-bin 1.0.0-1
 megasync 3.7.1.0-2
 orbit2 2.14.19-7
+peazip-gtk2-portable 6.5.1-1
 phonon-qt4 4.10.1-3
 plex-media-server-plexpass 1.14.0.5470-1
 wxsvg 1.5.15-1
