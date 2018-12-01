@@ -1,4 +1,4 @@
 **Bash Scripts For All Systems**
-![Rogue Designs Logo](https://drive.google.com/file/d/1GrBRPJ9mXVkEfnmZn3KwR9JwmaJf3gEP/view?usp=sharing)
+![Rogue Designs Logo](https://storage.googleapis.com/stiles-images/RogueLogo-256x158.png)
 **Rogue Designs**
 # bin
