@@ -2,6 +2,15 @@
 #==== SET JAVA_HOME ===
 #export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/jre
 
+# Added for pyenv
+export PATH="/home/brettsalemink/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+
+# Added by Brett Salemink
+export PYTHONPATH="/usr/lib/python2.7:$PYTHONPATH"
+
 #=====TEMPORARY ADD TO ALLOW WORK ON THIS PROJECT WIHOUT LOGGING IN========
 
 #export GOOGLE_APPLICATION_CREDENTIALS="/home/brettsalemink/brett.salemink@gmail.com/Development/Google-Cloud/Deadmans-Key-2013/deadman-key-2013-87aebaf55efb.json"
@@ -13,7 +22,7 @@
 #export PATH="/home/brettsalemink/anaconda3/bin:$PATH"
 
 # Added by Brett Salemink for Google Cloud
-#export CLOUDSDK_PYTHON=/usr/bin/python.2.7
+export CLOUDSDK_PYTHON=/usr/bin/python.2.7
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$PATH
@@ -28,31 +37,32 @@ export PATH=$HOME/lib/sh:$PATH
 #export PATH="$PATH:$HOME/.local/bin"
 #export PYTHONPATH="/usr/lib/python2.7/dist-packages/:$PYTHONPATH"
 
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
 # Path to golang
-#export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin
 
 # Path to Go
-#export GOPATH=$HOME/go
+export GOPATH=$HOME/go
 
 # Path to GoBin
-#export GOBIN=$HOME/go/bin
+export GOBIN=$HOME/go/bin
 
 # Path to User GoLang
-#export PATH=$PATH:$GOBIN
+export PATH=$PATH:$GOBIN
 
 # Variable for DVDAuthor
-#export VIDEO_FORMAT=NTSC
+export VIDEO_FORMAT=NTSC
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 #== Added for NVM ==
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #=== THEMES ===
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -145,8 +155,8 @@ source $HOME/bin/files/Aliases/aliases-common
 source $HOME/bin/files/Aliases/aliases-systemctl
 
 #======= SEPERATE MACHINE SPECIFIC ALIASES =========
-#source $HOME/bin/files/Aliases/Arch/aliases-arch
-source $HOME/bin/files/Aliases/Raspbian/aliases-raspbian
+source $HOME/bin/files/Aliases/Arch/aliases-arch
+#source $HOME/bin/files/Aliases/Raspbian/aliases-raspbian
 #source $HOME/bin/files/Aliases/Gentoo/aliases-gentoo
 
 #export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -156,3 +166,9 @@ source $HOME/bin/files/Aliases/Raspbian/aliases-raspbian
 
 # The next line enables shell command completion for gcloud.
 #if [ -f '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc'; fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/brettsalemink/google-cloud-sdk/path.zsh.inc' ]; then . '/home/brettsalemink/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc'; fi

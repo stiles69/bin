@@ -1,0 +1,12 @@
+dropbox 62.4.103-1
+google-chrome 70.0.3538.110-1
+insync 1.5.5-1
+jdownloader2 latest-13
+lcms 1.19-7
+mega-sdk 3.4.4-1
+megacmd-bin 1.0.0-1
+megafuse-git r155.6e7f18f-1
+megasync 3.7.1.0-2
+mkchromecast 0.3.8.1-1
+nautilus-dropbox 2018.11.08-1
+nautilus-megasync 3.6.6-2
