@@ -1,5 +1,5 @@
 #!/bin/bash  
-#===============================================================================
+#====================================================
 #
 #          FILE: Install-README-Git.sh
 # 
@@ -15,7 +15,7 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 02/07/18 18:06
 #      REVISION:  ---
-#===============================================================================
+#====================================================
 
 set -o nounset                              # Treat unset variables as an error
 
@@ -43,7 +43,7 @@ function Proceed ()
 
 function ProceedYes ()
 {
-	echo "![Rogue Designs Logo](https://storage.googleapis.com/stiles-images/MadHatter-465x640.png)" >> ./README.md
+	echo "![Rogue Designs Logo](https://storage.googleapis.com/stiles-images/RogueLogo-256x158.png)" >> ./README.md
 	echo "**Rogue Designs**" >> ./README.md
 	echo "# "$RESULT >> ./README.md
 }	# end function

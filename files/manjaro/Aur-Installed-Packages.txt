@@ -1,0 +1,15 @@
+<<<<<<< HEAD
+=======
+dropbox
+google-chrome
+insync
+jdownloader2
+lcms
+mega-sdk
+megacmd-bin
+megafuse-git
+megasync
+mkchromecast
+nautilus-dropbox
+nautilus-megasync
+>>>>>>> e976ea282a50bf049a163ec0cf04d7a691e46caa
