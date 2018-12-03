@@ -10,3 +10,5 @@ megasync 3.7.1.0-2
 mkchromecast 0.3.8.1-1
 nautilus-dropbox 2018.11.08-1
 nautilus-megasync 3.6.6-2
+smartgit 18.2.0-1
+subgit 3.3.5-1

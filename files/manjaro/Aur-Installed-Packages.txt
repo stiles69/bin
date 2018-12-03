@@ -10,3 +10,5 @@ megasync
 mkchromecast
 nautilus-dropbox
 nautilus-megasync
+smartgit
+subgit

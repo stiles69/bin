@@ -201,6 +201,8 @@ gc 7.6.8-1
 gcab 1.0+2+gc0947f6-1
 gcc 8.2.1+20180831-1
 gcc-libs 8.2.1+20180831-1
+gcc7 7.3.1+20180814-1
+gcc7-libs 7.3.1+20180814-1
 gconf 3.2.6+11+g07808097-4
 gcr 3.28.0-4
 gd 2.2.5-1
@@ -236,6 +238,7 @@ gnupg 2.2.11-1
 gnutls 3.5.19-2
 gobject-introspection-runtime 1.58.0+8+gfdaa3b1a-1
 gparted 0.32.0-1
+gperf 3.1-1
 gpgme 1.12.0-1
 gpm 1.20.7.r27.g1fd1941-1
 gptfdisk 1.0.4-1
@@ -539,6 +542,7 @@ liblouis 3.7.0-1
 liblqr 0.4.2-2
 libmad 0.15.1b-8
 libmagick 7.0.8.14-1
+libmariadbclient 10.1.37-1
 libmatroska 1.4.9-1
 libmbim 1.16.2-1
 libmediainfo 18.08.1-1
@@ -747,6 +751,8 @@ manjaro-release 18.0.0-1.1
 manjaro-settings-manager 0.5.5-2
 manjaro-settings-manager-notifier 0.5.5-2
 manjaro-system 20180828-2
+mariadb 10.1.37-1
+mariadb-clients 10.1.37-1
 mdadm 4.0-1
 media-player-info 23-1
 memtest86+ 5.01-2
