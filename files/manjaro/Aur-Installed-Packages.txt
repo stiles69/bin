@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 dropbox
 google-chrome
 insync
@@ -13,5 +12,3 @@ nautilus-dropbox
 nautilus-megasync
 smartgit
 subgit
-=======
->>>>>>> 202c6c1d4050e0e3bce0d69d93fc375c15a72ba0
