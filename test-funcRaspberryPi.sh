@@ -26,7 +26,8 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-	echo ${funcRaspberryPi}
+	PI=$(RaspberryPi)
+	echo $PI
 }	# end Main
 
 Main
