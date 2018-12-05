@@ -1,0 +1,6 @@
+google-chrome
+insync
+insync-nautilus
+jdownloader2
+megacmd-bin
+plex-media-server-plexpass
