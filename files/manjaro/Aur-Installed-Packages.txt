@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 dropbox
 google-chrome
 handbrake-cli-fdkaac
@@ -14,3 +15,5 @@ nautilus-dropbox
 nautilus-megasync
 smartgit
 subgit
+=======
+>>>>>>> e6a21d6016cb1dd6db58b56c9b2b13c7d7635371
