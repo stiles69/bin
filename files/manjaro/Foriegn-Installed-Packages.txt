@@ -1,6 +1,7 @@
 dropbox 62.4.103-1
 google-chrome 71.0.3578.80-1
 handbrake-cli-fdkaac 1.1.2-1
+handbrake-fdkaac 1.1.2-1
 insync 1.5.5-1
 jdownloader2 latest-13
 lcms 1.19-7
