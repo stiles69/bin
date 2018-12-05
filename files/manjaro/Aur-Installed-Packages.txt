@@ -1,3 +1,4 @@
+ffmpeg-libfdk_aac
 google-chrome
 insync
 insync-nautilus

@@ -23,7 +23,7 @@ set e
 #----------------------------
 
 #---------- GLOBAL VARIABLES ---------
-AURPACKAGELIST="$HOME/bin/files/manjaro/Aur-Package-List.txt"
+AURPACKAGELIST="$HOME/Desktop/Removed-Packages-Working-Copy.txt"
 NATIVEPACKAGELIST="$HOME/bin/files/manjaro/Native-Package-List.txt"
 NOTINSTALLEDNATIVEPACKAGELIST="$HOME/bin/files/manjaro-Not-Installed-Native-Package-List.txt"
 NOTINSTALLEDAURPACKAGELIST="$HOME/bin/files/manjaro-Not-Installed-Aur-Package-List.txt"
@@ -80,7 +80,7 @@ function InstallNative ()
 		read INSTALLNATIVE
 		case "$INSTALLNATIVE" in
 			Y|y)
-			yaourt -S --needed --noconfirm ${native[$i]}
+			yay -S --needed --noconfirm ${native[$i]}
 			wait
 			;;
 			N|n)
@@ -124,7 +124,7 @@ function InstallAur ()
 function Main ()
 {
 	Proceed
-	InstallNative
+#	InstallNative
 	InstallAur
 }	# end Main
 

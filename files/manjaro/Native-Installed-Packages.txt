@@ -1102,6 +1102,7 @@ woff2 1.0.2-1
 wpa_supplicant 1:2.6-12
 wxgtk-common 3.0.4-2
 wxgtk3 3.0.4-2
+x264 2:155.r0a84d986-2
 x265 2.9-1
 xarchiver 0.5.4.13-1
 xcb-proto 1.13-2
