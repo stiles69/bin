@@ -68,12 +68,16 @@ cdparanoia 10.2-7
 cdrdao 1.2.4-1
 cdrtools 3.02a09-1
 celt 0.11.3-3
+chromaprint 1.4.3-2
 cifs-utils 6.8-2
 ckbcomp 1.175-1
 clamav 0.100.2-2
 clamtk 5.26-1
+clementine 1.3.1-20
 clucene 2.3.3.4-10
 clutter-gtk 1.8.4-1
+cmake 3.12.4-1
+code 1.29.1-1
 colord 1.4.3-2
 convertlit 1.8-8
 coreutils 8.30-1
@@ -131,6 +135,7 @@ deepin-turbo 0.0.2-1
 deepin-wallpapers 2:1.7.5-2
 deepin-wm 1.9.33-1
 desktop-file-utils 0.23+4+g92af410-1
+devede 4.12.0-2
 device-mapper 2.02.182-1
 dhclient 4.4.1-4
 dhcpcd 7.0.8-1
@@ -156,6 +161,8 @@ ebook-tools 0.2.2-5
 ecryptfs-utils 111-3
 efibootmgr 16-1
 efivar 35-1
+electron 2.0.12-1
+emby-server 3.5.3.0-1
 emovix 0.9.0-7
 enchant 2.2.3-2
 etcher 1.4.4-1
@@ -169,11 +176,13 @@ f2fs-tools 1.12.0-2
 faac 1.29.9.2-1
 faad2 2.8.8-1
 fakeroot 1.23-1
+ffmpegthumbnailer 2.2.0-2
 fftw 3.3.8-1
 file 5.35-1
 file-roller 3.30.1-1
 filesystem 2018.9-1
 findutils 4.6.0-4
+firefox 63.0.3-1
 flac 1.3.2-2
 flex 2.6.4-2
 fontconfig 2:2.13.1+12+g5f5ec56-1
@@ -250,9 +259,11 @@ gsm 1.0.18-1
 gspell 1.8.1-1
 gssproxy 0.8.0-1
 gst-libav 1.14.4-1
+gst-plugins-bad 1.14.4-4
 gst-plugins-base 1.14.4-1
 gst-plugins-base-libs 1.14.4-1
 gst-plugins-good 1.14.4-1
+gst-plugins-ugly 1.14.4-1
 gstreamer 1.14.4-1
 gtk-engine-murrine 0.98.2-3
 gtk-theme-numix-solarized 20160212-1
@@ -300,6 +311,7 @@ iniparser 4.1-1
 inkscape 0.92.3-6
 intel-tbb 2019-1
 intel-ucode 20180807.a-1
+intltool 0.51.0-4
 inxi 3.0.27-1
 iproute2 4.19.0-1
 iptables 1:1.8.2-1
@@ -325,7 +337,9 @@ jre8-openjdk-headless 8.u192-1
 js52 52.9.0-1
 json-c 0.13.1-2
 json-glib 1.4.4-1
+jsoncpp 1.8.4-2
 jxrlib 0.2.1-3
+k3b 1:18.08.3-1
 kaccounts-integration 18.08.3-1
 karchive 5.52.0-1
 kauth 5.52.0-1
@@ -340,7 +354,9 @@ kcoreaddons 5.52.0-1
 kcrash 5.52.0-1
 kdbusaddons 5.52.0-1
 kdeclarative 5.52.0-1
+kdenlive 18.08.3-1
 keyutils 1.6-1
+kfilemetadata 5.52.0-1
 kglobalaccel 5.52.0-1
 kguiaddons 5.52.0-1
 ki18n 5.52.0-1
@@ -352,6 +368,7 @@ kjobwidgets 5.52.0-1
 kmod 25-1
 knewstuff 5.52.0-1
 knotifications 5.52.0-1
+knotifyconfig 5.52.0-1
 kpackage 5.52.0-1
 krb5 1.16.1-1
 kservice 5.52.0-1
@@ -781,6 +798,7 @@ mongo-c-driver 1.13.0-2
 mozilla-common 1.4-5
 mpfr 4.0.1-1
 mpg123 1.25.10-1
+mpv 1:0.29.1-4
 mtdev 1.1.5-2
 mutagen 1.41.1-1
 mypaint-brushes 1.3.0-3
@@ -878,8 +896,12 @@ perl-uri 1.74-2
 perl-www-robotrules 6.02-5
 perl-xml-libxml 2.0132-2
 perl-xml-namespacesupport 1.12-3
+perl-xml-parser 2.44-7
 perl-xml-sax 1.00-1
 perl-xml-sax-base 1.09-3
+phonon-qt5 4.10.1-2
+phonon-qt5-gstreamer 4.9.0-5
+phonon-qt5-vlc 0.10.1-3
 pinentry 1.1.0-4
 pixman 0.36.0-1
 pkcs11-helper 1.25.1-1
@@ -983,6 +1005,7 @@ redland 1:1.0.17-6
 redshift 1.12-2
 reiserfsprogs 3.6.27-2
 rest 0.8.1-1
+rhash 1.3.6-1
 rpcbind 1.2.5-2
 rsync 3.1.3-1
 rtkit 0.11+8+ge0a51fe-1
@@ -1055,6 +1078,7 @@ thin-provisioning-tools 0.7.6-1
 tmux 2.8-1
 totem-plparser 3.26.1+2+gb7f36dd-1
 tracker 2.1.6-2
+transcode 1.1.7-28
 transmission-gtk 2.94-1
 treefrog-framework 1.22.0-1
 tslib 1.18-1
@@ -1082,6 +1106,7 @@ vi 1:070224-3
 vid.stab 1.1-2
 vim 8.1.0542-1
 vim-runtime 8.1.0542-1
+vlc 3.0.4-7
 volume_key 0.3.11-2
 vpnc 0.5.3.svn550-3
 vte-common 0.54.2-1
@@ -1159,6 +1184,7 @@ xz 5.2.4-1
 yajl 2.1.0-2
 yaourt 1.9-2
 yarn 1.12.3-1
+yasm 1.3.0-3
 yay 8.1173.0-2
 yubico-c 1.13-5
 yubico-c-client 2.15-4

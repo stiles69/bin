@@ -1,5 +1,7 @@
 ffmpeg-libfdk_aac
 google-chrome
+handbrake-cli-fdkaac
+handbrake-fdkaac
 insync
 insync-nautilus
 jdownloader2
