@@ -38,38 +38,44 @@ DIR7=/media/TV-Shows
 DIR8=/media/Music
 DIRSSL=/media/ssl
 
-USERPLEX=plex
-USEREMBY=emby
-GROUPEMBY=brettsalemink
-GROUPPLEX=brettsalemink
+USERPLEX=brettsalemink
+USEREMBY=brettsalemink
+GROUPEMBY=emby
+GROUPPLEX=plex
+GROUPMEDIA=media
 
 PERM=770
 #-------------------------------------
 function Main ()
 {
-	# Emby
-	sudo chown -R $USEREMBY:$GROUPEMBY $DIR0
+	# Change all settings to group shared media. Shared by Emby, Plex, brettsalemink.
+	sudo chgrp -R $GROUPMEDIA $DIR0
 	sudo chmod -R $PERM $DIR0
-	sudo chown -R $USEREMBY:$GROUPEMBY $DIR3
+	sudo chgrp -R $GROUPMEDIA $DIR3
 	sudo chmod -R $PERM $DIR3
-	# Plex
-	sudo chown -R $USERPLEX:$GROUPPLEX $DIR1
-	sudo chmod -R $PERM $DIR1
-	sudo chown -R $USERPLEX:$GROUPPLEX $DIR2
-	sudo chmod -R $PERM $DIR2
 	# Emby
-	sudo chown -R $USEREMBY:$GROUPEMBY $DIR4
-	sudo chmod -R $PERM $DIR4
-	sudo chown -R $USEREMBY:$GROUPEMBY $DIR5
-	sudo chmod -R $PERM $DIR5
-	sudo chown -R $USEREMBY:$GROUPEMBY $DIR6
-	sudo chmod -R $PERM $DIR6
-	sudo chown -R $USEREMBY:$GROUPEMBY $DIR7
-	sudo chmod -R $PERM $DIR7
-	sudo chown -R $USEREMBY:$GROUPEMBY $DIR8
-	sudo chmod -R $PERM $DIR8	
-	sudo chown -R $USEREMBY:$GROUPEMBY $DIRSSL
-	sudo chmod -R $PERM $DIRSSL
+#	sudo chown -R $USEREMBY:$GROUPEMBY $DIR0
+#	sudo chmod -R $PERM $DIR0
+#	sudo chown -R $USEREMBY:$GROUPEMBY $DIR3
+#	sudo chmod -R $PERM $DIR3
+#	# Plex
+#	sudo chown -R $USERPLEX:$GROUPPLEX $DIR1
+#	sudo chmod -R $PERM $DIR1
+#	sudo chown -R $USERPLEX:$GROUPPLEX $DIR2
+#	sudo chmod -R $PERM $DIR2
+	# Emby
+#	sudo chown -R $USEREMBY:$GROUPEMBY $DIR4
+#	sudo chmod -R $PERM $DIR4
+#	sudo chown -R $USEREMBY:$GROUPEMBY $DIR5
+#	sudo chmod -R $PERM $DIR5
+#	sudo chown -R $USEREMBY:$GROUPEMBY $DIR6
+#	sudo chmod -R $PERM $DIR6
+#	sudo chown -R $USEREMBY:$GROUPEMBY $DIR7
+#	sudo chmod -R $PERM $DIR7
+#	sudo chown -R $USEREMBY:$GROUPEMBY $DIR8
+#	sudo chmod -R $PERM $DIR8	
+#	sudo chown -R $USEREMBY:$GROUPEMBY $DIRSSL
+#	sudo chmod -R $PERM $DIRSSL
 	# Emby
 	echo "Permissions Changed for $DIR0"
 	ls -l $DIR0
