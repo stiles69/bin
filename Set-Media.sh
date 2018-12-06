@@ -38,8 +38,8 @@ DIR7=/media/TV-Shows
 DIR8=/media/Music
 DIRSSL=/media/ssl
 
-USERPLEX=brettsalemink
-USEREMBY=brettsalemink
+USERPLEX=nobody
+USEREMBY=nobody
 GROUPEMBY=emby
 GROUPPLEX=plex
 GROUPMEDIA=media
@@ -51,8 +51,8 @@ function Main ()
 	# Change all settings to group shared media. Shared by Emby, Plex, brettsalemink.
 	sudo chgrp -R $GROUPMEDIA $DIR0
 	sudo chmod -R $PERM $DIR0
-	sudo chgrp -R $GROUPMEDIA $DIR3
-	sudo chmod -R $PERM $DIR3
+	#sudo chgrp -R $GROUPMEDIA $DIR3
+	#sudo chmod -R $PERM $DIR3
 	# Emby
 #	sudo chown -R $USEREMBY:$GROUPEMBY $DIR0
 #	sudo chmod -R $PERM $DIR0
