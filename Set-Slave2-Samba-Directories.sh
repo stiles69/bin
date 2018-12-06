@@ -21,8 +21,11 @@ set -o nounset                              # Treat unset variables as an error
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-DIR1=/mnt/usb/Media
+DIR1=/mnt/Media
 DIR2=/media
+PERM=770
+SAMBAUSER=nobody
+SAMBAGROUP=nogroup
 #-------------------------------------
 function Main ()
 {
