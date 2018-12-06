@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 blackmagic-decklink-sdk
 codec2
 davs2
@@ -23,3 +24,5 @@ vmaf
 vo-amrwbenc
 xavs
 xavs2-git
+=======
+>>>>>>> df2084229b7571f476e4014208f415bc220e28c2
