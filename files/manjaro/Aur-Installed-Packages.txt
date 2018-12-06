@@ -1,12 +1,8 @@
-<<<<<<< HEAD
 blackmagic-decklink-sdk
-chromaprint-fftw
 codec2
 davs2
 flite1-patched
 google-chrome
-handbrake-cli-fdkaac
-handbrake-fdkaac
 insync
 insync-nautilus
 intel-media-sdk
@@ -27,5 +23,3 @@ vmaf
 vo-amrwbenc
 xavs
 xavs2-git
-=======
->>>>>>> edb40ba8a3c290114f19229038e057b444c508d8
