@@ -51,7 +51,8 @@ function Convert ()
 	for FILENAME in *
 	do 
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
-		ffmpeg -i "$FILENAME" -vcodec copy -acodec copy "$OUTPUTDIR/Converted/$NAME.mp4"
+		NEWNAME="$NAME.mp4"
+		ffmpeg -i "$FILENAME" -vcodec copy -acodec copy "$OUTPUTDIR/Converted/$NEWNAME"
 		wait
 	done
 }	# end function

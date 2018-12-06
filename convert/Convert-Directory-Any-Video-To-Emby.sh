@@ -55,7 +55,7 @@ function Convert ()
 		echo $NAME
 		NEWNAME="$NAME.mp4"
 		
-		ffmpeg -i "$FILENAME" -c:v libx264 -profile:v high -level 4.1 -preset medium -b:v 1500k -maxrate 2500k -bufsize 5000k -threads 0 -codec:a aac -b:a 128k  "$OUTPUTDIR/Converted/$NEWNAME"
+		ffmpeg -i "$FILENAME" -c:v libx264 -profile:v high -level 4.1 -b:v 1500k -maxrate 2500k -bufsize 5000k -threads 0 -codec:a aac -b:a 128k  "$OUTPUTDIR/Converted/$NEWNAME"
 		wait
 	done
 }	# end function
