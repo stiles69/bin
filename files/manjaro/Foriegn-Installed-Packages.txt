@@ -2,7 +2,6 @@ blackmagic-decklink-sdk 10.11.4-1
 chromaprint-fftw 1.4.3-4
 codec2 0.8-1
 davs2 1.6-6
-ffmpeg-libfdk_aac 1:4.1-1
 flite1-patched 1.4-2
 google-chrome 71.0.3578.80-1
 handbrake-cli-fdkaac 1.1.2-1
