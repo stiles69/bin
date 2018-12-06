@@ -31,10 +31,10 @@ function GetFile ()
 
 function MakeDir ()
 {
-	echo "What do you want to name the directory that the converted files will be located in? [$HOME/Kodi-Exports/????]"
+	echo "What What directory do you want to save the coverted file:"
 	read OUTPUTDIR
 
-	mkdir -p "Converted/$OUTPUTDIR"	
+	mkdir -p "$OUTPUTDIR/Converted"	
 	
 }	# end function
 
@@ -44,8 +44,7 @@ function Convert ()
 		echo "$NAME"
 		NEWNAME="$NAME.mp4"
 		
-		/usr/bin/ffmpeg -i "$FILENAME" -vcodec libx264 -profile:v high -level 4.1 -preset fast -crf 18 -b-pyramid none \
-    -acodec ac3 -ab 1536k -scodec copy "Converted/$OUTPUTDIR/$NEWNAME"
+		ffmpeg -i "$FILENAME" -c:v libx264 -profile:v high -level 4.1 -b:v 1500k -maxrate 2500k -bufsize 5000k -threads 0 -codec:a aac -b:a 128k  "$OUTPUTDIR/Converted/$NEWNAME.mp4"
 		wait	
 }	# end function
 

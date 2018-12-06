@@ -17,41 +17,51 @@
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
-# == GLOBAL VARS ==
+#== GLOBAL VARS ==
+INPUTDIR="$1"
+OUTPUTDIR="$2"
 
-FILENAME="$1"
-function GetFile ()
+function CheckVars()
 {
-	if [ "$FILENAME" = null ]
+	if [ ! "$INPUTDIR" ]
 	then
-		echo "Please select the filename. Make sure you spell it exactly and it is in the same path as the $PWD. [ You can also select the filename as a commandline parameter ]"
-		read FILENAME	
+		echo "Proper usage Command InputDirPath OutputDirPath"
+		echo "Please enter InputDirPath:"
+		read INPUTDIR
+	fi
+
+	if [ ! "$OUTPUTDIR" ]
+	then
+		echo "Proper usage Command InputDirPath OutputDirPath"
+		echo "Please enter OutputDirPath:"
+		read OUTPUTDIR
 	fi
 }
 
 function MakeDir ()
 {
-	echo "What is the ouputdir:"
-	read OUTPUTDIR
-
-	cd "$OUTPUTDIR"
-	mkdir "$OUTPUTDIR/Converted"	
 	
+	mkdir "$OUTPUTDIR/Converted"
+
 }	# end function
 
 function Convert () 
 {
+	cd "$INPUTDIR"	
+	for FILENAME in *
+	do 
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
-		echo "$NAME"
+		echo $NAME
 		NEWNAME="$NAME.mp4"
-	
-		HandBrakeCLI -Z "Fast 720p30" -O -i "$NAME" -o "$OUTPUTDIR/Converted/$NEWNAME"
-		wait	
+		
+		ffmpeg -i "$FILENAME" -c:v libx264 -profile:v high -level 4.1 -b:v 1500k -maxrate 2500k -bufsize 5000k -threads 0 -codec:a aac -b:a 128k  "$OUTPUTDIR/Converted/$NEWNAME"
+		wait
+	done
 }	# end function
 
 function Main ()
 {
-	GetFile
+	CheckVars
 	MakeDir
 	Convert
 }	# end function

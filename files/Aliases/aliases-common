@@ -15,7 +15,7 @@ alias yay -S='yay -S --noconfirm'
 alias bfg='java -jar $HOME/bin/Java/bfg-1.13.0.jar'
 
 #======THIS IS TO ENSURE FFMPEG USES CORRECT VERSION======
-alias ffmpeg="/usr/bin/ffmpeg"
+#alias ffmpeg="/usr/bin/ffmpeg"
 
 #=== SET DEFAULT EDITOR FOR VISUDO ====
 alias visudo='EDITOR=nano visudo'

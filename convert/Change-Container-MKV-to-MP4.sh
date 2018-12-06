@@ -41,20 +41,17 @@ function CheckVars()
 function MakeDir ()
 {
 	
-	mkdir "$OUTPUTDIR/Converted"
+	mkdir "$OUTPUTDIR/Converted/"
 
 }	# end function
 
 function Convert () 
 {
-	cd "$INPUTDIR"	
+	cd $INPUTDIR	
 	for FILENAME in *
 	do 
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
-		echo $NAME
-		NEWNAME="$NAME.mp4"
-		
-		ffmpeg -i "$FILENAME" -vcodec libx264 -profile:v high -level 4.1 -preset fast -crf 18 -b-pyramid none -acodec ac3 -ab 1536k -scodec copy "$OUTPUTDIR/Converted/$NAME.mp4"
+		ffmpeg -i "$FILENAME" -vcodec copy -acodec copy "$OUTPUTDIR/Converted/$NAME.mp4"
 		wait
 	done
 }	# end function
