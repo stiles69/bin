@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 a52dec 0.7.4-10
 aalib 1.4rc5-13
 accounts-qml-module 0.7-2
@@ -71,6 +70,7 @@ cdrdao 1.2.4-1
 cdrtools 3.02a09-1
 celt 0.11.3-3
 celt0.5.1 0.5.1.3-4
+chromaprint 1.4.3-2
 cifs-utils 6.8-2
 ckbcomp 1.175-1
 clamav 0.100.2-2
@@ -79,6 +79,7 @@ clucene 2.3.3.4-10
 clutter-gtk 1.8.4-1
 cmake 3.12.4-1
 colord 1.4.3-2
+confuse 3.2.2-1
 convertlit 1.8-8
 coreutils 8.30-1
 cpupower 4.19-1
@@ -101,8 +102,10 @@ dconf-editor 3.30.2-1
 deepin-account-faces 1.0.11-1.1
 deepin-anything 0.0.3-1
 deepin-api 3.10.0-1
+deepin-boot-maker 2.0.4.8-1
 deepin-calculator 1.0.10-1
 deepin-calendar 1.2.6-1
+deepin-clone 0.1.2-1
 deepin-clutter 1.26.2-2
 deepin-cogl 1.22.5-2
 deepin-control-center 4.7.8-1
@@ -111,6 +114,7 @@ deepin-desktop-base 2:2018.10.29-1
 deepin-desktop-schemas-manjaro 3.5.0-1
 deepin-dock 4.8.1-2
 deepin-draw 1.0.0-2
+deepin-editor 1.1-1
 deepin-file-manager 1:4.7.1.5-1
 deepin-gtk-theme 17.10.10-1
 deepin-icon-theme 15.12.65-1
@@ -197,6 +201,7 @@ freeimage 3.18.0-2
 freetype2 2.9.1-1
 frei0r-plugins 1.6.1-7
 fribidi 1.0.5-1
+ftgl 2.1.3rc5-10
 fuse-common 3.3.0-1
 fuse2 2.9.8-1
 galculator 2.1.4-4
@@ -363,7 +368,9 @@ kcoreaddons 5.52.0-1
 kcrash 5.52.0-1
 kdbusaddons 5.52.0-1
 kdeclarative 5.52.0-1
+kdenlive 18.08.3-1
 keyutils 1.6-1
+kfilemetadata 5.52.0-1
 kglobalaccel 5.52.0-1
 kguiaddons 5.52.0-1
 ki18n 5.52.0-1
@@ -403,10 +410,8 @@ lib32-expat 2.2.6-1
 lib32-flac 1.3.2-2
 lib32-flex 2.6.4-2
 lib32-gcc-libs 8.2.1+20180831-1
-lib32-glew 2.1.0-1
 lib32-glib2 2.58.1-1
 lib32-glibc 2.28-5
-lib32-glu 9.0.0-4
 lib32-icu 63.1-2
 lib32-libasyncns 0.8+3+g68cd5af-2
 lib32-libcanberra 0.30+2+gc0620e4-1
@@ -446,7 +451,6 @@ lib32-libxxf86vm 1.1.4-2
 lib32-llvm-libs 7.0.0-1
 lib32-lm_sensors 3.4.0-2
 lib32-mesa 18.2.6-0
-lib32-mesa-demos 8.4.0-1
 lib32-mesa-vdpau 18.2.6-0
 lib32-ncurses 6.1-3
 lib32-pcre 8.42-1
@@ -523,6 +527,7 @@ libfdk-aac 0.1.6-1
 libffi 3.2.1-3
 libfontenc 1.1.3-2
 libfreehand 0.1.2-1
+libftdi 1.4-2
 libgcrypt 1.8.4-1
 libgdata 0.17.9-1
 libgee 0.20.1-2
@@ -532,6 +537,7 @@ libglade 2.6.4-6
 libglvnd 1.1.0-1
 libgme 0.6.2-1
 libgnome-keyring 3.12.0-3
+libgoom2 2k4-4
 libgpg-error 1.32-1
 libgphoto2 2.5.19-1
 libgpod 0.8.3-6
@@ -555,6 +561,7 @@ libisoburn 1.5.0-1
 libisofs 1.5.0-1
 libixion 0.14.1-1
 libjpeg-turbo 2.0.1-1
+libkate 0.4.1-6
 libkcddb 18.08.3-1
 libksba 1.3.5-1
 liblangtag 0.6.2-2
@@ -570,6 +577,7 @@ libmariadbclient 10.1.37-1
 libmatroska 1.4.9-1
 libmbim 1.16.2-1
 libmediainfo 18.08.1-1
+libmicrodns 0.0.10-1
 libmicrohttpd 0.9.61-1
 libmm-glib 1.8.2-1
 libmms 0.6.4-2
@@ -661,6 +669,7 @@ libteam 1.27-2
 libthai 0.1.28-1
 libtheora 1.1.1-4
 libtiff 4.0.10-1
+libtiger 0.3.4-5
 libtirpc 1.1.4-1
 libtommath 1.0.1-1
 libtool 2.4.6+42+gb88cebd5-2
@@ -676,6 +685,7 @@ libutf8proc 2.2.0-1
 libutil-linux 2.33-2
 libuv 1.24.0-1
 libva 2.3.0-1
+libva-intel-driver 2.2.0-1
 libva-mesa-driver 18.2.6-0
 libva-vdpau-driver 0.7.4-3
 libvdpau 1.1.1+3+ga21bf7a-1
@@ -742,6 +752,8 @@ linux418 4.18.20-1
 linux418-headers 4.18.20-1
 linux419 4.19.6-1
 linux419-headers 4.19.6-1
+lirc 1:0.10.1-2
+live-media 2018.10.17-1
 llvm-libs 7.0.0-2
 lm_sensors 3.4.0+5176+dcf23676-1
 lmdb 0.9.22-1
@@ -749,6 +761,7 @@ logrotate 3.14.0-1
 lpsolve 5.5.2.5-3
 lsb-release 1.4-12
 lua 5.3.5-1
+lua-socket 20160311-2
 lua52 5.2.4-3
 lua52-bitop 1.0.2-8
 lua52-expat 1.3.0-4
@@ -821,6 +834,7 @@ mpfr 4.0.1-1
 mpg123 1.25.10-1
 mpv 1:0.29.1-4
 mtdev 1.1.5-2
+mtools 4.0.21-1
 mutagen 1.41.1-1
 mypaint-brushes 1.3.0-3
 namcap 3.2.8-3
@@ -843,6 +857,7 @@ networkmanager-qt 5.52.0-1
 networkmanager-vpnc 1.2.6-1
 nfs-utils 2.3.3-1
 nfsidmap 2.3.3-1
+nilfs-utils 2.2.7-1
 nmap 7.70-2
 nodejs 11.3.0-1
 noto-fonts 20181024-1
@@ -888,6 +903,7 @@ pango 1.42.4-1
 pango-perl 1.227-9
 pangomm 2.42.0-1
 papirus-icon-theme 20181120-1
+partclone 0.3.11-1
 parted 3.2-7
 patch 2.7.6-7
 patchutils 0.3.4-3
@@ -951,6 +967,8 @@ powertop 2.9-2
 ppp 2.4.7-5
 pptpclient 1.10.0-1
 procps-ng 3.3.15-1.2
+progsreiserfs 0.3.0.5-9
+projectm 2.1.0-17
 protobuf 3.6.1-1
 psmisc 23.2-1
 pstoedit 3.73-1
@@ -1034,6 +1052,7 @@ raptor 2.0.15-10
 rasqal 1:0.9.33-2
 re2 20181001-1
 readline 7.0.005-1
+recordmydesktop 0.3.8.1-8
 redland 1:1.0.17-6
 redshift 1.12-2
 reiserfsprogs 3.6.27-2
@@ -1098,7 +1117,9 @@ subversion 1.11.0-1
 sudo 1.8.26-2
 suil 0.10.0-3
 suitesparse 5.3.0-1
+syntax-highlighting 5.52.0-1
 sysfsutils 2.1.0-10
+syslinux 6.03-11
 syslog-ng 3.18.1-1
 system-config-printer 1.5.11-3
 systemd 239.303-1
@@ -1126,6 +1147,7 @@ tslib 1.18-1
 ttf-bitstream-vera 1.10-12
 ttf-dejavu 2.37-2
 ttf-droid 20121017-6
+ttf-freefont 20120503-5
 ttf-inconsolata 1:2.0.0.1-3
 ttf-indic-otf 0.2-9
 ttf-liberation 2.00.1-8
@@ -1145,11 +1167,13 @@ v86d 0.1.10-5.1
 vamp-plugin-sdk 2.7.1-2
 vcdimager 2.0.1-1
 vde2 2.3.2-11
+veracrypt 1.23-1
 vi 1:070224-3
 vid.stab 1.1-2
 vim 8.1.0542-1
 vim-runtime 8.1.0542-1
 virglrenderer 0.7.0-1
+vlc 3.0.4-7
 volume_key 0.3.11-2
 vpnc 0.5.3.svn550-3
 vte-common 0.54.2-1
@@ -1196,6 +1220,8 @@ xf86-video-intel 1:2.99.917+855+g746ab3bb-1
 xf86-video-nouveau 1.0.15-3
 xfce-theme-numix-reborn 20151002-1
 xfsprogs 4.19.0-1
+xine-lib 1.2.9-7
+xine-ui 0.99.10-1
 xkeyboard-config 2.25-1
 xmlsec 1.2.27-1
 xorg-bdftopcf 1.1-1
@@ -1245,5 +1271,3 @@ zsh 5.6.2-1
 zstd 1.3.7-1
 zvbi 0.2.35-3
 zziplib 0.13.69-1
-=======
->>>>>>> b84550ef07abdc1b87269a06531f4781e938fc79
