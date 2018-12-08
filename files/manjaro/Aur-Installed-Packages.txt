@@ -1,0 +1,8 @@
+flite1-patched
+google-chrome
+insync
+insync-nautilus
+jdownloader2
+megacmd-bin
+peazip-gtk2-portable
+plex-media-server-plexpass
