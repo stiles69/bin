@@ -1,4 +1,3 @@
-ffmpeg-git
 flite1-patched
 google-chrome
 insync

@@ -1,4 +1,3 @@
-ffmpeg-git 4.2.r92639.g6b1c4ce8cf-1
 flite1-patched 1.4-2
 google-chrome 71.0.3578.80-1
 insync 1.5.5-1
