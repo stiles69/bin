@@ -1,9 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: Test-Walk2.sh
+#          FILE: Change-Container-MKV-to-MP4-Increase-Volume.sh
 # 
-#         USAGE: ./Test-Walk2.sh 
+#         USAGE: ./Change-Container-MKV-to-MP4-Increase-Volume.shChange-Container-MKV-to-MP4-Increase-Volume.sh
 # 
 #   DESCRIPTION: 
 # 
@@ -17,47 +17,42 @@
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
-
 #== GLOBAL VARS ==
 INPUTDIR="$1"
 OUTPUTDIR="$2"
-HANDBRAKEPROFILE="Fast 720p30-Kodi-Volume-Up"
 
 function CheckVars()
 {
-	if [ ! -d "$INPUTDIR" ]
+	if [ ! "$INPUTDIR" ]
 	then
-		echo "Correct cli usage is Convert-Directory-Any-Video-To-RaspberryPi-Handbrake.sh InputDirFilePath OutputDirFilePath"
-		echo "Please enter the filepath of the Input Directory?"
+		echo "Proper usage Command InputDirPath OutputDirPath"
+		echo "Please enter InputDirPath:"
 		read INPUTDIR
 	fi
 
-	if [ ! -d "$OUTPUTDIR" ]
+	if [ ! "$OUTPUTDIR" ]
 	then
-		
-		echo "Correct cli usage is Convert-Directory-Any-Video-To-RaspberryPi-Handbrake.sh InputDirFilePath OutputDirFilePath"
-		echo "Please enter the filepath of the Output Directory?"
+		echo "Proper usage Command InputDirPath OutputDirPath"
+		echo "Please enter OutputDirPath:"
 		read OUTPUTDIR
-	fi	
+	fi
 }
 
 function MakeDir ()
 {
-	mkdir "$OUTPUTDIR/Converted"
+	
+	mkdir "$OUTPUTDIR/Converted/"
 
 }	# end function
 
 function Convert () 
 {
-	cd "$INPUTDIR"	
-
+	cd $INPUTDIR	
 	for FILENAME in *
 	do 
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
-		echo $NAME
 		NEWNAME="$NAME.mp4"
-		
-		HandBrakeCLI -Z "$HANDBRAKEPROFILE" -O -i "$FILENAME" -o "$OUTPUTDIR/Converted/$NEWNAME"
+		ffmpeg -i "$FILENAME" -vcodec copy -af "volume=11dB" "$OUTPUTDIR/Converted/$NEWNAME"
 		wait
 	done
 }	# end function

@@ -22,6 +22,7 @@ set -o nounset                              # Treat unset variables as an error
 #== GLOBAL VARS ==
 INPUTDIR="$1"
 OUTPUTDIR="$2"
+HANDBRAKEPROFILE="Fast 720p30-Kodi-Volume-Up"
 
 function CheckVars()
 {
@@ -57,7 +58,7 @@ function Convert ()
 		echo $NAME
 		NEWNAME="$NAME.mp4"
 		
-		HandBrakeCLI -Z "Fast 720p30" -O -i "$FILENAME" -o "$OUTPUTDIR/Converted/$NEWNAME"
+		HandBrakeCLI -Z "$HANDBRAKEPROFILE" -O -i "$FILENAME" -o "$OUTPUTDIR/Converted/$NEWNAME"
 		wait
 	done
 }	# end function
