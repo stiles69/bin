@@ -1,9 +1,9 @@
 #!/bin/bash  
 #===============================================================================
 #
-#          FILE: Convert-Any-Video-To-Kodi.sh
+#          FILE: Convert-Any-Video-To-Emby.sh
 # 
-#         USAGE: ./Convert-Any-Video-To-Kodi.sh
+#         USAGE: ./Convert-Any-Video-To-Emby.sh
 # 
 #   DESCRIPTION: 
 # 
