@@ -1,9 +1,9 @@
 #!/bin/bash 
 #====================================================
 #
-#          FILE: *-Install-Raspberry-Pi.sh
+#          FILE: Download-Bin.sh
 # 
-#         USAGE: ./*-Install-Raspberry-Pi.sh 
+#         USAGE: ./Download-Bin.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,7 +13,7 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 12/08/2018 22:17
+#       CREATED: 08/26/2018 18:19
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
@@ -21,25 +21,28 @@ set -o nounset                              # Treat unset variables as an error
 #------------ SOURCED ----------------
 
 #-------------------------------------
-#---------- GLOBAL VARIABLES ---------
 
+#---------- GLOBAL VARIABLES ---------
+DOWNLOADDIR=$HOME
 #-------------------------------------
 function Main ()
 {
-	sudo pacman -S yay
+	sudo pacman -S Syu
 	wait
-	yay -Syu
+	sudo pacman -S wget unzip
 	wait
-	sudo pacman -S zsh
+
+	cd $DOWNLOADDIR
+	wget https://github.com/stiles69/bin/archive/master.zip
 	wait
-	./2-Create-User-brettsalemink.sh
+	unzip $DOWNLOADDIR/master.zip
+	sudo chmod +x $DOWNLOADDIR/bin-master
+	sudo rm -r $DOWNLOADDIR/master.zip
+
+	cd $HOME/bin-master/files/manjaro/Install-Scripts
+	./*-Install-Raspberry-Pi.sh
 	wait
-	sudo chsh -s /bin/zsh brettsalemink
-	wait
-	cd $HOME
-	sudo rm -r bin-master
-	wait	
-	echo "Now reboot and run second script *-Install.sh"
+	
 }	# end Main
 
 Main
