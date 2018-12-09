@@ -44,31 +44,11 @@ function CleanUp ()
 	rm groups2.txt
 }	# end function
 
-function Proceed ()
-{
-	echo "This will make a new user with with all the groups privlegdes of your user now and sudo. Do you wish to Proceed? [Y/n]"
-	read PROCEED
-
-	case $PROCEED in
-		Y|y)
-		GetCurrentGroups
-		MakeUser
-		CleanUp
-		;;
-		N|n)
-		echo "Exiting now..."
-		exit 0
-		;;
-		*)
-		echo "Invalid response. Exiting.."
-		exit 1
-		;;
-	esac
-}	# end function
-
 function Main ()
 {
-	Proceed
+	GetCurrentGroups
+		MakeUser
+		CleanUp
 }	# end function
 
 Main

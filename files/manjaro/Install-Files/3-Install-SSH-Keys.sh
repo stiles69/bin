@@ -1,4 +1,4 @@
-#!/bin/bash - 
+#!/bin/bash 
 #===============================================================================
 #
 #          FILE: Install-SSH-Keys.sh
@@ -21,6 +21,8 @@ set -o nounset                              # Treat unset variables as an error
 
 mkdir ~/.ssh
 
-ssh-keygen -t rsa -b 2048 -C $(hostname)
+ssh-keygen -t rsa -b 4096 -C SLAVE1
+wait 
+cat ~/.ssh/id_rsa.pub
 
 exit 0

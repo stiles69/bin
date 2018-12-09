@@ -18,24 +18,19 @@
 #      REVISION:  ---
 #===============================================================================
 
-function InstallGitArch ()
+function CloneBin ()
 {
-	sudo pacman -S git 
-}	# end function
-
-function ConfigureGitUser ()
-{
-	git config --global user.name "stiles69"
-	git config --global user.email "brett.salemink@gmail.com"	
-}	# end function
+		cd $HOME
+		git clone https://github.com/stiles69/bin.git
+		
+} 	# end function	
 
 function Main ()
-{	
-	InstallGitArch
-	ConfigureGitUser	
-}	# end Main
+{
+	CloneBin
+}	# End Function
 
 Main
 
-# == exit ==
+# === Exit ===
 exit 0
