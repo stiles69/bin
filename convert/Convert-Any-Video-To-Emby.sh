@@ -1,5 +1,5 @@
 #!/bin/bash  
-#===============================================================================
+#====================================================
 #
 #          FILE: Convert-Any-Video-To-Emby.sh
 # 
@@ -15,8 +15,7 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 07/12/2018 06:42
 #      REVISION:  ---
-#===============================================================================
-
+#====================================================
 set -o nounset                              # Treat unset variables as an error
 
 FILENAME="$1"
@@ -44,7 +43,7 @@ function Convert ()
 		echo "$NAME"
 		NEWNAME="$NAME.mp4"
 		
-		ffmpeg -i "$FILENAME" -c:v libx264 -profile:v high -level 4.1 -b:v 1500k -maxrate 2500k -bufsize 5000k -threads 0 -codec:a aac -b:a 128k -filter:a "volume=11dB" "$OUTPUTDIR/Converted/$NEWNAME"
+		ffmpeg -i "$FILENAME" -profile:v high -level 4.1 "$OUTPUTDIR/Converted/$NEWNAME"
 		wait	
 }	# end function
 
