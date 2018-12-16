@@ -1,8 +1,9 @@
 blackmagic-decklink-sdk
+chromaprint-fftw
 codec2
 dav1d-git
 davs2
-ffmpeg-libfdk_aac
+ffmpeg-full
 flite1-patched
 google-chrome
 insync
