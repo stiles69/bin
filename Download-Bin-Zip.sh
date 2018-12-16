@@ -27,6 +27,10 @@ DOWNLOADDIR=$HOME
 #-------------------------------------
 function Main ()
 {
+	sudo apt-get update -y
+	sudo apt-get install wget -y
+	sudo apt-get install unzip -y
+
 	cd $DOWNLOADDIR
 	wget https://github.com/stiles69/bin/archive/master.zip
 	wait

@@ -10,6 +10,7 @@ alias wget='wget -c '
 alias ipe='curl ipinfo.io/ip'
 alias c='clear'
 alias yay -S='yay -S --noconfirm'
+alias ffmpeg='/usr/bin/ffmpeg'
 
 #======ADDED FOR BFG GIT REPO CLEANER=====
 alias bfg='java -jar $HOME/bin/Java/bfg-1.13.0.jar'
