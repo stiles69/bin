@@ -52,7 +52,7 @@ function Convert ()
 	do 
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
 		NEWNAME="$NAME.mp4"
-		ffmpeg -i "$FILENAME" -vcodec copy -acodec copy "$OUTPUTDIR/Converted/$NEWNAME"
+		ffmpeg -i "$FILENAME" -vcodec copy -acodec copy "$OUTPUTDIR/$NEWNAME"
 		wait
 	done
 }	# end function
@@ -60,7 +60,7 @@ function Convert ()
 function Main ()
 {
 	CheckVars
-	MakeDir
+#	MakeDir
 	Convert
 }	# end function
 
