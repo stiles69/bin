@@ -38,6 +38,9 @@ DIR7=/media/TV-Shows
 DIR8=/media/Music
 DIRSSL=/media/ssl
 
+# crypthome
+DIR10=/mnt/crypthome
+
 USERPLEX=nobody
 USEREMBY=nobody
 GROUPEMBY=emby
@@ -51,6 +54,9 @@ function Main ()
 	# Change all settings to group shared media. Shared by Emby, Plex, brettsalemink.
 	sudo chgrp -R $GROUPMEDIA $DIR0
 	sudo chmod -R $PERM $DIR0
+	sudo chgrp -R $GROUPMEDIA $DIR10
+	sudo chmod -R $PERM $DIR10
+
 	#sudo chgrp -R $GROUPMEDIA $DIR3
 	#sudo chmod -R $PERM $DIR3
 	# Emby
@@ -99,7 +105,8 @@ function Main ()
 	ls -l $DIR8
 	echo "Permissions Changed for $DIRSSL"
 	ls -l $DIRSSL
-
+	echo "Permissions Changed for $DIR10"
+	ls -l $DIR10
 }	# end Main
 
 Main
