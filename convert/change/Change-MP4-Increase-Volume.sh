@@ -52,7 +52,7 @@ function Convert ()
 	do 
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
 		NEWNAME="$NAME.mp4"
-		ffmpeg -i "$NEWNAME" -af "volume=11dB" -c:v copy -strict -2 -c:a aac -b:a 192k "$OUTPUTDIR/$NEWNAME"
+		/usr/bin/ffmpeg -i "$NEWNAME" -af "volume=11dB" -c:v copy -strict -2 -c:a aac -b:a 192k "$OUTPUTDIR/$NEWNAME"
 		wait
 	done
 }	# end function

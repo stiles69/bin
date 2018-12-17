@@ -43,7 +43,7 @@ function Convert ()
 		echo "$NAME"
 		NEWNAME="$NAME.mp4"
 		
-		ffmpeg -i "$FILENAME" -profile:v high -level 4.1 "$OUTPUTDIR/Converted/$NEWNAME"
+		/usr/bin/ffmpeg -i "$FILENAME" -profile:v high -level 4.1 "$OUTPUTDIR/Converted/$NEWNAME"
 		wait	
 }	# end function
 

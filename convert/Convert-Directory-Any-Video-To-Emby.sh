@@ -55,7 +55,7 @@ function Convert ()
 		echo $NAME
 		NEWNAME="$NAME.mp4"
 		
-		ffmpeg -i "$FILENAME" -movflags faststart -profile:v high -level 4.1 "$OUTPUTDIR/Converted/$NEWNAME"
+		/usr/bin/ffmpeg -i "$FILENAME" -movflags faststart -profile:v high -level 4.1 "$OUTPUTDIR/$NEWNAME"
 		wait
 	done
 }	# end function
@@ -63,7 +63,7 @@ function Convert ()
 function Main ()
 {
 	CheckVars
-	MakeDir
+#	MakeDir
 	Convert
 }	# end function
 
