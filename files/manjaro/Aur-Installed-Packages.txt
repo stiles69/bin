@@ -15,7 +15,7 @@ libilbc
 libklvanc-git
 libmysofa
 libopenmpt-svn
-masterpdfeditor
+masterpdfeditor-free
 megacmd-bin
 ndi-sdk
 openh264
