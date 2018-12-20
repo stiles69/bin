@@ -31,7 +31,7 @@ function Main ()
 
 	ls -l $WEBDIR
 
-	sudo bash -c "/etc/init.d/nginx restart && /etc/init.d/php7.3-fmp restart"
+	sudo bash -c "/etc/init.d/nginx restart && /etc/init.d/php7.3-fpm restart"
 }	# end Main
 
 Main
