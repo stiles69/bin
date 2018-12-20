@@ -23,6 +23,7 @@ peazip-gtk2-portable
 plex-media-server-plexpass
 rockchip-mpp
 shine
+v4l2loopback-dkms
 vmaf
 vo-amrwbenc
 xavs

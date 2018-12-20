@@ -20,9 +20,10 @@ megacmd-bin 1.0.0-1
 ndi-sdk 3.20181005.r97672-2
 openh264 1.8.0-1
 peazip-gtk2-portable 6.5.1-1
-plex-media-server-plexpass 1.14.1.5487-1
+plex-media-server-plexpass 1.14.1.5488-1
 rockchip-mpp 20171218-1
 shine 3.1.1-2
+v4l2loopback-dkms 0.11.0-1
 vmaf 1.3.9-2
 vo-amrwbenc 0.1.3-1
 xavs 0.1.55-1
