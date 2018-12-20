@@ -1,4 +1,7 @@
 # ============= SYSTEMCTL ALIASES ===============
+alias sudo='sudo '
+alias webrestart='bash -c "/etc/init.d/nginx restart && /etc/init.d/php7.3-fpm restart"'
+
 alias minidlna-stop="sudo systemctl stop minidlna.service"
 alias minidlna-stop="sudo systemctl stop minidlna.service"
 alias minidlna-start="sudo systemctl start minidlna.service"
