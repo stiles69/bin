@@ -23,16 +23,16 @@ set -o nounset                              # Treat unset variables as an error
 #---------- GLOBAL VARIABLES ---------
 DIR1=/mnt/Media
 DIR2=/media
-PERM=770
+PERM=774
 SAMBAUSER=nobody
 MEDIAGROUP=mediagrp
 #-------------------------------------
 function Main ()
 {
 	sudo chgrp -R "$MEDIAGROUP" "$DIR1"
-	sudo chmod -R 774 "$DIR1"
+	sudo chmod -R "$PERM" "$DIR1"
 	sudo chgrp -R "$MEDIAGROUP" "$DIR2"
-	sudo chmod -R 774 "$DIR2"
+	sudo chmod -R "$PERM" "$DIR2"
 }	# end Main
 
 Main
