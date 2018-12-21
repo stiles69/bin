@@ -28,6 +28,7 @@ atkmm 2.28.0-1
 atomicparsley 0.9.6-1
 attica 5.52.0-1
 attr 2.4.48-1
+audacity 2.3.0-1
 audit 2.8.4-2
 autoconf 2.69-5
 automake 1.16.1-1
@@ -185,7 +186,6 @@ elfutils 0.174-1
 emovix 0.9.0-7
 enca 1.19-2
 enchant 2.2.3-2
-espeak 1:1.48.04-2
 etcher 1.4.4-1
 evolution 3.30.2-1
 evolution-data-server 3.30.2-2
@@ -883,6 +883,7 @@ parted 3.2-7
 patch 2.7.6-7
 patchelf 0.9-2
 patchutils 0.3.4-3
+pcaudiolib r34.af7edad-1
 pciutils 3.6.2-1
 pcre 8.42-1
 pcre2 10.32-1
@@ -936,6 +937,7 @@ poppler-glib 0.71.0-1
 poppler-qt5 0.71.0-1
 popt 1.16-10
 portaudio 190600_20161030-2
+portsmf 228-3
 potrace 1.15-1
 powertop 2.9-2
 ppp 2.4.7-5
@@ -1092,6 +1094,8 @@ solid 5.52.0-1
 sonnet 5.52.0-2
 sord 0.16.2-1
 sound-theme-freedesktop 0.8-3
+soundtouch 2.1.2-1
+speakup-utils 3.1.6-4
 spectre-meltdown-checker 0.37-1
 speex 1.2.0-2
 speexdsp 1.2rc3-3
@@ -1106,6 +1110,7 @@ startdde 3.5.0-1
 startup-notification 0.12-6
 subversion 1.11.0-1
 sudo 1.8.26-2
+suil 0.10.0-3
 suitesparse 5.3.0-1
 syntax-highlighting 5.52.0-1
 sysfsutils 2.1.0-10

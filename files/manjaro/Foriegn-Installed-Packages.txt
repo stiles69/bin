@@ -15,6 +15,7 @@ libilbc 2.0.2-3
 libklvanc-git r430.68c5c7d-1
 libmysofa 0.6-3
 libopenmpt-svn 0.5.r11008-1
+libsonic-git 9-1
 masterpdfeditor-free 4.3.89-1
 megacmd-bin 1.0.0-1
 ndi-sdk 3.20181005.r97672-2
