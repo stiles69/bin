@@ -25,13 +25,13 @@ DIR1=/mnt/Media
 DIR2=/media
 PERM=770
 SAMBAUSER=nobody
-SAMBAGROUP=nogroup
+MEDIAGROUP=mediagrp
 #-------------------------------------
 function Main ()
 {
-	sudo chown -R nobody:nogroup "$DIR1"
+	sudo chgrp -R "$MEDIAGROUP" "$DIR1"
 	sudo chmod -R 774 "$DIR1"
-	sudo chown -R nobody:nogroup "$DIR2"
+	sudo chgrp -R "$MEDIAGROUP" "$DIR2"
 	sudo chmod -R 774 "$DIR2"
 }	# end Main
 
