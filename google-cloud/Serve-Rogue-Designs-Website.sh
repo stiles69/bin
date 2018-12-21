@@ -29,6 +29,8 @@ function Main ()
 	rsync -avz --progress --delete-before "$SITEDIR/" "$HOME/development/GitLab/Rogue-Designs-Google-Cloud-Deployment/Webserver1/files/"
 
 	cd $HOME/development/GitLab/Rogue-Designs-Google-Cloud-Deployment/Webserver1
+	
+	dev_appserver.py app.yaml
 }	# end Main
 
 Main
