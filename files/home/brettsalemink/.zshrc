@@ -155,8 +155,8 @@ source $HOME/bin/files/Aliases/aliases-common
 source $HOME/bin/files/Aliases/aliases-systemctl
 
 #======= SEPERATE MACHINE SPECIFIC ALIASES =========
-source $HOME/bin/files/Aliases/Arch/aliases-arch
-#source $HOME/bin/files/Aliases/Raspbian/aliases-raspbian
+#source $HOME/bin/files/Aliases/Arch/aliases-arch
+source $HOME/bin/files/Aliases/Raspbian/aliases-raspbian
 #source $HOME/bin/files/Aliases/Gentoo/aliases-gentoo
 
 #export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
