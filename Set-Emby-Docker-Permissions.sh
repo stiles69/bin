@@ -3,7 +3,7 @@
 #=======GLOBAL=======
 DIR1="$HOME/development/Docker/docker-emby-armhf"
 DIR2=/share1
-DIR3=/mnt/SanDisk
+DIR3=/mnt/sandisk
 CHUSER=brettsalemink
 CHGROUP=docker
 CHPERM=774
