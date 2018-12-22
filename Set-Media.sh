@@ -23,90 +23,77 @@ set -o nounset                              # Treat unset variables as an error
 
 #---------- GLOBAL VARIABLES ---------
 # Emby
-DIR0=/mnt/sandisk
-#DIR3=/mnt/Media
+DIR0=/media
+DIR3=/mnt/Media
 
 # Plex
-#DIR1=/media/Adult
-#DIR2=/mnt/Media/Adult
+DIR1=/media/Adult
+DIR2=/mnt/Media/Adult
 
 # Emby
-#DIR4=/mnt/Media/Movies
-#DIR5=/mnt/Media/TV-Shows
-#DIR6=/media/Movies
-#DIR7=/media/TV-Shows
-#DIR8=/media/Music
-#DIRSSL=/media/ssl
+DIR4=/mnt/Media/Movies
+DIR5=/mnt/Media/TV-Shows
+DIR6=/media/Movies
+DIR7=/media/TV-Shows
+DIR8=/media/Music
+DIRSSL=/media/ssl
 
-# crypthome
-#DIR10=/mnt/crypthome
-
-#USERPLEX=nobody
+USERPLEX=plex
 USEREMBY=emby
-GROUPEMBY=emby
-#GROUPPLEX=plex
-#GROUPMEDIA=media
+GROUPEMBY=brettsalemink
+GROUPPLEX=brettsalemink
 
-PERM=774
+PERM=770
 #-------------------------------------
 function Main ()
 {
-	# Change all settings to group shared media. Shared by Emby, Plex, brettsalemink.
-	sudo chgrp -R $GROUPEMBY $DIR0
+	# Emby
+	sudo chown -R $USEREMBY:$GROUPEMBY $DIR0
 	sudo chmod -R $PERM $DIR0
-#	sudo chgrp -R $GROUPMEDIA $DIR10
-#	sudo chmod -R $PERM $DIR10
-
-	#sudo chgrp -R $GROUPMEDIA $DIR3
-	#sudo chmod -R $PERM $DIR3
+	sudo chown -R $USEREMBY:$GROUPEMBY $DIR3
+	sudo chmod -R $PERM $DIR3
+	# Plex
+	sudo chown -R $USERPLEX:$GROUPPLEX $DIR1
+	sudo chmod -R $PERM $DIR1
+	sudo chown -R $USERPLEX:$GROUPPLEX $DIR2
+	sudo chmod -R $PERM $DIR2
 	# Emby
-#	sudo chown -R $USEREMBY:$GROUPEMBY $DIR0
-#	sudo chmod -R $PERM $DIR0
-#	sudo chown -R $USEREMBY:$GROUPEMBY $DIR3
-#	sudo chmod -R $PERM $DIR3
-#	# Plex
-#	sudo chown -R $USERPLEX:$GROUPPLEX $DIR1
-#	sudo chmod -R $PERM $DIR1
-#	sudo chown -R $USERPLEX:$GROUPPLEX $DIR2
-#	sudo chmod -R $PERM $DIR2
-	# Emby
-#	sudo chown -R $USEREMBY:$GROUPEMBY $DIR4
-#	sudo chmod -R $PERM $DIR4
-#	sudo chown -R $USEREMBY:$GROUPEMBY $DIR5
-#	sudo chmod -R $PERM $DIR5
-#	sudo chown -R $USEREMBY:$GROUPEMBY $DIR6
-#	sudo chmod -R $PERM $DIR6
-#	sudo chown -R $USEREMBY:$GROUPEMBY $DIR7
-#	sudo chmod -R $PERM $DIR7
-#	sudo chown -R $USEREMBY:$GROUPEMBY $DIR8
-#	sudo chmod -R $PERM $DIR8	
-#	sudo chown -R $USEREMBY:$GROUPEMBY $DIRSSL
-#	sudo chmod -R $PERM $DIRSSL
+	sudo chown -R $USEREMBY:$GROUPEMBY $DIR4
+	sudo chmod -R $PERM $DIR4
+	sudo chown -R $USEREMBY:$GROUPEMBY $DIR5
+	sudo chmod -R $PERM $DIR5
+	sudo chown -R $USEREMBY:$GROUPEMBY $DIR6
+	sudo chmod -R $PERM $DIR6
+	sudo chown -R $USEREMBY:$GROUPEMBY $DIR7
+	sudo chmod -R $PERM $DIR7
+	sudo chown -R $USEREMBY:$GROUPEMBY $DIR8
+	sudo chmod -R $PERM $DIR8	
+	sudo chown -R $USEREMBY:$GROUPEMBY $DIRSSL
+	sudo chmod -R $PERM $DIRSSL
 	# Emby
 	echo "Permissions Changed for $DIR0"
 	ls -l $DIR0
 	# Plex
-#	echo "Permissions Changed for $DIR1"
-#	ls -l "$DIR1"
-#	echo "Permissions Changed for $DIR2"
-#	ls -l "$DIR2"
+	echo "Permissions Changed for $DIR1"
+	ls -l "$DIR1"
+	echo "Permissions Changed for $DIR2"
+	ls -l "$DIR2"
 	# Emby
-#	echo "Permissions Changed for $DIR3"
-#	ls -l "$DIR3"
-#	echo "Permissions Changed for $DIR4"
-#	ls -l "$DIR4"
-#	echo "Permissions Changed for $DIR5"
-#	ls -l "$DIR5"
-#	echo "Permissions Changed for $DIR6"
-#	ls -l "$DIR6"
-#	echo "Permissions Changed for $DIR7"
-#	ls -l $DIR7
-#	echo "Permissions Changed for $DIR8"
-#	ls -l $DIR8
-#	echo "Permissions Changed for $DIRSSL"
-#	ls -l $DIRSSL
-#	echo "Permissions Changed for $DIR10"
-#	ls -l $DIR10
+	echo "Permissions Changed for $DIR3"
+	ls -l "$DIR3"
+	echo "Permissions Changed for $DIR4"
+	ls -l "$DIR4"
+	echo "Permissions Changed for $DIR5"
+	ls -l "$DIR5"
+	echo "Permissions Changed for $DIR6"
+	ls -l "$DIR6"
+	echo "Permissions Changed for $DIR7"
+	ls -l $DIR7
+	echo "Permissions Changed for $DIR8"
+	ls -l $DIR8
+	echo "Permissions Changed for $DIRSSL"
+	ls -l $DIRSSL
+
 }	# end Main
 
 Main
