@@ -1177,6 +1177,7 @@ virglrenderer 0.7.0-1
 vlc 3.0.4-7
 volume_key 0.3.11-2
 vpnc 0.5.3.svn550-3
+vsftpd 3.0.3-4
 vte-common 0.54.2-1
 vte3 0.54.2-1
 vulkan-icd-loader 1.1.92+2999+abe5c2b3c-1
