@@ -1,6 +1,0 @@
-/home/brettsalemink/Notes
-/home/brettsalemink/development
-/home/brettsalemink/lib
-/home/brettsalemink/Documents
-/home/brettsalemink/Pictures
-/home/brettsalemink/bin

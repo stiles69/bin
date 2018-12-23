@@ -1,8 +1,0 @@
-﻿manjaro-deepin-settings (20180714-1)
-﻿manjaro-deepin-settings (20180714-1)
-knotifyconfig (5.52.0-1)
-﻿manjaro-deepin-settings
-deepin-file-manager
-deepin-movie
-deepin-screen-recorder
-deepin-music
