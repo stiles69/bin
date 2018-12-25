@@ -1,8 +1,0 @@
-google-chrome
-handbrake-cli-fdkaac
-handbrake-fdkaac
-insync
-jdownloader2
-megacmd-bin
-peazip-gtk2-portable
-plex-media-server
