@@ -26,11 +26,11 @@ DIR2=/media
 PERM=774
 SAMBAUSER=brettsalemink
 SAMBAGROUP=sambashare
-MEDIAGROUP=grpmedia
+MEDIAGROUP=groupmedia
 #-------------------------------------
 function Main ()
 {
-	sudo chown -R "$SAMBAUSER:$SAMBAGROUP" "$DIR1"
+	sudo chown -R "$SAMBAUSER:$MEDIAGROUP" "$DIR1"
 	sudo chmod -R "$PERM" "$DIR1"
 
 	ls -l "$DIR1"
