@@ -21,18 +21,19 @@ set -o nounset                              # Treat unset variables as an error
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-DIR1=/mnt/Media
+DIR1=/mnt/sandisk
 DIR2=/media
 PERM=774
-SAMBAUSER=nobody
-MEDIAGROUP=mediagrp
+SAMBAUSER=brettsalemink
+SAMBAGROUP=sambashare
+MEDIAGROUP=grpmedia
 #-------------------------------------
 function Main ()
 {
-	sudo chgrp -R "$MEDIAGROUP" "$DIR1"
+	sudo chown -R "$SAMBAUSER:$SAMBAGROUP" "$DIR1"
 	sudo chmod -R "$PERM" "$DIR1"
-	sudo chgrp -R "$MEDIAGROUP" "$DIR2"
-	sudo chmod -R "$PERM" "$DIR2"
+
+	ls -l "$DIR1"
 }	# end Main
 
 Main
