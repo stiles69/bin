@@ -42,7 +42,7 @@ USERPLEX=plex
 USEREMBY=brettsalemink
 GROUPEMBY=emby
 GROUPPLEX=brettsalemink
-GROUPEMEDIA=grpmedia
+GROUPMEDIA=plex
 PERM=774
 #-------------------------------------
 function Main ()
