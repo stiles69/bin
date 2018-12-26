@@ -26,7 +26,7 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 function Main ()
 {
-	duplicity -v 1 full --no-encryption /home/brettsalemink/development/Docker/ mega://brett.salemink@gmail.com@mega.co.nz/Data/Backups/
+	duplicity -v 1 full --no-encryption /home/brettsalemink/development/Docker/ mega://brett.salemink@gmail.com@mega.co.nz/Data/Backups/Master-Docker/
 }	# end Main
 
 Main
