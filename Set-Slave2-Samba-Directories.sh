@@ -24,13 +24,13 @@ set -o nounset                              # Treat unset variables as an error
 DIR1=/mnt/sandisk
 DIR2=/media
 PERM=774
-SAMBAUSER=brettsalemink
-SAMBAGROUP=sambashare
+SAMBAUSER=emby
+SAMBAGROUP=emby
 MEDIAGROUP=groupmedia
 #-------------------------------------
 function Main ()
 {
-	sudo chown -R "$SAMBAUSER:$MEDIAGROUP" "$DIR1"
+	sudo chown -R "$SAMBAUSER:$SAMBAGROUP" "$DIR1"
 	sudo chmod -R "$PERM" "$DIR1"
 
 	ls -l "$DIR1"
