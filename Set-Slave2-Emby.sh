@@ -24,6 +24,7 @@ set -o nounset                              # Treat unset variables as an error
 #---------- GLOBAL VARIABLES ---------
 # Emby
 DIR0=/mnt/sandisk
+DIR1=/media
 USEREMBY=brettsalemink
 GROUPMEDIA=grpmedia
 GROUPEMBY=emby
@@ -35,9 +36,12 @@ function Main ()
 	# Change all settings to group shared media. Shared by Emby, Plex, brettsalemink.
 	sudo chown -R $USEREMBY:$GROUPEMBY $DIR0
 	sudo chmod -R $PERM $DIR0
+	sudo chown -R $USEREMBY:$GROUPEMBY $DIR1
+	sudo chmod -R $PERM $DIR1
 	# Emby
 	echo "Permissions Changed for $DIR0"
 	ls -l $DIR0
+	ls -l $DIR1
 }	# end Main
 
 Main
