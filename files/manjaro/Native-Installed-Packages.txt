@@ -50,6 +50,7 @@ bluez 5.50-3
 bluez-libs 5.50-3
 bolt 0.6-1
 boost-libs 1.68.0-2
+breeze-icons 5.52.0-1
 brotli 1.0.7-1
 btrfs-progs 4.19-1
 bubblewrap 0.3.1-1
@@ -157,11 +158,13 @@ foomatic-db-engine 4:4.0.13-1
 fprintd 0.8.1-2
 freeglut 3.0.0-2
 freetype2 2.9.1-1
+frei0r-plugins 1.6.1-7
 fribidi 1.0.5-1
 fuse-common 3.3.0-1
 fuse2 2.9.8-1
 fzf 0.17.5-1
 gamin 0.1.10-9
+gavl 1.4.0-3
 gawk 4.2.1-1
 gc 7.6.8-1
 gcab 1.0+2+gc0947f6-1
