@@ -19,7 +19,7 @@
 
 set -o nounset                              # Treat unset variables as an error
 #--------Global Variables-----------
-#VIDEONAME="$1"
+VIDEONAME="$1"
 #-----------------------------------
 #---- Sources ----
 source $HOME/lib/sh/funcSendMessage.sh
@@ -91,15 +91,15 @@ function BurnISOToDisk ()
 
 function Main ()
 {
-#	ConvertVideo
-#	wait
-#	BuildTSFiles	
-#	wait
-#	FinalizeDVD
-#	wait
-#	Generate 
-#	wait
-funcSendMessage.sh "10.0.0.11" "Run-Complete-DVD.sh" "Run-Complete-DVD.sh" "DVD Completed and ready to be burned."
+	ConvertVideo
+	wait
+	BuildTSFiles	
+	wait
+	FinalizeDVD
+	wait
+	Generate 
+	wait
+	echo $(SendMessage "10.0.0.11" "Run-Complete-DVD.sh" "Run-Complete-DVD.sh" "DVD Completed and ready to be burned.")
 }	# end Main
 
 Main
