@@ -18,10 +18,12 @@
 #      REVISION:  ---
 #====================================================
 #---------- SOURCED ---------
-
+source /scripts/send-message.sh
 #----------------------------
 
 #---------- GLOBAL VARIABLES ---------
+HOST=173.29.176.138
+PORT=60001
 DIR=/data
 DIRCOMPLETED=$DIR/completed
 PARAM1="$1"
@@ -44,52 +46,30 @@ MoveDir()
 	find $DIR -name '*.wmv' -exec mv -t "$DIRCOMPLETED" {} +
 	find $DIR -name '*.mpeg' -exec mv -t "$DIRCOMPLETED" {} +
 	find $DIR -name '*.flv' -exec mv -t "$DIRCOMPLETED" {} +
+	wait
 }	
 
 function SendMessage ()
 {
-	local URGENCY="$1"
-	local ICONPATH="$2"
-	local TITLE="$3"
-	local MSG="$4"
+	APPNAME="Transmission"
+	local ICON="/usr/share/icons/roguedesigns/slave-icon-256x256.png"
+	TITLE="Transmission Slave3"
+	MSG="Extraction Completed"
 	
-	ssh brettsalemink@173.29.176.138 -p 60001 "export Display=:0;notify-send '$TITLE' '$MSG' -t 15000 --icon='$ICONPATH'"
+	sshpass -p "Samsung#2013" ssh brettsalemink@$HOST 'dunstify --appname="$APPNAME" --icon="$ICON" "$TITLE" "$MSG"'
+
 	curl https://xdroid.net/api/message -X POST -d "k=u-440890b42fee" -d "t='$TITLE'" -d "c='$MSG'" -d "u=http://roguedesigns.us"
 }	# end
 
 function Main ()
 {
-#	UnrarDir
+	UnrarDir
 	wait
-#	MoveDir
+	MoveDir
 	wait
-
-	#Check $1
-	if [ -z "$PARAM1" ]
-	then
-		TITLE="SLAVE3"
-	else
-		TITLE="$PARAM1"
-	fi
-
-	#Check $2
-	if [ -z "$PARAM2" ]
-	then
-		MSG="Extraction Completed"
-	else
-		MSG="$PARAM2"
-	fi
-
-#	echo "Param1 is $PARAM1"
-#	echo "Param2 is $PARAM2"
-
-	URGENCY='normal'		# Array OPTIONAL (low normal critical)
-#	EXPIRETIME=6000			# Time in Milliseconds OPTIONAL
-	ICONPATH='dialog-information'	# Path to ICON OPTIONAL or Name of Icon ex. --icon=dialog-information
-#	TITLE				# Title or Summary MANDATORY
-#	MSG				# Actual Message OPTIONAL
 	
-	SendMessage $URGENCY $ICONPATH $TITLE $MSG 
+	SendMessage
+
 }	# end Main
 
 Main
