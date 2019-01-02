@@ -48,6 +48,12 @@ function ProceedYes ()
 		mkdir $HOME/Downloads
 	fi
 
+	if [ -d $HOME/development/GitLab ]
+	then
+		echo "$HOME/development/GitLab directory already exists."
+	else
+		mkdir -p $HOME/development/GitLab
+	fi
 
 }	
 
