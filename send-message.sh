@@ -21,15 +21,13 @@
 source $HOME/lib/sh/funcSendMessage.sh
 PARAM1="$1"
 PARAM2="$2"
-PARAM3="$3"
 #----------------------------
 
 #---------- GLOBAL VARIABLES ---------
 #-------------------------------------
 function Main ()
 {
-	echo $(SendMessage "$PARAM1" "$PARAM2" "$PARAM3")
-	# HOST=$1
+	echo $(SendMessage "$PARAM1" "$PARAM2")
 	# TITLE="'$2'"
 	# MSG="'$3'"
 }
