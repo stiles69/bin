@@ -66,6 +66,7 @@ cantarell-fonts 1:0.111-1
 cblas 3.8.0-2
 ccid 1.4.30-2
 cdparanoia 10.2-7
+cdrdao 1.2.4-1
 cdrtools 3.02a09-1
 celt 0.11.3-3
 cheese 3.30.0-1
@@ -121,6 +122,7 @@ dnssec-anchors 20181003-1
 dosfstools 4.1-2
 double-conversion 3.1.1-1
 dunstify 1.3.2-1
+dvd+rw-tools 7.1-8
 dvdauthor 0.7.2-5
 e2fsprogs 1.44.5-1
 ebook-tools 0.2.2-5
@@ -128,6 +130,7 @@ ecryptfs-utils 111-3
 efibootmgr 16-1
 efivar 35-1
 electron2 2.0.16-1
+emovix 0.9.0-7
 empathy 3.25.90+34+g78f4d4fda-3
 enchant 2.2.3-2
 etcher 1.4.8-1
@@ -364,6 +367,7 @@ js60 60.2.2-1
 json-c 0.13.1-2
 json-glib 1.4.4-1
 jsoncpp 1.8.4-2
+k3b 1:18.12.0-1
 kaccounts-integration 18.12.0-1
 karchive 5.53.0-1
 kauth 5.53.0-1
@@ -482,6 +486,7 @@ libabw 0.1.2-1
 libaccounts-glib 1.24-1
 libaccounts-qt 1.15-2
 libaio 0.3.111-2
+libao 1.2.2-2
 libarchive 3.3.3-1
 libass 0.14.0-1
 libassuan 2.5.2-1
@@ -493,6 +498,7 @@ libblockdev 2.20-1
 libbluray 1.0.2-2
 libbs2b 3.1.0-6
 libbsd 0.9.1-1
+libburn 1.5.0-1
 libbytesize 1.4-1
 libcaca 0.99.beta19-2
 libcanberra 0.30+2+gc0620e4-2
@@ -575,6 +581,7 @@ libinput 1.12.4-1
 libiptcdata 1.0.4-4
 libixion 0.14.1-1
 libjpeg-turbo 2.0.1-1
+libkcddb 18.12.0-1
 libksba 1.3.5-1
 liblangtag 0.6.2-2
 liblastfm-qt4 1.0.9-3
@@ -1094,6 +1101,7 @@ totem 3.30.0-1
 totem-plparser 3.26.1+2+gb7f36dd-1
 tracker 2.1.6-2
 tracker-miners 2.1.5-2
+transcode 1.1.7-29
 transmission-gtk 2.94-1
 transmission-remote-gtk 1.4.0-2
 tslib 1.18-1
