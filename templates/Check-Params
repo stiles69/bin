@@ -1,0 +1,8 @@
+ USAGE="Correct usage"
+ if [ "$#" -ne 4 ]
+	then
+		echo "Function is missing parameters. $USAGE. Exiting."				
+		exit 0
+	else
+		local PARAM1="$1"		
+	fi

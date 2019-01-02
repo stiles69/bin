@@ -18,8 +18,12 @@
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
-VIDEONAME="$1"
-
+#--------Global Variables-----------
+#VIDEONAME="$1"
+#-----------------------------------
+#---- Sources ----
+source $HOME/lib/sh/funcSendMessage.sh
+#----------------
 function ConvertVideo ()
 {
 
@@ -87,15 +91,15 @@ function BurnISOToDisk ()
 
 function Main ()
 {
-	ConvertVideo
-	wait
-	BuildTSFiles	
-	wait
-	FinalizeDVD
-	wait
-	Generate 
-	wait
-	$HOME/bin/Send-Message.sh Manjaro 'DVD Complete'
+#	ConvertVideo
+#	wait
+#	BuildTSFiles	
+#	wait
+#	FinalizeDVD
+#	wait
+#	Generate 
+#	wait
+funcSendMessage.sh "10.0.0.11" "Run-Complete-DVD.sh" "Run-Complete-DVD.sh" "DVD Completed and ready to be burned."
 }	# end Main
 
 Main

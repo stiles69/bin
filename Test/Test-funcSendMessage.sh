@@ -26,7 +26,7 @@ source $HOME/lib/sh/funcSendMessage.sh
 #-------------------------------------
 function Main ()
 {
-	echo $(SendMessage "This is a Test")
+	echo $(SendMessage "10.0.0.11" "Application Name" "Completed DVD" "Make DVD Script")
 }	# end Main
 
 Main
