@@ -1,9 +1,9 @@
 #!/bin/bash
 #====================================================
 #
-#          FILE:  transmission-extract-docker.sh
+#          FILE:  transmission-extract.sh
 # 
-#         USAGE:  ./transmission-extract-docker.sh 
+#         USAGE:  ./transmission-extract.sh 
 # 
 #   DESCRIPTION:  This will extract rar files when done downloading.
 # 
@@ -18,23 +18,19 @@
 #      REVISION:  ---
 #====================================================
 #---------- SOURCED ---------
-source /scripts/send-message.sh
+
 #----------------------------
 
 #---------- GLOBAL VARIABLES ---------
-HOST=173.29.176.138
-PORT=60001
-DIR=/data
-DIRCOMPLETED=$DIR/completed
-PARAM1="$1"
-PARAM2="$2"
+HOST=10.0.0.11
+DIR="/data"
+DIRCOMPLETED="$DIR/completed"
 #-------------------------------------
 UnrarDir()
 {
-	#Docker Folder
 	cd $DIR
-	find . -name '*.rar' -exec unrar e -o- {} \;
-	wait	
+	find . -name '*.rar' -execdir unrar e -o- {} \;
+	wait
 }	# end
 
 MoveDir()
@@ -46,17 +42,12 @@ MoveDir()
 	find $DIR -name '*.wmv' -exec mv -t "$DIRCOMPLETED" {} +
 	find $DIR -name '*.mpeg' -exec mv -t "$DIRCOMPLETED" {} +
 	find $DIR -name '*.flv' -exec mv -t "$DIRCOMPLETED" {} +
-	wait
-}	
+
+}	# end
 
 function SendMessage ()
 {
-	APPNAME="Transmission"
-	local ICON="/usr/share/icons/roguedesigns/slave-icon-256x256.png"
-	TITLE="Transmission Slave3"
-	MSG="Extraction Completed"
-	
-	sshpass -p "Samsung#2013" ssh brettsalemink@$HOST 'dunstify --appname="$APPNAME" --icon="$ICON" "$TITLE" "$MSG"'
+	sshpass -p "Samsung#2013" ssh brettsalemink@$HOST 'dunstify --icon=/usr/share/icons/roguedesigns/slave-icon-256x256.png "Slave3" "Extraction Complete"'
 
 	curl https://xdroid.net/api/message -X POST -d "k=u-440890b42fee" -d "t='$TITLE'" -d "c='$MSG'" -d "u=http://roguedesigns.us"
 }	# end
@@ -66,8 +57,7 @@ function Main ()
 	UnrarDir
 	wait
 	MoveDir
-	wait
-	
+	wait	
 	SendMessage
 
 }	# end Main
