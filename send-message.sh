@@ -18,45 +18,19 @@
 #      REVISION:  ---
 #====================================================
 #---------- SOURCED ---------
-
-#----------------------------
-
-#---------- GLOBAL VARIABLES ---------
-HOST=10.0.0.11
-USAGE="send-message.sh APPNAME ICON TITLE MSG"
+source $HOME/lib/sh/funcSendMessage.sh
 PARAM1="$1"
 PARAM2="$2"
 PARAM3="$3"
 PARAM4="$4"
+#----------------------------
+
+#---------- GLOBAL VARIABLES ---------
 #-------------------------------------
-function SendMessage ()
-{
-	local APPNAME="'$1'"
-	local ICON="'$2'"
-	local TITLE="'$3'"
-	local MSG="'$4'"
-	
-	# Need sshpass installed and dunstify on machine sending message to.
-	sshpass -p "Samsung#2013" ssh brettsalemink@$HOST dunstify --appname=$APPNAME --icon=$ICON $TITLE $MSG
-
-	curl https://xdroid.net/api/message -X POST -d "k=u-440890b42fee" -d "t='$TITLE'" -d "c='$MSG'" -d "u=http://roguedesigns.us"
-}	# end
-
 function Main ()
 {
- 	if [ "$#" -ne 4 ] then;
-		echo "Function is missing parameters. $USAGE. Exiting."
-	 	exit 0
- 	else
-		APPNAME="$PARAM1"
-		ICON="$PARAM2"
-		TITLE="$PARAM3"
-		MSG="$PARAM4"
-	fi
-	
-	SendMessage $APPNAME $ICON $TITLE $MSG 
+	echo $(SendMessage "$PARAM1" "$PARAM2" "$PARAM3" "$PARAM4")
 }
-
 Main
 
 exit 0
