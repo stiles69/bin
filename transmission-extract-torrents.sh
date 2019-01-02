@@ -22,6 +22,7 @@
 #----------------------------
 
 #---------- GLOBAL VARIABLES ---------
+HOST=10.0.0.11
 DIR="/torrents"
 DIRCOMPLETED="$DIR/completed"
 PARAM1="$1"
@@ -30,7 +31,7 @@ PARAM2="$2"
 UnrarDir()
 {
 	cd $DIR
-	find . -name '*.rar' -execdir 7z e -o- {} \;
+	find . -name '*.rar' -execdir unrar e -o- {} \;
 	wait
 }	# end
 
@@ -48,12 +49,13 @@ MoveDir()
 
 function SendMessage ()
 {
-	local URGENCY="$1"
-	local ICONPATH="$2"
-	local TITLE="$3"
-	local MSG="$4"
+	APPNAME="Transmission"
+	local ICON="/usr/share/icons/roguedesigns/slave-icon-256x256.png"
+	TITLE="Transmission Slave3"
+	MSG="Extraction Completed"
 	
-	ssh brettsalemink@173.29.176.138 -p 60001 "export Display=:0;notify-send '$TITLE' '$MSG' -t 15000 --icon='$ICONPATH'"
+	sshpass -p "Samsung#2013" ssh brettsalemink@$HOST 'dunstify --appname="$APPNAME" --icon="$ICON" "$TITLE" "$MSG"'
+
 	curl https://xdroid.net/api/message -X POST -d "k=u-440890b42fee" -d "t='$TITLE'" -d "c='$MSG'" -d "u=http://roguedesigns.us"
 }	# end
 
@@ -63,30 +65,9 @@ function Main ()
 	wait
 	MoveDir
 	wait
-
-	#Check $1
-	if [ -z "$PARAM1" ]
-	then
-		TITLE="SLAVE3"
-	else
-		TITLE="$PARAM1"
-	fi
-
-	#Check $2
-	if [ -z "$PARAM2" ]
-	then
-		MSG="Extraction Completed"
-	else
-		MSG="$PARAM2"
-	fi
-
-
-	URGENCY='normal'		# Array OPTIONAL (low normal critical)
-	ICONPATH='dialog-information'	# Path to ICON OPTIONAL or Name of Icon ex. --icon=dialog-information
-#	TITLE				# Title or Summary MANDATORY
-#	MSG				# Actual Message OPTIONAL
 	
-	SendMessage $URGENCY $ICONPATH $TITLE $MSG 
+	SendMessage
+
 }	# end Main
 
 Main
