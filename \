@@ -18,19 +18,34 @@
 #      REVISION:  ---
 #====================================================
 #---------- SOURCED ---------
-source $HOME/lib/sh/funcSendMessage.sh
-PARAM1="$1"
-PARAM2="$2"
-PARAM3="$3"
-PARAM4="$4"
+
 #----------------------------
 
 #---------- GLOBAL VARIABLES ---------
+HOST=10.0.0.11
 #-------------------------------------
+function SendMessage ()
+{
+	local APPNAME="$1"
+	local ICON="$2"
+	local TITLE="$3"
+	local MSG="$4"
+	
+	# Need sshpass installed and dunstify on machine sending message to.
+	sshpass -p "Samsung#2013" ssh brettsalemink@$HOST 'dunstify --appname=$APPNAME --icon=$ICON $TITLE $MSG'
+
+	curl https://xdroid.net/api/message -X POST -d "k=u-440890b42fee" -d "t='$TITLE'" -d "c='$MSG'" -d "u=http://roguedesigns.us"
+}	# end
+
 function Main ()
 {
-	echo $(SendMessage "$PARAM1" "$PARAM2" "$PARAM3" "$PARAM4")
+	APPNAME="App Name"
+	ICON="/usr/share/icons/roguedesigns/slave-icon-256x256.png"
+	TITLE="Title Test"
+	MSG="Message Test"
+	SendMessage "$HOST" "'$APPNAME'" "'$ICON'" "'$TITLE'" "'$MSG'" 
 }
+
 Main
 
 exit 0
