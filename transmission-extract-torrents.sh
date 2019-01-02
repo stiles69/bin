@@ -49,12 +49,7 @@ MoveDir()
 
 function SendMessage ()
 {
-	APPNAME="Transmission"
-	local ICON="/usr/share/icons/roguedesigns/slave-icon-256x256.png"
-	TITLE="Transmission Slave3"
-	MSG="Extraction Completed"
-	
-	sshpass -p "Samsung#2013" ssh brettsalemink@$HOST 'dunstify --appname="$APPNAME" --icon="$ICON" "$TITLE" "$MSG"'
+	sshpass -p "Samsung#2013" ssh brettsalemink@$HOST 'dunstify --icon=/usr/share/icons/roguedesigns/slave-icon-256x256.png "Slave3" "Extraction Complete"'
 
 	curl https://xdroid.net/api/message -X POST -d "k=u-440890b42fee" -d "t='$TITLE'" -d "c='$MSG'" -d "u=http://roguedesigns.us"
 }	# end
