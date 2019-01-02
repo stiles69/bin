@@ -1,9 +1,9 @@
-#!/bin/bash 
+#!/bin/bash  
 #====================================================
 #
-#          FILE: Install-Vim-Python-Syntax.sh
+#          FILE: Config-Git.sh
 # 
-#         USAGE: ./Install-Vim-Python-Syntax.sh 
+#         USAGE: ./Config-Got.sh
 # 
 #   DESCRIPTION: 
 # 
@@ -13,19 +13,24 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 09/15/2018 08:34
+#       CREATED: 10/10/2018 00:23
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
+
+#------------ SOURCED ----------------
+
+#-------------------------------------
+#---------- GLOBAL VARIABLES ---------
+
+#-------------------------------------
 function Main ()
 {
-	
-	cd ~/.vim/bundle
-	git clone https://github.com/hdima/python-syntax
+	git config --global user.name stiles69
+	git config --global user.email brett.salemink@gmail.com
 }	# end Main
 
 Main
 
 #===EXIT===
 exit 0
-
