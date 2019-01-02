@@ -1,0 +1,24 @@
+#------------ SOURCED ----------------
+
+#-------------------------------------
+#---------- GLOBAL VARIABLES ---------
+
+#-------------------------------------
+function CHANGETONAMEOFFUNCTION ()
+{
+    if [ "$#" -lt 1 ]
+	then
+		echo "Function is missing parameter."
+		echo "Now exiting."
+		exit 0
+	else
+		local PARAM1=$1
+	fi
+
+    MSG=PARAM1
+
+    echo $MSG
+
+
+}	
+
