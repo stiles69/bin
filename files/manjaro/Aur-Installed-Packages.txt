@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 amp
 etcher-git
 google-chrome
@@ -8,3 +9,5 @@ jdownloader2
 megacmd-bin
 peazip-gtk2-portable
 plex-media-server
+=======
+>>>>>>> 59905b162b7d8c03238fa09c4a8cebdd93aeb721
