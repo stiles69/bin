@@ -864,6 +864,7 @@ networkmanager-vpnc 1.2.6-1
 nfs-utils 2.3.3-1
 nfsidmap 2.3.3-1
 nm-connection-editor 1.8.19dev+21+geebf7f95-1
+nmap 7.70-2
 node-gyp 3.8.0-1
 nodejs 11.6.0-1
 nodejs-material-design-icons 3.0.1-2
