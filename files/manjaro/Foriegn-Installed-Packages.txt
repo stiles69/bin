@@ -1,3 +1,4 @@
+amp 0.5.2-2
 etcher-git 1.4.9.r0.g5bdd5da1-1
 google-chrome 71.0.3578.98-1
 handbrake-cli-fdkaac 1.1.2-1

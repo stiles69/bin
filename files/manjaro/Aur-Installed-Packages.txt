@@ -1,3 +1,4 @@
+amp
 etcher-git
 google-chrome
 handbrake-cli-fdkaac
