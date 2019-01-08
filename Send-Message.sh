@@ -24,11 +24,11 @@
 HOST=10.0.0.11
 USAGE="Usage is funcSendMessage MSG TITLE"
 ICON="/usr/share/icons/roguedesigns/slave-icon-256x256.png"
+TITLE="SLAVE1 Deluge"
+MSG="Torrent Completed"
 #-------------------------------------
 function SendMessage ()
 {
-	local TITLE
-	local MSG
 	sshpass -p "Samsung#2013" ssh brettsalemink@10.0.0.11 'dunstify --icon=/usr/share/icons/roguedesigns/slave-icon-256x256.png "'$TITLE'" "'$MSG'"'
 
 	curl https://xdroid.net/api/message -X POST -d "k=u-440890b42fee" -d "t='$TITLE'" -d "c='$MSG'" -d "u=http://roguedesigns.us"
