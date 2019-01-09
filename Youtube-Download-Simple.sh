@@ -18,7 +18,20 @@
 #====================================================
 set -o nounset                              # Treat unset variables as an error
 #===Variables===
+SUBTITLE="--write-sub"
+THUMBNAIL="--write-thumbnail"
 CONFIG="-o %(title)s.%(ext)s"
+EXTRACTAUDIO="--extract-audio"
+AUDIOFORMAT="--audio-format"
+AUDITOFORMATM4A="--audio-format m4a"
+AUDIOFORMATWAV="--audio-format wav"
+EMBEDTHUMBNAIL="--embed-thumbnail"
+REENCODEVIDEOMP4="--recode-video mp4"
+VIDEOFORMATMP4="-f mp4"
+BESTVIDEOFORMAT="-f bestvideo"
+BESTAUDIOFORMAT="-f bestaudio[ext=m4a]"
+LOGIN="--username 'brett.salemink@gmail.com' --password 'Samsung#2013'"
+#--------------------------
 function GetVideoAudio ()
 {
 	echo "Do you want to download [1. best, 2. bestvideo, 3. bestaudio, 4. m4a, 5. mp3, 6. wav, 7. webm, 8. mp4, 9. ogg]"
@@ -83,16 +96,16 @@ function DownloadLink ()
 
 	if [ $FORMAT = 'bestaudio' ]
 	then	
-		CONVERTFORMAT='m4a'
+		CONVERTFORMAT='wav'
 	else
 		CONVERTFORMAT=$FORMAT
 	fi	
 
 	if [ $AUDIOONLY = 'Y' ]
 	then
-		COMMANDSTRING="-f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best  --extract-audio --audio-format m4a "$CONFIG" "$(echo $URL)""
+		COMMANDSTRING="--netrc "$BESTAUDIOFORMAT" "$EMBEDTHUMBNAIL" "$CONFIG" "$EXTRACTAUDIO" "$AUDIOFORMATWAV" "$(echo $URL)""
 	else
-		COMMANDSTRING="-f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best --recode-video mp4 --embed-thumbnail "$CONFIG" "$(echo $URL)""
+		COMMANDSTRING="--netrc "$FORMAT" "$SUBTITLE" "$REENCODEVIDEO" "$THUMBNAIL" "$CONFIG" "$(echo $URL)""
 	fi
 
 	echo $COMMANDSTRING
@@ -106,16 +119,16 @@ function DownloadList ()
 
 	if [ $FORMAT = 'bestaudio' ]
 	then	
-		CONVERTFORMAT='m4a'
+		CONVERTFORMAT='wav'
 	else
 		CONVERTFORMAT='m4a'
 	fi	
 
 	if [ $AUDIOONLY = 'Y' ]
 	then
-		COMMANDSTRING="-a $(echo $LIST) $(echo $FORMAT) --extract-audio --audio-format $CONVERTFORMAT"
+		COMMANDSTRING="-a $(echo $LIST) $(echo $FORMAT) "$EXTRACTAUDIO" "$AUDIOFORMAT" "$CONVERTFORMAT""
 	else
-		COMMANDSTRING="-a "$(echo $LIST)" $FORMAT -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best --recode-video mp4 --embed-thumbnail $CONFIG"
+		COMMANDSTRING="-a "$(echo $LIST)" "$VIDEOFORMATMP4" "$SUBTITLE" "$REENCODEVIDEOMP4" "$EMBEDTHUMBNAIL" "$CONFIG""
 	fi
 
 	echo $COMMANDSTRING

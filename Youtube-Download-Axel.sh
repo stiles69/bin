@@ -18,15 +18,19 @@
 #====================================================
 set -o nounset                              # Treat unset variables as an error
 #===Variables===
+SUBTITLE="--write-sub"
 THUMBNAIL="--write-thumbnail"
 CONFIG="-o %(title)s.%(ext)s"
 DOWNLOADER="--external-downloader axel"
 DOWNLOADEROPTIONS=" --external-downloader-args --num-connections=6"
-EXTRACTAUDIO="--extract-audio --audio-format m4a"
+EXTRACTAUDIO="--extract-audio"
+AUDIOFORMATM4A="--audio-format m4a"
+AUDIOFORMATWAV="--audio-format wav"
 EMBEDTHUMBNAIL="--embed-thumbnail"
-REENCODEVIDEO="--recode-video mp4"
+REENCODEVIDEO="--recode-video"
+VIDEOFORMATMP4="mp4"
 FORMAT="-f bestvideo"
-AUDIOFORMAT="-f bestaudio[ext=m4a]"
+BESTAUDIOFORMAT="-f bestaudio[ext=m4a]"
 EXTRACTAUDIO="--extract-audio"
 LOGIN="--username 'brett.salemink@gmail.com' --password 'Samsung#2013'"
 CONVERTFORMAT="m4a"
@@ -65,9 +69,9 @@ function DownloadLink ()
 
 	if [ $AUDIOONLY = 'Y' ]
 	then
-		COMMANDSTRING="--netrc "$AUDIOFORMAT" "$DOWNLOADER" "$DOWNLOADEROPTIONS" "$THUMBNAIL" "$CONFIG" "$EXTRACTAUDIO" "$(echo $URL)""
+		COMMANDSTRING="--netrc "$BESTAUDIOFORMAT" "$DOWNLOADER" "$DOWNLOADEROPTIONS" "$THUMBNAIL" "$CONFIG" "$EXTRACTAUDIO" "$AUDIOFORMATWAV" "$(echo $URL)""
 	else
-		COMMANDSTRING="--netrc "$FORMAT" "$REENCODEVIDEO" "$THUMBNAIL" "$DOWNLOADER" "$DOWNLOADEROPTIONS" "$CONFIG" "$(echo $URL)""
+		COMMANDSTRING="--netrc "$FORMAT" "$SUBTITLE" "$THUMBNAIL" "$DOWNLOADER" "$DOWNLOADEROPTIONS" "$REENCODEVIDEO" "$VIDEOFORMATMP4" "$CONFIG" "$(echo $URL)""
 	fi
 
 	echo $COMMANDSTRING
@@ -81,10 +85,9 @@ function DownloadList ()
 
 	if [ $AUDIOONLY = 'Y' ]
 	then
-		COMMANDSTRING="--netrc -a "$LIST" 
-"$AUDIOFORMAT" "$DOWNLOADER" "$DOWNLOADEROPTIONS" "$EXTRACTAUDIO" "$THUMBNAIL""
+		COMMANDSTRING="--netrc -a "$LIST" "$AUDIOFORMAT" "$DOWNLOADER" "$DOWNLOADEROPTIONS" "$EXTRACTAUDIO" "$AUDIOFORMATWAV" "$EMBEDTHUMBNAIL""
 	else
-		COMMANDSTRING="--netrc -a "$(echo $LIST)" "$FORMAT" "$DOWNLOADER" "$DOWNLOADEROPTIONS" "$REENCODEVIDEO" "$THUMBNAIL" "$CONFIG""
+		COMMANDSTRING="--netrc -a "$(echo $LIST)" "$FORMAT" "$SUBTITLE" "$THUMBNAIL" "$DOWNLOADER" "$DOWNLOADEROPTIONS" "$REENCODEVIDEO" "$VIDEOFORMATMP4" "$CONFIG""
 	fi
 
 	echo $COMMANDSTRING
