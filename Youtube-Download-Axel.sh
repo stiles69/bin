@@ -21,7 +21,7 @@ set -o nounset                              # Treat unset variables as an error
 THUMBNAIL="--write-thumbnail"
 CONFIG="-o %(title)s.%(ext)s"
 DOWNLOADER="--external-downloader axel"
-DOWNLOADEROPTIONS=" --external-downloader-args --num-connections=4"
+DOWNLOADEROPTIONS=" --external-downloader-args --num-connections=6"
 EXTRACTAUDIO="--extract-audio --audio-format m4a"
 EMBEDTHUMBNAIL="--embed-thumbnail"
 REENCODEVIDEO="--recode-video mp4"
