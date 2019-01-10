@@ -17,7 +17,7 @@
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
-
+PARAM1="$1"
 function urlencode() 
 {
 	echo "$@" | awk -v ORS="" '{ gsub(/./,"&\n") ;
@@ -38,3 +38,12 @@ function urlencode()
 	done
 	echo ""
 }
+
+function Main ()
+{
+	urlencode $PARAM1
+}
+
+Main
+
+exit 0

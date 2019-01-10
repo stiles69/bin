@@ -44,7 +44,8 @@ function Main ()
 
 	
 	DTIME='9000'
-	ICON="https://storage.googleapis.com/stiles-images/Tom-Girlfriend-Icon-200x200.png"
+	ICON="https://storage.googleapis.com/stiles-images/Clit.png"
+#	ICON="https://storage.googleapis.com/stiles-images/Tom-Girlfriend-Icon-200x200.png"
 	curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"GUI.ShowNotification","params":{"title":"'$TITLE'","message":"I Love You So Much Tom!","image":"'$ICON'"},"id":2,"displaytime":"9000"}' $KODIHOST {"id":2,"jsonrpc":"2.0","result":"OK"}
 #	CURLLINE1="-X POST -H 'Content-Type: application/json' -d "0
 #	CURLLINE2="'{'jsonrpc':'2.0','method':'GUI.ShowNotification','params':"
