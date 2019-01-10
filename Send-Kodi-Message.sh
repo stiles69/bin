@@ -22,8 +22,8 @@ set -o nounset                              # Treat unset variables as an error
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-KODIHOST=10.0.0.11
-KODIPORT=9090
+KODIHOST=10.0.0.3
+KODIPORT=8080
 MESSAGEICONPATH=/home/brettsalemink/Pictures/Icons/Tom-Girlfriend-Icon-256x256.png
 MESSAGEALERTTYPE="ALERT!"
 MESSAGETIME=6000
@@ -38,6 +38,13 @@ function Main ()
     
     WGETCOMMAND="http://$KODIHOST:$KODIPORT/xbmcCmds/xbmcHttp?command=ExecBuiltIn(Notification($MESSAGEALERTTYPE,$MESSAGE,$MESSAGETIME))"
     wget "$WGETCOMMAND"
+
+curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"GUI.ShowNotification","params":{"title":"This is the title of the message","message":"This is the body of the message"},"id":1}' http://10.0.0.3:8080/jsonrpc {"id":1,"jsonrpc":"2.0","result":"OK"}%}}}
+
+
+
+
+
 }	# end Main
 
 Main
