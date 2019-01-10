@@ -6,5 +6,8 @@ handbrake-fdkaac
 insync
 jdownloader2
 megacmd-bin
+megasync
+nautilus-megasync
 peazip-gtk2-portable
 plex-media-server
+websocat-bin

@@ -6,5 +6,8 @@ handbrake-fdkaac 1.1.2-1
 insync 1.5.5-2
 jdownloader2 latest-13
 megacmd-bin 1.0.0-1
+megasync 3.7.1.0-2
+nautilus-megasync 3.6.6-2
 peazip-gtk2-portable 6.5.1-1
 plex-media-server 1.14.1.5488-1
+websocat-bin 1.1.0-1
