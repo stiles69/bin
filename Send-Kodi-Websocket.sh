@@ -1,9 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: Send-Kodi-Message.sh
+#          FILE: Send-Kodi-Websocket.sh
 # 
-#         USAGE: ./Send-Kodi-Message.sh 
+#         USAGE: ./Send-Kodi-Websocket.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,7 +13,7 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 01/09/2019 21:37
+#       CREATED: 01/09/2019 23:27
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
@@ -22,22 +22,11 @@ set -o nounset                              # Treat unset variables as an error
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-KODIHOST=10.0.0.11
-KODIPORT=9090
-MESSAGEICONPATH=/home/brettsalemink/Pictures/Icons/Tom-Girlfriend-Icon-256x256.png
-MESSAGEALERTTYPE="ALERT!"
-MESSAGETIME=6000
-USAGE="The correct usage is Send-Kodi-Message.sh MESSAGE"
+
 #-------------------------------------
 function Main ()
 {
-    echo "Please enter message to send:"
-    read MSG    
-    MESSAGE="${MSG// /\\ }"
-    echo "$MESSAGE"
-    
-    WGETCOMMAND="http://$KODIHOST:$KODIPORT/xbmcCmds/xbmcHttp?command=ExecBuiltIn(Notification($MESSAGEALERTTYPE,$MESSAGE,$MESSAGETIME))"
-    wget "$WGETCOMMAND"
+	websocat ws://10.0.0.11:9090/jsonrpc
 }	# end Main
 
 Main
