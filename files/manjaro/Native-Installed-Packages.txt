@@ -961,6 +961,7 @@ pipewire 0.2.5-1
 pixman 0.36.0-1
 pkcs11-helper 1.25.1-1
 pkgconf 1.5.4-1
+pkgfile 19-1
 playerctl 0.6.1-1
 polkit 0.115+24+g5230646-1
 polkit-gnome 0.105-4

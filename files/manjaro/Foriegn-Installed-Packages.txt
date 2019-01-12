@@ -1,4 +1,6 @@
+adduser 1.16-1
 amp 0.5.2-2
+chrome-remote-desktop 71.0.3578.36-1
 etcher-git 1.4.9.r7.g7445004a-1
 google-chrome 71.0.3578.98-1
 handbrake-cli-fdkaac 1.1.2-1
