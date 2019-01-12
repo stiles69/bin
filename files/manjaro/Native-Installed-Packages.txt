@@ -777,6 +777,8 @@ licenses 20181104-1
 lilv 0.24.4-1
 linux-api-headers 4.17.11-1
 linux-firmware 20181218.0f22c85-1
+linux418 4.18.20-1
+linux418-virtualbox-host-modules 6.0.0-1
 linux419 4.19.13-1
 llvm-libs 7.0.1-1
 lm_sensors 3.5.0-1
@@ -1219,6 +1221,8 @@ vim 8.1.0570-1
 vim-runtime 8.1.0570-1
 vim-spell-en 20180224-1
 vino 3.22.0+19+g15eb3c5-1
+virtualbox 6.0.0-1
+virtualbox-guest-iso 6.0.0-1
 vlc 3.0.4-7
 volume_key 0.3.11-2
 vpnc 0.5.3.svn550-3
