@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 adduser
 amp
 chrome-remote-desktop
@@ -15,4 +13,3 @@ nautilus-megasync
 peazip-gtk2-portable
 plex-media-server
 websocat-bin
->>>>>>> 9efd59f3bda419262d15631d72df1fd1f9b3e1a8
