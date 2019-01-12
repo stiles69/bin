@@ -223,6 +223,8 @@ usb_modeswitch
 vi
 vim-spell-en
 vino
+virtualbox
+virtualbox-guest-iso
 vulkan-intel
 vulkan-radeon
 wallpapers-2018
