@@ -1,0 +1,18 @@
+<<<<<<< HEAD
+=======
+adduser
+amp
+chrome-remote-desktop
+etcher-git
+google-chrome
+handbrake-cli-fdkaac
+handbrake-fdkaac
+insync
+jdownloader2
+megacmd-bin
+megasync
+nautilus-megasync
+peazip-gtk2-portable
+plex-media-server
+websocat-bin
+>>>>>>> 56ec0abf2f2b6e70c7b6719fe7706aa63ab54e0c
