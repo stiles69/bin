@@ -1,8 +1,16 @@
 # ============= SYSTEMCTL ALIASES ===============
+alias chrome-remote-desktop-enable="systemctl --user enable chrome-remote-desktop.service"
+alias chrome-remote-desktop-disable="systemctl --user disable chrome-remote-desktop.service"
+alias chrome-remote-desktop-stop="systemctl --user stop chrome-remote-desktop.service"
+alias chrome-remote-desktop-start="systemctl --user start chrome-remote-desktop.service"
+alias chrome-remote-desktop-status="systemctl --user status chrome-remote-desktop.service"
+alias chrome-remote-desktop-restart="systemctl --user restart chrome-remote-desktop.service"
+
 alias sudo='sudo '
 alias webrestart='bash -c "/etc/init.d/nginx restart && /etc/init.d/php7.3-fpm restart"'
 
-alias minidlna-stop="sudo systemctl stop minidlna.service"
+alias minidlna-enable="sudo systemctl enable minidlna.service"
+alias minidlna-disable="sudo systemctl disable minidlna.service"
 alias minidlna-stop="sudo systemctl stop minidlna.service"
 alias minidlna-start="sudo systemctl start minidlna.service"
 alias minidlna-status="sudo systemctl status minidlna.service"
