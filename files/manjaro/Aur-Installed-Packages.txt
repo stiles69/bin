@@ -14,4 +14,5 @@ nautilus-megasync
 nginx-mainline-mod-dav-ext
 peazip-gtk2-portable
 plex-media-server
+teamviewer
 websocat-bin
