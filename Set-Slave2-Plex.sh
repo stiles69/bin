@@ -27,7 +27,7 @@ DIR0=/mnt/sandisk
 DIR1=/media
 USERPLEX=brettsalemink
 GROUPMEDIA=grpmedia
-GROUPPLEX=plex
+GROUPPLEX=docker
 
 PERM=774
 #-------------------------------------
