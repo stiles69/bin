@@ -32,8 +32,6 @@ function Main ()
 	pacman -Qqettn > $HOME/bin/files/manjaro/Native-Package-List.txt
 	# Aur Packages
 	pacman -Qqettm > $HOME/bin/files/manjaro/Aur-Package-List.txt
-	# Foreign Packages
-	pacman -Qm > $HOME/bin/files/manjaro/Foreign-Package-List.txt
 }	# end Main
 
 Main
