@@ -28,7 +28,7 @@ function ProceedYes ()
 	wait
 
 	# Pull SYNCDIR Stiles
-	sshpass -p Samsung#2013 'ssh -p 22575 slave2.roguedesigns.us "$COMMAND"'
+	sshpass -p "Samsung#2013" ssh -p brettsalemink@slave2.roguedesigns.us '$COMMAND'
 	wait
 
 	# Pull SYNCDIR Pi64
