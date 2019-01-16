@@ -32,6 +32,8 @@ function Main ()
 	pacman -Qqettn > $HOME/bin/files/manjaro/Native-Package-List.txt
 	# Aur Packages
 	pacman -Qqettm > $HOME/bin/files/manjaro/Aur-Package-List.txt
+	# Combine Package List to Installed-Packaged-List.txt
+	cat $HOME/bin/files/manjaro/Native-Package-List.txt $HOME/bin/files/manjaro/Aur-Package-List.txt > Installed-Package-List.txt
 }	# end Main
 
 Main

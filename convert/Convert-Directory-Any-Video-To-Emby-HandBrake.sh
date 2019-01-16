@@ -22,7 +22,7 @@ set -o nounset                              # Treat unset variables as an error
 #== GLOBAL VARS ==
 INPUTDIR="$1"
 OUTPUTDIR="$2"
-HANDBRAKEPROFILE="Fast 720p30-Kodi-Volume-Up"
+HANDBRAKEPROFILE="Fast 720p30"
 
 function CheckVars()
 {

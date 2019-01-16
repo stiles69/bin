@@ -26,15 +26,15 @@ COMMAND="$HOME/bin/Pull-Sh.sh"
 function ProceedYes ()
 {
 	# Pull SYNCDIR Stretch
-	PullMachine "stretch.roguedesigns.us" "$COMMAND"
+	PullMachine "slave1.roguedesigns.us" "$COMMAND"
 	wait
 
 	# Pull SYNCDIR Stiles
-	PullMachine "stiles.roguedesigns.us" "$COMMAND"
+	PullMachine "slave2.roguedesigns.us" "$COMMAND"
 	wait
 
 	# Pull SYNCDIR Pi64
-	PullMachine "pi64.roguedesigns.us" "$COMMAND"
+	PullMachine "slave3.roguedesigns.us" "$COMMAND"
 	wait
 
 	# Pull Manjaro
