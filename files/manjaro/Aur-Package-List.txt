@@ -1,0 +1,17 @@
+adduser
+amp
+chrome-remote-desktop
+etcher-git
+google-chrome
+handbrake-cli-fdkaac
+handbrake-fdkaac
+insync
+jdownloader2
+joplin
+megacmd-bin
+nautilus-megasync
+nginx-mainline-mod-dav-ext
+peazip-gtk2-portable
+plex-media-server
+teamviewer
+websocat-bin

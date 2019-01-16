@@ -32,7 +32,7 @@ function Main ()
 	msgId="991049" 	
 	
 	# Change the volume using alsa(might differ if you use pulseaudio))   
-	amixer -c 0 set Master "$@" > /dev/null) 
+	amixer -c 0 set Master "$@" > /dev/null 
 	
 	# Query amixer for the current volume and whether or not the speaker is muted ther 
 	volume="$(amixer -c 0 get Master | tail -1 | awk '{print $4}' | sed 's/[^0-9]*//g')"]} mute="$(amixer -c 0 get Master | tail -1 | awk '{print $6}' | sed 's/[^a-z]*//g')"]} 
@@ -45,7 +45,7 @@ function Main ()
 	
 	# Play the volume changed sound
 	canberra-gtk-play -i audio-volume-change -d "changeVolume"
-
+}
 Main
 
 #===EXIT===
