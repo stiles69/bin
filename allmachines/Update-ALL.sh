@@ -28,7 +28,7 @@ function ProceedYes ()
 	wait
 
 	# Pull SYNCDIR Stiles
-	PullMachine "slave2.roguedesigns.us" "$COMMAND"
+	RunRemoteCommand "ssh -p 22575 slave2.roguedesigns.us" "$COMMAND"
 	wait
 
 	# Pull SYNCDIR Pi64
