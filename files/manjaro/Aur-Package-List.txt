@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 adduser
 amp
 chrome-remote-desktop
@@ -17,3 +18,5 @@ plex-media-server
 teamviewer
 websocat-bin
 wickr-bin
+=======
+>>>>>>> b63724635660ae57eb77a0fdb21a92168f019950
