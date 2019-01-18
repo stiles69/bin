@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 acpi
 acpid
 apache
@@ -265,5 +264,3 @@ plex-media-server
 teamviewer
 websocat-bin
 wickr-bin
-=======
->>>>>>> 75387828334c8ead8714ac0cf9abeda506d7d462
