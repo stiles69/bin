@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 acpi
 acpid
 apache
@@ -245,3 +246,5 @@ yubikey-manager-qt
 yubikey-personalization-gui
 zim
 zsh
+=======
+>>>>>>> 75387828334c8ead8714ac0cf9abeda506d7d462
