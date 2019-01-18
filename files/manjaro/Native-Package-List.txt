@@ -4,7 +4,6 @@ apache
 aspell-en
 atomicparsley
 audacity
-autoconf
 automake
 axel
 b43-fwcutter
@@ -41,7 +40,6 @@ firefox-i18n-en-us
 flatpak
 fprintd
 frei0r-plugins
-gcc
 gedit
 gendesk
 gimp-dbp
@@ -241,7 +239,6 @@ xf86-video-intel
 xf86-video-nouveau
 xorg-twm
 xorg-xinit
-yarn
 yay
 youtube-dl
 yubikey-manager-qt
