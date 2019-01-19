@@ -116,7 +116,7 @@ function PermissionsSet ()
 
 function CreateInstalledPackageList ()
 {
-	. /home/brettsalemink/bin/Create-Installed-Package-List.sh
+	. /home/brettsalemink/bin/Generate-All-Installed-Packages-Arch.sh
 }
 
 function Main ()

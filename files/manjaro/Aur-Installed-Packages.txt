@@ -1,0 +1,26 @@
+<<<<<<< HEAD
+=======
+adduser
+amp
+chrome-remote-desktop
+etcher-git
+google-chrome
+handbrake-cli-fdkaac
+handbrake-fdkaac
+icu55
+insync
+jdownloader2
+joplin
+libhunspell1.3
+libprotobuf2
+mastodon
+megacmd-bin
+megasync
+nautilus-megasync
+nginx-mainline-mod-dav-ext
+peazip-gtk2-portable
+plex-media-server
+teamviewer
+websocat-bin
+wickr-bin
+>>>>>>> 72c954c121958e408437c30c91a3a54a28ea99f8
