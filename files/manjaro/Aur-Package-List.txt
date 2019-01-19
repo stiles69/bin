@@ -1,7 +1,6 @@
 adduser
 amp
 chrome-remote-desktop
-etcher-git
 google-chrome
 handbrake-cli-fdkaac
 handbrake-fdkaac
