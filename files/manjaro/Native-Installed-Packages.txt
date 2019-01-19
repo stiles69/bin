@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 a52dec 0.7.4-10
 aalib 1.4rc5-13
 accounts-qml-module 0.7-2
@@ -150,6 +146,7 @@ efivar 35-1
 electron2 2.0.16-1
 emovix 0.9.0-7
 enchant 2.2.3-2
+etcher 1.4.9-1
 exempi 2.4.5-1
 exfat-utils 1.3.0-1
 exiv2 0.26-2
@@ -1367,5 +1364,3 @@ zsh 5.6.2-1
 zstd 1.3.7-1
 zvbi 0.2.35-3
 zziplib 0.13.69-1
->>>>>>> 72c954c121958e408437c30c91a3a54a28ea99f8
->>>>>>> 286d98857c6e6b2eda8dd24245a6a103bb4e5228

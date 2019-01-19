@@ -30,29 +30,34 @@ DIR1=/media/Videos/Adult
 
 REMOTEDIR1=/Media/Adult
 #-------------------------------------
-fuction ChangePermissions ()
+function ChangePermissions ()
 {
 	sudo chown -R $OWNER:$GROUP /media/Videos
 	sudo chmod -R $PERM /media/Videos
 	echo "Changed permission on /media/Videos to:"
 	ls -l /media/Videos
+	mega-login brett.salemink@gmail.com Vizio#2013
+	wait
+	echo "Login"
 }
 
 function PutDirectory ()
 {
-	local SUBDIRECTORY
-	for file in $SUBDIRECTORY
-	mega-put $SUBDIRECTORY/$file $REMOTEDIR
-	wait
+	cd "$DIR1"	
 
+	for FILENAME in *
+	do 
+		echo "Putting $DIR1/$FILENAME"
+		mega-put -c -q "$DIR1/$FILENAME" "$REMOTEDIR1"
+		wait
+	done
 }
-
 
 function Main ()
 {
-	ChangePermissions ()
-
-	PutDirectory $DIR1
+	ChangePermissions
+	wait
+	PutDirectory
 }	# end Main
 
 Main
