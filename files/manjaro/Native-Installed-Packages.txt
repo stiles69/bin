@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 a52dec 0.7.4-10
 aalib 1.4rc5-13
 accounts-qml-module 0.7-2
@@ -151,6 +150,7 @@ exfat-utils 1.3.0-1
 exiv2 0.26-2
 expac 9-1
 expat 2.2.6-1
+extra-cmake-modules 5.53.0-1
 f2fs-tools 1.12.0-2
 faac 1.29.9.2-1
 faad2 2.8.8-1
@@ -493,7 +493,7 @@ lib32-mesa-vdpau 18.3.1-1
 lib32-ncurses 6.1-3
 lib32-pcre 8.42-1
 lib32-readline 7.0.005-1
-lib32-systemd 239.6-2
+lib32-systemd 239.6-2.2
 lib32-tdb 1.3.16-1
 lib32-util-linux 2.33-1
 lib32-vulkan-intel 18.3.1-1
@@ -706,7 +706,7 @@ libssh2 1.8.0-3
 libstaroffice 0.0.6-1
 libstemmer 0+337-3
 libsynctex 2018.48691-3
-libsystemd 239.6-2
+libsystemd 239.6-2.2
 libtar 1.2.20-4
 libtasn1 4.13-1
 libteam 1.28-1
@@ -960,6 +960,7 @@ perl-clone 0.41-1
 perl-dbi 1.642-1
 perl-error 0.17027-1
 perl-file-which 1.22-2
+perl-image-exiftool 11.11-1
 perl-mailtools 2.20-2
 perl-parse-yapp 1.21-1
 perl-timedate 2.30-5
@@ -1179,9 +1180,9 @@ swig 3.0.12-2
 sysfsutils 2.1.0-10
 sysstat 12.0.2-2
 system-config-printer 1.5.11-3
-systemd 239.6-2
+systemd 239.6-2.2
 systemd-fsck-silent 239-1
-systemd-sysvcompat 239.6-2
+systemd-sysvcompat 239.6-2.2
 t1lib 5.1.2-7
 taglib 1.11.1-2
 talloc 2.1.14-1
@@ -1363,5 +1364,3 @@ zsh 5.6.2-1
 zstd 1.3.7-1
 zvbi 0.2.35-3
 zziplib 0.13.69-1
-=======
->>>>>>> 678a03f3baf6da3f8c365233cbfc94f7e7f9c5ca
