@@ -241,6 +241,7 @@ xorg-twm
 xorg-xinit
 yay
 youtube-dl
+yubico-pam
 yubikey-manager-qt
 yubikey-personalization-gui
 zim

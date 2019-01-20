@@ -27,3 +27,4 @@ teamviewer 14.1.3399-9
 websocat-bin 1.1.0-1
 wickr-bin 4.62.2-1
 xnviewmp 0.92-1
+yubikey-manager-completion 0.1.0-1

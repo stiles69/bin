@@ -27,3 +27,4 @@ teamviewer
 websocat-bin
 wickr-bin
 xnviewmp
+yubikey-manager-completion

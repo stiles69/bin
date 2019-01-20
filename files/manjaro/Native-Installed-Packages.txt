@@ -150,6 +150,7 @@ exfat-utils 1.3.0-1
 exiv2 0.26-2
 expac 9-1
 expat 2.2.6-1
+expect 5.45.4-1
 extra-cmake-modules 5.53.0-1
 f2fs-tools 1.12.0-2
 faac 1.29.9.2-1
@@ -1349,6 +1350,7 @@ yelp-xsl 3.30.1-1
 youtube-dl 2019.01.10-1
 yubico-c 1.13-5
 yubico-c-client 2.15-4
+yubico-pam 2.26-1
 yubikey-manager 2.0.0-1
 yubikey-manager-qt 1.1.0-1
 yubikey-personalization 1.19.0-2
