@@ -43,7 +43,7 @@ function Convert ()
 		echo "$NAME"
 		NEWNAME="$NAME.webm"
 		
-		/usr/bin/ffmpeg -i "$FILENAME" -c:v libvpx -quality good -cpu used 0 -crf 5 -qmax 35 -threads 4 -c:a libopus -vbr on -b:a 64k "$OUTPUTDIR/$NEWNAME"
+		/usr/bin/ffmpeg -i "$FILENAME" -c:v libvpx -quality good -cpu-used 0 -crf 5 -qmax 35 -threads 4 -c:a libopus -vbr on -b:a 64k "$OUTPUTDIR/$NEWNAME"
 		wait	
 }	# end function
 
