@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 acpi
 acpid
 apache
@@ -260,9 +259,11 @@ megacmd-bin
 nautilus-megasync
 nginx-mainline-mod-dav-ext
 peazip-gtk2-portable
+phonon-qt4
 plex-media-server
+python-shiboken
+python2-pyside
 teamviewer
 websocat-bin
 wickr-bin
-=======
->>>>>>> 678a03f3baf6da3f8c365233cbfc94f7e7f9c5ca
+xnviewmp
