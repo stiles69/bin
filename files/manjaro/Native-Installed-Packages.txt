@@ -88,7 +88,6 @@ clutter 1.26.2-2
 clutter-gst 3.0.26-1
 clutter-gtk 1.8.4-1
 cmake 3.13.2-1
-code 1.30.2-1
 cogl 1.22.2+22+ge023a361-1
 colord 1.4.3-2
 colord-gtk 0.1.26+5+ga9d9c91-2
@@ -143,7 +142,6 @@ ebook-tools 0.2.2-5
 ecryptfs-utils 111-3
 efibootmgr 16-1
 efivar 35-1
-electron2 2.0.16-1
 emovix 0.9.0-7
 enchant 2.2.3-2
 etcher 1.4.9-1
