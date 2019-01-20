@@ -1,9 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: Set-Slave3.sh
+#          FILE: Set-Slave1.sh
 # 
-#         USAGE: ./Set-Slave3.sh
+#         USAGE: ./Set-Slave1.sh
 # 
 #   DESCRIPTION: 
 # 
@@ -22,22 +22,19 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 
 #---------- GLOBAL VARIABLES ---------
-# Emby
 DIR0=/torrents
-DIR1=/home/brettsalemink/development/Docker/docker-deluge
-USERSLAVE3=brettsalemink
-GROUPDOCKER=docker
+DIR1=/home/brettsalemink/development/Docker/docker-deluge-slave1
+CHUSER=brettsalemink
+CHGROUP=brettsalemink
 PERM=774
 #-------------------------------------
 function Main ()
 {
-	# Change all settings to group shared media. Shared by Emby, Plex, brettsalemink.
-	sudo chown -R $USERSLAVE3:$GROUPDOCKER $DIR0
-	sudo chmod -R $PERM $DIR0
-	sudo chown -R $USERSLAVE3:$GROUPDOCKER $DIR1
-	sudo chmod -R $PERM $DIR1
-	# Emby
-	echo "Permissions Changed for $DIR0"
+	sudo chown -R $CHUSER:$CHGROUP "$DIR0"
+	sudo chmod -R $PERM "$DIR0"
+	sudo chown -R $CHUSER:$CHGROUP "$DIR1"
+	sudo chmod -R $PERM "$DIR1"
+	
 	ls -l $DIR0
 	ls -l $DIR1
 }	# end Main
