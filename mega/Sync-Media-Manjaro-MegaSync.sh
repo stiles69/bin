@@ -26,13 +26,15 @@ DIR1=/media/Videos/Adult
 DIR2=/media/Videos/Documentaries
 DIR3=/media/Videos/Movies
 DIR4=/media/Videos/Music-Videos
-DIR4=/media/Videos/TV-Shows
+DIR5=/media/Videos/TV-Shows
+DIR6=$HOME/Pictures
 
 REMOTEDIR1=/Media/Adult
 REMOTEDIR2=/Media/Documentaries
 REMOTEDIR3=/Media/Movies
 REMOTEDIR4=/Media/Music-Videos
 REMOTEDIR5=/Media/TV-Shows
+REMOTEDIR6=/Media/Pictures
 
 OWNER=brettsalemink
 GROUP=plex
@@ -43,7 +45,7 @@ function Main ()
 	sudo chown -R $OWNER:$GROUP /media/Videos
 	sudo chmod -R $PERM /media/Videos
 
-	mega-transfers -p -d
+	mega-transfers -a -p --only-downloads
 	wait
 
 	# Adult
@@ -73,14 +75,21 @@ function Main ()
 	wait
 	echo "Done Syncing $DIR4 to $REMOTEDIR4"
 
-	# Music-Videos
+	# TV-Shows
 	mega-sync $DIR5/ $REMOTEDIR5/
 	wait
 	mega-sync -d 0
 	wait
 	echo "Done Syncing $DIR5 to $REMOTEDIR5"
 
-	mega-transfers -r -a
+	# Pictures
+	mega-sync $DIR6/ $REMOTEDIR6/
+	wait
+	mega-sync -d 0
+	wait
+	echo "Done Syncing $DIR6 to $REMOTEDIR6"
+
+	mega-transfers -a -r -a
 }	# end Main
 
 Main

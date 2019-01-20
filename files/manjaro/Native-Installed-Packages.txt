@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 a52dec 0.7.4-10
 aalib 1.4rc5-13
 accounts-qml-module 0.7-2
@@ -92,7 +88,6 @@ clutter 1.26.2-2
 clutter-gst 3.0.26-1
 clutter-gtk 1.8.4-1
 cmake 3.13.2-1
-code 1.30.2-1
 cogl 1.22.2+22+ge023a361-1
 colord 1.4.3-2
 colord-gtk 0.1.26+5+ga9d9c91-2
@@ -147,14 +142,15 @@ ebook-tools 0.2.2-5
 ecryptfs-utils 111-3
 efibootmgr 16-1
 efivar 35-1
-electron2 2.0.16-1
 emovix 0.9.0-7
 enchant 2.2.3-2
+etcher 1.4.9-1
 exempi 2.4.5-1
 exfat-utils 1.3.0-1
 exiv2 0.26-2
 expac 9-1
 expat 2.2.6-1
+extra-cmake-modules 5.53.0-1
 f2fs-tools 1.12.0-2
 faac 1.29.9.2-1
 faad2 2.8.8-1
@@ -497,7 +493,7 @@ lib32-mesa-vdpau 18.3.1-1
 lib32-ncurses 6.1-3
 lib32-pcre 8.42-1
 lib32-readline 7.0.005-1
-lib32-systemd 239.6-2
+lib32-systemd 239.6-2.2
 lib32-tdb 1.3.16-1
 lib32-util-linux 2.33-1
 lib32-vulkan-intel 18.3.1-1
@@ -710,7 +706,7 @@ libssh2 1.8.0-3
 libstaroffice 0.0.6-1
 libstemmer 0+337-3
 libsynctex 2018.48691-3
-libsystemd 239.6-2
+libsystemd 239.6-2.2
 libtar 1.2.20-4
 libtasn1 4.13-1
 libteam 1.28-1
@@ -964,6 +960,7 @@ perl-clone 0.41-1
 perl-dbi 1.642-1
 perl-error 0.17027-1
 perl-file-which 1.22-2
+perl-image-exiftool 11.11-1
 perl-mailtools 2.20-2
 perl-parse-yapp 1.21-1
 perl-timedate 2.30-5
@@ -1183,9 +1180,9 @@ swig 3.0.12-2
 sysfsutils 2.1.0-10
 sysstat 12.0.2-2
 system-config-printer 1.5.11-3
-systemd 239.6-2
+systemd 239.6-2.2
 systemd-fsck-silent 239-1
-systemd-sysvcompat 239.6-2
+systemd-sysvcompat 239.6-2.2
 t1lib 5.1.2-7
 taglib 1.11.1-2
 talloc 2.1.14-1
@@ -1367,5 +1364,3 @@ zsh 5.6.2-1
 zstd 1.3.7-1
 zvbi 0.2.35-3
 zziplib 0.13.69-1
->>>>>>> 72c954c121958e408437c30c91a3a54a28ea99f8
->>>>>>> 286d98857c6e6b2eda8dd24245a6a103bb4e5228
