@@ -33,7 +33,7 @@ function MakeDir ()
 	echo "What What directory do you want to save the coverted file:"
 	read OUTPUTDIR
 
-	mkdir -p "$OUTPUTDIR/Converted"	
+	mkdir -p "$OUTPUTDIR"	
 	
 }	# end function
 
@@ -43,14 +43,13 @@ function Convert ()
 		echo "$NAME"
 		NEWNAME="$NAME.mp4"
 		
-		/usr/bin/ffmpeg -i "$FILENAME" -profile:v high -level 4.1 "$OUTPUTDIR/Converted/$NEWNAME"
+		/usr/bin/ffmpeg -i "$FILENAME" -profile:v high -level 4.1 "$OUTPUTDIR/$NEWNAME"
 		wait	
 }	# end function
 
 function Main ()
 {
 	GetFile
-	MakeDir
 	Convert
 }	# end function
 

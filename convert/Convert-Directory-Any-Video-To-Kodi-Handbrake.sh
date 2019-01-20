@@ -57,7 +57,7 @@ function Convert ()
 		echo $NAME
 		NEWNAME="$NAME.mp4"
 		
-		HandBrakeCLI -Z "$HANDBRAKEPROFILE" -O -i "$FILENAME" -o "$OUTPUTDIR/Converted/$NEWNAME"
+		HandBrakeCLI -Z "$HANDBRAKEPROFILE" -O -i "$FILENAME" -o "$OUTPUTDIR/$NEWNAME"
 		wait
 	done
 }	# end function
@@ -65,7 +65,6 @@ function Convert ()
 function Main ()
 {
 	CheckVars
-	MakeDir
 	Convert
 }	# end function
 

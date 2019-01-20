@@ -63,7 +63,6 @@ function Convert ()
 function Main ()
 {
 	CheckVars
-#	MakeDir
 	Convert
 }	# end function
 

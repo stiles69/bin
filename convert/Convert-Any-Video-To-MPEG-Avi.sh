@@ -46,7 +46,7 @@ function Convert ()
 		echo "$NAME"
 		NEWNAME="$NAME.avi"
 		
-		/usr/bin/ffmpeg -i "$FILENAME" -c:v mjpeg -codec:a ac3 -b:a 128k -filter:a "volume=11dB" "$OUTPUTDIR/$NEWNAME"
+		/usr/bin/ffmpeg -i "$FILENAME" -c:v mjpeg -codec:a ac3 -b:a 128k "$OUTPUTDIR/$NEWNAME"
 		wait	
 }	# end function
 
