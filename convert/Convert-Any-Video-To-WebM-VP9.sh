@@ -19,23 +19,15 @@
 set -o nounset                              # Treat unset variables as an error
 
 FILENAME="$1"
+OUTPUTDIR="$2"
 function GetFile ()
 {
-	if [ "$FILENAME" = null ]
+	if [ ! -f "$FILENAME" ]
 	then
 		echo "Please select the filename. Make sure you spell it exactly and it is in the same path as the $PWD. [ You can also select the filename as a commandline parameter ]"
 		read FILENAME	
 	fi
 }
-
-function MakeDir ()
-{
-	echo "What What directory do you want to save the coverted file:"
-	read OUTPUTDIR
-
-	mkdir -p "$OUTPUTDIR"	
-	
-}	# end function
 
 function Convert () 
 {
