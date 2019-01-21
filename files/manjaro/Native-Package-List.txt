@@ -16,6 +16,7 @@ bzr
 cadaver
 cdrdao
 clementine
+code
 conky-i3
 cpupower
 crda

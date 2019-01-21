@@ -1,9 +1,9 @@
 #!/bin/bash  
-#===============================================================================
+#====================================================
 #
-#          FILE: Convert-Any-Video-To-Kodi.sh
+#          FILE: Convert-Any-Video-To-Emby.sh
 # 
-#         USAGE: ./Convert-Any-Video-To-Kodi.sh
+#         USAGE: ./Convert-Any-Video-To-Emby.sh
 # 
 #   DESCRIPTION: 
 # 
@@ -15,8 +15,7 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 07/12/2018 06:42
 #      REVISION:  ---
-#===============================================================================
-
+#====================================================
 set -o nounset                              # Treat unset variables as an error
 
 FILENAME="$1"
@@ -34,7 +33,7 @@ function MakeDir ()
 	echo "What What directory do you want to save the coverted file:"
 	read OUTPUTDIR
 
-	mkdir -p "$OUTPUTDIR/Converted"	
+	mkdir -p "$OUTPUTDIR"	
 	
 }	# end function
 
@@ -43,8 +42,8 @@ function Convert ()
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
 		echo "$NAME"
 		NEWNAME="$NAME.mp4"
-		
-		/usr/bin/ffmpeg -i "$FILENAME" -c:v libx264 -profile:v high -level 4.1 -b:v 1500k -maxrate 2500k -bufsize 5000k -threads 0 -codec:a aac -b:a 128k "$OUTPUTDIR/$NEWNAME"
+
+		/usr/bin/ffmpeg -i "$FILENAME" -c:v libx264 -crf 22 -movflags faststart -profile:v high -level 4.1 -ac 2 -c:a aac "$OUTPUTDIR/$NEWNAME"		
 		wait	
 }	# end function
 

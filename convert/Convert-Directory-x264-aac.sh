@@ -1,9 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: Convert-Directory-Any-Video-To-Emby.sh
+#          FILE: Convert-Directory-x264-aac.sh
 # 
-#         USAGE: ./Convert-Directory-Any-Video-To-Emby.sh 
+#         USAGE: ./Convert-Directory-x264-aac.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -54,8 +54,8 @@ function Convert ()
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
 		echo $NAME
 		NEWNAME="$NAME.mp4"
-		
-		/usr/bin/ffmpeg -i "$FILENAME" -movflags faststart -profile:v high -level 4.1 "$OUTPUTDIR/$NEWNAME"
+
+		/usr/bin/ffmpeg -i "$FILENAME" -c:v libx264 -crf 22 -movflags faststart -profile:v high -level 4.1 -ac 2 -c:a aac "$OUTPUTDIR/$NEWNAME"		
 		wait
 	done
 }	# end function
