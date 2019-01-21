@@ -55,7 +55,7 @@ function Convert ()
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
 		echo $NAME
 		NEWNAME="$NAME.webm"
-		/usr/bin/ffmpeg -i "$FILENAME" -c:v vp9 -b:v 1000k -minrate 750k -maaxrate 1400k -crf 10 -c:a libvorbis "$OUTPUTDIR/$NEWNAME"		
+		/usr/bin/ffmpeg -i "$FILENAME" -c:v libvpx-vp9 -b:v 1000k -minrate 750k -maxrate 1400k -crf 10 -c:a libvorbis "$OUTPUTDIR/$NEWNAME"		
 		wait
 	done
 }	# end function
