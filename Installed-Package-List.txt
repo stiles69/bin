@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 acpi
 acpid
 apache
@@ -21,6 +20,7 @@ conky-i3
 cpupower
 crda
 dconf-editor
+deluge
 devede
 dhclient
 dhcpcd
@@ -178,6 +178,8 @@ pygtksourceview2
 python-pip
 python2-gtkspellcheck
 python2-lxml
+python2-mako
+python2-notify
 python2-numpy
 python2-scour
 qt5-translations
@@ -210,7 +212,6 @@ tmux
 totem
 tracker-miners
 transcode
-transmission-gtk
 transmission-remote-gtk
 ttf-inconsolata
 ttf-indic-otf
@@ -270,5 +271,3 @@ websocat-bin
 wickr-bin
 xnviewmp
 yubikey-manager-completion
-=======
->>>>>>> f691fd6a0d6e72cffad902ecbf428ef9e1163757
