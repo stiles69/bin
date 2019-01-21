@@ -248,7 +248,7 @@ zim
 zsh
 adduser
 amp
-chrome-remote-desktop
+chromecastize-git
 google-chrome
 handbrake-cli-fdkaac
 handbrake-fdkaac
