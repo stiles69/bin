@@ -10,6 +10,8 @@ jdownloader2
 joplin
 libhunspell1.3
 libprotobuf2
+linux418
+linux418-virtualbox-host-modules
 mastodon
 megacmd-bin
 megasync
