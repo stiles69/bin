@@ -19,6 +19,8 @@
 set -o nounset                              # Treat unset variables as an error
 
 FILENAME="$1"
+OUTPUTDIR="$2"
+
 function GetFile ()
 {
 	if [ "$FILENAME" = null ]
@@ -43,7 +45,7 @@ function Convert ()
 		echo "$NAME"
 		NEWNAME="$NAME.mp4"
 
-		/usr/bin/ffmpeg -i "$FILENAME" -c:v libx264 -crf 22 -movflags faststart -profile:v high -level 4.1 -ac 2 -c:a aac "$OUTPUTDIR/$NEWNAME"		
+		/usr/bin/ffmpeg -i "$FILENAME" -c:v libx264 -crf 22 -movflags faststart -profile:v high -level 4.1 -ac 2 -c:a aac "$OUTPUTDIR/$NEWNAME"	
 		wait	
 }	# end function
 
