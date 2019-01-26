@@ -1285,8 +1285,6 @@ vid.stab 1.1-2
 vim 8.1.0751-1
 vim-runtime 8.1.0751-1
 vim-spell-en 20180224-1
-virtualbox 6.0.2-1
-virtualbox-guest-iso 6.0.2-1
 vlc 3.0.6-1
 volume_key 0.3.11-2
 vpnc 0.5.3.svn550-3
