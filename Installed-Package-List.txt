@@ -102,6 +102,7 @@ ipw2200-fw
 jfsutils
 k3b
 kdenlive
+keepassxc
 kernel-alive
 kodi
 kodi-eventclients
