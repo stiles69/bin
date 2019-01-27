@@ -50,10 +50,13 @@ function Main ()
 	# Emby
 	sudo chgrp -R $GROUPMEDIA $DIR0
 	sudo chmod -R $PERM $DIR0
+	sudo chgrp -R $GROUPMEDIA $DIR3
+	sudo chmod -R $PERM $DIR3
 	# Emby
 	echo "Permissions Changed for $DIR0"
 	ls -l $DIR0
-
+	echo "Permissions Changed for $DIR3"
+	ls -l
 }	# end Main
 
 Main
