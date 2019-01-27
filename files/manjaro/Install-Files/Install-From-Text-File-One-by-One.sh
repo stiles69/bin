@@ -23,12 +23,11 @@ set e
 #----------------------------
 
 #---------- GLOBAL VARIABLES ---------
-#PACKAGELIST=/home/brettsalemink/bin/files/manjaro/Installed-Package-List.txt
-PARAMETER1="$1"
+PACKAGELIST=/home/brettsalemink/Installed-Package-List.txt
+#PARAMETER1="$1"
 #-------------------------------------
 function ReadPackageList ()
 {
-	PACKAGELIST="$PARAMETER1"
 	counter=0
 	readarray aur < "$PACKAGELIST"
 	cat "$PACKAGELIST" | while read myline 
