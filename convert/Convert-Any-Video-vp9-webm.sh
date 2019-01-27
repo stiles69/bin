@@ -19,30 +19,28 @@
 set -o nounset                              # Treat unset variables as an error
 
 FILENAME="$1"
+OUTPUTDIR="$2"
 function GetFile ()
 {
-	if [ "$FILENAME" = null ]
+	if [ ! -f "$FILENAME" ]
 	then
 		echo "Please select the filename. Make sure you spell it exactly and it is in the same path as the $PWD. [ You can also select the filename as a commandline parameter ]"
 		read FILENAME	
 	fi
 }
 
-function MakeDir ()
-{
-	echo "What What directory do you want to save the coverted file:"
-	read OUTPUTDIR
-
-	mkdir -p "$OUTPUTDIR"	
-	
-}	# end function
-
 function Convert () 
 {
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
 		echo "$NAME"
 		NEWNAME="$NAME.webm"
-		/usr/bin/ffmpeg -i "$FILENAME" -c:v libvpx-vp9 -crf 30 -b:v 0 -c:a libopus -vbr on -b:a 64k "$OUTPUTDIR/$NEWNAME"		
+		
+		/usr/bin/ffmpeg -i "$FILENAME" -c:v libvpx-vp9 -b:v 1000k -minrate 750k -maxrate 1400k -crf 10 -c:a libvorbis "$OUTPUTDIR/$NEWNAME"	
+		/usr/bin/ffmpeg -i "$FILENAME" -vf scale=1280x720 -b:v 1024k -minrate 512k -maxrate 1485k -tile-columns 2 -g 240 -threads 8 \
+		 -quality good -crf 32 -c:v libvpx-vp9 -c:a libopus -pass 1 -speed 4 tos-1280x720-24-30fps.webm && \
+		/usr/bin/ffmpeg -i "$FILENAME" -vf scale=1280x720 -b:v 1024k -minrate 512k -maxrate 1485k -tile-columns 2 -g 240 -threads 8 \
+		-quality good -crf 32 -c:v libvpx-vp9 -c:a libopus \
+		-pass 2 -speed 4 -y "$OUTPUTDIR/$NEWNAME"
 		wait	
 }	# end function
 

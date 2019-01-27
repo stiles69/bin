@@ -1,9 +1,9 @@
-#!/bin/bash  
+#!/bin/bash
 #====================================================
 #
-#          FILE: Test-funcSendMessage.sh
+#          FILE: 21-Install-Aria2.sh
 # 
-#         USAGE: ./Test-funcSendMessage.sh 
+#         USAGE: ./21-Install-Aria2.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,7 +13,7 @@
 #         NOTES: ---
 #        AUTHOR: Brett Salemink (BS), admin@roguedesigns.us
 #  ORGANIZATION: Rogue Designs
-#       CREATED: 01/02/2019 01:11
+#       CREATED: 01/23/2019 02:55
 #      REVISION:  ---
 #====================================================
 set -o nounset                              # Treat unset variables as an error
@@ -22,14 +22,15 @@ set -o nounset                              # Treat unset variables as an error
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-source $HOME/lib/sh/funcSendMessage.sh
+
 #-------------------------------------
 function Main ()
 {
-	echo $(SendMessage "Summary" "The Body" "/usr/share/icons/roguedesigns/64x64/Slave-Icon.svg")
+	sudo apt-get install aria2
 }	# end Main
 
 Main
 
 #===EXIT===
 exit 0
+

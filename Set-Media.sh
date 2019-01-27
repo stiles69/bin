@@ -47,13 +47,12 @@ PERM=774
 #-------------------------------------
 function Main ()
 {
-	# Emby
+	# Plex
 	sudo chgrp -R $GROUPMEDIA $DIR0
 	sudo chmod -R $PERM $DIR0
-	# Emby
+	# Plex
 	echo "Permissions Changed for $DIR0"
-	ls -l $DIR0
-
+	ls -l
 }	# end Main
 
 Main

@@ -55,7 +55,7 @@ function Convert ()
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
 		echo $NAME
 		NEWNAME="$NAME.webm"
-		/usr/bin/ffmpeg -i "$FILENAME" -c:v libvpx-vp9 -crf 30 -b:v 0 -c:a libopus -vbr on -b:a 64k o"$OUTPUTDIR/$NEWNAME"		
+		/usr/bin/ffmpeg -i "$FILENAME" -c:v libvpx-vp9 -crf 30 -b:v 0 -c:a libopus -vbr on -b:a 64k "$OUTPUTDIR/$NEWNAME"		
 		wait
 	done
 }	# end function

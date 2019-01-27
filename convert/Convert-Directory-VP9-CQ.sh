@@ -1,9 +1,10 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: Test-Walk2.sh
+#          FILE: Convert-Directory-VP9-CQ.sh
 # 
-#         USAGE: ./Test-Walk2.sh 
+#         USAGE: ./Convert-Directory-VP9-CQ.sh 
+
 # 
 #   DESCRIPTION: 
 # 
@@ -53,9 +54,14 @@ function Convert ()
 	do 
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
 		echo $NAME
-		NEWNAME="$NAME.mp4"
+		NEWNAME="$NAME.webm"
 		
-		/usr/bin/ffmpeg -i "$FILENAME" -movflags faststart -profile:v high -level 4.1 "$OUTPUTDIR/$NEWNAME"
+		/usr/bin/ffmpeg -i "$FILENAME" -c:v libvpx-vp9 -b:v 1000k -minrate 750k -maxrate 1400k -crf 10 -c:a libvorbis "$OUTPUTDIR/$NEWNAME"	
+		/usr/bin/ffmpeg -i "$FILENAME" -vf scale=1280x720 -b:v 1024k -minrate 512k -maxrate 1485k -tile-columns 2 -g 240 -threads 8 \
+		 -quality good -crf 32 -c:v libvpx-vp9 -c:a libopus -pass 1 -speed 4 tos-1280x720-24-30fps.webm && \
+		/usr/bin/ffmpeg -i "$FILENAME" -vf scale=1280x720 -b:v 1024k -minrate 512k -maxrate 1485k -tile-columns 2 -g 240 -threads 8 \
+		-quality good -crf 32 -c:v libvpx-vp9 -c:a libopus \
+		-pass 2 -speed 4 -y "$OUTPUTDIR/$NEWNAME"
 		wait
 	done
 }	# end function
