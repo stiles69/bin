@@ -26,11 +26,10 @@ source $HOME/lib/sh/funcSendMessage.sh
 #-------------------------------------
 function Main ()
 {
-	echo $(SendMessage "10.0.0.11" "Application Name" "Completed DVD" "Make DVD Script")
+	echo $(SendMessage "Summary" "The Body" "/usr/share/icons/roguedesigns/64x64/Slave-Icon.svg")
 }	# end Main
 
 Main
 
 #===EXIT===
 exit 0
-
