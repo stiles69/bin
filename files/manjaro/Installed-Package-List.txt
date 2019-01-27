@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 acpi
 acpid
 adapta-maia-theme
@@ -151,3 +152,5 @@ xsane-gimp
 yaourt
 yay
 zsh
+=======
+>>>>>>> a486f82c287c3948029910a150c5b58dd0735a9a
