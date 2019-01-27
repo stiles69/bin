@@ -23,12 +23,13 @@ set e
 #----------------------------
 
 #---------- GLOBAL VARIABLES ---------
-PACKAGELIST=$HOME/bin/files/manjaro/Installed-Package-List.txt
+#PACKAGELIST=/home/brettsalemink/bin/files/manjaro/Installed-Package-List.txt
+PARAMETER1="$1"
 #-------------------------------------
 function ReadPackageList ()
 {
 	counter=0
-	readarray aur < "$PACKAGELIST"
+	readarray aur < "$PARAMETER1"
 	cat "$PACKAGELIST" | while read myline 
 	do
     		counter=$(($counter+1))
@@ -59,10 +60,14 @@ function InstallPackageList ()
 		esac
 	done	
 }	# end function
-PACKAGELIST="$1"
-ReadPackageList
-InstallPackageList
 
+function Main ()
+{
+	ReadPackageList
+	InstallPackageList
+}
+
+Main
 
 #===EXIT===
 exit 0

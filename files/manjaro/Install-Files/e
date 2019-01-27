@@ -1,18 +1,7 @@
-acpi
-acpid
-adapta-maia-theme
-autoconf
-automake
-axel
 b43-fwcutter
 baobab
-bison
 brasero
-cpupower
-crda
-cronie
 dconf-editor
-deepin-calculator
 deepin-calendar
 deepin-draw
 deepin-image-viewer
@@ -21,9 +10,6 @@ deepin-picker
 deepin-screen-recorder
 deepin-screenshot
 deepin-system-monitor
-deluge
-dhclient
-dhcpcd
 dmidecode
 dnsmasq
 downgrade
@@ -36,7 +22,6 @@ fakeroot
 firefox
 galculator
 gedit
-gparted
 grub-theme-manjaro-dev
 gst-libav
 gst-plugins-ugly
@@ -47,7 +32,6 @@ gvfs-mtp
 gvfs-smb
 haveged
 hexchat
-htop
 intel-ucode
 inxi
 iputils
@@ -130,7 +114,6 @@ vi
 vim
 vulkan-intel
 vulkan-radeon
-wget
 which
 xarchiver
 xcursor-breeze
