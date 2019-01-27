@@ -404,6 +404,7 @@ kcrash 5.54.0-1
 kdbusaddons 5.54.0-1
 kdeclarative 5.54.0-1
 kdenlive 18.12.1-1
+keepassxc 2.3.4-1
 kernel-alive 0.4-1
 keyutils 1.6-1
 kfilemetadata 5.54.0-1
@@ -843,7 +844,7 @@ manjaro-release 18.0.2-1
 manjaro-settings-manager 0.5.5-3
 manjaro-settings-manager-notifier 0.5.5-3
 manjaro-settings-samba 20180509-2
-manjaro-system 20190105-2
+manjaro-system 20190124-3
 manjaro-wallpapers-18.0 1.4-3
 mariadb-libs 10.3.12-2
 mc 4.8.22-1
@@ -1285,8 +1286,6 @@ vid.stab 1.1-2
 vim 8.1.0751-1
 vim-runtime 8.1.0751-1
 vim-spell-en 20180224-1
-virtualbox 6.0.2-1
-virtualbox-guest-iso 6.0.2-1
 vlc 3.0.6-1
 volume_key 0.3.11-2
 vpnc 0.5.3.svn550-3
