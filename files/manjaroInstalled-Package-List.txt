@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+<<<<<<< HEAD:Installed-Package-List.txt
 =======
 acpi
 acpid
@@ -251,4 +251,27 @@ yubikey-manager-qt
 yubikey-personalization-gui
 zim
 zsh
->>>>>>> e630bac359724964bcd6262c1861b82540a80e81
+adduser
+amp
+chromecastize-git
+google-chrome
+handbrake-cli-fdkaac
+handbrake-fdkaac
+insync
+jdownloader2
+joplin
+mastodon
+megacmd-bin
+nautilus-megasync
+nginx-mainline-mod-dav-ext
+peazip-gtk2-portable
+phonon-qt4
+plex-media-server
+python-shiboken
+python2-pyside
+teamviewer
+websocat-bin
+wickr-bin
+xnviewmp
+yubikey-manager-completion
+>>>>>>> e630bac359724964bcd6262c1861b82540a80e81:files/manjaroInstalled-Package-List.txt
