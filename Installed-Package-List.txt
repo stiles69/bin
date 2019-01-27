@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 acpi
 acpid
 apache
@@ -272,3 +274,4 @@ websocat-bin
 wickr-bin
 xnviewmp
 yubikey-manager-completion
+>>>>>>> 7f77be800b594d34ec6ab031bee8f616d73b99dd
