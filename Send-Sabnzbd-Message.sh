@@ -19,8 +19,8 @@
 #====================================================
 #---------- SOURCED ---------
 source $HOME/lib/sh/funcSendMessage.sh
-PARAM1="$1"
-PARAM2="$2"
+PARAM1="SABNZBD Master"
+PARAM2="Complete"
 USAGE="The correct usage is send-message.sh $SUMMARY $BODY"
 #----------------------------
 
