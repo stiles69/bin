@@ -1,0 +1,5 @@
+google-chrome
+insync
+jdownloader2
+megasync
+plex-media-server

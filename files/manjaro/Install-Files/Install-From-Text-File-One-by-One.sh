@@ -24,12 +24,12 @@ set e
 
 #---------- GLOBAL VARIABLES ---------
 #PACKAGELIST=/home/brettsalemink/bin/files/manjaro/Installed-Package-List.txt
-PARAMETER1="$1"
 #-------------------------------------
 function ReadPackageList ()
 {
+	PACKAGELIST="$1"
 	counter=0
-	readarray aur < "$PARAMETER1"
+	readarray aur < "$PACKAGELIST"
 	cat "$PACKAGELIST" | while read myline 
 	do
     		counter=$(($counter+1))

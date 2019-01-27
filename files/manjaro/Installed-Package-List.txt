@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 acpi
 acpid
 adapta-maia-theme
@@ -56,7 +55,6 @@ ipw2100-fw
 ipw2200-fw
 isousb
 jfsutils
-jre8-openjdk
 lib32-flex
 lib32-libva-vdpau-driver
 lib32-mesa-demos
@@ -91,6 +89,7 @@ mkinitcpio-openswap
 mlocate
 modemmanager
 nano
+nautilus
 netctl
 networkmanager-openconnect
 networkmanager-openvpn
@@ -109,6 +108,7 @@ powertop
 pulseaudio-bluetooth
 pulseaudio-ctl
 pulseaudio-zeroconf
+pygtksourceview2
 qpdfview
 redshift
 reiserfsprogs
@@ -131,7 +131,6 @@ vi
 vim
 vulkan-intel
 vulkan-radeon
-wget
 which
 xarchiver
 xcursor-breeze
@@ -151,6 +150,10 @@ xorg-xinit
 xsane-gimp
 yaourt
 yay
+zim
 zsh
-=======
->>>>>>> a486f82c287c3948029910a150c5b58dd0735a9a
+google-chrome
+insync
+jdownloader2
+megasync
+plex-media-server
