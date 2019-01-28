@@ -20,9 +20,65 @@ set -o nounset                              # Treat unset variables as an error
 
 function ProceedYes ()
 {
-	mkdir -p $HOME/development/Docker $HOME/development/stiles69 $HOME/development/GitLab
-	mkdir $HOME/Downloads
-	mkdir -p $HOME/Aur $HOME/Incoming $HOME/Videos/DEVEDE $HOME/Videos/FFMPEG $HOME/Videos/HANDBRAKE $HOME/Videos/KDENLIVE $HOME/Videos/YOUTUBE
+	if [ ! -d "$HOME/development/Docker" ]
+	then
+		mkdir -p $HOME/development/Docker 
+	fi
+
+	if [ ! -d "$HOME/development/GitLab" ]
+	then
+		mkdir -p $HOME/development/GitLab
+	fi
+
+	if [ ! -d "$HOME/development/stiles69" ]
+	then
+		mkdir -p $HOME/development/stiles69
+	fi
+
+	if [ ! -d "$HOME/Downloads" ]
+	then
+		mkdir -p $HOME/Downloads
+	fi
+
+	if [ ! -d "$HOME/Aur" ]
+	then
+		mkdir -p $HOME/Aur 
+	fi
+
+	if [ ! -d "$HOME/Incoming" ]
+	then
+		mkdir -p $HOME/Incoming
+	fi
+
+	if [ ! -d "$HOME/Videos" ]
+	then
+		mkdir -p $HOME/Videos
+	fi
+
+	if [ ! -d "$HOME/Videos/DEVEDE" ]
+	then
+		mkdir -p $HOME/Videos/DEVEDE 
+	fi
+
+	if [ ! -d "$HOME/Videos/FFMPEG" ]
+	then
+		mkdir -p $HOME/Videos/FFMPEG 
+	fi
+
+	if [ ! -d "$HOME/Videos/HANDBRAKE" ]
+	then
+		mkdir -p $HOME/Videos/HANDBRAKE 
+	fi
+
+	if [ ! -d "$HOME/Videos/KDENLIVE" ]
+	then
+		mkdir -p $HOME/Videos/KDENLIVE 
+	fi
+
+	if [ ! -d "$HOME/Videos/YOUTUBE" ]
+	then
+		mkdir -p $HOME/Videos/YOUTUBE
+	fi
 
 
 }	
