@@ -20,40 +20,66 @@ set -o nounset                              # Treat unset variables as an error
 
 function ProceedYes ()
 {
-	if [ -d $HOME/development ]
+	if [ ! -d "$HOME/development/Docker" ]
 	then
-		echo "$HOME/development already exists."
-	else
-		mkdir $HOME/development
-	fi	
+		mkdir -p $HOME/development/Docker 
+	fi
 
-	if [ -d $HOME/development/stiles69 ]
+	if [ ! -d "$HOME/development/GitLab" ]
 	then
-		echo "$HOME/development/stiles69 already exists."
-	else
+		mkdir -p $HOME/development/GitLab
+	fi
+
+	if [ ! -d "$HOME/development/stiles69" ]
+	then
 		mkdir -p $HOME/development/stiles69
 	fi
 
-	if [ -d $HOME/development/Docker ]
+	if [ ! -d "$HOME/Downloads" ]
 	then
-		echo "$HOME/development/Docker directory already exists."
-	else
-		mkdir -p $HOME/development/Docker
+		mkdir -p $HOME/Downloads
 	fi
 
-	if [ -d $HOME/Downloads ]
+	if [ ! -d "$HOME/Aur" ]
 	then
-		echo "$HOME/Downloads directory already exists."
-	else
-		mkdir $HOME/Downloads
+		mkdir -p $HOME/Aur 
 	fi
 
-	if [ -d $HOME/development/GitLab ]
+	if [ ! -d "$HOME/Incoming" ]
 	then
-		echo "$HOME/development/GitLab directory already exists."
-	else
-		mkdir -p $HOME/development/GitLab
+		mkdir -p $HOME/Incoming
 	fi
+
+	if [ ! -d "$HOME/Videos" ]
+	then
+		mkdir -p $HOME/Videos
+	fi
+
+	if [ ! -d "$HOME/Videos/DEVEDE" ]
+	then
+		mkdir -p $HOME/Videos/DEVEDE 
+	fi
+
+	if [ ! -d "$HOME/Videos/FFMPEG" ]
+	then
+		mkdir -p $HOME/Videos/FFMPEG 
+	fi
+
+	if [ ! -d "$HOME/Videos/HANDBRAKE" ]
+	then
+		mkdir -p $HOME/Videos/HANDBRAKE 
+	fi
+
+	if [ ! -d "$HOME/Videos/KDENLIVE" ]
+	then
+		mkdir -p $HOME/Videos/KDENLIVE 
+	fi
+
+	if [ ! -d "$HOME/Videos/YOUTUBE" ]
+	then
+		mkdir -p $HOME/Videos/YOUTUBE
+	fi
+
 
 }	
 
