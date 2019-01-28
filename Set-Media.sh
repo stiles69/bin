@@ -52,7 +52,7 @@ function Main ()
 	sudo chmod -R $PERM $DIR0
 	# Plex
 	echo "Permissions Changed for $DIR0"
-	ls -l
+	ls -l "$DIR0"
 }	# end Main
 
 Main

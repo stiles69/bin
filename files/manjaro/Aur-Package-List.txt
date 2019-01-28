@@ -1,0 +1,10 @@
+chromecastize-git
+google-chrome
+handbrake-cli-fdkaac
+handbrake-fdkaac
+insync
+jdownloader2
+nautilus-megasync
+peazip-gtk2-portable
+plex-media-server
+yubikey-manager-completion

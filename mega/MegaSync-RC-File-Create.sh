@@ -36,6 +36,7 @@ function Main ()
 	echo '[Login]' > $HOME/.megarc
 	echo "Username = "$USERNAME"" >> $HOME/.megarc
 	echo "Password = "$PASSWORD"" >> $HOME/.megarc
+	sudo chmod 640 $HOME/.megarc
 }	# end Main
 
 Main
