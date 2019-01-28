@@ -121,6 +121,7 @@ mkinitcpio-openswap
 mlocate
 modemmanager
 nano
+nautilus
 netctl
 networkmanager-openconnect
 networkmanager-openvpn

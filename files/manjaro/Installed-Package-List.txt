@@ -121,6 +121,7 @@ mkinitcpio-openswap
 mlocate
 modemmanager
 nano
+nautilus
 netctl
 networkmanager-openconnect
 networkmanager-openvpn
@@ -208,7 +209,7 @@ handbrake-cli-fdkaac
 handbrake-fdkaac
 insync
 jdownloader2
-nautilus-megasync
+megatools
 peazip-gtk2-portable
 plex-media-server
 yubikey-manager-completion

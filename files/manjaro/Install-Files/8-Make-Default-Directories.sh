@@ -20,33 +20,9 @@ set -o nounset                              # Treat unset variables as an error
 
 function ProceedYes ()
 {
-	if [ -d $HOME/development ]
-	then
-		echo "$HOME/development already exists."
-	else
-		mkdir $HOME/development
-	fi	
-
-	if [ -d $HOME/development/stiles69 ]
-	then
-		echo "$HOME/development/stiles69 already exists."
-	else
-		mkdir -p $HOME/development/stiles69
-	fi
-
-	if [ -d $HOME/development/Docker ]
-	then
-		echo "$HOME/development/Docker directory already exists."
-	else
-		mkdir -p $HOME/development/Docker
-	fi
-
-	if [ -d $HOME/Downloads ]
-	then
-		echo "$HOME/Downloads directory already exists."
-	else
-		mkdir $HOME/Downloads
-	fi
+	mkdir -p $HOME/development/Docker $HOME/development/stiles69 $HOME/development/GitLab
+	mkdir $HOME/Downloads
+	mkdir -p $HOME/Aur $HOME/Incoming $HOME/Videos/DEVEDE $HOME/Videos/FFMPEG $HOME/Videos/HANDBRAKE $HOME/Videos/KDENLIVE $HOME/Videos/YOUTUBE
 
 
 }	
