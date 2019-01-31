@@ -39,7 +39,6 @@ function Main ()
 	sudo chown -R $USERPLEX:$GROUPPLEX $DIR1
 	sudo chmod -R $PERM $DIR1
 	# Emby
-	echo "Permissions Changed for $DIR0"
 	ls -l $DIR0
 	ls -l $DIR1
 }	# end Main
