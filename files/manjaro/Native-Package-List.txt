@@ -114,6 +114,7 @@ manjaro-pulse
 manjaro-release
 manjaro-settings-manager-notifier
 manjaro-system
+mediainfo-gui
 memtest86+
 mesa-vdpau
 mhwd
