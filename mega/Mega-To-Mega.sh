@@ -22,18 +22,12 @@ set -o nounset                              # Treat unset variables as an error
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-HOMEDIR=/home/brettsalemink/MEGASync-Upload/
-MEGADIR=/MEGAsync\ Uploads/
+HOMEDIR=/home/brettsalemink/MEGAsync
+MEGADIR=/Root/MEGAsync
 #-------------------------------------
 function Main ()
 {
-	mega-sync "$HOMEDIR" "$MEGADIR"
-	wait
-	mega-transfers --show-syncs --path-display-size=60 --limit=5
-	wait
-	mega-transfers --show-syncs --path-display-size=60 --limit=5
-	wait
-	mega-transfers --show-syncs --path-display-size=60 --limit=5
+	megacopy -l "$HOMEDIR" -r "$MEGADIR" --disable-previews -d
 	wait
 }	# end Main
 
