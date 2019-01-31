@@ -19,6 +19,7 @@
 set -o nounset                              # Treat unset variables as an error
 
 FILENAME="$1"
+OUTPUTDIR="$2"
 function GetFile ()
 {
 	if [ "$FILENAME" = null ]

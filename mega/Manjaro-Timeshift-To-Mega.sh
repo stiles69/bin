@@ -22,12 +22,12 @@ set -o nounset                              # Treat unset variables as an error
 
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
-HOMEDIR=/home/brettsalemink/MEGAsync
-MEGADIR=/Root/MEGAsync
+HOMEDIR=/timeshift
+MEGADIR=/Root/Backups/Manjaro-Timeshift
 #-------------------------------------
 function Main ()
 {
-	megacopy -l "$HOMEDIR" -r "$MEGADIR" --disable-previews -d
+	megacopy -l "$HOMEDIR" -r "$MEGADIR" --disable-previews
 	wait
 }	# end Main
 
