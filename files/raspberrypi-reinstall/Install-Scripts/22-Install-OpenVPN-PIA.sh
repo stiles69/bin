@@ -31,7 +31,7 @@ function InstallOpenVPN ()
 	wait
 	sudo apt-get install openvpn -y
 	wait
-	#sudo apt-get install resolvconf -y
+	sudo apt-get install resolvconf -y
 	sudo apt-get install openvpn-systemd-resolved -y
 	wait
 }	# end function
