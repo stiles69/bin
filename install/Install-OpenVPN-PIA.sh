@@ -28,34 +28,55 @@ set -o nounset                              # Treat unset variables as an error
 function InstallOpenVPN ()
 {
 	sudo apt-get update -y && sudo apt-get upgrade -y
-	sudo apt-get install openvpn
+	wait
+	sudo apt-get install openvpn -y
+	wait
+	#sudo apt-get install resolvconf -y
+	sudo apt-get install openvpn-systemd-resolved -y
+	wait
 }	# end function
 
 function InstallPIA ()
 {
 	cd /etc/openvpn
+	wait
 	sudo wget https://www.privateinternetaccess.com/openvpn/openvpn.zip
+	wait
 	sudo unzip openvpn.zip	
+	wait
 	sudo rm openvpn.zip
-	echo "Please enter your PIA login:"
-	read PIALOGIN
-	echo "Please enter your PIA password:"
-	read PIAPASSWORD
-	sudo touch login.conf
-	sudo echo $PIALOGIN >> login.conf
-	sudo echo $PIAPASSWORD >> login.conf
+	wait
+	sudo cp $HOME/bin/files/etc/openvpn/login.conf /etc/openvpn
+	wait
+	sudo cp $HOME/bin/files/etc/openvpn/chicago.conf /etc/openvpn
+	wait
+	sudo cp $HOME/bin/files/etc/openvpn/toronto.conf /etc/openvpn
+	wait
 	sudo chmod 400 login.conf
-	sudo cp US\ Chicago.ovpn ./Chicago.conf
-	sudo cat /etc/openvpn/Chicago.conf | sed -e "s/auth-user-pass/auth-user-pass /etc/openvpn/login.conf/" > /etc/openvpn/temp_file
-	sudo mv /etc/openvpn/temp_file /etc/openvpn/Chicago.conf
-	echo "To start openvpn run [sudo openvpn Chicago.conf], or to autostart create a new line under the last AUTOSTART in /etc/default/openvpn with this line [AUTOSTART=Chicago]"
-	
+	wait
+	su -c "echo 'AUTOSTART="chicago"' >> /etc/default/openvpn"
+	wait
 }	# end function
+
+function StartService ()
+{
+	sudo systemctl start openvpn@chicago.service
+	wait
+}
+
+function CheckIP ()
+{
+	echo "The IP address is:"
+	curl ipinfo.io/ip
+	wait
+}
 
 function Main ()
 {
 	InstallOpenVPN
 	InstallPIA
+	#StartService
+	#CheckIP
 }	# end Main
 
 Main
