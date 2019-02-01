@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 chromecastize-git
 google-chrome
 handbrake-cli-fdkaac
@@ -11,4 +9,3 @@ peazip-gtk2-portable
 plex-media-server
 teamviewer
 yubikey-manager-completion
->>>>>>> 13a0e56cd9e3a6e33263d934a721b79cda5318df
