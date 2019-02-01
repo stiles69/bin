@@ -7,4 +7,5 @@ jdownloader2
 megatools
 peazip-gtk2-portable
 plex-media-server
+teamviewer
 yubikey-manager-completion
