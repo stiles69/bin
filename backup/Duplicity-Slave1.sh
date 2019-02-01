@@ -31,12 +31,15 @@ function Backup ()
 
 function MegaSync ()
 {
-
+	megacopy -l /backup -r /Root/Backups/Slave1 --disable-previews	
 }
 
 function Main ()
 {
 	Backup
+	wait
+	MegaSync
+	wait
 }	# end Main
 
 Main
