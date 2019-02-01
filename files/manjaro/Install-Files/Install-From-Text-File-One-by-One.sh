@@ -23,7 +23,7 @@ set e
 #----------------------------
 
 #---------- GLOBAL VARIABLES ---------
-PACKAGELIST=/home/brettsalemink/Installed-Package-List.txt
+PACKAGELIST=/home/brettsalemink/Removed-Packages.txt
 #PARAMETER1="$1"
 #-------------------------------------
 function ReadPackageList ()
