@@ -19,6 +19,11 @@
 set -o nounset                              # Treat unset variables as an error
 
 FILENAME="$1"
+OUTPUTDIR="$2"
+COMMAND1="ffmpeg -i "
+COMMAND2=" -acodec libvorbis -c:v libvpx -b:v 2000K -vf scale=1280:720 -threads 4 -quality good -lag-in-frames 16 -f webm -y "
+EXT="webm"
+#------------------------------
 function GetFile ()
 {
 	if [ "$FILENAME" = null ]
@@ -28,22 +33,13 @@ function GetFile ()
 	fi
 }
 
-function MakeDir ()
-{
-	echo "What What directory do you want to save the coverted file:"
-	read OUTPUTDIR
-
-	mkdir -p "$OUTPUTDIR"	
-	
-}	# end function
-
 function Convert () 
 {
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
 		echo "$NAME"
-		NEWNAME="$NAME.webm"
+		NEWNAME="$NAME.$EXT"
 
-		/usr/bin/ffmpeg -i "$FILENAME" -acodec libvorbis -c:v libvpx -b:v 2000K -vf scale=1280:720 -threads 4 -quality good -lag-in-frames 16 -f webm -y "$OUTPUTDIR/$NEWNAME"
+		$(echo "$COMMAND1") "$FILENAME" $(echo "$COMMAND2") "$OUTPUTDIR/$NEWNAME"
 		wait	
 }	# end function
 
