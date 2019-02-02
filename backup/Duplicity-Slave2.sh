@@ -23,14 +23,14 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
 BACKUPDIR=/home/brettsalemink
-HOSTER=Master
+HOSTER=Slave2
 #BACKEND="mega://brett.salemink@gmail.com@mega.co.nz//Backups/$HOSTER"
 BACKEND="file:///backup"
 #-------------------------------------
 function Backup ()
 {
 #	duplicity --no-encryption --name=master $BACKUPDIR mega://brett.salemink@gmail.com@mega.co.nz//Backups/Master
-	duplicity --no-encryption --name=master $BACKUPDIR $BACKEND
+	duplicity --no-encryption --no-compression --name=master $BACKUPDIR $BACKEND
 }
 
 function RemoveAllButTwo ()
