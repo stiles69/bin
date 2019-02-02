@@ -24,7 +24,7 @@ set -o nounset                              # Treat unset variables as an error
 #---------- GLOBAL VARIABLES ---------
 BACKUPDIR=/home/brettsalemink
 HOSTER=Slave3
-MEGADIR=Backups/$HOSTER
+MEGADIR=/Root/Backups/$HOSTER
 BACKEND="file:///backup"
 #-------------------------------------
 function Backup ()

@@ -24,20 +24,11 @@ set -o nounset                              # Treat unset variables as an error
 #---------- GLOBAL VARIABLES ---------
 BACKUPDIR=/home/brettsalemink
 HOSTER=Slave1
-<<<<<<< HEAD
-MEGADIR=Backups/$HOSTER
-=======
 MEGADIR=/Root/Backups/$HOSTER
-#BACKEND="mega://brett.salemink@gmail.com@mega.co.nz//Backups/$HOSTER"
->>>>>>> 894aefc2010262c4689b56ab07e897b78d6b0654
 BACKEND="file:///backup"
 #-------------------------------------
 function Backup ()
 {
-<<<<<<< HEAD
-#	duplicity --no-encryption --name=master $BACKUPDIR mega://brett.salemink@gmail.com@mega.co.nz//Backups/Master
-=======
->>>>>>> 894aefc2010262c4689b56ab07e897b78d6b0654
 	duplicity --no-encryption --no-compression $BACKUPDIR $BACKEND
 }
 
