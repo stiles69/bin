@@ -23,7 +23,7 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
 BACKUPDIR=/home/brettsalemink
-HOSTER=Slave1
+HOSTER=Manjaro
 MEGADIR=/Root/Backups/$HOSTER
 BACKEND="file:///backup"
 #-------------------------------------
