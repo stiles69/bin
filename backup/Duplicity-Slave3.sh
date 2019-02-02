@@ -23,14 +23,14 @@ set -o nounset                              # Treat unset variables as an error
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
 BACKUPDIR=/home/brettsalemink
-HOSTER=Master
+HOSTER=Slave3
+MEGADIR=/Root/Backups/$HOSTER
 #BACKEND="mega://brett.salemink@gmail.com@mega.co.nz//Backups/$HOSTER"
 BACKEND="file:///backup"
 #-------------------------------------
 function Backup ()
 {
-#	duplicity --no-encryption --name=master $BACKUPDIR mega://brett.salemink@gmail.com@mega.co.nz//Backups/Master
-	duplicity --no-encryption --name=master $BACKUPDIR $BACKEND
+	duplicity --no-encryption --no-compression $BACKUPDIR $BACKEND
 }
 
 function RemoveAllButTwo ()
@@ -42,7 +42,7 @@ function RemoveAllButTwo ()
 
 function MegaSync ()
 {
-	megacopy -l /backup -r /Root/Backups/Master --disable-previews
+	megacopy -l /backup -r $MEGADIR --disable-previews
 }
 
 function Main ()
