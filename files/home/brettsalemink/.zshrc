@@ -28,6 +28,7 @@
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/bin/install:$PATH
 export PATH=$HOME/bin/mega:$PATH
+export PATH=$HOME/bin/backup
 export PATH=$HOME/lib/sh:$PATH
 
 # Ruby Path
