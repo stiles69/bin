@@ -24,9 +24,9 @@ set -o nounset                              # Treat unset variables as an error
 INPUTDIR="$1"
 OUTPUTDIR="$2"
 COMMAND1="ffmpeg -i "
-COMMAND2=" -c:v libvpx-vp9 -b:v 1000k -minrate 750k -maxrate 1400k -crf 10 -c:a libvorbis "
+COMMAND2=" -c:v libvpx-vp9 -b:v 1000k -minrate 750k -maxrate 1400k -crf 10 -threads 4 -c:a libvorbis "
 COMMAND3=" -vf scale=1280x720 -b:v 1024k -minrate 512k -maxrate 1485k -tile-columns 2 -g 240 -threads 8 \
-		 -quality good -crf 32 -c:v libvpx-vp9 -c:a libopus -pass 1 -speed 4 tos-1280x720-24-30fps.webm && \
+		 -quality good -crf 32 -c:v libvpx-vp9 -threads 4 -c:a libopus -pass 1 -speed 4 tos-1280x720-24-30fps.webm && \
 		$(echo "$COMMAND1") -vf scale=1280x720 -b:v 1024k -minrate 512k -maxrate 1485k -tile-columns 2 -g 240 -threads 8 \
 		-quality good -crf 32 -c:v libvpx-vp9 -c:a libopus \
 		-pass 2 -speed 4 -y "
