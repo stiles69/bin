@@ -1,9 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: Convert-Directory-Any-Video-To-WebM.sh
+#          FILE: Convert-Directory-Any-Video-To-WebM-VP9.sh
 # 
-#         USAGE: ./Convert-Directory-Any-Video-To-WebM.sh 
+#         USAGE: ./Convert-Directory-Any-Video-To-WebM-VP9.sh 
 
 # 
 #   DESCRIPTION: 
@@ -21,30 +21,25 @@
 #== GLOBAL VARS ==
 INPUTDIR="$1"
 OUTPUTDIR="$2"
-
+COMMAND1="ffmpeg -i"
+COMMAND2=" -c:v libvpx-vp9 -crf 30 -b:v 0 -c:a libopus -vbr on -b:a 64k "
+#---------------------------------------
 function CheckVars()
 {
-	if [ ! -d "$INPUTDIR" ]
+	if [ "$INPUTDIR" == null ]
 	then
-		echo "Correct cli usage is Convert-Directory-Any-Video-To-Kodi-Handbrake.sh InputDirFilePath OutputDirFilePath"
+		echo "Correct cli usage is Convert-Directory-Any-Video-To-WebM-VP9 <InputDirFilePath> <OutputDirFilePath>"
 		echo "Please enter the filepath of the Input Directory?"
 		read INPUTDIR
 	fi
 
-	if [ ! -d "$OUTPUTDIR" ]
+	if [ "$OUTPUTDIR" == null ]
 	then
-		
-		echo "Correct cli usage is Convert-Directory-Any-Video-To-Kodi-Handbrake.sh InputDirFilePath OutputDirFilePath"
+		echo "Correct cli usage is Convert-Directory-Any-Video-To-WebM-VP9 <InputDirFilePath> <OutputDirFilePath>"
 		echo "Please enter the filepath of the Output Directory?"
 		read OUTPUTDIR
 	fi	
 }
-
-function MakeDir ()
-{
-	mkdir "$OUTPUTDIR/Converted"
-
-}	# end function
 
 function Convert () 
 {
@@ -55,7 +50,7 @@ function Convert ()
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
 		echo $NAME
 		NEWNAME="$NAME.webm"
-		/usr/bin/ffmpeg -i "$FILENAME" -c:v libvpx-vp9 -crf 30 -b:v 0 -c:a libopus -vbr on -b:a 64k "$OUTPUTDIR/$NEWNAME"		
+		$(echo "$COMMAND1") "$FILENAME" $(echo "$COMMAND2") "$OUTPUTDIR/$NEWNAME"		
 		wait
 	done
 }	# end function
