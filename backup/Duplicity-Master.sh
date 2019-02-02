@@ -26,21 +26,22 @@ BACKUPDIR=/home/brettsalemink
 #-------------------------------------
 function Backup ()
 {
-	duplicity full -v 1 --no-encryption --include="/" --exclude="**" $BACKUPDIR mega://brett.salemink@gmail.com@mega.co.nz//Root/Backups/Master
-#	duplicity incr --name=slave1 --no-encryption --progress $BACKUPDIR file:///backup 
+	duplicity --no-encryption --name=master $BACKUPDIR mega://brett.salemink@gmail.com@mega.co.nz//Backups/Master
 }
 
-function MegaSync ()
+function RemoveAllButTwo ()
 {
-	megacopy -l /backup -r /Root/Backups/Slave1 --disable-previews	
+	duplicity remove-all-but-n-full 2 --force mega://brett.salemink@gmail.com@mega.co.nz//Backups/Master 
+	wait
+	echo "Done removing older backups."
 }
 
 function Main ()
 {
 	Backup
-#	wait
-#	MegaSync
-#	wait
+	wait
+	RemoveAllButTwo
+	wait
 }	# end Main
 
 Main
