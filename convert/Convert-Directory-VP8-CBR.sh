@@ -1,10 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: Convert-Directory-Any-Video-To-WebM-VP9.sh
+#          FILE: Convert-Directory-Template.sh
 # 
-#         USAGE: ./Convert-Directory-Any-Video-To-WebM-VP9.sh 
-
+#         USAGE: ./Convert-Directory-Template.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -17,25 +16,30 @@
 #       CREATED: 07/12/2018 06:42
 #      REVISION:  ---
 #====================================================
-
-#== GLOBAL VARS ==
+set -o nounset                              # Treat unset variables as an error
+#------------ SOURCED ----------------
+									  
+#-------------------------------------
+#---------- GLOBAL VARIABLES ---------
 INPUTDIR="$1"
 OUTPUTDIR="$2"
-COMMAND1="ffmpeg -i"
-COMMAND2=" -c:v libvpx-vp9 -crf 30 -b:v 0 -c:a libopus -vbr on -b:a 64k "
-#---------------------------------------
+COMMAND1="ffmpeg -i "
+COMMAND2=" -acodec libvorbis -c:v libvpx -b:v 2000K -vf scale=1280:720 -threads 4 -quality good -lag-in-frames 16 -f webm -y "
+EXT="webm"
+#-------------------------------------
+
 function CheckVars()
 {
 	if [ "$INPUTDIR" == null ]
 	then
-		echo "Correct cli usage is Convert-Directory-Any-Video-To-WebM-VP9 <InputDirFilePath> <OutputDirFilePath>"
+		echo "Correct cli usage is Convert-Directory-Template.sh <InputDirFilePath> <OutputDirFilePath>"
 		echo "Please enter the filepath of the Input Directory?"
 		read INPUTDIR
 	fi
 
 	if [ "$OUTPUTDIR" == null ]
-	then
-		echo "Correct cli usage is Convert-Directory-Any-Video-To-WebM-VP9 <InputDirFilePath> <OutputDirFilePath>"
+	then		
+		echo "Correct cli usage is Convert-Directory-Template.sh <InputDirFilePath> <OutputDirFilePath>"
 		echo "Please enter the filepath of the Output Directory?"
 		read OUTPUTDIR
 	fi	
@@ -49,8 +53,8 @@ function Convert ()
 	do 
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
 		echo $NAME
-		NEWNAME="$NAME.webm"
-		$(echo "$COMMAND1") "$FILENAME" $(echo "$COMMAND2") "$OUTPUTDIR/$NEWNAME"		
+		NEWNAME="$NAME.$EXT"		
+		$(echo "$COMMAND1") "$FILENAME" $(echo "$COMMAND2") "$OUTPUTDIR/$NEWNAME"
 		wait
 	done
 }	# end function

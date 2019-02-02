@@ -1,9 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: Convert-Any-Video-To-Emby.sh
+#          FILE: Convert-Any-Video-x264-CBR.sh
 # 
-#         USAGE: ./Convert-Any-Video-To-Emby.sh
+#         USAGE: ./Convert-Any-Video-x264-CBR.sh
 # 
 #   DESCRIPTION: 
 # 
@@ -20,7 +20,10 @@ set -o nounset                              # Treat unset variables as an error
 
 FILENAME="$1"
 OUTPUTDIR="$2"
-
+COMMAND1="ffmpeg -i "
+COMMAND2=" -c:v libx264 -crf 22 -movflags faststart -profile:v high -level 4.1 -ac 2 -c:a aac"
+EXT="mp4"
+#-----------------------------------
 function GetFile ()
 {
 	if [ "$FILENAME" = null ]
@@ -34,9 +37,9 @@ function Convert ()
 {
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
 		echo "$NAME"
-		NEWNAME="$NAME.mp4"
+		NEWNAME="$NAME.$EXT"
 
-		ffmpeg -i "$FILENAME" -c:v libx264 -crf 22 -movflags faststart -profile:v high -level 4.1 -ac 2 -c:a aac "$OUTPUTDIR/$NEWNAME"	
+		$(echo "$COMMAND1") "$FILENAME" $(echo "$COMMAND2") "$OUTPUTDIR/$NEWNAME"	
 		wait	
 }	# end function
 

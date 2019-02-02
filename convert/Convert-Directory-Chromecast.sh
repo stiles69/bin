@@ -25,6 +25,7 @@ INPUTDIR="$1"
 OUTPUTDIR="$2"
 COMMAND1="ffmpeg -i "
 COMMAND2=` -c:v libx264 -profile:v high -level 5 -crf 18 -maxrate 10M -bufsize 16M -pix_fmt yuv420p -vf "scale=iw*sar:ih, scale='if(gt(iw,ih),min(1280,iw),-1)':'if(gt(iw,ih),-1,min(720,ih))'" -x264opts bframes=3:cabac=1 -movflags faststart -c:a libfdk_aac -b:a 320k -y `
+EXT="mp4"
 #-------------------------------------
 
 function CheckVars()
@@ -52,7 +53,7 @@ function Convert ()
 	do 
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
 		echo $NAME
-		NEWNAME="$NAME.mp4"		
+		NEWNAME="$NAME.$EXT"		
 		$(echo "$COMMAND1") "$FILENAME" $(echo "$COMMAND2") "$OUTPUTDIR/$NEWNAME"
 		wait
 	done

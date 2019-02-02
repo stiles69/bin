@@ -24,7 +24,7 @@ set -o nounset                              # Treat unset variables as an error
 INPUTDIR="$1"
 OUTPUTDIR="$2"
 COMMAND1="ffmpeg -i "
-COMMAND2=" -acodec libvorbis -c:v libvpx -b:v 2000K -vf scale=1280:720 -threads 4 -quality good -lag-in-frames 16 -f webm -y "
+COMMAND2=" -c:v libvpx -quality good -cpu-used 0 -crf 5 -qmax 35 -threads 4 -c:a libopus -vbr on -b:a 64k "
 EXT="webm"
 #-------------------------------------
 

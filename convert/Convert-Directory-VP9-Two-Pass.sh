@@ -1,9 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: Convert-Directory-VP9.sh
+#          FILE: Convert-Directory-VP9-Two-Pass.sh
 # 
-#         USAGE: ./Convert-Directory-VP9.sh 
+#         USAGE: ./Convert-Directory-VP9-Two-Pass.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -36,14 +36,16 @@ function CheckVars()
 {
 	if [ "$INPUTDIR" == null ]
 	then
-		echo "Correct cli usage is Convert-Directory-VP9 <InputDirFilePath> <OutputDirFilePath>"
+		echo "Correct cli usage is Convert-Directory-VP9-Two-Pass
+	 <InputDirFilePath> <OutputDirFilePath>"
 		echo "Please enter the filepath of the Input Directory?"
 		read INPUTDIR
 	fi
 
 	if [ "$OUTPUTDIR" == null ]
 	then		
-		echo "Correct cli usage is Convert-Directory-VP9 <InputDirFilePath> <OutputDirFilePath>"
+		echo "Correct cli usage is Convert-Directory-VP9-Two-Pass
+	 <InputDirFilePath> <OutputDirFilePath>"
 		echo "Please enter the filepath of the Output Directory?"
 		read OUTPUTDIR
 	fi	
