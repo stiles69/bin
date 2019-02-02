@@ -24,7 +24,8 @@ set -o nounset                              # Treat unset variables as an error
 INPUTDIR="$1"
 OUTPUTDIR="$2"
 COMMAND1="ffmpeg -i "
-COMMAND2=" -c:v libx264 -crf 22 -movflags faststart -profile:v high -level 4.1 -ac 2 -c:a aac "
+COMMAND2=" -acodec libvorbis -c:v libvpx -b:v 2000K -vf scale=1280:720 -threads 4 -quality good -lag-in-frames 16 -f webm -y "
+EXT="webm"
 #-------------------------------------
 
 function CheckVars()
@@ -52,7 +53,7 @@ function Convert ()
 	do 
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
 		echo $NAME
-		NEWNAME="$NAME.mp4"		
+		NEWNAME="$NAME.$EXT"		
 		$(echo "$COMMAND1") "$FILENAME" $(echo "$COMMAND2") "$OUTPUTDIR/$NEWNAME"
 		wait
 	done

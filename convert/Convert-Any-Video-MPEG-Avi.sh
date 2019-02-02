@@ -1,9 +1,11 @@
 #!/bin/bash  
-#====================================================
+#===============================================================================
 #
-#          FILE: Convert-Any-Video-To-Emby.sh
+#          FILE: Convert-Any-Video-To-MPEG-AVI.sh
+#
 # 
-#         USAGE: ./Convert-Any-Video-To-Emby.sh
+#         USAGE: ./Convert-Any-Video-To-MPEG-AVI.sh
+#
 # 
 #   DESCRIPTION: 
 # 
@@ -15,11 +17,15 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 07/12/2018 06:42
 #      REVISION:  ---
-#====================================================
-set -o nounset                              # Treat unset variables as an error
+#===============================================================================
 
+set -o nounset                              # Treat unset variables as an error
 FILENAME="$1"
 OUTPUTDIR="$2"
+COMMAND1="ffmpeg -i"
+COMMAND2=" -c:v mjpeg -codec:a ac3 -b:a 128k "
+EXT="avi"
+#-------------------------------------
 function GetFile ()
 {
 	if [ "$FILENAME" = null ]
@@ -29,28 +35,19 @@ function GetFile ()
 	fi
 }
 
-function MakeDir ()
-{
-	echo "What What directory do you want to save the coverted file:"
-	read OUTPUTDIR
-
-	mkdir -p "$OUTPUTDIR"	
-	
-}	# end function
-
 function Convert () 
 {
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
 		echo "$NAME"
-		NEWNAME="$NAME.webm"
+		NEWNAME="$NAME.$EXT"
 		
-		/usr/bin/ffmpeg -i "$FILENAME" -c:v libvpx -quality good -cpu-used 0 -crf 5 -qmax 35 -threads 4 -c:a libopus -vbr on -b:a 64k "$OUTPUTDIR/$NEWNAME"
+		$(echo "$COMMAND1") "$FILENAME" $(echo "$COMMAND2") "$OUTPUTDIR/$NEWNAME"
 		wait	
 }	# end function
 
 function Main ()
 {
-	GetFile
+	GetFile	
 	Convert
 }	# end function
 
