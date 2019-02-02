@@ -14,8 +14,8 @@ BACKEND="mega://brett.salemink@gmail.com@mega.co.nz/$BACKUPDIR"
 date=`date +%d` 
 
 # Setting the pass phrase to encrypt the backup files. 
-#export PASSPHRASE='SomeLongGeneratedHardToCrackKey' 
-#export PASSPHRASE 
+export PASSPHRASE='every good boy deserves fudge 2013' 
+export PASSPHRASE 
 
 # Setting the password for the FTP account that the 
 # backup files will be transferred to. 
@@ -28,18 +28,21 @@ date=`date +%d`
 # backup. 
 if [ $date = 01 ] 
      then 
-          duplicity full $HOMEDIR $BACKEND >>/var/log/duplicity/personal.log 
-          duplicity full /etc $BACKEND/etc >>/var/log/duplicity/etc.log 
+          duplicity full --progress --no-encryption $HOMEDIR $BACKEND #>>/var/log/duplicity/personal.log 
+          duplicity full --progress --no-encryption /etc $BACKEND/etc #>>/var/log/duplicity/etc.log 
      else 
-          duplicity $HOMEDIR $BACKEND >>/var/log/duplicity/personal.log 
-          duplicity /etc $BACKEND/etc >>/var/log/duplicity/etc.log 
+          duplicity --progress --no-encryption $HOMEDIR $BACKEND #>>/var/log/duplicity/personal.log 
+          duplicity --progress --no-encryption /etc $BACKEND/etc #>>/var/log/duplicity/etc.log 
+
 fi 
 
 # Check http://www.nongnu.org/duplicity/duplicity.1.html 
 # for all the options available for Duplicity. 
 # Deleting old backups 
-duplicity remove-older-than 1W --force $BACKEND >>/var/log/duplicity/personal.log 
-duplicity remove-older-than 1W --force $BACKEND/etc >>/var/log/duplicity/etc.log 
+duplicity remove-older-than 1W --force $BACKEND #>>/var/log/duplicity/personal.log 
+duplicity remove-older-than 1W --force $BACKEND/etc #>>/var/log/duplicity/etc.log 
+duplicity remove-all-but-n-full 2 --force $BACKEND #>>/var/log/duplicity/personal.log
+duplicity remove-all-but-n-full 2 --force $BACKEND/etc #>>/var/log/duplicity/etc.log
 
 # Unsetting the confidential variables so they are 
 # gone for sure. 
