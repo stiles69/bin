@@ -30,22 +30,13 @@ function GetFile ()
 	fi
 }
 
-function MakeDir ()
-{
-	echo "What What directory do you want to save the coverted file:"
-	read OUTPUTDIR
-
-	mkdir -p "$OUTPUTDIR"	
-	
-}	# end function
-
 function Convert () 
 {
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
 		echo "$NAME"
 		NEWNAME="$NAME.mp4"
 
-		/usr/bin/ffmpeg -i "$FILENAME" -c:v libx264 -crf 22 -movflags faststart -profile:v high -level 4.1 -ac 2 -c:a aac "$OUTPUTDIR/$NEWNAME"	
+		ffmpeg -i "$FILENAME" -c:v libx264 -crf 22 -movflags faststart -profile:v high -level 4.1 -ac 2 -c:a aac "$OUTPUTDIR/$NEWNAME"	
 		wait	
 }	# end function
 
