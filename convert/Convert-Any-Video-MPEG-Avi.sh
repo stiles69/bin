@@ -22,6 +22,10 @@
 set -o nounset                              # Treat unset variables as an error
 FILENAME="$1"
 OUTPUTDIR="$2"
+COMMAND1="ffmpeg -i"
+COMMAND2=" -c:v mjpeg -codec:a ac3 -b:a 128k "
+EXT="avi"
+#-------------------------------------
 function GetFile ()
 {
 	if [ "$FILENAME" = null ]
@@ -31,22 +35,13 @@ function GetFile ()
 	fi
 }
 
-function MakeDir ()
-{
-	echo "What What directory do you want to save the coverted file:"
-	read OUTPUTDIR
-
-	mkdir -p "$OUTPUTDIR/Converted"	
-	
-}	# end function
-
 function Convert () 
 {
 		NAME=`echo "$FILENAME" | cut -d'.' -f1`
 		echo "$NAME"
-		NEWNAME="$NAME.avi"
+		NEWNAME="$NAME.$EXT"
 		
-		/usr/bin/ffmpeg -i "$FILENAME" -c:v mjpeg -codec:a ac3 -b:a 128k "$OUTPUTDIR/$NEWNAME"
+		$(echo "$COMMAND1") "$FILENAME" $(echo "$COMMAND2") "$OUTPUTDIR/$NEWNAME"
 		wait	
 }	# end function
 
