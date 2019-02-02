@@ -25,12 +25,8 @@ set -o nounset                              # Treat unset variables as an error
 BACKUPDIR=/home/brettsalemink
 HOSTER=Slave3
 MEGADIR=/Root/Backups/$HOSTER
-<<<<<<< HEAD
-#BACKEND="mega://brett.salemink@gmail.com@mega.co.nz//Backups/$HOSTER"
-=======
->>>>>>> 7e507236107aec7a37c7b474f1cdcdfeb0661d32
-BACKEND="file:///backup"
-#-------------------------------------
+BACKEND=file:///backup
+
 function Backup ()
 {
 	duplicity --no-encryption --no-compression $BACKUPDIR $BACKEND
