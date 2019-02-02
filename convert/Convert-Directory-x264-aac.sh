@@ -16,34 +16,30 @@
 #       CREATED: 07/12/2018 06:42
 #      REVISION:  ---
 #====================================================
+#------------ SOURCED ----------------
 
-#== GLOBAL VARS ==
+#-------------------------------------
+#---------- GLOBAL VARIABLES ---------
 INPUTDIR="$1"
 OUTPUTDIR="$2"
-
+#-------------------------------------
 function CheckVars()
 {
-	if [ ! -d "$INPUTDIR" ]
+	if [  "$INPUTDIR" == null ]
 	then
-		echo "Correct cli usage is Convert-Directory-Any-Video-To-Kodi-Handbrake.sh InputDirFilePath OutputDirFilePath"
+		echo "Correct cli usage is Convert-Directory-x264-aac.sh <InputDirFilePath> <OutputDirFilePath>"
 		echo "Please enter the filepath of the Input Directory?"
 		read INPUTDIR
 	fi
 
-	if [ ! -d "$OUTPUTDIR" ]
+	if [ "$OUTPUTDIR" == null ]
 	then
 		
-		echo "Correct cli usage is Convert-Directory-Any-Video-To-Kodi-Handbrake.sh InputDirFilePath OutputDirFilePath"
-		echo "Please enter the filepath of the Output Directory?"
+	echo "Correct cli usage is Convert-Directory-x264-aac.sh <InputDirFilePath> <OutputDirFilePath>"
+	echo "Please enter the filepath of the Output Directory?"
 		read OUTPUTDIR
 	fi	
 }
-
-function MakeDir ()
-{
-	mkdir "$OUTPUTDIR/Converted"
-
-}	# end function
 
 function Convert () 
 {
@@ -64,9 +60,8 @@ function Main ()
 {
 	CheckVars
 	Convert
-}	# end function
+}	# end Main
 
 Main
 
-# == EXIT ==
-exit 0
+#===EXIT===

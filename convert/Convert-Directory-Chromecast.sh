@@ -23,27 +23,20 @@ OUTPUTDIR="$2"
 
 function CheckVars()
 {
-	if [ ! -d "$INPUTDIR" ]
+	if [ "$INPUTDIR" == null ]
 	then
-		echo "Correct cli usage is Convert-Directory-Any-Video-To-Kodi-Handbrake.sh InputDirFilePath OutputDirFilePath"
+		echo "Correct cli usage is Convert-Directory-x264-aac.sh <InputDirFilePath> <OutputDirFilePath>"
 		echo "Please enter the filepath of the Input Directory?"
 		read INPUTDIR
 	fi
 
-	if [ ! -d "$OUTPUTDIR" ]
-	then
-		
-		echo "Correct cli usage is Convert-Directory-Any-Video-To-Kodi-Handbrake.sh InputDirFilePath OutputDirFilePath"
+	if [ "$OUTPUTDIR" == null ]
+	then		
+		echo "Correct cli usage is Convert-Directory-x264-aac.sh <InputDirFilePath> <OutputDirFilePath>"
 		echo "Please enter the filepath of the Output Directory?"
 		read OUTPUTDIR
 	fi	
 }
-
-function MakeDir ()
-{
-	mkdir "$OUTPUTDIR/Converted"
-
-}	# end function
 
 function Convert () 
 {
