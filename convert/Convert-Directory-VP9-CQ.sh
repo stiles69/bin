@@ -40,12 +40,6 @@ function CheckVars()
 	fi	
 }
 
-function MakeDir ()
-{
-	mkdir "$OUTPUTDIR/Converted"
-
-}	# end function
-
 function Convert () 
 {
 	cd "$INPUTDIR"	
@@ -56,10 +50,10 @@ function Convert ()
 		echo $NAME
 		NEWNAME="$NAME.webm"
 		
-		/usr/bin/ffmpeg -i "$FILENAME" -c:v libvpx-vp9 -b:v 1000k -minrate 750k -maxrate 1400k -crf 10 -c:a libvorbis "$OUTPUTDIR/$NEWNAME"	
-		/usr/bin/ffmpeg -i "$FILENAME" -vf scale=1280x720 -b:v 1024k -minrate 512k -maxrate 1485k -tile-columns 2 -g 240 -threads 8 \
+		ffmpeg -i "$FILENAME" -c:v libvpx-vp9 -b:v 1000k -minrate 750k -maxrate 1400k -crf 10 -c:a libvorbis "$OUTPUTDIR/$NEWNAME"	
+		ffmpeg -i "$FILENAME" -vf scale=1280x720 -b:v 1024k -minrate 512k -maxrate 1485k -tile-columns 2 -g 240 -threads 8 \
 		 -quality good -crf 32 -c:v libvpx-vp9 -c:a libopus -pass 1 -speed 4 tos-1280x720-24-30fps.webm && \
-		/usr/bin/ffmpeg -i "$FILENAME" -vf scale=1280x720 -b:v 1024k -minrate 512k -maxrate 1485k -tile-columns 2 -g 240 -threads 8 \
+		ffmpeg -i "$FILENAME" -vf scale=1280x720 -b:v 1024k -minrate 512k -maxrate 1485k -tile-columns 2 -g 240 -threads 8 \
 		-quality good -crf 32 -c:v libvpx-vp9 -c:a libopus \
 		-pass 2 -speed 4 -y "$OUTPUTDIR/$NEWNAME"
 		wait

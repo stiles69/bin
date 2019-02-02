@@ -1,9 +1,9 @@
 #!/bin/bash  
 #====================================================
 #
-#          FILE: Convert-Directory-Chromecast.sh
+#          FILE: Convert-Directory-Template.sh
 # 
-#         USAGE: ./Convert-Directory-Chromecast.sh 
+#         USAGE: ./Convert-Directory-Template.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -31,14 +31,14 @@ function CheckVars()
 {
 	if [ "$INPUTDIR" == null ]
 	then
-		echo "Correct cli usage is Convert-Directory-Chromecast.sh <InputDirFilePath> <OutputDirFilePath>"
+		echo "Correct cli usage is Convert-Directory-Template.sh <InputDirFilePath> <OutputDirFilePath>"
 		echo "Please enter the filepath of the Input Directory?"
 		read INPUTDIR
 	fi
 
 	if [ "$OUTPUTDIR" == null ]
 	then		
-		echo "Correct cli usage is Convert-Directory-Chromecast.sh <InputDirFilePath> <OutputDirFilePath>"
+		echo "Correct cli usage is Convert-Directory-Template.sh <InputDirFilePath> <OutputDirFilePath>"
 		echo "Please enter the filepath of the Output Directory?"
 		read OUTPUTDIR
 	fi	
