@@ -45,9 +45,9 @@ function ProceedYes ()
 {
 	echo "![Rogue Designs Logo](https://storage.googleapis.com/stiles-images/RogueLogo-256x158.png)" >> ./README.md
 	echo "		" >> ./README.md
-	echo "# Rogue Designs #" >> ./README.md
+	echo "# Rogue Designs" >> ./README.md
 	echo "		" >> ./README.md
-	echo "**$RESULT**" >> ./README.md
+	echo "## $RESULT" >> ./README.md
 }	# end function
 
 function ProceedNo ()
