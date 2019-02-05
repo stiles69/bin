@@ -18,15 +18,15 @@
 #====================================================
 set -o nounset                              # Treat unset variables as an error
 
-#------------ SOURCED ----------------
-
+#------------ SOURCED --------------
 #-------------------------------------
 #---------- GLOBAL VARIABLES ---------
 
 #-------------------------------------
 function Main ()
 {
-. $HOME/lib/node/pushover-convert-completed index.js 'Test Message' 'Test Title'
+
+	node /home/brettsalemink/lib/node/pushover-convert-completed index.js 'Conversion Complete' 'Manjaro'
 }	# end Main
 
 Main
