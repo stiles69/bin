@@ -26,7 +26,7 @@ set -o nounset                              # Treat unset variables as an error
 function Main ()
 {
 
-	node /home/brettsalemink/lib/node/pushover-convert-completed index.js 'Conversion Complete' 'Manjaro'
+	node /home/brettsalemink/lib/node/pushover-convert-completed index.js
 }	# end Main
 
 Main
