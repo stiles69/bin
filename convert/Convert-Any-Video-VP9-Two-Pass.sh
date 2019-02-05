@@ -49,10 +49,17 @@ function Convert ()
 		wait	
 }	# end function
 
+function SendMessage ()
+{
+	node /home/brettsalemink/lib/node/pushover-convert-completed index.js
+}
+
 function Main ()
 {
 	GetFile
 	Convert
+	wait
+	SendMessage
 }	# end function
 
 Main

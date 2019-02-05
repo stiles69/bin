@@ -60,10 +60,17 @@ function Convert ()
 	done
 }	# end function
 
+function SendMessage ()
+{
+	node /home/brettsalemink/lib/node/pushover-convert-completed index.js
+}
+
 function Main ()
 {
 	CheckVars
 	Convert
+	wait
+	SendMessage
 }	# end function
 
 Main

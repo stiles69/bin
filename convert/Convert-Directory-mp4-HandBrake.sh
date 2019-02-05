@@ -1,5 +1,5 @@
 #!/bin/bash  
-#===============================================================================
+#====================================================
 #
 #          FILE: Test-Walk2.sh
 # 
@@ -15,8 +15,7 @@
 #  ORGANIZATION: Rogue Designs
 #       CREATED: 07/12/2018 06:42
 #      REVISION:  ---
-#===============================================================================
-
+#====================================================
 set -o nounset                              # Treat unset variables as an error
 
 #== GLOBAL VARS ==
@@ -41,12 +40,6 @@ function CheckVars()
 		read OUTPUTDIR
 	fi	
 }
-
-function MakeDir ()
-{
-	mkdir "$OUTPUTDIR"
-
-}	# end function
 
 function Convert () 
 {
