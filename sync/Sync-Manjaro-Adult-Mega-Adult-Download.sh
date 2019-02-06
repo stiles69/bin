@@ -25,12 +25,20 @@ set -o nounset                              # Treat unset variables as an error
 LOCALDIR=/media/Video/Adult
 REMOTEDIR=/Root/Media/Adult
 #-------------------------------------
+function SendMessage ()
+{
+	node /home/brettsalemink/lib/node/sync-completed index.js
+}
+
 function Main ()
 {
 	megacopy --disable-previews -l "$LOCALDIR" -r "$REMOTEDIR" -d
+	wait
+	SendMessage
 }	# end Main
 
 Main
+
 
 #===EXIT===
 exit 0
