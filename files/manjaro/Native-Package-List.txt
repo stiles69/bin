@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 acpi
 acpid
 adapta-maia-theme
@@ -210,5 +209,3 @@ yubikey-manager-qt
 yubikey-personalization-gui
 zim
 zsh
-=======
->>>>>>> cd026d216232a6742cff319b49342348808e7c5f
