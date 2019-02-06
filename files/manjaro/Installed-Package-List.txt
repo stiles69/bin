@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 acpi
 acpid
 adapta-maia-theme
@@ -239,3 +240,5 @@ vo-amrwbenc
 xavs
 xavs2-git
 yubikey-manager-completion
+=======
+>>>>>>> cd026d216232a6742cff319b49342348808e7c5f
