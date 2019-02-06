@@ -27,7 +27,7 @@ REMOTEDIR=
 #-------------------------------------
 function SendMessage ()
 {
-	node /home/brettsalemink/lib/node/sync-completed index.js
+	$HOME/bin/manjaro/Pushover-Send-Message-Manjaro-Mega-Sync.sh
 }
 
 function Main ()
