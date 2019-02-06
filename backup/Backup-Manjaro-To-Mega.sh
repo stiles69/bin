@@ -33,9 +33,16 @@ DUPOPT2="--encrypt-key=$SIGNKEY"
 FINALDEST="mega://$MEGANAME@$MEGAEXT$DESTDIR"
 DUPCOMMAND="duplicity $DUPOPT1 $DUPOPT2 $SRCDIR $FINALDEST"
 #-------------------------------------
+function SendMessage ()
+{
+	$HOME/bin/mega/Pushover-Send-Message-Manjaro-Backup-to-Mega.sh
+}
+
 function Main ()
 {
 	"$DUPCOMMAND"
+	wait
+	SendMessage
 }	# end Main
 
 Main
