@@ -44,6 +44,11 @@ function MegaSync ()
 	megacopy -l /backup -r $MEGADIR --disable-previews
 }
 
+function SendMessage ()
+{
+	$HOME/bin/manjaro/Pushover-Send-Message-Manjaro-Backup-to-Mega.sh
+}
+
 function Main ()
 {
 	Backup
@@ -51,6 +56,8 @@ function Main ()
 	RemoveAllButTwo
 	wait
 	MegaSync
+	wait
+	SendMessage
 
 }	# end Main
 
