@@ -25,13 +25,12 @@ set -o nounset                              # Treat unset variables as an error
 CURLURL=https://api.pushover.net/1/messages.json
 TOKEN='abf9p41utz3v4a49wz59w2ussp9cxk'
 USER='gos41mgsak3tf3ue5og3f5hd2z3ceb'
-TITLE='<b>Slave1</b>'
+TITLE='Slave1'
 MESSAGE='Torrent Complete'
 PRIORITY=0
 URL='http://10.0.0.5:8112'
 URL_TITLE='Slave1 Deluge'
-SOUND='pushover'
-IMAGE='Slave-Icon-48x48.png'
+IMAGE='/home/brettsalemink/Pictures/Manjaro Icons/PNG/Slave-Icon-128x128.png'
 #-------------------------------------
 function Main ()
 {
@@ -42,8 +41,7 @@ function Main ()
 		--form-string "priority=$PRIORITY" \
 		--form-string "url=$URL" \
 		--form-string "url_title=$URL_TITLE" \
-		--form-string "sound=$SOUND" \
-		-F "attachment=$IMAGE" \
+		-F "attachment=@$IMAGE" \
 		$CURLURL
 	
 }	# End Main	
