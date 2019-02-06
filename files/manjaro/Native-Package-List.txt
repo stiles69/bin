@@ -56,6 +56,7 @@ gst-libav
 gst-plugins-ugly
 gufw
 gvfs-afc
+gvfs-google
 gvfs-gphoto2
 gvfs-mtp
 gvfs-smb
@@ -179,8 +180,6 @@ ttf-indic-otf
 vde2
 vi
 vim
-virtualbox
-virtualbox-guest-iso
 vulkan-intel
 vulkan-radeon
 which
